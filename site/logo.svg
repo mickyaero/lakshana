@@ -1,0 +1,13 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lakshana logo">
+  <!-- scattered points: the "unmarked" documents -->
+  <circle cx="11" cy="18" r="2.6" fill="#1a1611" opacity="0.42"/>
+  <circle cx="52" cy="12" r="2.2" fill="#1a1611" opacity="0.36"/>
+  <circle cx="10" cy="48" r="2.4" fill="#1a1611" opacity="0.42"/>
+  <circle cx="54" cy="48" r="2.7" fill="#1a1611" opacity="0.40"/>
+  <circle cx="22" cy="55" r="1.9" fill="#1a1611" opacity="0.32"/>
+  <circle cx="44" cy="9"  r="1.8" fill="#1a1611" opacity="0.30"/>
+  <!-- thin orbit: the discovery -->
+  <circle cx="32" cy="32" r="14" fill="none" stroke="#cf6d35" stroke-width="1" opacity="0.32"/>
+  <!-- the lakṣaṇa — the defining mark -->
+  <circle cx="32" cy="32" r="8.5" fill="#cf6d35"/>
+</svg>
