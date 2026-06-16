@@ -269,6 +269,16 @@ def main() -> int:
         html,
     )
 
+    # Strip auto-init calls that race ahead of our fetch override
+    # (e.g. `D.checkApiKey();D.loadProjects();D.loadModels();` at the end
+    # of the D <script> block). These hit /api/* before our window.fetch
+    # patch lands, producing 404s in the console.
+    html = re.sub(
+        r'D\.checkApiKey\(\);\s*D\.loadProjects\(\);\s*D\.loadModels\(\);?',
+        '',
+        html,
+    )
+
     # 3. Replace Step 1 (Upload) content with the sample-run intro.
     # We match the `<!-- Step 1: Upload -->` block up to (but not including) `<!-- Step 2:`.
     step1_pattern = re.compile(
