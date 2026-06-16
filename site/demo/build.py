@@ -60,9 +60,33 @@ SAMPLE_RUN_INTRO = """
       </div>
     </div>
 
+    <div class="card" style="margin-top:1.1rem;padding:1.1rem 1.3rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.65rem">
+        <strong style="font-size:0.95rem;color:var(--text)">Browse the corpus</strong>
+        <span style="font-size:0.78rem;color:var(--muted)">Click any document to read it. These are the raw files Lakshana saw.</span>
+      </div>
+      <div id="demo-doc-browser" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem">
+        <!-- populated by _renderSampleDocBrowser() -->
+      </div>
+    </div>
+
     <div class="footer-bar">
       <button class="btn btn-primary btn-next" onclick="D.startAnalysis()">Play the analysis &#8594;</button>
       <button class="btn btn-secondary" onclick="D._jumpToResults()">Skip to results &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Doc preview modal (lives outside the wizard pages) -->
+  <div id="demo-doc-modal" class="hidden" style="position:fixed;inset:0;background:rgba(26,22,17,0.55);z-index:1000;align-items:flex-start;justify-content:center;padding:4rem 1.5rem;overflow-y:auto;display:none">
+    <div style="background:var(--surface,white);border-radius:14px;max-width:780px;width:100%;box-shadow:0 24px 60px -16px rgba(0,0,0,0.3);overflow:hidden">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1.2rem;border-bottom:1px solid var(--border)">
+        <div>
+          <div id="demo-doc-modal-title" style="font-family:'JetBrains Mono','SF Mono',monospace;font-size:0.92rem;font-weight:600;color:var(--text)">document</div>
+          <div id="demo-doc-modal-type" style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem">ground-truth doc type</div>
+        </div>
+        <button onclick="_demoCloseModal()" style="background:none;border:0;cursor:pointer;font-size:1.3rem;color:var(--muted);padding:0.3rem 0.5rem;line-height:1">&times;</button>
+      </div>
+      <pre id="demo-doc-modal-body" style="margin:0;padding:1.1rem 1.4rem;max-height:60vh;overflow-y:auto;font-family:'JetBrains Mono','SF Mono',monospace;font-size:0.82rem;line-height:1.65;color:var(--text-2);white-space:pre-wrap;background:#fafaf7"></pre>
     </div>
   </div>
 """
@@ -111,6 +135,88 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('demo-time-label').textContent = (DEMO_DATA.elapsed_seconds || DEMO_DATA.stats?.duration_s || '—') + ' s';
   document.getElementById('demo-doc-label').textContent = DEMO_DATA.stats?.total_docs || (DEMO_DATA.doc_names||[]).length || '—';
   document.getElementById('demo-cluster-label').textContent = DEMO_DATA.stats?.clusters || (DEMO_DATA.clusters||[]).length || '—';
+});
+
+// Render a per-type document browser on the Sample step.
+// Groups docs by their ground-truth doc_type (read from doc_cluster_ids
+// + cluster names) so users can scan what's in each pile.
+function _renderSampleDocBrowser(data) {
+  const root = document.getElementById('demo-doc-browser');
+  if (!root || !data.doc_names) return;
+  const clustersById = {};
+  (data.clusters || []).forEach(c => { clustersById[String(c.id)] = c; });
+
+  // group doc indices by their cluster id
+  const byCluster = {};
+  (data.doc_cluster_ids || []).forEach((cid, idx) => {
+    const k = String(cid);
+    (byCluster[k] = byCluster[k] || []).push(idx);
+  });
+
+  const groupHtml = Object.entries(byCluster).map(([cid, indices]) => {
+    const cluster = clustersById[cid] || { name: 'Cluster ' + cid };
+    const items = indices.map(idx => {
+      const name = (data.doc_names[idx] || ('doc_' + idx)).replace(/^.*\//, '');
+      return `<button class="demo-doc-item" data-idx="${idx}" data-type="${esc(cluster.name)}"
+        style="text-align:left;background:var(--surface,white);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.55rem;cursor:pointer;font-family:'JetBrains Mono','SF Mono',monospace;font-size:0.74rem;color:var(--text-2);transition:all 0.12s">
+        ${esc(name)}
+      </button>`;
+    }).join('');
+    return `
+      <div class="demo-doc-group">
+        <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.45rem">
+          <span style="font-weight:600;font-size:0.82rem;color:var(--text)">${esc(cluster.name)}</span>
+          <span style="font-size:0.72rem;color:var(--muted)">${indices.length} docs</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.3rem">${items}</div>
+      </div>
+    `;
+  }).join('');
+
+  root.innerHTML = groupHtml;
+
+  root.querySelectorAll('.demo-doc-item').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      btn.style.background = 'var(--accent-g,#fdf4ed)';
+      btn.style.borderColor = 'var(--accent,#cf6d35)';
+      btn.style.color = 'var(--accent,#cf6d35)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.background = 'var(--surface,white)';
+      btn.style.borderColor = 'var(--border,#ddd2c4)';
+      btn.style.color = 'var(--text-2,#564c40)';
+    });
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.idx, 10);
+      _demoOpenModal(idx, btn.dataset.type);
+    });
+  });
+}
+
+function _demoOpenModal(idx, typeName) {
+  const m = document.getElementById('demo-doc-modal');
+  if (!m) return;
+  const name = (DEMO_DATA.doc_names[idx] || ('doc_' + idx)).replace(/^.*\//, '');
+  document.getElementById('demo-doc-modal-title').textContent = name;
+  document.getElementById('demo-doc-modal-type').textContent = typeName || '';
+  document.getElementById('demo-doc-modal-body').textContent =
+    DEMO_DATA.doc_snippets?.[idx] || 'No preview available.';
+  m.classList.remove('hidden');
+  m.style.display = 'flex';
+}
+
+function _demoCloseModal() {
+  const m = document.getElementById('demo-doc-modal');
+  if (!m) return;
+  m.classList.add('hidden');
+  m.style.display = 'none';
+}
+
+// Close modal on Esc + on backdrop click
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') _demoCloseModal(); });
+document.addEventListener('click', (e) => {
+  const m = document.getElementById('demo-doc-modal');
+  if (m && e.target === m) _demoCloseModal();
 });
 
 // Override fetch — catch ALL /api/* calls so the browser never logs a 404.
@@ -212,6 +318,11 @@ function _wirePatch() {
     }
   });
 
+  // Populate the Sample-step document browser from DEMO_DATA, and wire
+  // each doc-name to a modal that shows its text. Lets users actually
+  // read the corpus before watching the analysis.
+  _renderSampleDocBrowser(DEMO_DATA);
+
   // On load: auto-play after a beat
   setTimeout(() => {
     if (D.currentStep === 1) {
@@ -268,6 +379,11 @@ def main() -> int:
         '',
         html,
     )
+
+    # The lifted step-bar was positioned `top:52px` to clear docstruct's
+    # global navbar, which we stripped. Without that nav, it leaves a
+    # 52px empty cream gap above the wizard. Anchor it to top:0 instead.
+    html = html.replace('#step-bar{position:fixed;top:52px;', '#step-bar{position:fixed;top:0;')
 
     # Strip auto-init calls that race ahead of our fetch override
     # (e.g. `D.checkApiKey();D.loadProjects();D.loadModels();` at the end
