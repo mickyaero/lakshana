@@ -951,7 +951,13 @@ def group_fields(fields: list[dict], model: str, doc_type: str = "") -> tuple[li
         logger.warning("Field grouping failed: %s", e)
         return fields, []
 
-    raw_groups = data.get("groups", [])
+    # LLMs sometimes return a bare list of groups instead of {"groups": [...]}
+    if isinstance(data, list):
+        raw_groups = data
+    elif isinstance(data, dict):
+        raw_groups = data.get("groups", [])
+    else:
+        raw_groups = []
     if not raw_groups:
         return fields, []
 
@@ -1506,7 +1512,7 @@ def run_discovery(
             # Step 4b: Group fields into semantic categories
             _progress("discover", "  Grouping fields...", pct)
             try:
-                schema["fields"], groups = group_fields(schema["fields"], model, doc_type=schema.get("name", ""))
+                schema["fields"], groups = group_fields(schema["fields"], model, doc_type=label_info.get("name", ""))
                 if groups:
                     schema["groups"] = groups
                     _progress("discover", f"  Grouped into {len(groups)} categories", pct)

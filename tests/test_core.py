@@ -786,6 +786,28 @@ def test_group_fields_empty():
 
 
 @patch("lakshana.core.call_llm")
+def test_group_fields_handles_bare_list_response(mock_llm):
+    """Regression: some LLMs return a top-level JSON array instead of {"groups": [...]}.
+
+    Before the fix, this crashed the legacy path with
+    `AttributeError: 'list' object has no attribute 'get'`.
+    """
+    mock_llm.return_value = MagicMock(text=json.dumps([
+        {"name": "Header", "description": "Top of doc", "fields": ["a", "b"]},
+        {"name": "Body", "description": "Middle", "fields": ["c"]},
+    ]))
+    fields = [
+        {"name": "a", "type": "string"},
+        {"name": "b", "type": "string"},
+        {"name": "c", "type": "string"},
+    ]
+    updated_fields, groups = group_fields(fields, model="test-model")
+    group_names = [g["name"] for g in groups]
+    assert "Header" in group_names
+    assert "Body" in group_names
+
+
+@patch("lakshana.core.call_llm")
 def test_group_fields_repeating(mock_llm):
     mock_llm.return_value = MagicMock(text=json.dumps({
         "groups": [
