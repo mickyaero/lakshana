@@ -8,6 +8,8 @@
 
 **Zero-config schema discovery for document collections.** Drop a folder of PDFs, get a JSON Schema. No training, no labels, no manual schema design.
 
+**Two ways to use it.** A **Python library + CLI** for pipelines (available now). A **graphical app** you download and click through (shipping next — same wizard as the [live demo](https://mickyaero.github.io/lakshana/demo/), runs on your own machine).
+
 ```bash
 # Install from source (PyPI release coming)
 git clone https://github.com/mickyaero/lakshana && cd lakshana

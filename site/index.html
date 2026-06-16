@@ -356,6 +356,40 @@ section h2 em { font-style: italic; color: var(--accent); }
   color: var(--ink-3);
 }
 
+/* Two ways to use it — modes grid */
+.modes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.8rem; }
+@media (max-width: 720px) { .modes-grid { grid-template-columns: 1fr; } }
+.mode-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  padding: 1.6rem 1.7rem;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.mode-card::before {
+  content: ''; position: absolute; left: 0; top: 20%; bottom: 20%;
+  width: 3px; background: var(--accent); border-radius: 0 3px 3px 0;
+}
+.mode-tag {
+  font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--accent); margin-bottom: 0.7rem;
+}
+.mode-card h3 {
+  font-family: 'Newsreader', serif; font-weight: 600;
+  font-size: 1.4rem; letter-spacing: -0.01em;
+  color: var(--ink); margin-bottom: 0.6rem; line-height: 1.2;
+}
+.mode-card p { font-size: 0.98rem; color: var(--ink-2); margin-bottom: 1rem; flex: 1; }
+.mode-card code { background: var(--accent-soft); padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.86em; color: var(--ink-2); }
+.mode-link {
+  align-self: flex-start;
+  font-weight: 600; font-size: 0.94rem;
+  border-bottom: 1.5px solid var(--accent); padding-bottom: 1px;
+}
+.mode-link:hover { text-decoration: none; }
+
 /* Footer */
 footer {
   padding: 3.5rem 0 4rem;
@@ -410,7 +444,7 @@ footer a:hover { color: var(--accent); }
   <div class="wrap">
     <div class="hero-eyebrow"><span class="deva">लक्षण</span> &nbsp;·&nbsp; <em>lakṣaṇa</em>, Sanskrit: a defining mark, a distinguishing feature.</div>
     <h1>Drop a folder of PDFs.<br />Get a <em>JSON Schema.</em></h1>
-    <p class="sub">An open-source Python library that discovers the document types in any folder, then hands you back a verified schema for each one. No training. No labels. Works on a laptop CPU; scales on GPU. Bring whichever LLM API you have.</p>
+    <p class="sub">Discovers the document types in any folder and hands you back a verified schema for each one. Use it as a <em>Python library</em>, or run the <em>graphical version</em> (the same wizard you can <a href="demo/">try right here</a>) on your own machine. No training. No labels. Bring whichever LLM API you have.</p>
 
     <div class="hero-cta">
       <a href="demo/" class="btn btn-primary">
@@ -424,7 +458,7 @@ footer a:hover { color: var(--accent); }
     </div>
 
     <div class="showpiece" aria-label="example output">
-      <span class="showpiece-title">example · groq · llama-3.3-70b</span>
+      <span class="showpiece-title">example · CLI</span>
 <pre><span class="c-prompt">$</span> lakshana analyze ./mystery_folder/
 
 <span class="c-comment"># clustering 50 documents…
@@ -454,6 +488,27 @@ footer a:hover { color: var(--accent); }
     </div>
   </div>
 </header>
+
+<section id="modes" class="dense">
+  <div class="wrap">
+    <p class="section-label">Two ways to use it</p>
+    <h2>A library when you want it in a pipeline. A <em>graphical app</em> when you want to interact with the result.</h2>
+    <div class="modes-grid">
+      <div class="mode-card">
+        <div class="mode-tag">Library &nbsp;·&nbsp; available now</div>
+        <h3>Python library + CLI</h3>
+        <p>Embed Lakshana inside your extraction pipeline. <code>discover(files, model, …)</code> returns a typed <code>DiscoverResult</code> with clusters, schemas, UMAP coords, and per-field frequency. CLI for one-shot folder runs.</p>
+        <a href="#install" class="mode-link">Install &nbsp;→</a>
+      </div>
+      <div class="mode-card">
+        <div class="mode-tag">Graphical &nbsp;·&nbsp; next release</div>
+        <h3>Download &amp; click through</h3>
+        <p>Get the wizard you can <a href="demo/">try right here</a> as a downloadable local app. Drop a folder, watch the UMAP form, edit the schema visually, export. Same engine, no Python required. Shipping next.</p>
+        <a href="demo/" class="mode-link">See the demo &nbsp;→</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="pitch" class="dense">
   <div class="wrap-tight">
