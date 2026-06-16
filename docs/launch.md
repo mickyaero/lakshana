@@ -1,7 +1,7 @@
 # Lakshana — launch sequence (draft)
 
 > **Status:** Draft, not posted anywhere. Review and edit before going live.
-> **Owner:** Micky Droch (@mickyaero)
+> **Owner:** Micky (@mickyaero)
 > **Last updated by:** Claude
 
 ---

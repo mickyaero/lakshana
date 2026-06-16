@@ -36,7 +36,7 @@ from lakshana.core import (
     suggest_merges,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "DiscoverResult",

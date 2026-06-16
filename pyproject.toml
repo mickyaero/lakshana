@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lakshana"
-version = "0.1.0"
+version = "0.1.1"
 description = "Zero-config schema discovery for document collections. Drop a folder of PDFs, get a JSON Schema."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Micky Droch" }]
+authors = [{ name = "Micky" }]
 keywords = ["document-extraction", "schema-discovery", "clustering", "llm", "umap", "hdbscan", "pdf"]
 classifiers = [
     "Development Status :: 3 - Alpha",
