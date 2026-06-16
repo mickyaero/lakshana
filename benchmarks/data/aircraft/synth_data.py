@@ -239,7 +239,7 @@ def main() -> int:
             doc_names.append(m["filename"])
             doc_cluster_ids.append(cid)
             text = (HERE / "documents" / m["filename"]).read_text()
-            doc_snippets.append(text[:500])
+            doc_snippets.append(text)  # full document so the modal can show the prose
 
     # doc_indices for each cluster (per the discover output convention)
     for c in CLUSTERS:
