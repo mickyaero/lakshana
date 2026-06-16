@@ -676,11 +676,11 @@ footer a:hover { color: var(--accent); }
     <p class="section-label">Install</p>
     <h2>One command. <em>Bring whichever LLM</em> you have a key for.</h2>
     <div class="code-card" style="margin-top:2rem;">
-<pre><span class="c-comment"># clone + install from source (PyPI release coming)</span>
-<span class="c-prompt">$</span> git clone https://github.com/mickyaero/lakshana &amp;&amp; cd lakshana
-<span class="c-prompt">$</span> pip install -e <span class="c-str">".[openai]"</span>     <span class="c-comment"># also serves Groq, Cerebras, OpenRouter, Ollama</span>
-<span class="c-prompt">$</span> pip install -e <span class="c-str">".[anthropic]"</span>  <span class="c-comment"># Claude</span>
-<span class="c-prompt">$</span> pip install -e <span class="c-str">".[google]"</span>     <span class="c-comment"># Gemini</span>
+<pre><span class="c-comment"># live on PyPI — pick whichever provider you have a key for</span>
+<span class="c-prompt">$</span> pip install <span class="c-str">"lakshana[openai]"</span>      <span class="c-comment"># also serves Groq, Cerebras, OpenRouter, Ollama</span>
+<span class="c-prompt">$</span> pip install <span class="c-str">"lakshana[anthropic]"</span>   <span class="c-comment"># Claude</span>
+<span class="c-prompt">$</span> pip install <span class="c-str">"lakshana[google]"</span>      <span class="c-comment"># Gemini</span>
+<span class="c-prompt">$</span> pip install <span class="c-str">"lakshana[all]"</span>         <span class="c-comment"># everything</span>
 
 <span class="c-comment"># Python API — works with whichever LLM you have a key for</span>
 <span class="c-prompt">&gt;&gt;&gt;</span> <span class="c-kw">from</span> lakshana <span class="c-kw">import</span> discover

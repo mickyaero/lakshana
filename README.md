@@ -11,13 +11,13 @@
 **Two ways to use it.** A **Python library + CLI** for pipelines (available now). A **graphical app** you download and click through (shipping next — same wizard as the [live demo](https://mickyaero.github.io/lakshana/demo/), runs on your own machine).
 
 ```bash
-# Install from source (PyPI release coming)
-git clone https://github.com/mickyaero/lakshana && cd lakshana
-pip install -e ".[openai]"
+pip install lakshana[openai]     # or [anthropic] · [google] · [all]
 
 export OPENAI_API_KEY=...        # or GROQ / ANTHROPIC / CEREBRAS / GOOGLE
 lakshana analyze ./my_docs --output schema.json
 ```
+
+Also on PyPI: [pypi.org/project/lakshana](https://pypi.org/project/lakshana/) · MIT licensed · `0.1.0`
 
 ---
 
