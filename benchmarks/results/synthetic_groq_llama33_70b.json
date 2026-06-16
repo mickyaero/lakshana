@@ -1,0 +1,48 @@
+{
+  "model": "groq/llama-3.3-70b-versatile",
+  "n_documents": 50,
+  "elapsed_seconds": 1388.05,
+  "clustering": {
+    "n_samples": 50,
+    "n_clusters_predicted": 5,
+    "n_clusters_true": 5,
+    "adjusted_rand_index": 0.7387,
+    "normalized_mutual_info": 0.7978,
+    "v_measure": 0.7978,
+    "homogeneity": 0.7978,
+    "completeness": 0.7978,
+    "purity": 0.88
+  },
+  "clusters": [
+    {
+      "id": 0,
+      "name": "Quarterly Report",
+      "doc_count": 10,
+      "schema_fields": 11
+    },
+    {
+      "id": 1,
+      "name": "Unknown Type",
+      "doc_count": 10,
+      "schema_fields": 0
+    },
+    {
+      "id": 2,
+      "name": "Unknown Type",
+      "doc_count": 10,
+      "schema_fields": 0
+    },
+    {
+      "id": 3,
+      "name": "Unknown Type",
+      "doc_count": 10,
+      "schema_fields": 0
+    },
+    {
+      "id": 4,
+      "name": "Company Memo",
+      "doc_count": 10,
+      "schema_fields": 5
+    }
+  ]
+}

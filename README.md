@@ -46,6 +46,16 @@ cluster 1: 'Invoice'  (5 docs)
 - **107 seconds** end-to-end (clustering + LLM schema discovery + frequency verification + semantic grouping)
 - **$0** with the free Groq tier
 
+### And honestly, where it degrades
+
+A full 50-doc run on the bundled synthetic set ([result JSON](benchmarks/results/synthetic_groq_llama33_70b.json)) measured:
+
+- **5 of 5 clusters discovered**, exactly the right size (10 docs each) — clustering itself is reliable.
+- **88% purity**, ARI 0.74, V-measure 0.80 — schema discovery quality drops at scale.
+- **2 of 5 clusters got proper names** ("Quarterly Report", "Company Memo"); the other 3 hit Groq's free-tier daily token limit (100K/day) mid-run and fell back to "Unknown Type" with empty schemas.
+
+The pipeline is **degrading gracefully** there, not crashing — but if you're running on >30 docs and want full schemas, use a paid tier or a higher-limit provider (Anthropic, OpenAI, Cerebras paid). The bundled benchmark is reproducible with any of them: just swap `--model`.
+
 ## Highlights
 
 - **Zero schema design.** Point it at a folder. Get back a typed schema with frequency and grounding for every field.
