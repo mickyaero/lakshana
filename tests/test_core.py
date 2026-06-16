@@ -243,8 +243,15 @@ def test_run_discovery_mocked(mock_extract, mock_llm):
         ]
     }))
 
-    files = [f"/tmp/inv{i}.txt" for i in range(5)]
-    result = run_discovery(files=files, model="test-model", min_cluster_size=2)
+    import tempfile
+    td = tempfile.mkdtemp()
+    files = []
+    for i in range(5):
+        fp = f"{td}/inv{i}.txt"
+        with open(fp, "w") as fh:
+            fh.write(f"placeholder {i}")  # text is mocked, just needs to exist
+        files.append(fp)
+    result = run_discovery(files=files, model="openai/test-model", min_cluster_size=2)
 
     assert isinstance(result, DiscoverResult)
     assert len(result.doc_names) == 5
@@ -253,6 +260,8 @@ def test_run_discovery_mocked(mock_extract, mock_llm):
     assert len(result.clusters) >= 1
     assert len(result.schemas) >= 1
     assert result.stats["total_docs"] == 5
+    import shutil
+    shutil.rmtree(td, ignore_errors=True)
 
     # Check schema has fields
     first_schema = list(result.schemas.values())[0]
@@ -516,7 +525,10 @@ def test_discover_schema_llm_returns_invalid_json(mock_llm):
 def test_run_discovery_single_file(mock_extract, mock_llm):
     """Discovery with fewer than 2 docs should return early."""
     mock_extract.return_value = "Some text content"
-    files = ["/tmp/single.txt"]
+    import tempfile, os
+    td = tempfile.mkdtemp()
+    fp = os.path.join(td, "single.txt"); open(fp, "w").write("placeholder")
+    files = [fp]
     result = run_discovery(files=files, model="test-model")
     assert isinstance(result, DiscoverResult)
     # Should log a message about needing at least 2 docs
@@ -528,7 +540,12 @@ def test_run_discovery_single_file(mock_extract, mock_llm):
 def test_run_discovery_all_files_fail(mock_extract, mock_llm):
     """When all files fail to parse, should return early."""
     mock_extract.side_effect = Exception("File read error")
-    files = ["/tmp/bad1.txt", "/tmp/bad2.txt"]
+    import tempfile, os
+    td = tempfile.mkdtemp()
+    files = []
+    for n in ("bad1.txt", "bad2.txt"):
+        fp = os.path.join(td, n); open(fp, "w").write("placeholder")
+        files.append(fp)
     result = run_discovery(files=files, model="test-model")
     assert isinstance(result, DiscoverResult)
     assert len(result.doc_names) == 0
@@ -553,8 +570,13 @@ def test_run_discovery_progress_callback(mock_extract, mock_llm):
     def on_progress(stage, msg, pct):
         progress_calls.append((stage, msg, pct))
 
-    files = [f"/tmp/inv{i}.txt" for i in range(3)]
-    run_discovery(files=files, model="test-model", on_progress=on_progress)
+    import tempfile, os
+    td = tempfile.mkdtemp()
+    files = []
+    for i in range(3):
+        fp = os.path.join(td, f"inv{i}.txt"); open(fp, "w").write("placeholder")
+        files.append(fp)
+    run_discovery(files=files, model="openai/test-model", on_progress=on_progress)
     assert len(progress_calls) > 0
     stages = {c[0] for c in progress_calls}
     assert "parse" in stages
@@ -925,3 +947,147 @@ def test_discover_schema_grounding(mock_llm):
         inv_field = next((f for f in result["fields"] if f["name"] == "invoice_number"), None)
         if inv_field:
             assert "grounded_count" in inv_field
+
+
+# --- Robustness: input validation in run_discovery ---
+
+def test_run_discovery_rejects_non_list_files():
+    import pytest
+    with pytest.raises(TypeError, match="must be a list"):
+        run_discovery(files="not-a-list", model="openai/test-model")
+
+
+def test_run_discovery_rejects_empty_list():
+    import pytest
+    with pytest.raises(ValueError, match="empty"):
+        run_discovery(files=[], model="openai/test-model")
+
+
+def test_run_discovery_rejects_non_string_entries():
+    import pytest
+    with pytest.raises(TypeError, match="must be str"):
+        run_discovery(files=[123, 456], model="openai/test-model")
+
+
+def test_run_discovery_rejects_missing_files():
+    import pytest
+    with pytest.raises(FileNotFoundError, match="do not exist"):
+        run_discovery(files=["/this/path/does/not/exist.txt"], model="openai/test-model")
+
+
+def test_run_discovery_rejects_invalid_min_cluster_size():
+    import pytest
+    import tempfile, os
+    td = tempfile.mkdtemp()
+    fp = os.path.join(td, "a.txt"); open(fp, "w").write("x")
+    with pytest.raises(ValueError, match="min_cluster_size must be"):
+        run_discovery(files=[fp], min_cluster_size=1, model="openai/test-model")
+    with pytest.raises(ValueError, match="min_cluster_size must be"):
+        run_discovery(files=[fp], min_cluster_size=0, model="openai/test-model")
+
+
+# --- Robustness: discover_from_strings convenience helper ---
+
+def test_discover_from_strings_rejects_non_list():
+    from lakshana import discover_from_strings
+    import pytest
+    with pytest.raises(TypeError, match="must be a list"):
+        discover_from_strings(texts="single string", model="openai/test-model")
+
+
+def test_discover_from_strings_rejects_empty():
+    from lakshana import discover_from_strings
+    import pytest
+    with pytest.raises(ValueError, match="empty"):
+        discover_from_strings(texts=[], model="openai/test-model")
+
+
+def test_discover_from_strings_rejects_non_strings():
+    from lakshana import discover_from_strings
+    import pytest
+    with pytest.raises(TypeError, match="must be str"):
+        discover_from_strings(texts=["ok", 42, None], model="openai/test-model")
+
+
+def test_discover_from_strings_rejects_mismatched_names():
+    from lakshana import discover_from_strings
+    import pytest
+    with pytest.raises(ValueError, match="length"):
+        discover_from_strings(
+            texts=["a", "b", "c"],
+            names=["only-two", "names"],
+            model="openai/test-model",
+        )
+
+
+@patch("lakshana.core.call_llm")
+def test_discover_from_strings_writes_tempfiles_and_runs(mock_llm):
+    from lakshana import discover_from_strings
+    mock_llm.return_value = MagicMock(text=json.dumps({
+        "name": "Invoice",
+        "fields": [{"name": "invoice_number", "type": "string", "description": "ID", "example": "INV-001"}],
+        "found": [{"name": "invoice_number", "present": True, "value": "INV-001"}],
+    }))
+    texts = [f"Invoice {i}\nTotal: $100" for i in range(4)]
+    result = discover_from_strings(texts=texts, model="openai/test-model", min_cluster_size=2)
+    assert isinstance(result, DiscoverResult)
+    assert result.stats["n_input_files"] == 4
+    assert result.stats["total_docs"] >= 1
+
+
+# --- Robustness: structural_fingerprint on empty input ---
+
+def test_structural_fingerprint_empty_is_all_zero():
+    """Empty input must produce an all-zero vector, not a phantom paragraph flag."""
+    fp = structural_fingerprint("")
+    assert len(fp) == 18
+    assert all(v == 0.0 for v in fp), f"Expected all zeros, got {fp}"
+
+
+def test_structural_fingerprint_single_char_no_phantom_paragraphs():
+    """A 1-char doc has no paragraph break; the paragraph density feature must be 0."""
+    fp = structural_fingerprint("x")
+    # Feature index 11 is the paragraph density
+    assert fp[11] == 0.0, f"Expected paragraph feature 0 for single-char input, got {fp[11]}"
+
+
+# --- Robustness: result.stats populated even on partial runs ---
+
+@patch("lakshana.core.extract_text_from_file")
+def test_run_discovery_populates_stats_on_too_few_parsed(mock_extract):
+    """Even when most files fail to parse, stats should be populated with diagnostics."""
+    mock_extract.return_value = ""  # every file extracts to empty
+    import tempfile, os
+    td = tempfile.mkdtemp()
+    files = []
+    for i in range(3):
+        fp = os.path.join(td, f"f{i}.txt"); open(fp, "w").write("placeholder")
+        files.append(fp)
+    result = run_discovery(files=files, model="openai/test-model", min_cluster_size=2)
+    assert result.stats["n_input_files"] == 3
+    assert result.stats["total_docs"] == 0
+    assert result.stats["parsed_errors"] == 3
+    assert "warning" in result.stats  # diagnostic so user knows why clusters=0
+    assert "duration_s" in result.stats
+
+
+# --- Robustness: deduplicate_fields surfaces config errors ---
+
+def test_deduplicate_fields_surfaces_missing_api_key():
+    """Missing API key is a configuration error, must NOT be silently swallowed."""
+    import pytest
+    import os
+    # Clear all provider keys so call_llm has nothing to use
+    saved = {}
+    for k in ("OPENAI_API_KEY","GROQ_API_KEY","ANTHROPIC_API_KEY","CEREBRAS_API_KEY","GOOGLE_API_KEY","OPENROUTER_API_KEY"):
+        saved[k] = os.environ.pop(k, None)
+    try:
+        with pytest.raises(ValueError, match="No API key"):
+            deduplicate_fields(
+                [{"name": "a", "type": "string"}, {"name": "b", "type": "string"}],
+                model="openai/test-model",
+            )
+    finally:
+        for k, v in saved.items():
+            if v is not None:
+                os.environ[k] = v

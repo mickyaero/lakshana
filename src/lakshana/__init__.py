@@ -22,6 +22,7 @@ from lakshana.core import (
     cluster_documents,
     deduplicate_fields,
     detect_subclusters,
+    discover_from_strings,
     discover_schema_for_cluster,
     embed_documents,
     export_as_csv_headers,
@@ -36,7 +37,7 @@ from lakshana.core import (
     suggest_merges,
 )
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 __all__ = [
     "DiscoverResult",
@@ -45,6 +46,7 @@ __all__ = [
     "deduplicate_fields",
     "detect_subclusters",
     "discover",
+    "discover_from_strings",
     "discover_schema_for_cluster",
     "embed_documents",
     "export_as_csv_headers",

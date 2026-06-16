@@ -46,7 +46,21 @@ _HEADER_RE = re.compile(r'^(?:#{1,4}\s+.+|[A-Z][A-Z\s]{2,40}$)', re.MULTILINE)
 
 
 def structural_fingerprint(text: str) -> list[float]:
-    """Extract structural features from a document for clustering."""
+    """Extract structural features from a document for clustering.
+
+    Returns an 18-dimensional vector summarising:
+      sizes (chars, lines, words), density of dates / amounts / emails /
+      phones / URLs / KV-pairs / headers / table-lines / paragraphs,
+      and 6 binary 'has X' flags.
+
+    Empty input returns a vector of zeros — earlier versions produced
+    spurious 1.0 components for paragraphs because of a default
+    division-by-1, which polluted the embedding space with phantom
+    structure.
+    """
+    if not text:
+        return [0.0] * 18
+
     features = []
     chars = len(text)
     lines = text.count('\n') + 1
@@ -74,13 +88,18 @@ def structural_fingerprint(text: str) -> list[float]:
     table_lines = sum(1 for line in text.split('\n') if line.count('\t') >= 2 or line.count('|') >= 2)
     features.append(min(table_lines / max(lines, 1), 1.0))
 
-    paragraphs = text.count('\n\n') + 1
-    features.append(min(paragraphs / max(lines, 1), 1.0))
+    # Only count paragraphs when the text actually contains paragraph
+    # breaks; otherwise the default `\n\n`.count + 1 falsely returns 1.
+    if '\n\n' in text:
+        paragraphs = text.count('\n\n') + 1
+        features.append(min(paragraphs / max(lines, 1), 1.0))
+    else:
+        features.append(0.0)
 
     # Binary flags
-    has_date = 1.0 if (text and _DATE_RE.search(text)) else 0.0
-    has_amount = 1.0 if (text and _AMOUNT_RE.search(text)) else 0.0
-    has_email = 1.0 if (text and _EMAIL_RE.search(text)) else 0.0
+    has_date = 1.0 if _DATE_RE.search(text) else 0.0
+    has_amount = 1.0 if _AMOUNT_RE.search(text) else 0.0
+    has_email = 1.0 if _EMAIL_RE.search(text) else 0.0
     has_table = 1.0 if table_lines > 0 else 0.0
     has_headers = 1.0 if len(headers) > 0 else 0.0
     has_kv = 1.0 if len(kv_matches) > 3 else 0.0
@@ -706,6 +725,13 @@ def deduplicate_fields(fields: list[dict], model: str) -> list[dict]:
             lines = [line for line in lines if not line.startswith("```")]
             raw = "\n".join(lines)
         data = _parse_json_robust(raw)
+    except ValueError as e:
+        # Configuration errors (missing API key, unknown provider) should
+        # surface to the caller — they're a misconfiguration, not transient.
+        if "No API key" in str(e) or "Unknown provider" in str(e) or "Unknown model" in str(e):
+            raise
+        logger.warning("Field deduplication failed: %s", e)
+        return fields
     except Exception as e:
         logger.warning("Field deduplication failed: %s", e)
         return fields
@@ -1393,8 +1419,76 @@ def run_discovery(
     min_cluster_size: int = 3,
     on_progress=None,
 ) -> DiscoverResult:
-    """Run the full template discovery pipeline."""
+    """Run the full template discovery pipeline.
+
+    Args:
+        files: list of file paths to discover schemas from.
+        model: LLM model id, e.g. ``"groq/llama-3.3-70b-versatile"``.
+        min_cluster_size: minimum docs that form a discovered cluster.
+        on_progress: optional callback ``(stage, message, pct)``.
+
+    Raises:
+        TypeError: if ``files`` is not a list/tuple of strings.
+        ValueError: if ``files`` is empty or ``min_cluster_size < 2``.
+        FileNotFoundError: if any file in ``files`` doesn't exist on disk.
+
+    Returns:
+        DiscoverResult. Even on a partial / no-cluster run, ``result.stats``
+        will be populated with diagnostic fields so the caller can tell
+        what happened without parsing logs.
+    """
+    # --- Input validation (fail fast, with actionable messages) -----------
+    if not isinstance(files, (list, tuple)):
+        raise TypeError(
+            f"`files` must be a list of paths, got {type(files).__name__}. "
+            f"Use lakshana.discover_from_strings(texts) if you have raw text."
+        )
+    if not files:
+        raise ValueError(
+            "`files` is empty — pass at least one document path. "
+            "Use lakshana.discover_from_strings(texts) for raw strings."
+        )
+    bad_types = [(i, type(f).__name__) for i, f in enumerate(files) if not isinstance(f, (str, Path))]
+    if bad_types:
+        raise TypeError(
+            f"All entries in `files` must be str or pathlib.Path; "
+            f"got non-path entries at positions {bad_types[:3]}{'...' if len(bad_types) > 3 else ''}."
+        )
+    files = [str(f) for f in files]
+    missing = [f for f in files if not Path(f).exists()]
+    if missing:
+        sample = missing[:3]
+        raise FileNotFoundError(
+            f"{len(missing)} of {len(files)} file(s) do not exist on disk. "
+            f"First missing: {sample}{'...' if len(missing) > 3 else ''}"
+        )
+    if not isinstance(min_cluster_size, int) or min_cluster_size < 2:
+        raise ValueError(
+            f"min_cluster_size must be an int >= 2; got {min_cluster_size!r}."
+        )
+
+    # Soft warning if min_cluster_size > n_files — we don't lower it
+    # silently because that may surprise the caller; we surface it.
+    n_input = len(files)
+    if min_cluster_size > n_input:
+        logger.warning(
+            "min_cluster_size=%d exceeds number of input files (%d). "
+            "HDBSCAN will likely produce 0 clusters; result.stats['warning'] will reflect this.",
+            min_cluster_size, n_input,
+        )
+
     result = DiscoverResult()
+    # Always-populated diagnostic fields, even on early exit
+    result.stats = {
+        "n_input_files": n_input,
+        "model": model,
+        "min_cluster_size": min_cluster_size,
+        "total_docs": 0,
+        "parsed_errors": 0,
+        "clusters": 0,
+        "total_fields": 0,
+        "duration_s": 0.0,
+    }
     start_time = time.time()
 
     def _progress(stage, msg, pct=0):
@@ -1429,10 +1523,27 @@ def run_discovery(
                 parse_errors += 1
 
     _progress("parse", f"Parsed {len(texts)} documents ({parse_errors} failed/empty)", 20)
+    result.stats["parsed_errors"] = parse_errors
+    result.stats["total_docs"] = len(texts)
 
     if len(texts) < 2:
-        _progress("error", "Need at least 2 documents for discovery", 0)
+        warning = (
+            f"Only {len(texts)} document(s) yielded extractable text "
+            f"(out of {n_input}, with {parse_errors} parse failures or empty results). "
+            f"Discovery requires at least 2 documents."
+        )
+        result.stats["warning"] = warning
+        result.stats["duration_s"] = round(time.time() - start_time, 1)
+        _progress("error", warning, 0)
         return result
+
+    if len(texts) < min_cluster_size:
+        warning = (
+            f"Only {len(texts)} document(s) parsed successfully, but "
+            f"min_cluster_size={min_cluster_size}. HDBSCAN will not form any "
+            f"cluster. Lower min_cluster_size or add more documents."
+        )
+        result.stats["warning"] = warning
 
     result.doc_names = doc_names
     result.doc_snippets = [t[:500] for t in texts]
@@ -1576,6 +1687,74 @@ def run_discovery(
 
     _progress("complete", f"Discovery complete: {result.stats['clusters']} clusters, {result.stats['total_fields']} fields in {result.stats['duration_s']}s", 100)
     return result
+
+
+def discover_from_strings(
+    texts: list[str],
+    names: list[str] | None = None,
+    model: str = "groq/llama-3.3-70b-versatile",
+    min_cluster_size: int = 3,
+    on_progress=None,
+) -> DiscoverResult:
+    """Run discovery directly on in-memory strings — no tempfiles needed.
+
+    A convenience wrapper around ``discover()`` for the common case where
+    you already have document text in memory (e.g. from a database, web
+    scraper, or upstream OCR pass) and don't want to write to disk just
+    to feed it in.
+
+    Args:
+        texts: list of document texts.
+        names: optional matching list of display names. Defaults to
+            ``["doc_00.txt", "doc_01.txt", ...]``.
+        model, min_cluster_size, on_progress: same as ``discover()``.
+
+    Raises:
+        TypeError: if ``texts`` is not a list of strings.
+        ValueError: if ``texts`` is empty, or if ``names`` is given but
+            doesn't match the length of ``texts``.
+    """
+    import tempfile
+
+    if not isinstance(texts, (list, tuple)):
+        raise TypeError(
+            f"`texts` must be a list of strings, got {type(texts).__name__}"
+        )
+    if not texts:
+        raise ValueError("`texts` is empty — pass at least one document string.")
+    bad = [(i, type(t).__name__) for i, t in enumerate(texts) if not isinstance(t, str)]
+    if bad:
+        raise TypeError(
+            f"All entries in `texts` must be str; got non-str at positions {bad[:3]}"
+            f"{'...' if len(bad) > 3 else ''}"
+        )
+    if names is not None:
+        if len(names) != len(texts):
+            raise ValueError(
+                f"`names` length ({len(names)}) does not match `texts` length ({len(texts)})"
+            )
+
+    tmpdir = Path(tempfile.mkdtemp(prefix="lakshana_strings_"))
+    try:
+        files = []
+        for i, t in enumerate(texts):
+            n = names[i] if names else f"doc_{i:02d}.txt"
+            # Force .txt suffix so the ingest layer picks the plain-text reader
+            if not n.lower().endswith((".txt", ".md", ".log", ".csv", ".tsv", ".json", ".xml", ".html")):
+                n = f"{n}.txt"
+            p = tmpdir / n
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text(t, encoding="utf-8")
+            files.append(str(p))
+        return run_discovery(
+            files=files,
+            model=model,
+            min_cluster_size=min_cluster_size,
+            on_progress=on_progress,
+        )
+    finally:
+        import shutil
+        shutil.rmtree(tmpdir, ignore_errors=True)
 
 
 # --- Export ---

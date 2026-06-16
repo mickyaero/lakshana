@@ -98,9 +98,44 @@ def call_llm(
     provider: str | None = None,
     max_retries: int = 3,
 ) -> LLMResponse:
-    """Call an LLM with a single user prompt. Retries on rate-limit errors."""
+    """Call an LLM with a single user prompt. Retries on rate-limit errors.
+
+    Raises:
+        TypeError: if ``prompt`` is not a string.
+        ValueError: if the model can't be routed to any provider, or the
+            required API-key environment variable is unset.
+    """
+    if not isinstance(prompt, str):
+        raise TypeError(f"prompt must be a str, got {type(prompt).__name__}")
+    if not isinstance(model, str) or not model.strip():
+        raise ValueError("model must be a non-empty string (e.g. 'groq/llama-3.3-70b-versatile')")
+
+    # If the caller used an explicit `provider/model` prefix, that's an
+    # opt-in signal — accept it. Otherwise we heuristic-match.
+    explicit_prefix = False
+    if "/" in model:
+        prefix = model.split("/", 1)[0].lower()
+        if prefix in _KNOWN_PREFIXES:
+            explicit_prefix = True
+
     if provider is None:
         provider = detect_provider(model)
+        # When the heuristic falls back to ANTHROPIC for a string that has
+        # no recognisable signal AND no explicit prefix, that's almost
+        # always a typo — surface it rather than greeting the user with
+        # an opaque "No API key" message later.
+        if not explicit_prefix and provider == ANTHROPIC:
+            m = model.lower()
+            has_signal = any(s in m for s in (
+                "claude", "anthropic", "gpt", "o1", "o3", "gemini", "llama",
+                "mixtral", "gemma", "qwen", "mistral", "nuextract", "deepseek",
+            ))
+            if not has_signal:
+                raise ValueError(
+                    f"Unknown model '{model}'. Lakshana could not infer a provider. "
+                    f"Prefix the model with one of {sorted(_KNOWN_PREFIXES)}, "
+                    f"e.g. 'openai/{model}' or 'groq/{model}'."
+                )
 
     if "/" in model:
         prefix = model.split("/", 1)[0].lower()
