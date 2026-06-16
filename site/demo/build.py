@@ -221,28 +221,22 @@ def main() -> int:
         '<link rel="stylesheet" href="demo.css">',
     )
 
-    # 2. Strip every docstruct-internal script include + the init() blocks
-    # that depend on them. The pre-script stubs (added in DEMO_SCRIPT) provide
-    # no-op fallbacks for DocstructShortcuts / DocstructApiKeys / DocstructNav.
+    # 2. Strip the entire bottom-script block that wires up docstruct's global
+    # nav, shortcuts, and API key manager. It's two <script> tags + their
+    # init() calls (which span multi-line config objects, so regex over the
+    # call alone leaves orphan braces). We delete from the `<!-- Unified nav`
+    # comment to the matching closing `</script>` that immediately precedes
+    # our DEMO_SCRIPT injection.
+    nav_marker = '<!-- Unified nav + shortcuts + API key manager -->'
+    if nav_marker in html:
+        idx = html.index(nav_marker)
+        # find the last </script> before </body>
+        end = html.rindex('</script>', idx, html.index('</body>')) + len('</script>')
+        html = html[:idx] + html[end:]
+    # In case the comment isn't present (older docstruct revisions), also
+    # strip any standalone external script includes that we don't ship.
     html = re.sub(
         r'<script[^>]+src="/static/(docstruct-[a-z-]+\.js|keyboard-shortcuts\.js)"[^>]*></script>',
-        '',
-        html,
-    )
-    html = re.sub(
-        r'DocstructNav\.init\([^)]*\(?[^)]*\)?[^)]*\);?',
-        '',
-        html,
-        flags=re.DOTALL,
-    )
-    html = re.sub(
-        r'DocstructShortcuts\.init\([^)]*\);?',
-        '',
-        html,
-        flags=re.DOTALL,
-    )
-    html = re.sub(
-        r"DocstructApiKeys\.render\('[^']*'\);?",
         '',
         html,
     )
