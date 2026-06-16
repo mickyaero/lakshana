@@ -2015,7 +2015,7 @@ const D = {
 
   // ---- Settings (reused from Connect) ----
   async checkApiKey(){try{const r=await fetch('/api/settings/llm-keys');const d=await r.json();const i=document.getElementById('api-key-indicator');if(d.any_configured){const n=Object.entries(d.providers).filter(([,v])=>v.configured).map(([,v])=>v.label.split(' ')[0]).join(', ');i.innerHTML=`<span style="color:var(--success)">&#10003; ${n}</span>`;document.getElementById('api-key-banner').classList.add('hidden')}else{i.innerHTML=`<span style="color:var(--error)">&#9888; No key</span>`;document.getElementById('api-key-banner').classList.remove('hidden')}}catch(e){}},
-  openSettings(){document.getElementById('settings-modal').classList.remove('hidden');this._loadProviders();if(typeof DocstructApiKeys!=='undefined')DocstructApiKeys.render('api-keys-manager')},
+  openSettings(){document.getElementById('settings-modal').classList.remove('hidden');this._loadProviders();if(typeof DocstructApiKeys!=='undefined')},
   closeSettings(){document.getElementById('settings-modal').classList.add('hidden')},
   async _loadProviders(){try{const r=await fetch('/api/settings/llm-keys');const d=await r.json();const c=document.getElementById('llm-providers');const ph={anthropic:'sk-ant-...',openai:'sk-...',google:'AI...',groq:'gsk_...',cerebras:'csk-...',openrouter:'sk-or-...'};const order=['groq','cerebras','openrouter','google','openai','anthropic'];const sorted=order.filter(k=>d.providers[k]).map(k=>[k,d.providers[k]]);let html='';const ol=d.providers.ollama;if(ol){html+='<div style="font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem">Local (No API Key)</div><div style="margin-bottom:0.5rem;padding:0.55rem;background:var(--surface-alt);border:1px solid var(--border);border-radius:8px"><div style="display:flex;justify-content:space-between;align-items:center"><strong style="font-size:0.8rem">Ollama</strong>'+(ol.configured?'<span style="font-size:0.62rem;font-weight:600;padding:0.1rem 0.3rem;border-radius:4px;background:rgba(61,139,64,0.1);color:var(--success)">&#10003; running</span>':'<span style="font-size:0.62rem;color:var(--muted)">not running</span>')+'</div><div style="font-size:0.7rem;color:var(--muted);margin-top:0.2rem">'+(ol.configured?(ol.models_available||[]).length?'Models: '+(ol.models_available||[]).join(', '):'Running':'<a href=&quot;https://ollama.com&quot; target=&quot;_blank&quot; style=&quot;color:var(--accent)&quot;>Install Ollama</a> for local extraction')+'</div></div>';}html+='<div style="font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem">Free / Freemium</div>';const free=['groq','cerebras','openrouter'];const paid=['google','openai','anthropic'];for(const[k,p]of sorted.filter(([k])=>free.includes(k)))html+=this._pc(k,p,ph[k]||'');html+='<div style="font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin:0.6rem 0 0.3rem">Paid</div>';for(const[k,p]of sorted.filter(([k])=>paid.includes(k)))html+=this._pc(k,p,ph[k]||'');c.innerHTML=html}catch(e){}},
   _pc(k,p,ph){return`<div style="margin-bottom:0.5rem;padding:0.55rem;background:var(--surface-alt);border:1px solid var(--border);border-radius:8px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.2rem"><strong style="font-size:0.8rem">${p.label}</strong>${p.configured?'<span style="font-size:0.62rem;font-weight:600;padding:0.1rem 0.3rem;border-radius:4px;background:rgba(61,139,64,0.1);color:var(--success)">&#10003; set</span>':''}</div><div style="display:flex;gap:0.25rem"><input type="password" id="key-${k}" placeholder="${ph}" style="flex:1;font-size:0.75rem;padding:0.25rem 0.4rem"><button class="btn btn-primary btn-sm" onclick="D.saveLLMKey('${k}')" style="font-size:0.72rem;padding:0.25rem 0.5rem">Save</button>${p.configured?`<button class="btn btn-secondary btn-sm" onclick="D.testLLMKey('${k}')" style="font-size:0.72rem;padding:0.25rem 0.5rem">Test</button>`:''}</div></div>`},
@@ -2029,22 +2029,16 @@ D.checkApiKey();D.loadProjects();D.loadModels();
 
 <!-- Unified nav + shortcuts + API key manager -->
 
-<script src="/static/docstruct-shortcuts.js"></script>
-<script src="/static/docstruct-apikeys.js"></script>
+
+
 <script>
-DocstructNav.init({
-  active: 'discover',
-  containerId: 'ds-nav-container',
-  onSettings: function() { D.openSettings(); }
+ }
 });
 
 // Render API key manager in settings modal
-DocstructApiKeys.render('api-keys-manager');
 
-DocstructShortcuts.init({
-  page: 'discover',
-  handlers: {
-    submit: function() {
+
+ {
       // Cmd+Enter: context-dependent action
       if (D.currentStep === 5) {
         // On pipeline step — launch or start pipeline
@@ -2082,6 +2076,18 @@ DocstructShortcuts.init({
 
 <script>
 // === LAKSHANA DEMO MODE OVERRIDES ============================================
+// Stub globals that the lifted code expects from docstruct-shortcuts / apikeys / nav.
+// These are no-ops; the demo doesn't need their UI affordances.
+window.DocstructShortcuts = {
+  showSkeleton: () => {},
+  showProgressiveStatus: () => {},
+  confidenceDot: (v) => v != null ? `<span style="color:#888">●</span>` : '',
+  confidencePill: (v) => `<span style="font-size:0.75rem;color:#666">${Math.round((v||0)*100)}%</span>`,
+  init: () => {},
+};
+window.DocstructApiKeys = { render: () => {} };
+window.DocstructNav = { init: () => {} };
+
 const DEMO_DATA = {
   "model": "openai/gpt-4o-mini",
   "elapsed_seconds": 134.7,

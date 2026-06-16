@@ -71,6 +71,18 @@ SAMPLE_RUN_INTRO = """
 DEMO_SCRIPT = """
 <script>
 // === LAKSHANA DEMO MODE OVERRIDES ============================================
+// Stub globals that the lifted code expects from docstruct-shortcuts / apikeys / nav.
+// These are no-ops; the demo doesn't need their UI affordances.
+window.DocstructShortcuts = {
+  showSkeleton: () => {},
+  showProgressiveStatus: () => {},
+  confidenceDot: (v) => v != null ? `<span style="color:#888">●</span>` : '',
+  confidencePill: (v) => `<span style="font-size:0.75rem;color:#666">${Math.round((v||0)*100)}%</span>`,
+  init: () => {},
+};
+window.DocstructApiKeys = { render: () => {} };
+window.DocstructNav = { init: () => {} };
+
 const DEMO_DATA = __DEMO_DATA__;
 const DEMO_LOG_LINES = [
   "Parsing 30 documents (PDFs / text / OCR fallback)…",
@@ -209,31 +221,30 @@ def main() -> int:
         '<link rel="stylesheet" href="demo.css">',
     )
 
-    # 2. Strip docstruct global nav + bottom scripts that reference internal modules
-    # The discover.html includes <nav id="step-bar">; keep that.
-    # But the top-level docstruct nav include and the bottom scripts (DocstructNav.init etc.)
-    # reference modules we don't ship. Strip the bottom block.
+    # 2. Strip every docstruct-internal script include + the init() blocks
+    # that depend on them. The pre-script stubs (added in DEMO_SCRIPT) provide
+    # no-op fallbacks for DocstructShortcuts / DocstructApiKeys / DocstructNav.
     html = re.sub(
-        r'<script[^>]+src="/static/docstruct-nav\.js"[^>]*></script>',
+        r'<script[^>]+src="/static/(docstruct-[a-z-]+\.js|keyboard-shortcuts\.js)"[^>]*></script>',
         '',
         html,
     )
     html = re.sub(
-        r'<script[^>]+src="/static/keyboard-shortcuts\.js"[^>]*></script>',
-        '',
-        html,
-    )
-    html = re.sub(
-        r'DocstructNav\.init\(\{[^}]*\}\);',
+        r'DocstructNav\.init\([^)]*\(?[^)]*\)?[^)]*\);?',
         '',
         html,
         flags=re.DOTALL,
     )
     html = re.sub(
-        r'DocstructShortcuts\.init\(\{[^}]*\}\);',
+        r'DocstructShortcuts\.init\([^)]*\);?',
         '',
         html,
         flags=re.DOTALL,
+    )
+    html = re.sub(
+        r"DocstructApiKeys\.render\('[^']*'\);?",
+        '',
+        html,
     )
 
     # 3. Replace Step 1 (Upload) content with the sample-run intro.
