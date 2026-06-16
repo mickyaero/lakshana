@@ -1,46 +1,52 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-HY-2026-541
-Test Date:           04/01/2026
-Test Duration:       4h 31min
+Test Report Number:  FTR-BL-2026-927
+Test Date:           28/01/2026
+Test Duration:       2h 41min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       Boeing 777-300ER
-Registration:        VT-ALR
-Engine Configuration: 2 × GE90-115BL
-Test Configuration:  66% MTOW, fwd CG @ 19% MAC
+Aircraft Type:       Boeing 737 MAX 8
+Registration:        VT-AKO
+Engine Configuration: 2 × CFM LEAP-1B27
+Test Configuration:  75% MTOW, fwd CG @ 25% MAC
 
 TEST CREW
 
-Test Pilot:          Capt. S. Mukherjee
+Test Pilot:          Capt. A. Deshmukh
 First Officer:       F/O R. Bhattacharya
 Flight Test Engineer: FTE V. Subramanian
 
 TEST OBJECTIVE
 
-Cruise Performance Validation — Verify TAS at FL370, SFC, range factor for the subject aircraft at the conditions defined in
-Test Plan FTR-HY-2026-541, in accordance with CAR-23 / CS-25 § 25.355.
+Single-Engine Out Handling — Verify Vmca, asymmetric thrust, rudder authority for the subject aircraft at the conditions defined in
+Test Plan FTR-BL-2026-927, in accordance with CAR-23 / CS-25 § 25.319.
 
 TEST CONDITIONS
 
-Weather:             SCT at 12000ft, wind 180/15, OAT 22°C
-Test Altitude(s):    FL178 — FL177
-Fuel On Board (Start): 9.8 tonnes
-Aircraft Mass:       159 tonnes
-CG Position:         22.6% MAC
+Weather:             CAVOK, wind 270/08, OAT 26°C
+Test Altitude(s):    FL285 — FL110
+Fuel On Board (Start): 13.2 tonnes
+Aircraft Mass:       142 tonnes
+CG Position:         18.6% MAC
 
 OBSERVATIONS
 
-  • Cabin pressure schedule tracked normally; max ΔP within limit.
-  • Hydraulic systems Green and Yellow maintained nominal pressure (3000 psi ± 50).
+  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
   • Pitch attitude steady within ±0.5° of target throughout maneuver.
-  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
+  • Engine parameters remained within nominal envelope during entire test sequence.
+  • Cabin pressure schedule tracked normally; max ΔP within limit.
+
+DISCUSSION
+
+Engine response during the rapid-power-application sequence was within predicted timing, with spool-up from idle to TOGA achieved in 5.9 seconds (specification ≤ 8.0 s). No compressor stall or surge indications were observed at any combination of altitude and speed flown. Recommend release of the engine envelope expansion package for line operations pending completion of the final cold-weather test campaign.
+
+Recommend incorporation into FCOM Vol. 2, Chapter 5 — Abnormal Procedures.
 
 CONCLUSION
 
 PASS — exceeds spec margin by 8%. No further action required.
 
-Approved by:         Capt. S. Mukherjee
+Approved by:         Capt. A. Deshmukh
 FTE Concurrence:     FTE V. Subramanian

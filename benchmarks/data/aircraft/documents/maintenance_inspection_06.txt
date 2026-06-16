@@ -1,30 +1,38 @@
 MAINTENANCE INSPECTION REPORT
 
-Work Order Number:   MIR/2026/92240
-Date of Inspection:  25/01/2026
+Work Order Number:   MIR/2026/94012
+Date of Inspection:  22/05/2026
 Station:             Delhi (DEL) — Hangar Bay 3
 
 AIRCRAFT DETAILS
 
-Aircraft Type:       Airbus A321neo
-Registration:        VT-IUR
-Operator:            Vistara
-Total Flight Hours:  15,185
-Total Flight Cycles: 5,504
-Engine Type:         CFM LEAP-1A26
+Aircraft Type:       Boeing 787-8
+Registration:        VT-ANI
+Operator:            Air India
+Total Flight Hours:  25,486
+Total Flight Cycles: 15,592
+Engine Type:         GEnx-1B70
 
 INSPECTION
 
-Check Level:         Phase-2
-ATA Chapter:         36 — Pneumatic
-Reference Manual:    AMM Rev. 47, Task 36-70-77
+Check Level:         A-Check
+ATA Chapter:         72 — Engine
+Reference Manual:    AMM Rev. 42, Task 72-75-32
 
 FINDINGS AND CORRECTIVE ACTIONS
 
-  1. FADEC software version mismatch found, software update SB-FADEC-22 applied.
+  1. Forward galley chiller coolant level below MIN mark, replenished.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  2. Lavatory waste tank flush motor intermittent; cleaned and tested OK.
      ACTION: Cleared after re-inspection; no further action required.
-  2. Forward galley chiller coolant level below MIN mark, replenished.
-     ACTION: Borescope inspection scheduled for next A-Check.
+  3. FADEC software version mismatch found, software update SB-FADEC-22 applied.
+     ACTION: Component replaced per IPC reference; functional test PASSED.
+
+INSPECTOR'S NARRATIVE
+
+An anomaly was noted in the cabin pressurization controller during the post-flight test, with the outflow valve commanding fully open for approximately 2 seconds during the automatic schedule transition. Subsequent ground tests were unable to reproduce the condition, and BITE data showed no fault codes. The event has been logged under investigation reference INV-21-2026-0418 for continued trend monitoring.
+
+Recommend continued operation with monitoring per the engineering surveillance plan.
 
 CERTIFICATION
 
@@ -33,7 +41,7 @@ approved maintenance program. All applicable Airworthiness Directives reviewed a
 found compliant.
 
 Inspected by:        Anjali Mehta, AME L2
-DGCA Licence No.:    AME-42953
-Signature:           _____________________   Date: 25/01/2026
+DGCA Licence No.:    AME-91959
+Signature:           _____________________   Date: 22/05/2026
 
-Next Inspection Due: 28/03/2026
+Next Inspection Due: 28/09/2026

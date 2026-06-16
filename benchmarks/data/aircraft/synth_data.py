@@ -80,6 +80,11 @@ SCHEMAS = {
             {"name": "inspector_name",    "type": "string",  "description": "Inspecting engineer's name",                          "example": "Anjali Mehta, AME L2", "frequency": 100, "required": True,  "doc_count": 10, "verified_against": 10, "group": "Certification"},
             {"name": "dgca_licence_no",   "type": "string",  "description": "DGCA-issued AME licence number",                     "example": "AME-34521",             "frequency": 100, "required": True,  "doc_count": 10, "verified_against": 10, "group": "Certification"},
             {"name": "next_inspection_due","type":"date",    "description": "Date the next inspection is due",                    "example": "07/05/2026",            "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Certification"},
+            # — fields derived from the prose INSPECTOR'S NARRATIVE section —
+            {"name": "narrative_summary",      "type": "string", "description": "One-line summary of the inspector's narrative paragraph (derived from prose)", "example": "Pressurization controller anomaly logged for trend monitoring",         "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Narrative Findings"},
+            {"name": "investigation_reference","type": "string", "description": "Investigation / surveillance reference cited in narrative",                "example": "INV-21-2026-0418",                                                       "frequency": 60,  "required": False, "doc_count": 6,  "verified_against": 10, "group": "Narrative Findings"},
+            {"name": "defect_severity",        "type": "enum",   "description": "Qualitative severity inferred from prose (minor / moderate / significant)", "example": "minor",                                                                  "frequency": 90,  "required": False, "doc_count": 9,  "verified_against": 10, "group": "Narrative Findings"},
+            {"name": "recommendation_text",    "type": "string", "description": "Inspector's free-form recommendation extracted from narrative",            "example": "Recommend component replacement at the next available C-check, not to exceed 1,500 FH.", "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Narrative Findings"},
         ],
         "groups": [
             {"name": "Work Order Metadata", "description": "Work order number, date, station",          "color": "#3868b8"},
@@ -87,8 +92,9 @@ SCHEMAS = {
             {"name": "Inspection Scope",    "description": "Check level, ATA chapter, AMM reference",   "color": "#e67e22"},
             {"name": "Findings and Actions","description": "Findings with corrective actions",          "color": "#9b59b6", "is_repeating": True},
             {"name": "Certification",       "description": "Inspector sign-off and next due date",      "color": "#1abc9c"},
+            {"name": "Narrative Findings",  "description": "Fields derived from the prose narrative section",  "color": "#7652b5"},
         ],
-        "coverage": 96,
+        "coverage": 92,
         "verified_docs": 10,
     },
     "1": {
@@ -110,14 +116,20 @@ SCHEMAS = {
             {"name": "cg_position",        "type": "string", "description": "CG position as % MAC",                                "example": "27.4% MAC",              "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Test Conditions"},
             {"name": "observations",       "type": "array",  "description": "Test observations bulleted by the FTE",               "example": "[\"…\"]",                "frequency": 100, "required": True, "doc_count": 10, "verified_against": 10, "group": "Results", "is_repeating": True},
             {"name": "conclusion",         "type": "string", "description": "Pass / pass with observations / partial pass",        "example": "PASS — all acceptance criteria met.","frequency": 100, "required": True, "doc_count": 10, "verified_against": 10, "group": "Results"},
+            # — fields derived from the prose DISCUSSION section —
+            {"name": "discussion_summary",          "type": "string", "description": "Concise summary of the prose discussion paragraph",                  "example": "Handling satisfactory; minor lateral PIO suppressed by reduced stick input", "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Pilot Discussion"},
+            {"name": "handling_qualities_rating",   "type": "enum",   "description": "Qualitative HQR derived from discussion prose",                       "example": "Level 1",                                  "frequency": 80,  "required": False, "doc_count": 8,  "verified_against": 10, "group": "Pilot Discussion"},
+            {"name": "anomaly_described",           "type": "string", "description": "Anomaly or surprise mentioned in pilot prose (free-form)",            "example": "Brief 0.3 g vertical disturbance at flaps transition",  "frequency": 70,  "required": False, "doc_count": 7,  "verified_against": 10, "group": "Pilot Discussion"},
+            {"name": "certification_recommendation","type": "string", "description": "Recommendation extracted from the discussion section",                "example": "Recommend approval of the test point for certification basis.",  "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Pilot Discussion"},
         ],
         "groups": [
             {"name": "Test Identification","description":"Report number, date, location",       "color": "#3868b8"},
             {"name": "Aircraft + Crew",   "description":"Aircraft and test crew",               "color": "#5cb85c"},
             {"name": "Test Conditions",   "description":"Objective, weather, mass, CG, altitudes","color": "#e67e22"},
             {"name": "Results",           "description":"Observations and conclusion",          "color": "#9b59b6", "is_repeating": True},
+            {"name": "Pilot Discussion",  "description":"Fields derived from the prose discussion section",  "color": "#7652b5"},
         ],
-        "coverage": 94,
+        "coverage": 89,
         "verified_docs": 10,
     },
     "2": {
@@ -137,6 +149,11 @@ SCHEMAS = {
             {"name": "material_cost_usd","type":"number",  "description": "Estimated material cost (USD)",                       "example": "2400",                           "frequency": 100, "required": False,"doc_count": 10, "verified_against": 10, "group": "Compliance + Cost"},
             {"name": "approved_by",      "type": "string", "description": "Engineer who approved the SB",                        "example": "Dr. K. Raghavan, Lead Engineer", "frequency": 100, "required": True, "doc_count": 10, "verified_against": 10, "group": "Approval"},
             {"name": "type_certification","type":"string", "description": "Governing TC (DGCA / EASA / FAA)",                     "example": "TC-EASA-2018",                   "frequency": 100, "required": True, "doc_count": 10, "verified_against": 10, "group": "Approval"},
+            # — fields derived from the prose BACKGROUND AND RISK ASSESSMENT section —
+            {"name": "background_summary",       "type": "string", "description": "Summary of the background/rationale narrative paragraph",         "example": "Field experience identified accelerated bearing wear under cold-soak conditions", "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Risk Narrative"},
+            {"name": "in_service_incident_count","type": "number", "description": "Number of in-service occurrences cited in prose (extracted as integer)", "example": "14",                                                                              "frequency": 70,  "required": False, "doc_count": 7,  "verified_against": 10, "group": "Risk Narrative"},
+            {"name": "risk_classification",      "type": "enum",   "description": "Risk category inferred from narrative (LOW / MINOR / MAJOR / HAZARDOUS)", "example": "LOW",                                                                             "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Risk Narrative"},
+            {"name": "residual_risk_text",       "type": "string", "description": "Residual risk statement extracted from narrative",                "example": "Residual risk after compliance: LOW.",                                            "frequency": 100, "required": False, "doc_count": 10, "verified_against": 10, "group": "Risk Narrative"},
         ],
         "groups": [
             {"name": "Bulletin Identity", "description":"Number, date, revision, ATA, classification","color": "#3868b8"},
@@ -144,8 +161,9 @@ SCHEMAS = {
             {"name": "Applicability",     "description":"Aircraft type, MSN range, engine",            "color": "#e67e22"},
             {"name": "Compliance + Cost", "description":"Window, labor hours, material cost",          "color": "#9b59b6"},
             {"name": "Approval",          "description":"Engineering authority and TC",                "color": "#1abc9c"},
+            {"name": "Risk Narrative",    "description":"Fields derived from the prose background section",  "color": "#7652b5"},
         ],
-        "coverage": 97,
+        "coverage": 94,
         "verified_docs": 10,
     },
 }

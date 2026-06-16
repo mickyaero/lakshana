@@ -1,46 +1,52 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-DA-2026-529
-Test Date:           02/05/2026
-Test Duration:       4h 39min
+Test Report Number:  FTR-DA-2026-457
+Test Date:           17/03/2026
+Test Duration:       2h 52min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       Airbus A320neo
-Registration:        VT-EXP
-Engine Configuration: 2 × PW1127G-JM
-Test Configuration:  85% MTOW, fwd CG @ 23% MAC
+Aircraft Type:       ATR 72-600
+Registration:        VT-IRR
+Engine Configuration: 2 × PW127M
+Test Configuration:  94% MTOW, fwd CG @ 26% MAC
 
 TEST CREW
 
-Test Pilot:          Capt. P. Bhattacharya
+Test Pilot:          Capt. R. Subramanian
 First Officer:       F/O A. Krishnan
-Flight Test Engineer: FTE K. Banerjee
+Flight Test Engineer: FTE V. Subramanian
 
 TEST OBJECTIVE
 
-Wet Runway Stopping Distance — Verify anti-skid efficiency, stopping distance ratio for the subject aircraft at the conditions defined in
-Test Plan FTR-DA-2026-529, in accordance with CAR-23 / CS-25 § 25.870.
+Climb Performance Evaluation — Verify rate of climb, fuel burn, time to altitude for the subject aircraft at the conditions defined in
+Test Plan FTR-DA-2026-457, in accordance with CAR-23 / CS-25 § 25.407.
 
 TEST CONDITIONS
 
-Weather:             BKN at 8000ft, wind calm, OAT 14°C
-Test Altitude(s):    FL117 — FL084
-Fuel On Board (Start): 12.7 tonnes
-Aircraft Mass:       204 tonnes
-CG Position:         36.1% MAC
+Weather:             Few CU at 4000ft, wind 090/12, OAT 18°C
+Test Altitude(s):    FL133 — FL148
+Fuel On Board (Start): 17.4 tonnes
+Aircraft Mass:       74 tonnes
+CG Position:         21.8% MAC
 
 OBSERVATIONS
 
-  • Roll control authority adequate at all tested conditions; no adverse handling noted.
   • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
-  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+  • EICAS/ECAM displays remained clean; no nuisance alerts during test.
   • Stick force gradient consistent with predicted simulator response.
+  • Roll control authority adequate at all tested conditions; no adverse handling noted.
+
+DISCUSSION
+
+The crew noted a mild lateral PIO tendency during the first approach in the gust simulation leg, which was attributed to the unfamiliar augmented control law. After the second exposure the pilot was able to suppress the tendency through reduced stick input amplitude. Recommend a brief familiarization brief be added to the type-rating syllabus covering this specific control law mode.
+
+Recommend continued investigation under engineering surveillance.
 
 CONCLUSION
 
-PARTIAL PASS — re-fly required for envelope point #3 due to weather.
+PASS — all acceptance criteria met. Recommended for certification.
 
-Approved by:         Capt. P. Bhattacharya
-FTE Concurrence:     FTE K. Banerjee
+Approved by:         Capt. R. Subramanian
+FTE Concurrence:     FTE V. Subramanian

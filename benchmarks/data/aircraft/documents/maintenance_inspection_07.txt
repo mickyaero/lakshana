@@ -1,32 +1,38 @@
 MAINTENANCE INSPECTION REPORT
 
-Work Order Number:   MIR/2026/48469
-Date of Inspection:  25/06/2026
+Work Order Number:   MIR/2026/52487
+Date of Inspection:  12/02/2026
 Station:             Delhi (DEL) — Hangar Bay 3
 
 AIRCRAFT DETAILS
 
-Aircraft Type:       Embraer E190
-Registration:        VT-JCD
-Operator:            Star Air
-Total Flight Hours:  30,293
-Total Flight Cycles: 4,827
-Engine Type:         CF34-10E
+Aircraft Type:       Boeing 787-8
+Registration:        VT-ANI
+Operator:            Air India
+Total Flight Hours:  8,037
+Total Flight Cycles: 12,813
+Engine Type:         GEnx-1B70
 
 INSPECTION
 
-Check Level:         Daily Pre-flight
-ATA Chapter:         24 — Electrical Power
-Reference Manual:    AMM Rev. 46, Task 24-24-90
+Check Level:         Phase-2
+ATA Chapter:         28 — Fuel System
+Reference Manual:    AMM Rev. 41, Task 28-83-20
 
 FINDINGS AND CORRECTIVE ACTIONS
 
-  1. L1 wheel brake assembly worn to 28% remaining; replacement scheduled.
-     ACTION: Borescope inspection scheduled for next A-Check.
-  2. Engine #2 IDG oil filter delta-P approaching caution band, filter replaced.
+  1. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
      ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
-  3. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
+  2. Forward galley chiller coolant level below MIN mark, replenished.
      ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  3. Right main landing gear oleo strut servicing low pressure, recharged to spec.
+     ACTION: Component replaced per IPC reference; functional test PASSED.
+
+INSPECTOR'S NARRATIVE
+
+During the scheduled inspection the crew reported a mild buffet on rotation, observed intermittently over the last three sectors. Initial walk-around revealed a small area of paint blistering on the left wing fairing, approximately 40 mm in diameter, with no underlying structural deformation evident. Tap-testing of the surrounding skin produced no anomalies, and dye-penetrant inspection of the adjacent fasteners returned negative. The aircraft was returned to service with continued monitoring; a follow-up borescope inspection is recommended at the next opportunity not later than 250 flight hours.
+
+Recommend referral to engineering for trend analysis before next heavy maintenance visit.
 
 CERTIFICATION
 
@@ -34,8 +40,8 @@ Aircraft is hereby certified airworthy for return to service in accordance with 
 approved maintenance program. All applicable Airworthiness Directives reviewed and
 found compliant.
 
-Inspected by:        Arjun Kapoor, B2
-DGCA Licence No.:    AME-49117
-Signature:           _____________________   Date: 25/06/2026
+Inspected by:        R. Venkatesan, AME L1
+DGCA Licence No.:    AME-19071
+Signature:           _____________________   Date: 12/02/2026
 
-Next Inspection Due: 28/10/2026
+Next Inspection Due: 28/06/2026

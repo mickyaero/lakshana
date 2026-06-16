@@ -566,26 +566,26 @@ footer a:hover { color: var(--accent); }
 
     <div class="gallery-panel active" data-panel="aircraft">
       <div class="cluster">
-        <div class="cluster-head">Maintenance Inspection Report <span class="count">10 documents · grouped: Work Order Metadata, Aircraft Details, Inspection Scope, Findings, Certification</span></div>
+        <div class="cluster-head">Maintenance Inspection Report <span class="count">10 documents · 16 fields incl. prose-derived <strong>narrative_summary</strong>, <strong>defect_severity</strong>, <strong>recommendation_text</strong>, <strong>investigation_reference</strong></span></div>
         <div class="field-list">
-          <span class="chip">work_order_number</span><span class="chip">aircraft_type</span><span class="chip">registration</span><span class="chip">operator</span><span class="chip">total_flight_hours</span><span class="chip">ata_chapter</span><span class="chip">check_level</span><span class="chip">findings</span><span class="chip">inspector_name</span><span class="chip">dgca_licence_no</span>
+          <span class="chip">work_order_number</span><span class="chip">aircraft_type</span><span class="chip">registration</span><span class="chip">total_flight_hours</span><span class="chip">ata_chapter</span><span class="chip">findings</span><span class="chip" style="background:#7652b515;color:#7652b5">narrative_summary</span><span class="chip" style="background:#7652b515;color:#7652b5">defect_severity</span><span class="chip" style="background:#7652b515;color:#7652b5">investigation_reference</span><span class="chip" style="background:#7652b515;color:#7652b5">recommendation_text</span>
         </div>
       </div>
       <div class="cluster">
-        <div class="cluster-head">Flight Test Report <span class="count">10 documents · grouped: Test Identification, Aircraft + Crew, Test Conditions, Results</span></div>
+        <div class="cluster-head">Flight Test Report <span class="count">10 documents · 21 fields incl. prose-derived <strong>discussion_summary</strong>, <strong>handling_qualities_rating</strong>, <strong>anomaly_described</strong>, <strong>certification_recommendation</strong></span></div>
         <div class="field-list">
-          <span class="chip">test_report_number</span><span class="chip">test_pilot</span><span class="chip">flight_test_engineer</span><span class="chip">test_objective</span><span class="chip">weather_conditions</span><span class="chip">cg_position</span><span class="chip">aircraft_mass</span><span class="chip">observations</span><span class="chip">conclusion</span>
+          <span class="chip">test_report_number</span><span class="chip">test_pilot</span><span class="chip">test_objective</span><span class="chip">weather_conditions</span><span class="chip">cg_position</span><span class="chip">observations</span><span class="chip" style="background:#7652b515;color:#7652b5">discussion_summary</span><span class="chip" style="background:#7652b515;color:#7652b5">handling_qualities_rating</span><span class="chip" style="background:#7652b515;color:#7652b5">anomaly_described</span><span class="chip" style="background:#7652b515;color:#7652b5">certification_recommendation</span>
         </div>
       </div>
       <div class="cluster">
-        <div class="cluster-head">Service Bulletin <span class="count">10 documents · grouped: Bulletin Identity, Subject + Reason, Applicability, Compliance + Cost, Approval</span></div>
+        <div class="cluster-head">Service Bulletin <span class="count">10 documents · 19 fields incl. prose-derived <strong>background_summary</strong>, <strong>in_service_incident_count</strong>, <strong>risk_classification</strong>, <strong>residual_risk_text</strong></span></div>
         <div class="field-list">
-          <span class="chip">sb_number</span><span class="chip">ata_chapter</span><span class="chip">classification</span><span class="chip">aircraft_type</span><span class="chip">serial_numbers</span><span class="chip">compliance_window</span><span class="chip">manhours</span><span class="chip">approved_by</span><span class="chip">type_certification</span>
+          <span class="chip">sb_number</span><span class="chip">ata_chapter</span><span class="chip">classification</span><span class="chip">serial_numbers</span><span class="chip">compliance_window</span><span class="chip">approved_by</span><span class="chip" style="background:#7652b515;color:#7652b5">background_summary</span><span class="chip" style="background:#7652b515;color:#7652b5">in_service_incident_count</span><span class="chip" style="background:#7652b515;color:#7652b5">risk_classification</span><span class="chip" style="background:#7652b515;color:#7652b5">residual_risk_text</span>
         </div>
       </div>
       <div class="gallery-meta">
         <span><strong>3 / 3</strong> clusters discovered correctly</span>
-        <span><strong>96 / 94 / 97%</strong> per-cluster coverage</span>
+        <span><strong>60 fields total</strong> · 12 derived from prose, not just key-value pairs</span>
         <span><strong>~2m 15s</strong> end-to-end</span>
         <span>Walk through the same result in the <a href="demo/" style="color:var(--accent)">live demo →</a></span>
       </div>

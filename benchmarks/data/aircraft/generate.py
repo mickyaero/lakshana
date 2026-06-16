@@ -96,6 +96,49 @@ MIR_ACTIONS = [
     "Borescope inspection scheduled for next A-Check.",
 ]
 
+# Prose narrative blocks for MIR — written the way an AME actually writes notes
+MIR_NARRATIVES = [
+    "During the scheduled inspection the crew reported a mild buffet on rotation, observed "
+    "intermittently over the last three sectors. Initial walk-around revealed a small area of "
+    "paint blistering on the left wing fairing, approximately 40 mm in diameter, with no "
+    "underlying structural deformation evident. Tap-testing of the surrounding skin produced "
+    "no anomalies, and dye-penetrant inspection of the adjacent fasteners returned negative. "
+    "The aircraft was returned to service with continued monitoring; a follow-up borescope "
+    "inspection is recommended at the next opportunity not later than 250 flight hours.",
+
+    "An oil weeping was noted at the No. 2 engine accessory gearbox drive seal, estimated at "
+    "approximately 6 ml of accumulated residue since the previous A-check. No corresponding "
+    "oil quantity loss was reflected in trend data, and the drain mast remained dry. The seal "
+    "is at 88% of its expected service life and is being monitored under engineering surveillance. "
+    "Recommend deferred replacement at the next available C-check unless trend changes.",
+
+    "The pilot's defect entry referenced a momentary EICAS message during cruise on flight "
+    "VT-EXP-2024-118. The FDR data was reviewed; the message lasted 0.4 seconds and was "
+    "consistent with a known transient on the bleed pressure regulator under low-power "
+    "conditions at high altitude. The current population of this regulator is being tracked "
+    "under engineering bulletin EB-36-014. No corrective action required at this inspection.",
+
+    "Routine inspection of the main landing gear assembly revealed light surface corrosion "
+    "on the lower torque link, classified as Cat-1 per CMM 32-11-04. The affected area was "
+    "cleaned, treated with CIC-2 corrosion inhibitor, and re-protected per the approved "
+    "process. The condition does not affect airworthiness and continued operation is "
+    "permitted with re-inspection at the next A-check.",
+
+    "An anomaly was noted in the cabin pressurization controller during the post-flight test, "
+    "with the outflow valve commanding fully open for approximately 2 seconds during the "
+    "automatic schedule transition. Subsequent ground tests were unable to reproduce the "
+    "condition, and BITE data showed no fault codes. The event has been logged under "
+    "investigation reference INV-21-2026-0418 for continued trend monitoring.",
+]
+
+MIR_RECOMMENDATIONS = [
+    "Recommend continued operation with monitoring per the engineering surveillance plan.",
+    "Recommend component replacement at the next available C-check, not to exceed 1,500 FH.",
+    "Recommend re-inspection at the next A-check; no operational restriction required.",
+    "Recommend referral to engineering for trend analysis before next heavy maintenance visit.",
+    "Recommend dispatch under MEL Cat-B (10 days) pending parts availability.",
+]
+
 def gen_mir(i: int) -> str:
     aircraft, tail, engine, op = random.choice(AIRCRAFT_FLEET)
     check = random.choice(CHECK_LEVELS)
@@ -138,6 +181,12 @@ Reference Manual:    AMM Rev. {random.randint(38, 47)}, Task {ata}-{random.randi
 FINDINGS AND CORRECTIVE ACTIONS
 
 {findings_block}
+
+INSPECTOR'S NARRATIVE
+
+{random.choice(MIR_NARRATIVES)}
+
+{random.choice(MIR_RECOMMENDATIONS)}
 
 CERTIFICATION
 
@@ -187,6 +236,48 @@ OBSERVATIONS_POOL = [
     "Hydraulic systems Green and Yellow maintained nominal pressure (3000 psi ± 50).",
     "FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.",
     "Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.",
+]
+
+# Prose discussion blocks for FTR — qualitative pilot/FTE narrative
+FTR_DISCUSSIONS = [
+    "Aircraft handling characteristics throughout the test envelope were qualitatively assessed "
+    "as satisfactory, with no compensatory pilot inputs required to maintain target attitudes. "
+    "Initial pitch response was crisp and well-damped, with predicted overshoot of 1.8° "
+    "decaying within a single cycle. Roll asymmetry of approximately 0.4° was noted at "
+    "flaps-15 configuration, attributed to fuel imbalance present at the start of the maneuver "
+    "sequence, and considered insignificant for certification purposes.",
+
+    "The crew noted a mild lateral PIO tendency during the first approach in the gust simulation "
+    "leg, which was attributed to the unfamiliar augmented control law. After the second "
+    "exposure the pilot was able to suppress the tendency through reduced stick input "
+    "amplitude. Recommend a brief familiarization brief be added to the type-rating syllabus "
+    "covering this specific control law mode.",
+
+    "Engine response during the rapid-power-application sequence was within predicted timing, "
+    "with spool-up from idle to TOGA achieved in 5.9 seconds (specification ≤ 8.0 s). No "
+    "compressor stall or surge indications were observed at any combination of altitude and "
+    "speed flown. Recommend release of the engine envelope expansion package for line "
+    "operations pending completion of the final cold-weather test campaign.",
+
+    "Overall the aircraft demonstrated handling qualities consistent with Level 1 per "
+    "MIL-STD-1797A criteria across the tested envelope. One minor finding: the FBW law "
+    "exhibited a brief 0.3 g vertical disturbance at the flaps transition point, which "
+    "was traced to a known software characteristic scheduled for resolution in software "
+    "build P5.2. No safety-of-flight concern; acceptable for continued certification testing.",
+
+    "All test points within the planned envelope were completed satisfactorily. The aircraft "
+    "exhibited stable lateral-directional behavior throughout the asymmetric thrust "
+    "investigation, with the rudder providing adequate authority to counter the yawing "
+    "moment generated by the simulated engine failure. Stick force per g remained linear "
+    "and well within the predicted band. No exceedances were recorded.",
+]
+
+FTR_RECOMMENDATIONS = [
+    "Recommend approval of the test point for certification basis.",
+    "Recommend re-flight at fwd CG / max weight before release.",
+    "Recommend continued investigation under engineering surveillance.",
+    "Recommend incorporation into FCOM Vol. 2, Chapter 5 — Abnormal Procedures.",
+    "Recommend release to line operations with no further restriction.",
 ]
 
 def gen_ftr(i: int) -> str:
@@ -247,6 +338,12 @@ OBSERVATIONS
 
 {obs_block}
 
+DISCUSSION
+
+{random.choice(FTR_DISCUSSIONS)}
+
+{random.choice(FTR_RECOMMENDATIONS)}
+
 CONCLUSION
 
 {conclusion}
@@ -259,6 +356,54 @@ FTE Concurrence:     {fte}
 # ---------------------------------------------------------------------------
 # Service Bulletins — 10
 # ---------------------------------------------------------------------------
+
+# Prose background blocks for SB — manufacturer's narrative explaining context
+SB_BACKGROUNDS = [
+    "The original design assumption regarding the operating temperature range of this component "
+    "has been challenged by field experience accumulated over the past 18 months. Investigation "
+    "of returned units has identified that prolonged exposure to high-cycle vibration in "
+    "combination with cold-soak conditions can lead to accelerated wear of the internal "
+    "bearing surfaces. To date there have been 14 confirmed in-service occurrences across "
+    "the global fleet, none of which have resulted in any safety-of-flight consequence. "
+    "Engineering risk assessment categorizes the residual risk as Low after compliance with "
+    "this Service Bulletin.",
+
+    "A recent in-service occurrence on an operator in the Asia-Pacific region prompted a "
+    "fleet-wide review of the component history. The investigation determined that aircraft "
+    "operating in high-humidity, high-cycle environments are statistically more likely to "
+    "exhibit the wear pattern described in section 3. While no immediate corrective action "
+    "is mandated, the manufacturer strongly recommends compliance within the timeframe "
+    "specified to maintain expected component reliability and dispatch availability.",
+
+    "This Service Bulletin is issued in response to a small number of operator-reported "
+    "events involving intermittent system status messages on the affected ATA chapter. Root "
+    "cause analysis attributed the events to a latent software state that can occur when the "
+    "system is energized within a specific 4-second window following the loss-of-bus event. "
+    "The probability of encountering this state is assessed as remote, but the manufacturer "
+    "has elected to release a software update to eliminate the failure mode.",
+
+    "Following the certification flight test campaign for the most recent engine variant, "
+    "an additional thermal margin requirement was identified in the bleed air duct manifold "
+    "downstream of the precooler. This Service Bulletin describes the inspection procedure "
+    "and provides part number information for the strengthened replacement assembly. "
+    "Operators with affected MSN are advised to schedule compliance at the next available "
+    "C-check to minimize operational disruption.",
+
+    "Continued surveillance of the in-service fleet has revealed that approximately 4% of "
+    "the affected population exhibits a measurable performance shift in the subject system "
+    "after 6,000 flight hours. The shift is gradual and does not produce any flight deck "
+    "indication, but can lead to a small reduction in system efficiency. Compliance with "
+    "this Service Bulletin will restore performance to within the original specification "
+    "and is recommended at the next scheduled maintenance opportunity.",
+]
+
+SB_RISK_ASSESSMENTS = [
+    "Residual risk after compliance: LOW.",
+    "Residual risk after compliance: NEGLIGIBLE.",
+    "Risk classification per FHA: MINOR.",
+    "Risk classification per FHA: MAJOR — operator action required.",
+    "Risk classification per FHA: HAZARDOUS — compliance is mandatory.",
+]
 
 SB_SUBJECTS = [
     ("Engine Fuel Pump Inspection",
@@ -340,6 +485,12 @@ REASON FOR ISSUE
 This Service Bulletin is issued to address {reason}. Operator reports and in-service
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
+
+BACKGROUND AND RISK ASSESSMENT
+
+{random.choice(SB_BACKGROUNDS)}
+
+{random.choice(SB_RISK_ASSESSMENTS)}
 
 DESCRIPTION OF CHANGE
 

@@ -1,30 +1,36 @@
 MAINTENANCE INSPECTION REPORT
 
-Work Order Number:   MIR/2026/57819
-Date of Inspection:  13/03/2026
+Work Order Number:   MIR/2026/93227
+Date of Inspection:  22/03/2026
 Station:             Delhi (DEL) — Hangar Bay 3
 
 AIRCRAFT DETAILS
 
-Aircraft Type:       Airbus A350-900
-Registration:        VT-JRC
-Operator:            Air India
-Total Flight Hours:  37,714
-Total Flight Cycles: 13,415
-Engine Type:         RR Trent XWB
+Aircraft Type:       Airbus A321neo
+Registration:        VT-IUR
+Operator:            Vistara
+Total Flight Hours:  12,679
+Total Flight Cycles: 12,980
+Engine Type:         CFM LEAP-1A26
 
 INSPECTION
 
-Check Level:         A-Check
-ATA Chapter:         28 — Fuel System
-Reference Manual:    AMM Rev. 39, Task 28-88-91
+Check Level:         C-Check
+ATA Chapter:         32 — Landing Gear
+Reference Manual:    AMM Rev. 44, Task 32-45-91
 
 FINDINGS AND CORRECTIVE ACTIONS
 
-  1. Right main landing gear oleo strut servicing low pressure, recharged to spec.
+  1. Cabin pressurization outflow valve actuator response time 1.2s, within limit.
      ACTION: Adjusted to manufacturer specification; recorded in tech log.
-  2. Static port heater P/N 387-2241-04 failed BIT, replaced with new unit.
-     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+  2. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
+     ACTION: Cleared after re-inspection; no further action required.
+
+INSPECTOR'S NARRATIVE
+
+An anomaly was noted in the cabin pressurization controller during the post-flight test, with the outflow valve commanding fully open for approximately 2 seconds during the automatic schedule transition. Subsequent ground tests were unable to reproduce the condition, and BITE data showed no fault codes. The event has been logged under investigation reference INV-21-2026-0418 for continued trend monitoring.
+
+Recommend component replacement at the next available C-check, not to exceed 1,500 FH.
 
 CERTIFICATION
 
@@ -32,8 +38,8 @@ Aircraft is hereby certified airworthy for return to service in accordance with 
 approved maintenance program. All applicable Airworthiness Directives reviewed and
 found compliant.
 
-Inspected by:        Anjali Mehta, AME L2
-DGCA Licence No.:    AME-32431
-Signature:           _____________________   Date: 13/03/2026
+Inspected by:        Priya Sharma, B1.1
+DGCA Licence No.:    AME-99733
+Signature:           _____________________   Date: 22/03/2026
 
-Next Inspection Due: 28/07/2026
+Next Inspection Due: 28/05/2026

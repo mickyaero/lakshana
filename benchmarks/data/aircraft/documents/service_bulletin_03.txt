@@ -1,9 +1,9 @@
 SERVICE BULLETIN
 
-Service Bulletin No: SB-DE-27-390
-Issue Date:          22/01/2026
-Revision Status:     Revision 02
-ATA Chapter:         27 — Flight Controls
+Service Bulletin No: SB-BOE-36-355
+Issue Date:          02/05/2026
+Revision Status:     Original Issue
+ATA Chapter:         36 — Pneumatic
 Classification:      Recommended
 
 SUBJECT
@@ -12,11 +12,11 @@ Cargo Door Latch Actuator Software Update
 
 APPLICABILITY
 
-Aircraft Type:       De Havilland DHC-6
-Serial Numbers:      MSN 1383 through MSN 1673
-Engine(s):           PT6A-34
+Aircraft Type:       Boeing 787-8
+Serial Numbers:      MSN 4283 through MSN 4808
+Engine(s):           GEnx-1B70
 Effectivity:         All aircraft within the serial range listed above unless previously
-                     modified per SB-DE-27-330 Rev. 02.
+                     modified per SB-BOE-36-672 Rev. 02.
 
 REASON FOR ISSUE
 
@@ -24,30 +24,36 @@ This Service Bulletin is issued to address rare nuisance unlock indication on EI
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
 
+BACKGROUND AND RISK ASSESSMENT
+
+Continued surveillance of the in-service fleet has revealed that approximately 4% of the affected population exhibits a measurable performance shift in the subject system after 6,000 flight hours. The shift is gradual and does not produce any flight deck indication, but can lead to a small reduction in system efficiency. Compliance with this Service Bulletin will restore performance to within the original specification and is recommended at the next scheduled maintenance opportunity.
+
+Risk classification per FHA: MINOR.
+
 DESCRIPTION OF CHANGE
 
 Upgrade actuator firmware from v3.4.1 to v3.5.0 using DCDS loader per maintenance task 52-71-01.
 
 COMPLIANCE
 
-Recommended compliance: Within 3,000 flight hours
-or 12 months from the date of this Service Bulletin,
+Recommended compliance: Within 6,000 flight hours
+or 24 months from the date of this Service Bulletin,
 whichever occurs first.
 
 ESTIMATED LABOR
 
-Manhours:            12 MH per aircraft (two technicians, station-level)
-Estimated Material Cost: USD 2,899
+Manhours:            6 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 2,049
 Special Tooling:     None / Standard line tooling
 
 REFERENCES
 
-— Aircraft Maintenance Manual (AMM) Chapter 27
-— Illustrated Parts Catalog (IPC) Chapter 27
-— Component Maintenance Manual 27-13-15
+— Aircraft Maintenance Manual (AMM) Chapter 36
+— Illustrated Parts Catalog (IPC) Chapter 36
+— Component Maintenance Manual 36-80-67
 
 APPROVED BY
 
-A. Vasudevan, Senior Engineer
-Engineering Authority: EA-5011
-Type Certification:    TC-EASA-2023
+T. Balakrishnan, Test Engineer
+Engineering Authority: EA-3607
+Type Certification:    TC-FAA-2021

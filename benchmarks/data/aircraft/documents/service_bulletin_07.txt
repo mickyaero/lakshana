@@ -1,9 +1,9 @@
 SERVICE BULLETIN
 
-Service Bulletin No: SB-AIR-29-653
-Issue Date:          11/03/2026
-Revision Status:     Original Issue
-ATA Chapter:         29 — Hydraulic Power
+Service Bulletin No: SB-BOE-32-917
+Issue Date:          22/06/2026
+Revision Status:     Revision 01
+ATA Chapter:         32 — Landing Gear
 Classification:      Mandatory
 
 SUBJECT
@@ -12,11 +12,11 @@ Engine Nacelle Anti-Ice Duct Inspection
 
 APPLICABILITY
 
-Aircraft Type:       Airbus A330-300
-Serial Numbers:      MSN 1948 through MSN 2390
-Engine(s):           RR Trent 772B
+Aircraft Type:       Boeing 737 MAX 8
+Serial Numbers:      MSN 4443 through MSN 4971
+Engine(s):           CFM LEAP-1B27
 Effectivity:         All aircraft within the serial range listed above unless previously
-                     modified per SB-AIR-29-823 Rev. 02.
+                     modified per SB-BOE-32-737 Rev. 02.
 
 REASON FOR ISSUE
 
@@ -24,30 +24,36 @@ This Service Bulletin is issued to address thermal cycling fatigue cracking obse
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
 
+BACKGROUND AND RISK ASSESSMENT
+
+Continued surveillance of the in-service fleet has revealed that approximately 4% of the affected population exhibits a measurable performance shift in the subject system after 6,000 flight hours. The shift is gradual and does not produce any flight deck indication, but can lead to a small reduction in system efficiency. Compliance with this Service Bulletin will restore performance to within the original specification and is recommended at the next scheduled maintenance opportunity.
+
+Residual risk after compliance: LOW.
+
 DESCRIPTION OF CHANGE
 
 Inspect duct elbow per Figure 3; replace if any crack length > 6 mm is detected.
 
 COMPLIANCE
 
-Recommended compliance: Within 3,000 flight hours
+Recommended compliance: Within 6,000 flight hours
 or 6 months from the date of this Service Bulletin,
 whichever occurs first.
 
 ESTIMATED LABOR
 
-Manhours:            6 MH per aircraft (two technicians, station-level)
-Estimated Material Cost: USD 746
+Manhours:            7 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 3,146
 Special Tooling:     None / Standard line tooling
 
 REFERENCES
 
-— Aircraft Maintenance Manual (AMM) Chapter 29
-— Illustrated Parts Catalog (IPC) Chapter 29
-— Component Maintenance Manual 29-63-62
+— Aircraft Maintenance Manual (AMM) Chapter 32
+— Illustrated Parts Catalog (IPC) Chapter 32
+— Component Maintenance Manual 32-20-92
 
 APPROVED BY
 
 Prof. S. Iyer, Chief Engineer
-Engineering Authority: EA-6421
-Type Certification:    TC-FAA-2021
+Engineering Authority: EA-8022
+Type Certification:    TC-DGCA-India-2021

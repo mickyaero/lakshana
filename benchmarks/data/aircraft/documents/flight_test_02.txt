@@ -1,46 +1,52 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-DA-2026-151
-Test Date:           15/05/2026
-Test Duration:       2h 13min
+Test Report Number:  FTR-BL-2026-258
+Test Date:           22/06/2026
+Test Duration:       3h 47min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       Airbus A321neo
-Registration:        VT-IUR
-Engine Configuration: 2 × CFM LEAP-1A26
-Test Configuration:  90% MTOW, fwd CG @ 20% MAC
+Aircraft Type:       Airbus A350-900
+Registration:        VT-JRC
+Engine Configuration: 2 × RR Trent XWB
+Test Configuration:  80% MTOW, fwd CG @ 25% MAC
 
 TEST CREW
 
-Test Pilot:          Capt. S. Mukherjee
-First Officer:       F/O P. Iyengar
-Flight Test Engineer: FTE V. Subramanian
+Test Pilot:          Capt. M. Choudhary
+First Officer:       F/O A. Krishnan
+Flight Test Engineer: FTE K. Banerjee
 
 TEST OBJECTIVE
 
-Autopilot Coupled Approach — Verify ILS CAT-IIIA capture, glideslope hold for the subject aircraft at the conditions defined in
-Test Plan FTR-DA-2026-151, in accordance with CAR-23 / CS-25 § 25.489.
+Brake Energy Limit Test — Verify RTO at MTOW, brake temperatures, fuse plug release for the subject aircraft at the conditions defined in
+Test Plan FTR-BL-2026-258, in accordance with CAR-23 / CS-25 § 25.615.
 
 TEST CONDITIONS
 
-Weather:             CAVOK, wind 270/08, OAT 26°C
-Test Altitude(s):    FL081 — FL279
-Fuel On Board (Start): 14.4 tonnes
-Aircraft Mass:       245 tonnes
-CG Position:         32.4% MAC
+Weather:             BKN at 8000ft, wind calm, OAT 14°C
+Test Altitude(s):    FL351 — FL160
+Fuel On Board (Start): 9.0 tonnes
+Aircraft Mass:       175 tonnes
+CG Position:         20.2% MAC
 
 OBSERVATIONS
 
   • Roll control authority adequate at all tested conditions; no adverse handling noted.
-  • Stick force gradient consistent with predicted simulator response.
-  • Cabin pressure schedule tracked normally; max ΔP within limit.
-  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+  • Pitch attitude steady within ±0.5° of target throughout maneuver.
+  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
+  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
+
+DISCUSSION
+
+Aircraft handling characteristics throughout the test envelope were qualitatively assessed as satisfactory, with no compensatory pilot inputs required to maintain target attitudes. Initial pitch response was crisp and well-damped, with predicted overshoot of 1.8° decaying within a single cycle. Roll asymmetry of approximately 0.4° was noted at flaps-15 configuration, attributed to fuel imbalance present at the start of the maneuver sequence, and considered insignificant for certification purposes.
+
+Recommend release to line operations with no further restriction.
 
 CONCLUSION
 
-PASS — exceeds spec margin by 8%. No further action required.
+PASS — all acceptance criteria met. Recommended for certification.
 
-Approved by:         Capt. S. Mukherjee
-FTE Concurrence:     FTE V. Subramanian
+Approved by:         Capt. M. Choudhary
+FTE Concurrence:     FTE K. Banerjee

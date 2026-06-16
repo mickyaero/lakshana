@@ -1,32 +1,36 @@
 MAINTENANCE INSPECTION REPORT
 
-Work Order Number:   MIR/2026/31643
-Date of Inspection:  05/06/2026
+Work Order Number:   MIR/2026/92719
+Date of Inspection:  19/02/2026
 Station:             Delhi (DEL) — Hangar Bay 3
 
 AIRCRAFT DETAILS
 
-Aircraft Type:       Airbus A320neo
-Registration:        VT-EXP
-Operator:            Indigo
-Total Flight Hours:  39,148
-Total Flight Cycles: 12,007
-Engine Type:         PW1127G-JM
+Aircraft Type:       Boeing 737-800
+Registration:        VT-SGE
+Operator:            SpiceJet
+Total Flight Hours:  8,471
+Total Flight Cycles: 4,163
+Engine Type:         CFM56-7B26
 
 INSPECTION
 
-Check Level:         Phase-2
-ATA Chapter:         78 — Engine Exhaust
-Reference Manual:    AMM Rev. 44, Task 78-58-66
+Check Level:         A-Check
+ATA Chapter:         71 — Power Plant
+Reference Manual:    AMM Rev. 39, Task 71-76-40
 
 FINDINGS AND CORRECTIVE ACTIONS
 
-  1. Cabin pressurization outflow valve actuator response time 1.2s, within limit.
-     ACTION: Lubrication performed per MM 12-21-04; signed off.
-  2. FADEC software version mismatch found, software update SB-FADEC-22 applied.
-     ACTION: Adjusted to manufacturer specification; recorded in tech log.
-  3. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
+  1. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
+     ACTION: Component replaced per IPC reference; functional test PASSED.
+  2. Forward galley chiller coolant level below MIN mark, replenished.
      ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+
+INSPECTOR'S NARRATIVE
+
+The pilot's defect entry referenced a momentary EICAS message during cruise on flight VT-EXP-2024-118. The FDR data was reviewed; the message lasted 0.4 seconds and was consistent with a known transient on the bleed pressure regulator under low-power conditions at high altitude. The current population of this regulator is being tracked under engineering bulletin EB-36-014. No corrective action required at this inspection.
+
+Recommend referral to engineering for trend analysis before next heavy maintenance visit.
 
 CERTIFICATION
 
@@ -34,8 +38,8 @@ Aircraft is hereby certified airworthy for return to service in accordance with 
 approved maintenance program. All applicable Airworthiness Directives reviewed and
 found compliant.
 
-Inspected by:        R. Venkatesan, AME L1
-DGCA Licence No.:    AME-77839
-Signature:           _____________________   Date: 05/06/2026
+Inspected by:        Priya Sharma, B1.1
+DGCA Licence No.:    AME-38080
+Signature:           _____________________   Date: 19/02/2026
 
-Next Inspection Due: 28/08/2026
+Next Inspection Due: 28/04/2026

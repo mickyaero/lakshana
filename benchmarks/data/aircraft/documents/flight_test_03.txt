@@ -1,46 +1,52 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-BL-2026-322
-Test Date:           05/02/2026
-Test Duration:       2h 13min
+Test Report Number:  FTR-HY-2026-140
+Test Date:           08/05/2026
+Test Duration:       2h 26min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       Boeing 737 MAX 8
-Registration:        VT-AKO
-Engine Configuration: 2 × CFM LEAP-1B27
-Test Configuration:  63% MTOW, fwd CG @ 26% MAC
+Aircraft Type:       Airbus A320neo
+Registration:        VT-EXP
+Engine Configuration: 2 × PW1127G-JM
+Test Configuration:  73% MTOW, fwd CG @ 24% MAC
 
 TEST CREW
 
-Test Pilot:          Capt. M. Choudhary
-First Officer:       F/O A. Krishnan
-Flight Test Engineer: FTE M. Rao
+Test Pilot:          Capt. S. Mukherjee
+First Officer:       F/O P. Iyengar
+Flight Test Engineer: FTE K. Banerjee
 
 TEST OBJECTIVE
 
-VMU Verification — Verify minimum unstick speed at aft CG, tail clearance for the subject aircraft at the conditions defined in
-Test Plan FTR-BL-2026-322, in accordance with CAR-23 / CS-25 § 25.183.
+Cruise Performance Validation — Verify TAS at FL370, SFC, range factor for the subject aircraft at the conditions defined in
+Test Plan FTR-HY-2026-140, in accordance with CAR-23 / CS-25 § 25.235.
 
 TEST CONDITIONS
 
-Weather:             CAVOK, wind 360/06, OAT 31°C
-Test Altitude(s):    FL175 — FL115
-Fuel On Board (Start): 23.9 tonnes
-Aircraft Mass:       62 tonnes
-CG Position:         25.6% MAC
+Weather:             SCT at 12000ft, wind 180/15, OAT 22°C
+Test Altitude(s):    FL410 — FL233
+Fuel On Board (Start): 18.7 tonnes
+Aircraft Mass:       125 tonnes
+CG Position:         20.0% MAC
 
 OBSERVATIONS
 
-  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
-  • Pitch attitude steady within ±0.5° of target throughout maneuver.
-  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
   • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
+  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
+  • Stick force gradient consistent with predicted simulator response.
+
+DISCUSSION
+
+Overall the aircraft demonstrated handling qualities consistent with Level 1 per MIL-STD-1797A criteria across the tested envelope. One minor finding: the FBW law exhibited a brief 0.3 g vertical disturbance at the flaps transition point, which was traced to a known software characteristic scheduled for resolution in software build P5.2. No safety-of-flight concern; acceptable for continued certification testing.
+
+Recommend release to line operations with no further restriction.
 
 CONCLUSION
 
 PASS WITH OBSERVATIONS — see noted items; cleared subject to FCOM revision.
 
-Approved by:         Capt. M. Choudhary
-FTE Concurrence:     FTE M. Rao
+Approved by:         Capt. S. Mukherjee
+FTE Concurrence:     FTE K. Banerjee

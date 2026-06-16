@@ -1,9 +1,9 @@
 SERVICE BULLETIN
 
-Service Bulletin No: SB-AIR-75-560
-Issue Date:          28/04/2026
-Revision Status:     Revision 01
-ATA Chapter:         75 — Engine Air
+Service Bulletin No: SB-AIR-78-588
+Issue Date:          19/04/2026
+Revision Status:     Original Issue
+ATA Chapter:         78 — Engine Exhaust
 Classification:      Mandatory
 
 SUBJECT
@@ -12,11 +12,11 @@ Cabin Pressure Outflow Valve Position Sensor Update
 
 APPLICABILITY
 
-Aircraft Type:       Airbus A321neo
-Serial Numbers:      MSN 4441 through MSN 5143
-Engine(s):           CFM LEAP-1A26
+Aircraft Type:       Airbus A320-200
+Serial Numbers:      MSN 2224 through MSN 2673
+Engine(s):           CFM56-5B4/P
 Effectivity:         All aircraft within the serial range listed above unless previously
-                     modified per SB-AIR-75-884 Rev. 02.
+                     modified per SB-AIR-78-651 Rev. 02.
 
 REASON FOR ISSUE
 
@@ -24,30 +24,36 @@ This Service Bulletin is issued to address drift of position sensor output obser
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
 
+BACKGROUND AND RISK ASSESSMENT
+
+Continued surveillance of the in-service fleet has revealed that approximately 4% of the affected population exhibits a measurable performance shift in the subject system after 6,000 flight hours. The shift is gradual and does not produce any flight deck indication, but can lead to a small reduction in system efficiency. Compliance with this Service Bulletin will restore performance to within the original specification and is recommended at the next scheduled maintenance opportunity.
+
+Risk classification per FHA: HAZARDOUS — compliance is mandatory.
+
 DESCRIPTION OF CHANGE
 
 Replace position sensor P/N OFV-PS-2301 and reprogram CPC per task 21-31-12.
 
 COMPLIANCE
 
-Recommended compliance: Within 6,000 flight hours
-or 12 months from the date of this Service Bulletin,
+Recommended compliance: Within 3,000 flight hours
+or 24 months from the date of this Service Bulletin,
 whichever occurs first.
 
 ESTIMATED LABOR
 
-Manhours:            9 MH per aircraft (two technicians, station-level)
-Estimated Material Cost: USD 3,259
+Manhours:            13 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 4,041
 Special Tooling:     None / Standard line tooling
 
 REFERENCES
 
-— Aircraft Maintenance Manual (AMM) Chapter 75
-— Illustrated Parts Catalog (IPC) Chapter 75
-— Component Maintenance Manual 75-45-66
+— Aircraft Maintenance Manual (AMM) Chapter 78
+— Illustrated Parts Catalog (IPC) Chapter 78
+— Component Maintenance Manual 78-38-44
 
 APPROVED BY
 
-A. Vasudevan, Senior Engineer
-Engineering Authority: EA-2269
-Type Certification:    TC-FAA-2018
+P. Krishnan, Design Engineer
+Engineering Authority: EA-8140
+Type Certification:    TC-EASA-2014

@@ -1,9 +1,9 @@
 SERVICE BULLETIN
 
-Service Bulletin No: SB-BOE-21-968
-Issue Date:          18/02/2026
+Service Bulletin No: SB-AIR-27-810
+Issue Date:          08/04/2026
 Revision Status:     Original Issue
-ATA Chapter:         21 — Air Conditioning
+ATA Chapter:         27 — Flight Controls
 Classification:      Recommended
 
 SUBJECT
@@ -12,11 +12,11 @@ APU Air Inlet Door Hinge Replacement
 
 APPLICABILITY
 
-Aircraft Type:       Boeing 777-300ER
-Serial Numbers:      MSN 4283 through MSN 4808
-Engine(s):           GE90-115BL
+Aircraft Type:       Airbus A321neo
+Serial Numbers:      MSN 1264 through MSN 1738
+Engine(s):           CFM LEAP-1A26
 Effectivity:         All aircraft within the serial range listed above unless previously
-                     modified per SB-BOE-21-672 Rev. 02.
+                     modified per SB-AIR-27-438 Rev. 02.
 
 REASON FOR ISSUE
 
@@ -24,30 +24,36 @@ This Service Bulletin is issued to address hinge bushing wear leading to door ra
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
 
+BACKGROUND AND RISK ASSESSMENT
+
+Continued surveillance of the in-service fleet has revealed that approximately 4% of the affected population exhibits a measurable performance shift in the subject system after 6,000 flight hours. The shift is gradual and does not produce any flight deck indication, but can lead to a small reduction in system efficiency. Compliance with this Service Bulletin will restore performance to within the original specification and is recommended at the next scheduled maintenance opportunity.
+
+Risk classification per FHA: MAJOR — operator action required.
+
 DESCRIPTION OF CHANGE
 
 Replace bushing P/N APU-INLT-BSH-04 with improved CRES bushing P/N APU-INLT-BSH-05.
 
 COMPLIANCE
 
-Recommended compliance: Within 4,500 flight hours
-or 24 months from the date of this Service Bulletin,
+Recommended compliance: Within 6,000 flight hours
+or 6 months from the date of this Service Bulletin,
 whichever occurs first.
 
 ESTIMATED LABOR
 
-Manhours:            6 MH per aircraft (two technicians, station-level)
-Estimated Material Cost: USD 2,049
+Manhours:            8 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 3,073
 Special Tooling:     None / Standard line tooling
 
 REFERENCES
 
-— Aircraft Maintenance Manual (AMM) Chapter 21
-— Illustrated Parts Catalog (IPC) Chapter 21
-— Component Maintenance Manual 21-88-74
+— Aircraft Maintenance Manual (AMM) Chapter 27
+— Illustrated Parts Catalog (IPC) Chapter 27
+— Component Maintenance Manual 27-36-63
 
 APPROVED BY
 
-T. Balakrishnan, Test Engineer
-Engineering Authority: EA-7991
-Type Certification:    TC-FAA-2021
+P. Krishnan, Design Engineer
+Engineering Authority: EA-7381
+Type Certification:    TC-FAA-2025

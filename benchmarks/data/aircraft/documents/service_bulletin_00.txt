@@ -1,9 +1,9 @@
 SERVICE BULLETIN
 
-Service Bulletin No: SB-BOE-71-145
-Issue Date:          07/03/2026
-Revision Status:     Revision 02
-ATA Chapter:         71 — Power Plant
+Service Bulletin No: SB-BOE-72-866
+Issue Date:          13/06/2026
+Revision Status:     Original Issue
+ATA Chapter:         72 — Engine
 Classification:      Recommended
 
 SUBJECT
@@ -13,16 +13,22 @@ Engine Fuel Pump Inspection
 APPLICABILITY
 
 Aircraft Type:       Boeing 737 MAX 8
-Serial Numbers:      MSN 3130 through MSN 3731
+Serial Numbers:      MSN 2664 through MSN 3275
 Engine(s):           CFM LEAP-1B27
 Effectivity:         All aircraft within the serial range listed above unless previously
-                     modified per SB-BOE-71-472 Rev. 02.
+                     modified per SB-BOE-72-411 Rev. 02.
 
 REASON FOR ISSUE
 
 This Service Bulletin is issued to address potential premature wear of impeller bearing under specific operating conditions. Operator reports and in-service
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
+
+BACKGROUND AND RISK ASSESSMENT
+
+This Service Bulletin is issued in response to a small number of operator-reported events involving intermittent system status messages on the affected ATA chapter. Root cause analysis attributed the events to a latent software state that can occur when the system is energized within a specific 4-second window following the loss-of-bus event. The probability of encountering this state is assessed as remote, but the manufacturer has elected to release a software update to eliminate the failure mode.
+
+Residual risk after compliance: NEGLIGIBLE.
 
 DESCRIPTION OF CHANGE
 
@@ -31,23 +37,23 @@ Inspect impeller bearing per Figure 2 using borescope. If wear exceeds 0.15 mm, 
 COMPLIANCE
 
 Recommended compliance: Within 6,000 flight hours
-or 6 months from the date of this Service Bulletin,
+or 18 months from the date of this Service Bulletin,
 whichever occurs first.
 
 ESTIMATED LABOR
 
-Manhours:            2 MH per aircraft (two technicians, station-level)
-Estimated Material Cost: USD 1,966
+Manhours:            11 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 2,701
 Special Tooling:     None / Standard line tooling
 
 REFERENCES
 
-— Aircraft Maintenance Manual (AMM) Chapter 71
-— Illustrated Parts Catalog (IPC) Chapter 71
-— Component Maintenance Manual 71-52-89
+— Aircraft Maintenance Manual (AMM) Chapter 72
+— Illustrated Parts Catalog (IPC) Chapter 72
+— Component Maintenance Manual 72-69-66
 
 APPROVED BY
 
-Prof. S. Iyer, Chief Engineer
-Engineering Authority: EA-6143
-Type Certification:    TC-FAA-2015
+Dr. K. Raghavan, Lead Engineer
+Engineering Authority: EA-8244
+Type Certification:    TC-FAA-2017

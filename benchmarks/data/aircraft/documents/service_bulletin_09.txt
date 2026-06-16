@@ -1,9 +1,9 @@
 SERVICE BULLETIN
 
-Service Bulletin No: SB-DE-49-325
-Issue Date:          26/05/2026
-Revision Status:     Revision 01
-ATA Chapter:         49 — Airborne Auxiliary Power
+Service Bulletin No: SB-EMB-24-141
+Issue Date:          25/06/2026
+Revision Status:     Original Issue
+ATA Chapter:         24 — Electrical Power
 Classification:      Mandatory
 
 SUBJECT
@@ -12,11 +12,11 @@ Brake Control Unit Software Update
 
 APPLICABILITY
 
-Aircraft Type:       De Havilland DHC-6
-Serial Numbers:      MSN 2786 through MSN 3333
-Engine(s):           PT6A-34
+Aircraft Type:       Embraer E190
+Serial Numbers:      MSN 1817 through MSN 1887
+Engine(s):           CF34-10E
 Effectivity:         All aircraft within the serial range listed above unless previously
-                     modified per SB-DE-49-498 Rev. 02.
+                     modified per SB-EMB-24-256 Rev. 02.
 
 REASON FOR ISSUE
 
@@ -24,30 +24,36 @@ This Service Bulletin is issued to address FAA reported potential anti-skid logi
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
 
+BACKGROUND AND RISK ASSESSMENT
+
+A recent in-service occurrence on an operator in the Asia-Pacific region prompted a fleet-wide review of the component history. The investigation determined that aircraft operating in high-humidity, high-cycle environments are statistically more likely to exhibit the wear pattern described in section 3. While no immediate corrective action is mandated, the manufacturer strongly recommends compliance within the timeframe specified to maintain expected component reliability and dispatch availability.
+
+Residual risk after compliance: NEGLIGIBLE.
+
 DESCRIPTION OF CHANGE
 
 Update BCU software from v2.18 to v2.20 per maintenance procedure 32-44-10.
 
 COMPLIANCE
 
-Recommended compliance: Within 4,500 flight hours
-or 24 months from the date of this Service Bulletin,
+Recommended compliance: Within 6,000 flight hours
+or 6 months from the date of this Service Bulletin,
 whichever occurs first.
 
 ESTIMATED LABOR
 
-Manhours:            10 MH per aircraft (two technicians, station-level)
-Estimated Material Cost: USD 1,078
+Manhours:            9 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 4,069
 Special Tooling:     None / Standard line tooling
 
 REFERENCES
 
-— Aircraft Maintenance Manual (AMM) Chapter 49
-— Illustrated Parts Catalog (IPC) Chapter 49
-— Component Maintenance Manual 49-31-69
+— Aircraft Maintenance Manual (AMM) Chapter 24
+— Illustrated Parts Catalog (IPC) Chapter 24
+— Component Maintenance Manual 24-82-37
 
 APPROVED BY
 
-Dr. K. Raghavan, Lead Engineer
-Engineering Authority: EA-3091
-Type Certification:    TC-FAA-2022
+T. Balakrishnan, Test Engineer
+Engineering Authority: EA-8619
+Type Certification:    TC-FAA-2018

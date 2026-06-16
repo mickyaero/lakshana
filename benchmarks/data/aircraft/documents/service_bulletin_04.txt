@@ -1,9 +1,9 @@
 SERVICE BULLETIN
 
-Service Bulletin No: SB-AIR-36-689
-Issue Date:          14/06/2026
-Revision Status:     Original Issue
-ATA Chapter:         36 — Pneumatic
+Service Bulletin No: SB-BOE-29-960
+Issue Date:          25/02/2026
+Revision Status:     Revision 02
+ATA Chapter:         29 — Hydraulic Power
 Classification:      Mandatory
 
 SUBJECT
@@ -12,11 +12,11 @@ Main Landing Gear Pintle Pin Inspection
 
 APPLICABILITY
 
-Aircraft Type:       Airbus A320neo
-Serial Numbers:      MSN 3025 through MSN 3484
-Engine(s):           PW1127G-JM
+Aircraft Type:       Boeing 777-300ER
+Serial Numbers:      MSN 2985 through MSN 3676
+Engine(s):           GE90-115BL
 Effectivity:         All aircraft within the serial range listed above unless previously
-                     modified per SB-AIR-36-251 Rev. 02.
+                     modified per SB-BOE-29-381 Rev. 02.
 
 REASON FOR ISSUE
 
@@ -24,30 +24,36 @@ This Service Bulletin is issued to address small population of pintle pins found
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
 
+BACKGROUND AND RISK ASSESSMENT
+
+Following the certification flight test campaign for the most recent engine variant, an additional thermal margin requirement was identified in the bleed air duct manifold downstream of the precooler. This Service Bulletin describes the inspection procedure and provides part number information for the strengthened replacement assembly. Operators with affected MSN are advised to schedule compliance at the next available C-check to minimize operational disruption.
+
+Residual risk after compliance: LOW.
+
 DESCRIPTION OF CHANGE
 
 Perform fluorescent dye penetrant inspection per NDT-32-08-PT-04 on next A-Check.
 
 COMPLIANCE
 
-Recommended compliance: Within 1,500 flight hours
-or 6 months from the date of this Service Bulletin,
+Recommended compliance: Within 4,500 flight hours
+or 12 months from the date of this Service Bulletin,
 whichever occurs first.
 
 ESTIMATED LABOR
 
-Manhours:            14 MH per aircraft (two technicians, station-level)
-Estimated Material Cost: USD 3,122
+Manhours:            18 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 1,315
 Special Tooling:     None / Standard line tooling
 
 REFERENCES
 
-— Aircraft Maintenance Manual (AMM) Chapter 36
-— Illustrated Parts Catalog (IPC) Chapter 36
-— Component Maintenance Manual 36-64-38
+— Aircraft Maintenance Manual (AMM) Chapter 29
+— Illustrated Parts Catalog (IPC) Chapter 29
+— Component Maintenance Manual 29-44-52
 
 APPROVED BY
 
 Prof. S. Iyer, Chief Engineer
-Engineering Authority: EA-3881
-Type Certification:    TC-FAA-2022
+Engineering Authority: EA-6238
+Type Certification:    TC-FAA-2015

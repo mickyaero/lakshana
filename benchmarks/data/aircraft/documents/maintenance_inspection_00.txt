@@ -30,6 +30,12 @@ FINDINGS AND CORRECTIVE ACTIONS
   4. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
      ACTION: Lubrication performed per MM 12-21-04; signed off.
 
+INSPECTOR'S NARRATIVE
+
+An anomaly was noted in the cabin pressurization controller during the post-flight test, with the outflow valve commanding fully open for approximately 2 seconds during the automatic schedule transition. Subsequent ground tests were unable to reproduce the condition, and BITE data showed no fault codes. The event has been logged under investigation reference INV-21-2026-0418 for continued trend monitoring.
+
+Recommend component replacement at the next available C-check, not to exceed 1,500 FH.
+
 CERTIFICATION
 
 Aircraft is hereby certified airworthy for return to service in accordance with the
@@ -37,7 +43,7 @@ approved maintenance program. All applicable Airworthiness Directives reviewed a
 found compliant.
 
 Inspected by:        Arjun Kapoor, B2
-DGCA Licence No.:    AME-83563
+DGCA Licence No.:    AME-95181
 Signature:           _____________________   Date: 08/02/2026
 
 Next Inspection Due: 28/06/2026

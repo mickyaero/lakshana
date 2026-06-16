@@ -1,46 +1,52 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-DA-2026-854
-Test Date:           14/01/2026
-Test Duration:       4h 40min
+Test Report Number:  FTR-HY-2026-439
+Test Date:           13/06/2026
+Test Duration:       2h 30min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       ATR 72-600
-Registration:        VT-IRR
-Engine Configuration: 2 × PW127M
-Test Configuration:  66% MTOW, fwd CG @ 21% MAC
+Aircraft Type:       Airbus A320neo
+Registration:        VT-EXP
+Engine Configuration: 2 × PW1127G-JM
+Test Configuration:  66% MTOW, fwd CG @ 24% MAC
 
 TEST CREW
 
-Test Pilot:          Capt. P. Bhattacharya
-First Officer:       F/O P. Iyengar
-Flight Test Engineer: FTE V. Subramanian
+Test Pilot:          Capt. A. Deshmukh
+First Officer:       F/O A. Krishnan
+Flight Test Engineer: FTE K. Banerjee
 
 TEST OBJECTIVE
 
-Single-Engine Out Handling — Verify Vmca, asymmetric thrust, rudder authority for the subject aircraft at the conditions defined in
-Test Plan FTR-DA-2026-854, in accordance with CAR-23 / CS-25 § 25.305.
+Autopilot Coupled Approach — Verify ILS CAT-IIIA capture, glideslope hold for the subject aircraft at the conditions defined in
+Test Plan FTR-HY-2026-439, in accordance with CAR-23 / CS-25 § 25.721.
 
 TEST CONDITIONS
 
-Weather:             SCT at 12000ft, wind 180/15, OAT 22°C
-Test Altitude(s):    FL315 — FL259
-Fuel On Board (Start): 20.4 tonnes
-Aircraft Mass:       255 tonnes
-CG Position:         25.3% MAC
+Weather:             CAVOK, wind 270/08, OAT 26°C
+Test Altitude(s):    FL341 — FL139
+Fuel On Board (Start): 21.6 tonnes
+Aircraft Mass:       275 tonnes
+CG Position:         36.3% MAC
 
 OBSERVATIONS
 
-  • Roll control authority adequate at all tested conditions; no adverse handling noted.
   • EICAS/ECAM displays remained clean; no nuisance alerts during test.
   • Stick force gradient consistent with predicted simulator response.
-  • Cabin pressure schedule tracked normally; max ΔP within limit.
+  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+  • Pitch attitude steady within ±0.5° of target throughout maneuver.
+
+DISCUSSION
+
+Engine response during the rapid-power-application sequence was within predicted timing, with spool-up from idle to TOGA achieved in 5.9 seconds (specification ≤ 8.0 s). No compressor stall or surge indications were observed at any combination of altitude and speed flown. Recommend release of the engine envelope expansion package for line operations pending completion of the final cold-weather test campaign.
+
+Recommend approval of the test point for certification basis.
 
 CONCLUSION
 
-PASS — all acceptance criteria met. Recommended for certification.
+PARTIAL PASS — re-fly required for envelope point #3 due to weather.
 
-Approved by:         Capt. P. Bhattacharya
-FTE Concurrence:     FTE V. Subramanian
+Approved by:         Capt. A. Deshmukh
+FTE Concurrence:     FTE K. Banerjee

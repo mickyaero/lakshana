@@ -1,32 +1,40 @@
 MAINTENANCE INSPECTION REPORT
 
-Work Order Number:   MIR/2026/26361
-Date of Inspection:  26/01/2026
+Work Order Number:   MIR/2026/92397
+Date of Inspection:  13/01/2026
 Station:             Delhi (DEL) — Hangar Bay 3
 
 AIRCRAFT DETAILS
 
-Aircraft Type:       Boeing 737-800
-Registration:        VT-SGE
-Operator:            SpiceJet
-Total Flight Hours:  38,108
-Total Flight Cycles: 11,785
-Engine Type:         CFM56-7B26
+Aircraft Type:       De Havilland DHC-6
+Registration:        VT-RDA
+Operator:            Fly91
+Total Flight Hours:  27,213
+Total Flight Cycles: 16,588
+Engine Type:         PT6A-34
 
 INSPECTION
 
-Check Level:         C-Check
-ATA Chapter:         71 — Power Plant
-Reference Manual:    AMM Rev. 47, Task 71-35-18
+Check Level:         Phase-1
+ATA Chapter:         49 — Airborne Auxiliary Power
+Reference Manual:    AMM Rev. 41, Task 49-23-58
 
 FINDINGS AND CORRECTIVE ACTIONS
 
-  1. Forward galley chiller coolant level below MIN mark, replenished.
+  1. Right main landing gear oleo strut servicing low pressure, recharged to spec.
      ACTION: Borescope inspection scheduled for next A-Check.
-  2. Cabin pressurization outflow valve actuator response time 1.2s, within limit.
-     ACTION: Lubrication performed per MM 12-21-04; signed off.
-  3. Lavatory waste tank flush motor intermittent; cleaned and tested OK.
+  2. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  3. Forward galley chiller coolant level below MIN mark, replenished.
      ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+  4. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
+     ACTION: Component replaced per IPC reference; functional test PASSED.
+
+INSPECTOR'S NARRATIVE
+
+The pilot's defect entry referenced a momentary EICAS message during cruise on flight VT-EXP-2024-118. The FDR data was reviewed; the message lasted 0.4 seconds and was consistent with a known transient on the bleed pressure regulator under low-power conditions at high altitude. The current population of this regulator is being tracked under engineering bulletin EB-36-014. No corrective action required at this inspection.
+
+Recommend referral to engineering for trend analysis before next heavy maintenance visit.
 
 CERTIFICATION
 
@@ -34,8 +42,8 @@ Aircraft is hereby certified airworthy for return to service in accordance with 
 approved maintenance program. All applicable Airworthiness Directives reviewed and
 found compliant.
 
-Inspected by:        Arjun Kapoor, B2
-DGCA Licence No.:    AME-16006
-Signature:           _____________________   Date: 26/01/2026
+Inspected by:        Anjali Mehta, AME L2
+DGCA Licence No.:    AME-93320
+Signature:           _____________________   Date: 13/01/2026
 
-Next Inspection Due: 28/03/2026
+Next Inspection Due: 28/04/2026

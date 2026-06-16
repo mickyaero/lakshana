@@ -1,32 +1,38 @@
 MAINTENANCE INSPECTION REPORT
 
-Work Order Number:   MIR/2026/52487
-Date of Inspection:  12/02/2026
+Work Order Number:   MIR/2026/89507
+Date of Inspection:  18/02/2026
 Station:             Delhi (DEL) — Hangar Bay 3
 
 AIRCRAFT DETAILS
 
-Aircraft Type:       Boeing 787-8
-Registration:        VT-ANI
-Operator:            Air India
-Total Flight Hours:  8,037
-Total Flight Cycles: 12,813
-Engine Type:         GEnx-1B70
+Aircraft Type:       Airbus A321neo
+Registration:        VT-IUR
+Operator:            Vistara
+Total Flight Hours:  25,370
+Total Flight Cycles: 11,645
+Engine Type:         CFM LEAP-1A26
 
 INSPECTION
 
-Check Level:         Phase-2
-ATA Chapter:         28 — Fuel System
-Reference Manual:    AMM Rev. 41, Task 28-83-20
+Check Level:         B-Check
+ATA Chapter:         72 — Engine
+Reference Manual:    AMM Rev. 43, Task 72-67-76
 
 FINDINGS AND CORRECTIVE ACTIONS
 
-  1. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
+  1. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
+     ACTION: Borescope inspection scheduled for next A-Check.
+  2. Cabin pressurization outflow valve actuator response time 1.2s, within limit.
      ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
-  2. Forward galley chiller coolant level below MIN mark, replenished.
-     ACTION: Adjusted to manufacturer specification; recorded in tech log.
-  3. Right main landing gear oleo strut servicing low pressure, recharged to spec.
-     ACTION: Component replaced per IPC reference; functional test PASSED.
+  3. Static port heater P/N 387-2241-04 failed BIT, replaced with new unit.
+     ACTION: Cleared after re-inspection; no further action required.
+
+INSPECTOR'S NARRATIVE
+
+Routine inspection of the main landing gear assembly revealed light surface corrosion on the lower torque link, classified as Cat-1 per CMM 32-11-04. The affected area was cleaned, treated with CIC-2 corrosion inhibitor, and re-protected per the approved process. The condition does not affect airworthiness and continued operation is permitted with re-inspection at the next A-check.
+
+Recommend continued operation with monitoring per the engineering surveillance plan.
 
 CERTIFICATION
 
@@ -34,8 +40,8 @@ Aircraft is hereby certified airworthy for return to service in accordance with 
 approved maintenance program. All applicable Airworthiness Directives reviewed and
 found compliant.
 
-Inspected by:        R. Venkatesan, AME L1
-DGCA Licence No.:    AME-21226
-Signature:           _____________________   Date: 12/02/2026
+Inspected by:        Karthik Raghunathan, B1.3
+DGCA Licence No.:    AME-42493
+Signature:           _____________________   Date: 18/02/2026
 
-Next Inspection Due: 28/05/2026
+Next Inspection Due: 28/04/2026

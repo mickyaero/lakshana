@@ -1,9 +1,9 @@
 SERVICE BULLETIN
 
-Service Bulletin No: SB-DE-29-782
-Issue Date:          17/03/2026
-Revision Status:     Revision 01
-ATA Chapter:         29 — Hydraulic Power
+Service Bulletin No: SB-BOE-36-273
+Issue Date:          26/06/2026
+Revision Status:     Revision 02
+ATA Chapter:         36 — Pneumatic
 Classification:      Mandatory
 
 SUBJECT
@@ -12,11 +12,11 @@ Hydraulic Reservoir Fill Valve Replacement
 
 APPLICABILITY
 
-Aircraft Type:       De Havilland DHC-6
-Serial Numbers:      MSN 3856 through MSN 4208
-Engine(s):           PT6A-34
+Aircraft Type:       Boeing 787-8
+Serial Numbers:      MSN 3112 through MSN 3841
+Engine(s):           GEnx-1B70
 Effectivity:         All aircraft within the serial range listed above unless previously
-                     modified per SB-DE-29-230 Rev. 02.
+                     modified per SB-BOE-36-443 Rev. 02.
 
 REASON FOR ISSUE
 
@@ -24,30 +24,36 @@ This Service Bulletin is issued to address corrosion of fill valve seat observed
 investigations indicate that continued operation without the corrective action described
 herein may result in degraded system performance and increased maintenance burden.
 
+BACKGROUND AND RISK ASSESSMENT
+
+The original design assumption regarding the operating temperature range of this component has been challenged by field experience accumulated over the past 18 months. Investigation of returned units has identified that prolonged exposure to high-cycle vibration in combination with cold-soak conditions can lead to accelerated wear of the internal bearing surfaces. To date there have been 14 confirmed in-service occurrences across the global fleet, none of which have resulted in any safety-of-flight consequence. Engineering risk assessment categorizes the residual risk as Low after compliance with this Service Bulletin.
+
+Residual risk after compliance: NEGLIGIBLE.
+
 DESCRIPTION OF CHANGE
 
 Replace fill valve assembly P/N HRV-2241-01 with improved variant P/N HRV-2241-02.
 
 COMPLIANCE
 
-Recommended compliance: Within 3,000 flight hours
-or 24 months from the date of this Service Bulletin,
+Recommended compliance: Within 4,500 flight hours
+or 12 months from the date of this Service Bulletin,
 whichever occurs first.
 
 ESTIMATED LABOR
 
-Manhours:            14 MH per aircraft (two technicians, station-level)
-Estimated Material Cost: USD 1,516
+Manhours:            11 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 527
 Special Tooling:     None / Standard line tooling
 
 REFERENCES
 
-— Aircraft Maintenance Manual (AMM) Chapter 29
-— Illustrated Parts Catalog (IPC) Chapter 29
-— Component Maintenance Manual 29-58-96
+— Aircraft Maintenance Manual (AMM) Chapter 36
+— Illustrated Parts Catalog (IPC) Chapter 36
+— Component Maintenance Manual 36-35-28
 
 APPROVED BY
 
 T. Balakrishnan, Test Engineer
-Engineering Authority: EA-3851
-Type Certification:    TC-FAA-2023
+Engineering Authority: EA-1400
+Type Certification:    TC-DGCA-India-2017

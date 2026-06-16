@@ -1,46 +1,52 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-DA-2026-658
-Test Date:           03/06/2026
-Test Duration:       2h 33min
+Test Report Number:  FTR-BL-2026-921
+Test Date:           24/03/2026
+Test Duration:       3h 22min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       De Havilland DHC-6
-Registration:        VT-RDA
-Engine Configuration: 2 × PT6A-34
-Test Configuration:  68% MTOW, fwd CG @ 18% MAC
+Aircraft Type:       Airbus A321neo
+Registration:        VT-IUR
+Engine Configuration: 2 × CFM LEAP-1A26
+Test Configuration:  62% MTOW, fwd CG @ 25% MAC
 
 TEST CREW
 
-Test Pilot:          Capt. V. Ramachandran
+Test Pilot:          Capt. S. Mukherjee
 First Officer:       F/O P. Iyengar
 Flight Test Engineer: FTE V. Subramanian
 
 TEST OBJECTIVE
 
-Brake Energy Limit Test — Verify RTO at MTOW, brake temperatures, fuse plug release for the subject aircraft at the conditions defined in
-Test Plan FTR-DA-2026-658, in accordance with CAR-23 / CS-25 § 25.467.
+Single-Engine Out Handling — Verify Vmca, asymmetric thrust, rudder authority for the subject aircraft at the conditions defined in
+Test Plan FTR-BL-2026-921, in accordance with CAR-23 / CS-25 § 25.459.
 
 TEST CONDITIONS
 
 Weather:             BKN at 8000ft, wind calm, OAT 14°C
-Test Altitude(s):    FL187 — FL207
-Fuel On Board (Start): 9.1 tonnes
-Aircraft Mass:       135 tonnes
-CG Position:         35.6% MAC
+Test Altitude(s):    FL236 — FL196
+Fuel On Board (Start): 23.3 tonnes
+Aircraft Mass:       51 tonnes
+CG Position:         24.6% MAC
 
 OBSERVATIONS
 
-  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
-  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
   • Stick force gradient consistent with predicted simulator response.
-  • Roll control authority adequate at all tested conditions; no adverse handling noted.
+  • Engine parameters remained within nominal envelope during entire test sequence.
+  • Cabin pressure schedule tracked normally; max ΔP within limit.
+  • Hydraulic systems Green and Yellow maintained nominal pressure (3000 psi ± 50).
+
+DISCUSSION
+
+Engine response during the rapid-power-application sequence was within predicted timing, with spool-up from idle to TOGA achieved in 5.9 seconds (specification ≤ 8.0 s). No compressor stall or surge indications were observed at any combination of altitude and speed flown. Recommend release of the engine envelope expansion package for line operations pending completion of the final cold-weather test campaign.
+
+Recommend continued investigation under engineering surveillance.
 
 CONCLUSION
 
-PARTIAL PASS — re-fly required for envelope point #3 due to weather.
+PASS WITH OBSERVATIONS — see noted items; cleared subject to FCOM revision.
 
-Approved by:         Capt. V. Ramachandran
+Approved by:         Capt. S. Mukherjee
 FTE Concurrence:     FTE V. Subramanian

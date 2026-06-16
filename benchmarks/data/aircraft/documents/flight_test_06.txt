@@ -1,46 +1,52 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-HY-2026-749
-Test Date:           11/02/2026
-Test Duration:       4h 10min
+Test Report Number:  FTR-BL-2026-696
+Test Date:           18/01/2026
+Test Duration:       3h 53min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       Airbus A350-900
-Registration:        VT-JRC
-Engine Configuration: 2 × RR Trent XWB
-Test Configuration:  87% MTOW, fwd CG @ 23% MAC
+Aircraft Type:       Airbus A320-200
+Registration:        VT-IDA
+Engine Configuration: 2 × CFM56-5B4/P
+Test Configuration:  62% MTOW, fwd CG @ 21% MAC
 
 TEST CREW
 
-Test Pilot:          Capt. V. Ramachandran
-First Officer:       F/O P. Iyengar
-Flight Test Engineer: FTE K. Banerjee
+Test Pilot:          Capt. R. Subramanian
+First Officer:       F/O A. Krishnan
+Flight Test Engineer: FTE V. Subramanian
 
 TEST OBJECTIVE
 
-Autopilot Coupled Approach — Verify ILS CAT-IIIA capture, glideslope hold for the subject aircraft at the conditions defined in
-Test Plan FTR-HY-2026-749, in accordance with CAR-23 / CS-25 § 25.234.
+Climb Performance Evaluation — Verify rate of climb, fuel burn, time to altitude for the subject aircraft at the conditions defined in
+Test Plan FTR-BL-2026-696, in accordance with CAR-23 / CS-25 § 25.783.
 
 TEST CONDITIONS
 
-Weather:             CAVOK, wind 360/06, OAT 31°C
-Test Altitude(s):    FL406 — FL214
-Fuel On Board (Start): 16.2 tonnes
-Aircraft Mass:       234 tonnes
-CG Position:         32.8% MAC
+Weather:             SCT at 12000ft, wind 180/15, OAT 22°C
+Test Altitude(s):    FL132 — FL261
+Fuel On Board (Start): 19.8 tonnes
+Aircraft Mass:       271 tonnes
+CG Position:         31.9% MAC
 
 OBSERVATIONS
 
-  • Hydraulic systems Green and Yellow maintained nominal pressure (3000 psi ± 50).
-  • EICAS/ECAM displays remained clean; no nuisance alerts during test.
+  • Stick force gradient consistent with predicted simulator response.
   • Pitch attitude steady within ±0.5° of target throughout maneuver.
+  • EICAS/ECAM displays remained clean; no nuisance alerts during test.
   • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+
+DISCUSSION
+
+The crew noted a mild lateral PIO tendency during the first approach in the gust simulation leg, which was attributed to the unfamiliar augmented control law. After the second exposure the pilot was able to suppress the tendency through reduced stick input amplitude. Recommend a brief familiarization brief be added to the type-rating syllabus covering this specific control law mode.
+
+Recommend re-flight at fwd CG / max weight before release.
 
 CONCLUSION
 
-PASS — all acceptance criteria met. Recommended for certification.
+PASS WITH OBSERVATIONS — see noted items; cleared subject to FCOM revision.
 
-Approved by:         Capt. V. Ramachandran
-FTE Concurrence:     FTE K. Banerjee
+Approved by:         Capt. R. Subramanian
+FTE Concurrence:     FTE V. Subramanian

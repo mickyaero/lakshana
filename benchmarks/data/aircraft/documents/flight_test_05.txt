@@ -1,16 +1,16 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-DA-2026-350
-Test Date:           05/03/2026
-Test Duration:       4h 52min
+Test Report Number:  FTR-HY-2026-973
+Test Date:           07/06/2026
+Test Duration:       4h 10min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       Airbus A320neo
-Registration:        VT-EXP
-Engine Configuration: 2 × PW1127G-JM
-Test Configuration:  93% MTOW, fwd CG @ 19% MAC
+Aircraft Type:       Airbus A350-900
+Registration:        VT-JRC
+Engine Configuration: 2 × RR Trent XWB
+Test Configuration:  87% MTOW, fwd CG @ 23% MAC
 
 TEST CREW
 
@@ -20,27 +20,33 @@ Flight Test Engineer: FTE M. Rao
 
 TEST OBJECTIVE
 
-VMU Verification — Verify minimum unstick speed at aft CG, tail clearance for the subject aircraft at the conditions defined in
-Test Plan FTR-DA-2026-350, in accordance with CAR-23 / CS-25 § 25.238.
+Wet Runway Stopping Distance — Verify anti-skid efficiency, stopping distance ratio for the subject aircraft at the conditions defined in
+Test Plan FTR-HY-2026-973, in accordance with CAR-23 / CS-25 § 25.234.
 
 TEST CONDITIONS
 
-Weather:             BKN at 8000ft, wind calm, OAT 14°C
-Test Altitude(s):    FL215 — FL139
-Fuel On Board (Start): 8.1 tonnes
-Aircraft Mass:       235 tonnes
-CG Position:         35.2% MAC
+Weather:             CAVOK, wind 360/06, OAT 31°C
+Test Altitude(s):    FL406 — FL214
+Fuel On Board (Start): 16.2 tonnes
+Aircraft Mass:       234 tonnes
+CG Position:         32.8% MAC
 
 OBSERVATIONS
 
-  • Stick force gradient consistent with predicted simulator response.
   • Hydraulic systems Green and Yellow maintained nominal pressure (3000 psi ± 50).
   • EICAS/ECAM displays remained clean; no nuisance alerts during test.
-  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
+  • Pitch attitude steady within ±0.5° of target throughout maneuver.
+  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+
+DISCUSSION
+
+Overall the aircraft demonstrated handling qualities consistent with Level 1 per MIL-STD-1797A criteria across the tested envelope. One minor finding: the FBW law exhibited a brief 0.3 g vertical disturbance at the flaps transition point, which was traced to a known software characteristic scheduled for resolution in software build P5.2. No safety-of-flight concern; acceptable for continued certification testing.
+
+Recommend release to line operations with no further restriction.
 
 CONCLUSION
 
-PARTIAL PASS — re-fly required for envelope point #3 due to weather.
+PASS — all acceptance criteria met. Recommended for certification.
 
 Approved by:         Capt. P. Bhattacharya
 FTE Concurrence:     FTE M. Rao

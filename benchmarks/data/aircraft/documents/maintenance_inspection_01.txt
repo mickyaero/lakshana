@@ -1,30 +1,38 @@
 MAINTENANCE INSPECTION REPORT
 
-Work Order Number:   MIR/2026/10851
-Date of Inspection:  08/04/2026
+Work Order Number:   MIR/2026/65392
+Date of Inspection:  26/01/2026
 Station:             Delhi (DEL) — Hangar Bay 3
 
 AIRCRAFT DETAILS
 
-Aircraft Type:       Embraer E190
-Registration:        VT-JCD
-Operator:            Star Air
-Total Flight Hours:  26,231
-Total Flight Cycles: 16,261
-Engine Type:         CF34-10E
+Aircraft Type:       Boeing 737 MAX 8
+Registration:        VT-AKO
+Operator:            Akasa Air
+Total Flight Hours:  18,463
+Total Flight Cycles: 14,438
+Engine Type:         CFM LEAP-1B27
 
 INSPECTION
 
-Check Level:         Daily Pre-flight
-ATA Chapter:         49 — Airborne Auxiliary Power
-Reference Manual:    AMM Rev. 41, Task 49-54-23
+Check Level:         B-Check
+ATA Chapter:         36 — Pneumatic
+Reference Manual:    AMM Rev. 44, Task 36-23-55
 
 FINDINGS AND CORRECTIVE ACTIONS
 
-  1. FADEC software version mismatch found, software update SB-FADEC-22 applied.
+  1. Lavatory waste tank flush motor intermittent; cleaned and tested OK.
      ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
-  2. Right main landing gear oleo strut servicing low pressure, recharged to spec.
-     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  2. L1 wheel brake assembly worn to 28% remaining; replacement scheduled.
+     ACTION: Component replaced per IPC reference; functional test PASSED.
+  3. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
+     ACTION: Lubrication performed per MM 12-21-04; signed off.
+
+INSPECTOR'S NARRATIVE
+
+The pilot's defect entry referenced a momentary EICAS message during cruise on flight VT-EXP-2024-118. The FDR data was reviewed; the message lasted 0.4 seconds and was consistent with a known transient on the bleed pressure regulator under low-power conditions at high altitude. The current population of this regulator is being tracked under engineering bulletin EB-36-014. No corrective action required at this inspection.
+
+Recommend dispatch under MEL Cat-B (10 days) pending parts availability.
 
 CERTIFICATION
 
@@ -32,8 +40,8 @@ Aircraft is hereby certified airworthy for return to service in accordance with 
 approved maintenance program. All applicable Airworthiness Directives reviewed and
 found compliant.
 
-Inspected by:        Vikram Nair, AME L1
-DGCA Licence No.:    AME-22156
-Signature:           _____________________   Date: 08/04/2026
+Inspected by:        Arjun Kapoor, B2
+DGCA Licence No.:    AME-44671
+Signature:           _____________________   Date: 26/01/2026
 
-Next Inspection Due: 28/06/2026
+Next Inspection Due: 28/03/2026

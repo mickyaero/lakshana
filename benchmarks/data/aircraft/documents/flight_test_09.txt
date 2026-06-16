@@ -1,46 +1,52 @@
 FLIGHT TEST REPORT
 
-Test Report Number:  FTR-BL-2026-459
-Test Date:           28/01/2026
-Test Duration:       5h 16min
+Test Report Number:  FTR-HY-2026-854
+Test Date:           22/06/2026
+Test Duration:       3h 42min
 Test Location:       Bengaluru (BLR) — Flight Test Range B
 
 TEST AIRCRAFT
 
-Aircraft Type:       Airbus A320-200
-Registration:        VT-IDA
-Engine Configuration: 2 × CFM56-5B4/P
-Test Configuration:  71% MTOW, fwd CG @ 27% MAC
+Aircraft Type:       De Havilland DHC-6
+Registration:        VT-RDA
+Engine Configuration: 2 × PT6A-34
+Test Configuration:  80% MTOW, fwd CG @ 22% MAC
 
 TEST CREW
 
-Test Pilot:          Capt. S. Mukherjee
-First Officer:       F/O R. Bhattacharya
-Flight Test Engineer: FTE M. Rao
+Test Pilot:          Capt. R. Subramanian
+First Officer:       F/O A. Krishnan
+Flight Test Engineer: FTE K. Banerjee
 
 TEST OBJECTIVE
 
-Cruise Performance Validation — Verify TAS at FL370, SFC, range factor for the subject aircraft at the conditions defined in
-Test Plan FTR-BL-2026-459, in accordance with CAR-23 / CS-25 § 25.545.
+Brake Energy Limit Test — Verify RTO at MTOW, brake temperatures, fuse plug release for the subject aircraft at the conditions defined in
+Test Plan FTR-HY-2026-854, in accordance with CAR-23 / CS-25 § 25.783.
 
 TEST CONDITIONS
 
-Weather:             CAVOK, wind 360/06, OAT 31°C
-Test Altitude(s):    FL256 — FL240
-Fuel On Board (Start): 16.6 tonnes
-Aircraft Mass:       200 tonnes
-CG Position:         34.1% MAC
+Weather:             BKN at 8000ft, wind calm, OAT 14°C
+Test Altitude(s):    FL289 — FL247
+Fuel On Board (Start): 11.6 tonnes
+Aircraft Mass:       223 tonnes
+CG Position:         27.8% MAC
 
 OBSERVATIONS
 
-  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
-  • Pitch attitude steady within ±0.5° of target throughout maneuver.
+  • Cabin pressure schedule tracked normally; max ΔP within limit.
   • Engine parameters remained within nominal envelope during entire test sequence.
-  • Stick force gradient consistent with predicted simulator response.
+  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
+  • EICAS/ECAM displays remained clean; no nuisance alerts during test.
+
+DISCUSSION
+
+The crew noted a mild lateral PIO tendency during the first approach in the gust simulation leg, which was attributed to the unfamiliar augmented control law. After the second exposure the pilot was able to suppress the tendency through reduced stick input amplitude. Recommend a brief familiarization brief be added to the type-rating syllabus covering this specific control law mode.
+
+Recommend re-flight at fwd CG / max weight before release.
 
 CONCLUSION
 
-PASS — all acceptance criteria met. Recommended for certification.
+PARTIAL PASS — re-fly required for envelope point #3 due to weather.
 
-Approved by:         Capt. S. Mukherjee
-FTE Concurrence:     FTE M. Rao
+Approved by:         Capt. R. Subramanian
+FTE Concurrence:     FTE K. Banerjee

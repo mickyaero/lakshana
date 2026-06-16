@@ -1,7 +1,7 @@
 MAINTENANCE INSPECTION REPORT
 
-Work Order Number:   MIR/2026/52504
-Date of Inspection:  09/06/2026
+Work Order Number:   MIR/2026/84341
+Date of Inspection:  13/03/2026
 Station:             Delhi (DEL) — Hangar Bay 3
 
 AIRCRAFT DETAILS
@@ -9,22 +9,32 @@ AIRCRAFT DETAILS
 Aircraft Type:       Airbus A330-300
 Registration:        VT-JFK
 Operator:            Air India
-Total Flight Hours:  22,392
-Total Flight Cycles: 14,216
+Total Flight Hours:  12,337
+Total Flight Cycles: 6,456
 Engine Type:         RR Trent 772B
 
 INSPECTION
 
-Check Level:         B-Check
-ATA Chapter:         36 — Pneumatic
-Reference Manual:    AMM Rev. 42, Task 36-19-37
+Check Level:         A-Check
+ATA Chapter:         78 — Engine Exhaust
+Reference Manual:    AMM Rev. 40, Task 78-42-81
 
 FINDINGS AND CORRECTIVE ACTIONS
 
-  1. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
-     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
-  2. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
+  1. Right main landing gear oleo strut servicing low pressure, recharged to spec.
+     ACTION: Borescope inspection scheduled for next A-Check.
+  2. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
      ACTION: Cleared after re-inspection; no further action required.
+  3. Engine #2 IDG oil filter delta-P approaching caution band, filter replaced.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  4. Cabin pressurization outflow valve actuator response time 1.2s, within limit.
+     ACTION: Lubrication performed per MM 12-21-04; signed off.
+
+INSPECTOR'S NARRATIVE
+
+An anomaly was noted in the cabin pressurization controller during the post-flight test, with the outflow valve commanding fully open for approximately 2 seconds during the automatic schedule transition. Subsequent ground tests were unable to reproduce the condition, and BITE data showed no fault codes. The event has been logged under investigation reference INV-21-2026-0418 for continued trend monitoring.
+
+Recommend re-inspection at the next A-check; no operational restriction required.
 
 CERTIFICATION
 
@@ -32,8 +42,8 @@ Aircraft is hereby certified airworthy for return to service in accordance with 
 approved maintenance program. All applicable Airworthiness Directives reviewed and
 found compliant.
 
-Inspected by:        Vikram Nair, AME L1
-DGCA Licence No.:    AME-84341
-Signature:           _____________________   Date: 09/06/2026
+Inspected by:        Meera Iyer, AME L2
+DGCA Licence No.:    AME-86622
+Signature:           _____________________   Date: 13/03/2026
 
-Next Inspection Due: 28/10/2026
+Next Inspection Due: 28/07/2026
