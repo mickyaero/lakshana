@@ -1,0 +1,95 @@
+HDFC BANK LIMITED
+STATEMENT OF ACCOUNT
+
+STATEMENT PERIOD: 01/02/2024 TO 29/02/2024
+
+======================================================================
+
+ACCOUNT DETAILS:
+Account Holder Name: RAJESH KUMAR SHARMA
+Account Number: 50100123456789
+Account Type: Savings Account
+Customer ID (CIF): 9876543210
+IFSC Code: HDFC0000053
+Branch: Delhi Main Branch, New Delhi
+
+======================================================================
+
+ACCOUNT HOLDER ADDRESS:
+Flat No. 402, Maple Heights Apartment
+Sector 15, Rohini
+New Delhi - 110089
+
+PAN Number: ABCRS1234F
+Aadhaar Number: 1234-5678-9101
+
+======================================================================
+
+ACCOUNT SUMMARY:
+
+Opening Balance (01/02/2024): Rs. 3,45,670.00
+
+Total Credits: Rs. 5,78,900.00
+Total Debits: Rs. 2,12,540.00
+
+Closing Balance (29/02/2024): Rs. 6,12,030.00
+
+Average Balance: Rs. 4,82,350.00
+
+======================================================================
+
+TRANSACTION DETAILS:
+
+Date        Ref. No.        Description                    Debit       Credit      Balance
+01/02/2024  NEFT001         ICICI Bank Transfer (Salary)           45,000.00   3,90,670.00
+02/02/2024  CHQ001          Cheque No. 456123              15,200.00              3,75,470.00
+03/02/2024  ATM002          ATM Withdrawal - KA108          8,500.00              3,66,970.00
+04/02/2024  NEFT002         Credit from A Sharma Pvt Ltd           35,600.00   4,02,570.00
+05/02/2024  POS001          Swiggy Payment                  1,245.00              4,01,325.00
+07/02/2024  NEFT003         Quarterly Bonus                          1,20,000.00 5,21,325.00
+08/02/2024  DD001           Demand Draft Issued             28,750.00             4,92,575.00
+10/02/2024  IMPS001         IMPS to Priya Venkatesh         35,000.00             4,57,575.00
+12/02/2024  CHQ002          Cheque No. 456124              22,800.00             4,34,775.00
+14/02/2024  POS002          Amazon.in Payment               3,680.00              4,31,095.00
+15/02/2024  NEFT004         Dividend Income - HDFC Stock            8,400.00   4,39,495.00
+18/02/2024  ATM003          ATM Withdrawal - KA145          5,000.00              4,34,495.00
+20/02/2024  RTGS001         Loan EMI - HDFC Home Loan      24,365.00             4,10,130.00
+22/02/2024  NEFT005         Credit from Consulting Work            78,900.00   4,89,030.00
+25/02/2024  CHQ003          Cheque No. 456125              45,300.00             4,43,730.00
+26/02/2024  POS003          Flipkart Payment                 2,100.00             4,41,630.00
+27/02/2024  NEFT006         Tax Refund - Income Tax                81,400.00   5,23,030.00
+29/02/2024  CHQ004          Cheque No. 456126              50,000.00             4,73,030.00
+
+Note: Closing Balance as per above transactions: Rs. 6,12,030.00
+
+======================================================================
+
+CHARGES AND FEES:
+
+Maintenance Charge: NIL (Average Balance > Rs. 5,00,000)
+Cheque Book Charges: Rs. 0.00
+ATM Charges (Other Bank): Rs. 45.00
+IMPS Charges: Rs. 0.00
+SMS Charges: Rs. 15.00
+
+Total Charges: Rs. 60.00
+
+======================================================================
+
+IMPORTANT NOTES:
+
+1. This statement is generated for the period mentioned above.
+2. Please report any discrepancy within 30 days of receipt.
+3. Unclaimed balances are subject to Unclaimed Deposits Rules.
+4. For GSTIN: 07AAQPM3066D1Z5
+5. Standing Instructions: Monthly Auto-Pay - Electricity Bill (NESCO) - Rs. 3,250.00
+
+For queries, contact:
+HDFC Bank Customer Service: 1-888-HDFC-BANK
+Email: cs@hdfcbank.com
+Website: www.hdfcbank.com
+
+Generated on: 02/03/2024
+Statement ID: STMT20240229H987654
+
+======================================================================

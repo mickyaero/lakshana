@@ -1,0 +1,112 @@
+HDFC BANK LIMITED
+ACCOUNT STATEMENT
+
+================================================================================
+
+ACCOUNT HOLDER NAME        : RAJESH KUMAR SHARMA
+ACCOUNT NUMBER            : 50100012345678
+ACCOUNT TYPE              : Savings Account
+IFSC CODE                 : HDFC0000234
+CUSTOMER ID / CIF         : 98765432101
+NOMINATION REGISTERED     : YES
+
+ADDRESS                   : 456, Shivalik Residency, Sector 12
+                           Rohini, New Delhi - 110085
+                           Phone: 9876543210
+
+================================================================================
+
+STATEMENT PERIOD
+
+Statement From Date       : 01/01/2026
+Statement To Date         : 31/01/2026
+
+================================================================================
+
+ACCOUNT SUMMARY
+
+Opening Balance           : Rs. 2,35,420
+Total Credits             : Rs. 8,76,500
+Total Debits              : Rs. 6,45,300
+Number of Transactions    : 18
+Closing Balance           : Rs. 4,66,620
+
+================================================================================
+
+TRANSACTION DETAILS
+
+Date        | Particulars                    | Withdrawal  | Deposit    | Balance
+            |                                | (Dr.)       | (Cr.)      |
+------------|--------------------------------|-------------|------------|----------
+
+01/01/2026  | Opening Balance                |             |            | 2,35,420
+
+02/01/2026  | Salary Credit - ABC Ltd        |             | 2,50,000   | 4,85,420
+
+03/01/2026  | Utility Bill Payment - BSNL    | 1,850       |            | 4,83,570
+
+05/01/2026  | ATM Cash Withdrawal - Delhi    | 25,000      |            | 4,58,570
+
+06/01/2026  | Insurance Premium - ICICI Life | 8,500       |            | 4,50,070
+
+08/01/2026  | Dividend Income - HDFC Mutual  |             | 1,25,000   | 5,75,070
+
+10/01/2026  | Cheque Clearing - Rent Payment | 75,000      |            | 5,00,070
+
+12/01/2026  | Online Transfer - Axis Bank    | 1,50,000    |            | 3,50,070
+
+15/01/2026  | EMI Payment - Home Loan        | 45,000      |            | 3,05,070
+
+16/01/2026  | Credit Transfer - Parents      |             | 3,00,000   | 6,05,070
+
+18/01/2026  | Mobile Recharge - Vodafone     | 499         |            | 6,04,571
+
+20/01/2026  | Grocery Purchase - Credit Card | 12,451      |            | 5,92,120
+
+22/01/2026  | Refund - Online Shopping       |             | 5,200      | 5,97,320
+
+23/01/2026  | Monthly Service Charge         | 100         |            | 5,97,220
+
+24/01/2026  | Insurance - Premium Payment    | 18,500      |            | 5,78,720
+
+25/01/2026  | Petrol Pump - Fuel Charges     | 3,600       |            | 5,75,120
+
+27/01/2026  | Dividend Transfer - Mutual Fund|             | 1,96,300   | 7,71,420
+
+28/01/2026  | GST Payment - Business Account | 2,50,000    |            | 5,21,420
+
+29/01/2026  | Interest Credited on Savings   |             | 55,200     | 5,76,620
+
+30/01/2026  | Cheque Deposit - Client        |             | 2,90,000   | 8,66,620
+
+31/01/2026  | Bank Charges Debit             | 200         |            | 8,66,420
+
+Closing Balance as on 31/01/2026                                       Rs. 4,66,620
+
+================================================================================
+
+SUMMARY
+
+Total Number of Credits   : 08
+Total Number of Debits    : 10
+Total Credits             : Rs. 8,76,500
+Total Debits              : Rs. 6,45,300
+
+Net Change During Period  : Rs. 2,31,200
+
+================================================================================
+
+PAN Number                : AYQPS1234A
+Email ID                  : rajesh.sharma@gmail.com
+Mobile Number             : XXXXXX3210
+
+Statement Generated on    : 15/02/2026
+Next Statement Due        : 28/02/2026
+
+This is a Computer Generated Statement and does not require signature.
+
+For queries, contact HDFC Bank Customer Service
+Toll Free: 1800-270-0123
+Email: support@hdfcbank.com
+
+================================================================================

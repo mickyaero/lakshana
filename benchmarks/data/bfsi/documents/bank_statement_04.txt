@@ -1,0 +1,87 @@
+STATE BANK OF INDIA
+Account Statement
+
+ACCOUNT HOLDER NAME: RAJESH KUMAR SHARMA
+CUSTOMER ID / CIF: 9876543210
+ACCOUNT NUMBER: 35423001285647
+ACCOUNT TYPE: Savings Account
+BRANCH NAME: Koregaon Park Branch, Pune
+IFSC CODE: SBIN0002156
+BANK NAME: State Bank of India
+
+STATEMENT PERIOD
+Statement From Date: 01/04/2024
+Statement To Date: 30/06/2024
+
+ACCOUNT HOLDER DETAILS
+Address: 302, Sunflower Apartments, Koregaon Park,
+Pune - 411001
+Maharashtra, India
+PIN Code: 411001
+
+ACCOUNT SUMMARY
+Opening Balance: ₹2,47,560
+Total Credits (Deposits): ₹8,92,150
+Total Debits (Withdrawals): ₹6,74,820
+Closing Balance: ₹4,64,890
+
+TRANSACTION DETAILS
+Number of Transactions: 24
+Debit Transactions: 14
+Credit Transactions: 10
+
+TRANSACTION LISTING:
+
+Date | Transaction Description | Debit | Credit | Balance
+-----|------------------------|-------|--------|--------
+02/04/2024 | Transfer to Axis Bank | 25,000 | | 2,22,560
+03/04/2024 | Salary Credit - Infosys Ltd | | 1,50,000 | 3,72,560
+05/04/2024 | ATM Withdrawal | 10,000 | | 3,62,560
+08/04/2024 | Cheque Deposit - Client Payment | | 85,500 | 4,48,060
+10/04/2024 | Insurance Premium Debit | 15,000 | | 4,33,060
+12/04/2024 | NEFT Transfer - Utilities | 8,500 | | 4,24,560
+15/04/2024 | Mobile Recharge | 1,500 | | 4,23,060
+18/04/2024 | Dividend Income | | 45,000 | 4,68,060
+20/04/2024 | Online Transfer to SBI Savings | 50,000 | | 4,18,060
+22/04/2024 | Fund Transfer - Education | 35,000 | | 3,83,060
+25/04/2024 | Interest Credit | | 2,150 | 3,85,210
+28/04/2024 | EMI - Home Loan | 42,000 | | 3,43,210
+
+05/05/2024 | Salary Credit - Infosys Ltd | | 1,50,000 | 4,93,210
+08/05/2024 | Cheque Withdrawal | 30,000 | | 4,63,210
+10/05/2024 | Bill Payment - Electricity | 5,200 | | 4,58,010
+12/05/2024 | NEFT - Vendor Payment | 18,000 | | 4,40,010
+15/05/2024 | Insurance Premium Debit | 15,000 | | 4,25,010
+18/05/2024 | Transfer to FD | 1,00,000 | | 3,25,010
+20/05/2024 | Dividend Income | | 35,800 | 3,60,810
+22/05/2024 | Online Shopping - Card Debit | 12,120 | | 3,48,690
+25/05/2024 | Interest Credit | | 1,980 | 3,50,670
+
+03/06/2024 | Salary Credit - Infosys Ltd | | 1,50,000 | 5,00,670
+05/06/2024 | ATM Withdrawal | 15,000 | | 4,85,670
+08/06/2024 | Cheque Deposit | | 95,800 | 5,81,470
+10/06/2024 | Service Tax Debit | 2,000 | | 5,79,470
+12/06/2024 | Mobile Recharge | 1,500 | | 5,77,970
+15/06/2024 | Insurance Premium Debit | 15,000 | | 5,62,970
+18/06/2024 | Interest Credit | | 2,620 | 5,65,590
+
+ACCOUNT STATUS
+Nomination Registered: Yes
+Nominee Name: PRIYA SHARMA
+PAN: ABCRS1234D
+GSTIN (if applicable): 27AABDR5055K1Z5
+
+CLOSING BALANCE AS ON 30/06/2024: ₹4,64,890
+
+BANK CERTIFICATIONS
+This statement is computer-generated and does not require signature.
+For any discrepancies, please contact the branch within 30 days of receipt.
+
+For queries or complaints, contact:
+SBI Customer Care: 1800-425-3800
+Email: grievances.sbi@sbi.co.in
+Branch: Koregaon Park, Pune - 411001
+Branch Code: 2156
+
+Statement Generated on: 02/07/2024
+Statement ID: 2024062400023156

@@ -1,0 +1,107 @@
+FORM 26AS
+TAX CREDIT STATEMENT FOR FINANCIAL YEAR 2024-25
+
+---
+
+Name of Assessee: RAJESH KUMAR SHARMA
+PAN: AXMPS1234K
+Assessment Year: 2024-25
+Financial Year: 01/04/2023 to 31/03/2024
+
+Address:
+Flat No. 305, Tower B
+Prestige Meadows, Whitefield
+Bangalore - 560066
+Karnataka
+
+---
+
+DETAILS OF TDS DEDUCTED
+
+Total TDS Deducted: Rs. 85,750
+
+---
+
+Deductor Details:
+
+Deductor 1:
+Name: XYZ PROPERTIES LIMITED
+GSTIN: 29ABCDE1234F2Z5
+Period: 01/01/2024 to 31/03/2024
+Section: 194 - Other Income
+Amount Paid: Rs. 5,00,000
+TDS Deducted: Rs. 25,000
+TDS Deposited: Rs. 25,000
+Date of Deposit: 15/04/2024
+
+Deductor 2:
+Name: PINNACLE CONSULTING PVT LTD
+GSTIN: 27DEFGH5678I1Z0
+Period: 01/04/2023 to 31/12/2023
+Section: 192 - Salary
+Amount Paid: Rs. 12,00,000
+TDS Deducted: Rs. 35,750
+TDS Deposited: Rs. 35,750
+Date of Deposit: 31/01/2024
+
+Deductor 3:
+Name: VENTURE CAPITAL FUND
+PAN: AACXV5055K
+Period: 15/02/2024 to 28/02/2024
+Section: 194A - Interest on Securities
+Amount Paid: Rs. 80,000
+TDS Deducted: Rs. 8,000
+TDS Deposited: Rs. 8,000
+Date of Deposit: 15/03/2024
+
+Deductor 4:
+Name: INFOTECH SERVICES
+GSTIN: 33AAACR1234H1Z2
+Period: 01/01/2024 to 31/03/2024
+Section: 194J - Professional Fees
+Amount Paid: Rs. 4,50,000
+TDS Deducted: Rs. 17,000
+TDS Deposited: Rs. 17,000
+Date of Deposit: 05/04/2024
+
+---
+
+ADVANCE TAX PAID
+
+Total Advance Tax Paid: Rs. 60,000
+
+Payment Details:
+Installment 1 (Q1): Rs. 15,000 - Date: 15/06/2023
+Installment 2 (Q2): Rs. 15,000 - Date: 15/09/2023
+Installment 3 (Q3): Rs. 15,000 - Date: 15/12/2023
+Installment 4 (Q4): Rs. 15,000 - Date: 15/03/2024
+
+---
+
+SUMMARY
+
+Total Amount Paid (on which TDS Deducted): Rs. 21,30,000
+Total TDS Deducted During F.Y.: Rs. 85,750
+Total TDS Deposited with Govt.: Rs. 85,750
+Total Advance Tax Paid: Rs. 60,000
+Total Tax Paid in F.Y.: Rs. 1,45,750
+
+---
+
+ADDITIONAL DETAILS
+
+Status: Verified and Digitally Signed
+Date of Generation: 10/06/2024
+ITR Filing Status: Filed on 15/09/2024
+Refund Claimed: Rs. 0
+Net Tax Payable: Rs. 0
+
+Bank Details for Refund:
+HDFC Bank Ltd.
+Account No: 50200123456789
+IFSC Code: HDFC0000001
+
+---
+
+This statement has been prepared as per Income Tax Act, 1961 and rules made thereunder.
+For details and grievance redressal, visit www.incometaxindiaefiling.gov.in

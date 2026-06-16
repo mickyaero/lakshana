@@ -1,0 +1,140 @@
+DEPARTMENT OF INCOME TAX
+INCOME TAX DEPARTMENT - GOVERNMENT OF INDIA
+FORM 26AS
+TAX CREDIT STATEMENT
+
+PAN: AQRPR2834K
+ASSESSMENT YEAR: 2024-25
+FINANCIAL YEAR: 2023-24
+
+===============================================================================
+
+NAME OF TAXPAYER/DEDUCTEE: RAJESH KUMAR SHARMA
+ADDRESS: 145-B, SECTOR 18A, NOIDA, UTTAR PRADESH - 201301
+PIN CODE: 201301
+PHONE: 9876543210
+
+GSTIN: 09AQRPR2834K1Z0
+
+===============================================================================
+
+STATEMENT PERIOD: 01/04/2023 TO 31/03/2024
+
+Total TDS/TCS Credited to this PAN:          ₹4,89,750.00
+Total Self Assessment Tax Paid:               ₹8,50,000.00
+Total Amount of TDS Deposited:                ₹4,89,750.00
+
+===============================================================================
+
+DETAILS OF TDS DEDUCTED UNDER SECTION 192 (SALARY):
+
+Transaction Date: 15/04/2023
+Deductor Name: XYZ CORPORATION PVT LTD
+Deductor PAN: AABCY1234K
+Amount Paid: ₹3,50,000.00
+TDS Deducted: ₹52,500.00
+TDS Deposited: 15/04/2023
+
+Transaction Date: 15/05/2023
+Deductor Name: XYZ CORPORATION PVT LTD
+Deductor PAN: AABCY1234K
+Amount Paid: ₹3,50,000.00
+TDS Deducted: ₹52,500.00
+TDS Deposited: 15/05/2023
+
+Transaction Date: 15/06/2023
+Deductor Name: XYZ CORPORATION PVT LTD
+Deductor PAN: AABCY1234K
+Amount Paid: ₹3,50,000.00
+TDS Deducted: ₹52,500.00
+TDS Deposited: 15/06/2023
+
+===============================================================================
+
+DETAILS OF TDS DEDUCTED UNDER SECTION 194A (INTEREST ON SECURITIES):
+
+Transaction Date: 30/06/2023
+Deductor Name: ICICI BANK LIMITED
+Deductor PAN: AAACI0066K
+Amount Paid: ₹2,15,000.00
+TDS Deducted: ₹21,500.00
+TDS Deposited: 15/07/2023
+
+Transaction Date: 31/12/2023
+Deductor Name: HDFC BANK LIMITED
+Deductor PAN: AAACH0055K
+Amount Paid: ₹1,85,000.00
+TDS Deducted: ₹18,500.00
+TDS Deposited: 15/01/2024
+
+===============================================================================
+
+DETAILS OF TDS DEDUCTED UNDER SECTION 194C (WORK CONTRACTORS):
+
+Transaction Date: 22/08/2023
+Deductor Name: INFRATECH BUILDERS & CO
+Deductor PAN: AABCX5678M
+Amount Paid: ₹45,000.00
+TDS Deducted: ₹4,500.00
+TDS Deposited: 15/09/2023
+
+Transaction Date: 15/02/2024
+Deductor Name: PROPERTY CONSULTANTS LLP
+Deductor PAN: AABPX1111L
+Amount Paid: ₹95,000.00
+TDS Deducted: ₹9,500.00
+TDS Deposited: 15/02/2024
+
+===============================================================================
+
+DETAILS OF TDS DEDUCTED UNDER SECTION 194J (PROFESSIONAL FEES):
+
+Transaction Date: 10/10/2023
+Deductor Name: PRIYA VENKATESH CONSULTANCY
+Deductor PAN: AEVPV2023C
+Amount Paid: ₹1,20,000.00
+TDS Deducted: ₹12,000.00
+TDS Deposited: 15/10/2023
+
+===============================================================================
+
+SELF ASSESSMENT TAX DETAILS:
+
+SAT Paid: 31/01/2024
+Amount: ₹8,50,000.00
+Payment Reference: 15AATPK1234H000
+
+===============================================================================
+
+SUMMARY:
+
+Total TDS Deducted:          ₹4,89,750.00
+Total TCS Deducted:          ₹0.00
+Total Tax Paid (SAT):        ₹8,50,000.00
+Total Tax Credit Available:  ₹13,39,750.00
+
+Previous Year TDS Not Used:  ₹0.00
+Current Year TDS:            ₹4,89,750.00
+Total TDS Available:         ₹4,89,750.00
+
+===============================================================================
+
+CERTIFICATE ISSUED BY: INCOME TAX INFORMATION CENTRE
+Certificate Generated On: 15/05/2024
+Valid Till: 31/03/2025
+
+FOR TAX YEAR ENDING 31/03/2024
+CERTIFICATE REFERENCE: 26AS/2024/NZXMK1234L001
+
+This is a digitally generated statement and requires no signature.
+
+===============================================================================
+
+NOTE: This 26AS covers only TDS/TCS credits reported to this PAN by deductors.
+Please verify the details with your employer/deductors and provide necessary
+corrections to them if any discrepancies are found.
+
+For any queries regarding 26AS, contact your nearest Income Tax Office or
+visit: www.incometax.gov.in
+
+===============================================================================

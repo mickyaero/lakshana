@@ -1,0 +1,98 @@
+ICICI BANK LIMITED
+REGISTERED OFFICE: ICICI BANK TOWERS, BANDRA KURLA COMPLEX, MUMBAI - 400051
+BRANCH: BANGALORE WHITEFIELD
+BRANCH CODE: 000897
+IFSC CODE: ICIC0000897
+
+---
+
+ACCOUNT STATEMENT
+Statement Period: 01/01/2024 to 31/01/2024
+
+ACCOUNT HOLDER DETAILS
+Name: RAJESH KUMAR SHARMA
+Address: 307, GREENFIELD APARTMENTS, WHITEFIELD,
+BANGALORE - 560066, KARNATAKA
+Mobile: +91-98765-43210
+Email: rajesh.sharma@email.com
+
+ACCOUNT INFORMATION
+Account Number: 005801000123456
+Account Type: SAVINGS ACCOUNT
+Customer ID (CIF): 00987654
+IFSC Code: ICIC0000897
+Nomination Registered: YES
+Nominee Name: PRIYA SHARMA (WIFE)
+
+---
+
+ACCOUNT SUMMARY
+Opening Balance (01/01/2024): Rs. 3,45,820.00
+Total Credits: Rs. 8,72,500.00
+Total Debits: Rs. 5,28,960.00
+Closing Balance (31/01/2024): Rs. 6,89,360.00
+Number of Transactions: 23
+
+---
+
+TRANSACTION DETAILS
+
+Date          | Particulars                        | Debit (Rs.)  | Credit (Rs.)
+--------------|-----------------------------------|--------------|--------------
+02/01/2024    | OPENING BALANCE                   |              | 3,45,820.00
+03/01/2024    | SALARY CREDIT - TECHCORP IT      |              | 4,50,000.00
+04/01/2024    | ATM WITHDRAWAL - BANGALORE       | 30,000.00    |
+05/01/2024    | ICICI CREDIT CARD PAYMENT       | 85,000.00    |
+06/01/2024    | UTILITY BILL - ELECTRICITY       | 3,250.00     |
+07/01/2024    | TRANSFER TO SB ACCOUNT          | 1,00,000.00  |
+08/01/2024    | INTEREST ACCRUED                 |              | 125.50
+09/01/2024    | GROCERY STORE - BIGBASKET       | 8,745.00     |
+10/01/2024    | RESTAURANT PAYMENT - LEELA     | 4,850.00     |
+11/01/2024    | DIVIDEND RECEIVED - ICICI PRUD  |              | 2,50,000.00
+12/01/2024    | INSURANCE PREMIUM - LIC         | 1,25,000.00  |
+13/01/2024    | ATM WITHDRAWAL - BANGALORE      | 25,000.00    |
+14/01/2024    | ONLINE TRANSFER TO AXIS BANK    | 2,00,000.00  |
+15/01/2024    | CHEQUE DEPOSIT - CHQ 654321     |              | 1,80,000.00
+16/01/2024    | AMAZON PAYMENT - SHOPPING       | 12,365.00    |
+17/01/2024    | GST PAID - VENDOR REG          | 45,000.00    |
+18/01/2024    | MEDICAL EXPENSE - APOLLO       | 18,950.00    |
+19/01/2024    | TRANSFER FROM PARENT - GIFT    |              | 2,50,000.00
+20/01/2024    | FUEL PUMP - SHELL              | 5,800.00     |
+21/01/2024    | MOBILE RECHARGE - AIRTEL       | 1,299.00     |
+22/01/2024    | ATM WITHDRAWAL - KORAMANGALA   | 20,000.00    |
+24/01/2024    | BOOK PURCHASE - FLIPKART       | 2,145.00     |
+27/01/2024    | SERVICE CHARGES                 | 1,156.00     |
+
+---
+
+SUMMARY OF TRANSACTIONS
+
+Total Number of Transactions: 23
+Total Credits (Deposits): Rs. 8,72,500.00
+Total Debits (Withdrawals): Rs. 5,28,960.00
+Net Change: Rs. 3,43,540.00
+Closing Balance: Rs. 6,89,360.00
+
+---
+
+ACCOUNT HOLDER'S GST DETAILS (IF REGISTERED)
+GSTIN: 29ABCDE1234F1Z0
+PAN: ABCDE1234F
+
+---
+
+IMPORTANT NOTES:
+- Interest on deposits is credited quarterly
+- Service charges are levied on SMS services and below minimum balance
+- This statement is generated from ICICI Bank's core banking system
+- Please report any discrepancies within 30 days of receipt
+- Nominee: PRIYA SHARMA, Relation: SPOUSE
+
+Bank Address: ICICI Bank Limited, Whitefield Branch, 42 Main Street,
+Whitefield, Bangalore - 560066, Karnataka
+Contact: 1800-22-4343 (Toll Free)
+
+---
+
+Date of Generation: 01/02/2024
+Statement Valid For: 12 Months From Date of Issue

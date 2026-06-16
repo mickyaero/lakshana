@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lakshana — zero-config schema discovery for any folder of documents</title>
+<meta name="description" content="Drop a folder of PDFs. Get a JSON Schema. No training, no labels, no manual schema design. MIT-licensed open source." />
+<meta property="og:title" content="Lakshana" />
+<meta property="og:description" content="Zero-config schema discovery for document collections." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #f5f0ea;
+  --surface: #fff;
+  --surface-alt: #f6f1eb;
+  --border: #ddd2c4;
+  --text: #1a1611;
+  --text-2: #564c40;
+  --muted: #8f8274;
+  --accent: #cf6d35;
+  --accent-h: #b85c28;
+  --accent-g: rgba(207, 109, 53, 0.08);
+  --blue: #3868b8;
+  --success: #3d8b40;
+  --r: 10px;
+  --r-lg: 14px;
+  --shadow: 0 1px 3px rgba(30,26,21,0.06), 0 1px 2px rgba(30,26,21,0.04);
+  --shadow-lg: 0 8px 24px rgba(30,26,21,0.08), 0 2px 8px rgba(30,26,21,0.04);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -2;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(208,104,48,0.06), transparent 70%),
+    radial-gradient(ellipse 60% 80% at 85% 70%, rgba(176,132,37,0.05), transparent 70%);
+  pointer-events: none;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-h); text-decoration: underline; }
+code, pre { font-family: 'Fira Code', 'SF Mono', monospace; }
+.container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(245, 240, 234, 0.78);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid rgba(221, 210, 196, 0.5);
+}
+nav .container {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 0.8rem; padding-bottom: 0.8rem;
+}
+.brand { font-weight: 800; font-size: 1.3rem; color: var(--text); letter-spacing: -0.02em; }
+.brand-marker { color: var(--accent); font-family: 'Fira Code', monospace; font-size: 0.85em; font-weight: 500; margin-left: 0.3em; opacity: 0.7; }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a { color: var(--text-2); font-weight: 500; font-size: 0.92rem; }
+.nav-links a:hover { color: var(--accent); text-decoration: none; }
+.gh-btn {
+  background: var(--text); color: #fff !important;
+  padding: 0.45rem 0.9rem; border-radius: var(--r);
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.88rem; font-weight: 600;
+}
+.gh-btn:hover { background: #000; text-decoration: none !important; }
+
+/* Hero */
+.hero { padding: 5rem 0 4rem; text-align: center; }
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800; line-height: 1.1; letter-spacing: -0.025em;
+  color: var(--text); margin-bottom: 1.2rem;
+}
+.hero h1 .accent { color: var(--accent); }
+.hero .lede {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--text-2); max-width: 660px; margin: 0 auto 2rem;
+}
+.hero-cta { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.4rem; border-radius: var(--r);
+  font-weight: 600; font-size: 0.95rem;
+  border: 1.5px solid transparent; cursor: pointer; transition: all 0.15s;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-h); text-decoration: none; transform: translateY(-1px); }
+.btn-secondary { background: var(--surface); color: var(--text); border-color: var(--border); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* Quickstart */
+.quickstart { padding: 0 0 4rem; }
+.quickstart-card {
+  background: #1a1611; color: #f6f1eb;
+  border-radius: var(--r-lg); padding: 1.3rem 1.5rem;
+  box-shadow: var(--shadow-lg);
+  font-family: 'Fira Code', monospace; font-size: 0.92rem;
+  line-height: 1.8; position: relative;
+  max-width: 720px; margin: 0 auto;
+  overflow-x: auto;
+}
+.quickstart-card .c-comment { color: #8f8274; }
+.quickstart-card .c-prompt { color: #cf6d35; user-select: none; }
+.quickstart-card .copy-btn {
+  position: absolute; top: 0.8rem; right: 0.8rem;
+  background: rgba(255,255,255,0.08); color: #f6f1eb;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+.quickstart-card .copy-btn:hover { background: rgba(255,255,255,0.16); }
+
+/* Sections */
+section { padding: 4rem 0; border-top: 1px solid rgba(221,210,196,0.5); }
+section h2 {
+  font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em;
+  margin-bottom: 0.7rem; color: var(--text);
+}
+section .section-lede { color: var(--text-2); margin-bottom: 2rem; font-size: 1.05rem; max-width: 640px; }
+
+/* What it does — 3 step cards */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+.step-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.4rem; box-shadow: var(--shadow);
+}
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; background: var(--accent-g); color: var(--accent);
+  border-radius: 50%; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.7rem;
+}
+.step-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.step-card p { color: var(--text-2); font-size: 0.94rem; }
+
+/* Demo result panel */
+.demo-tabs { display: flex; gap: 0.4rem; border-bottom: 1px solid var(--border); margin-bottom: 0; }
+.demo-tab {
+  padding: 0.6rem 1.1rem; cursor: pointer; font-size: 0.9rem; font-weight: 500;
+  color: var(--muted); border-bottom: 2px solid transparent; transition: all 0.15s;
+  background: none; border-top: none; border-left: none; border-right: none;
+  font-family: 'Inter', sans-serif;
+}
+.demo-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.demo-tab:hover { color: var(--text); }
+.demo-panel {
+  display: none; background: var(--surface); border: 1px solid var(--border); border-top: none;
+  border-radius: 0 0 var(--r-lg) var(--r-lg); padding: 1.5rem; box-shadow: var(--shadow);
+}
+.demo-panel.active { display: block; }
+.cluster-row {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 0.8rem 0; border-bottom: 1px solid rgba(221,210,196,0.4);
+}
+.cluster-row:last-child { border-bottom: none; }
+.cluster-name {
+  flex-shrink: 0; min-width: 180px; font-weight: 600; color: var(--text);
+}
+.cluster-name .doc-count { color: var(--muted); font-weight: 400; font-size: 0.85rem; margin-left: 0.3rem; }
+.cluster-fields { flex: 1; }
+.field-chip {
+  display: inline-block; background: var(--accent-g); color: var(--accent);
+  padding: 0.2rem 0.55rem; border-radius: 6px; font-size: 0.82rem; font-weight: 500;
+  margin: 0.15rem 0.2rem 0.15rem 0; font-family: 'Fira Code', monospace;
+}
+.demo-meta {
+  margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(221,210,196,0.4);
+  display: flex; gap: 1.5rem; font-size: 0.86rem; color: var(--muted); flex-wrap: wrap;
+}
+.demo-meta strong { color: var(--text); font-weight: 600; }
+
+/* Why */
+.why { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media (max-width: 720px) { .why { grid-template-columns: 1fr; } }
+.why-card {
+  background: var(--surface-alt); border-left: 3px solid var(--accent);
+  padding: 1.2rem 1.4rem; border-radius: 0 var(--r) var(--r) 0;
+}
+.why-card h4 { font-size: 1.02rem; margin-bottom: 0.4rem; color: var(--text); }
+.why-card p { color: var(--text-2); font-size: 0.94rem; }
+
+/* Founder note */
+.founder {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.8rem; box-shadow: var(--shadow);
+}
+.founder p { color: var(--text-2); margin-bottom: 0.8rem; }
+.founder .signature { font-style: italic; color: var(--muted); margin-top: 0.8rem; }
+
+/* Footer */
+footer { padding: 2.5rem 0 3rem; color: var(--muted); font-size: 0.88rem; text-align: center; border-top: 1px solid rgba(221,210,196,0.5); }
+footer a { color: var(--text-2); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="brand">Lakshana<span class="brand-marker">लक्षण</span></a>
+    <div class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#demo">Demo</a>
+      <a href="#install">Install</a>
+      <a class="gh-btn" href="https://github.com/mickyaero/lakshana" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        Star
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1>Drop a folder of PDFs.<br />Get a <span class="accent">JSON Schema.</span></h1>
+    <p class="lede">
+      Lakshana clusters mixed document collections by type and infers a verified schema per cluster — using a hybrid embedding, UMAP, HDBSCAN, and an LLM you choose. No training, no labels, no manual schema design.
+    </p>
+    <div class="hero-cta">
+      <a href="#install" class="btn btn-primary">Install</a>
+      <a href="https://github.com/mickyaero/lakshana" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+  </div>
+</header>
+
+<section class="quickstart" style="border-top: none; padding-top: 0;">
+  <div class="container">
+    <div class="quickstart-card" id="quickstart">
+      <button class="copy-btn" onclick="copyQuickstart(this)">Copy</button>
+<pre id="quickstart-text"><span class="c-comment"># 1. install</span>
+<span class="c-prompt">$</span> pip install lakshana
+
+<span class="c-comment"># 2. grab a free Groq key from console.groq.com</span>
+<span class="c-prompt">$</span> export GROQ_API_KEY=...
+
+<span class="c-comment"># 3. point it at a folder of documents</span>
+<span class="c-prompt">$</span> lakshana analyze ./my_docs --output schema.json</pre>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="container">
+    <h2>How it works</h2>
+    <p class="section-lede">Three steps. Each one falls back gracefully. Each output is real, not a hallucination.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Cluster by type</h3>
+        <p>Documents are embedded with a hybrid structural+semantic signature, projected with UMAP, and clustered with HDBSCAN. No labels needed — the algorithm finds the doc types implicit in your folder.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Infer a schema</h3>
+        <p>For each cluster, an LLM (Anthropic, OpenAI, Groq, Cerebras, Google, Ollama, OpenRouter) walks the documents and proposes fields with names, types, and example values.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Verify frequency</h3>
+        <p>Every proposed field is re-checked across a spread of documents in the cluster, with grounding quotes. Fields with low frequency are flagged. The schema you get is one you can trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="container">
+    <h2>What you actually get</h2>
+    <p class="section-lede">A real Groq-Llama-3.3-70B run on the bundled benchmark, captured verbatim.</p>
+
+    <div class="demo-tabs">
+      <button class="demo-tab active" data-tab="general">General (10 docs)</button>
+      <button class="demo-tab" data-tab="bfsi">Indian BFSI (35 docs)</button>
+    </div>
+
+    <div class="demo-panel active" data-panel="general">
+      <div class="cluster-row">
+        <div class="cluster-name">Service Agreement <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">provider</span>
+          <span class="field-chip">client</span>
+          <span class="field-chip">agreement_date</span>
+          <span class="field-chip">scope_of_services</span>
+          <span class="field-chip">compensation</span>
+          <span class="field-chip">term_start_date</span>
+          <span class="field-chip">term_end_date</span>
+          <span class="field-chip">payment_terms</span>
+        </div>
+      </div>
+      <div class="cluster-row">
+        <div class="cluster-name">Invoice <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">invoice_number</span>
+          <span class="field-chip">date</span>
+          <span class="field-chip">bill_to</span>
+          <span class="field-chip">description</span>
+          <span class="field-chip">quantity</span>
+          <span class="field-chip">price</span>
+          <span class="field-chip">tax_amount</span>
+          <span class="field-chip">total_amount</span>
+        </div>
+      </div>
+      <div class="demo-meta">
+        <span><strong>2</strong> clusters discovered</span>
+        <span><strong>100%</strong> purity vs. ground truth</span>
+        <span><strong>107s</strong> end-to-end</span>
+        <span><strong>$0</strong> with Groq free tier</span>
+      </div>
+    </div>
+
+    <div class="demo-panel" data-panel="bfsi">
+      <div class="cluster-row">
+        <div class="cluster-name">GST Invoice <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">gstin</span>
+          <span class="field-chip">invoice_number</span>
+          <span class="field-chip">hsn_code</span>
+          <span class="field-chip">cgst</span>
+          <span class="field-chip">sgst</span>
+          <span class="field-chip">igst</span>
+          <span class="field-chip">taxable_value</span>
+        </div>
+      </div>
+      <div class="cluster-row">
+        <div class="cluster-name">Form 26AS <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">assessment_year</span>
+          <span class="field-chip">pan</span>
+          <span class="field-chip">tds_deducted</span>
+          <span class="field-chip">section_code</span>
+          <span class="field-chip">amount_paid</span>
+        </div>
+      </div>
+      <div class="cluster-row">
+        <div class="cluster-name">Bank Statement <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">account_number</span>
+          <span class="field-chip">opening_balance</span>
+          <span class="field-chip">closing_balance</span>
+          <span class="field-chip">transactions</span>
+          <span class="field-chip">period</span>
+        </div>
+      </div>
+      <div class="cluster-row">
+        <div class="cluster-name">ITR Form <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">pan</span>
+          <span class="field-chip">filing_status</span>
+          <span class="field-chip">total_income</span>
+          <span class="field-chip">tax_payable</span>
+          <span class="field-chip">refund</span>
+        </div>
+      </div>
+      <div class="demo-meta">
+        <span><strong>7</strong> Indian doc types</span>
+        <span>GST · ITR · 26AS · KYC · Bank · Loan · Insurance</span>
+        <span>Reproducible: <code>python benchmarks/run.py --dataset bfsi</code></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <h2>Why this exists</h2>
+    <p class="section-lede">Every "AI document extraction" tool assumes you already know your schema. Real-world data isn't shaped that way.</p>
+    <div class="why">
+      <div class="why-card">
+        <h4>Other tools start at extraction.</h4>
+        <p>You point them at a doc with a schema you wrote by hand. If the doc is something you've never seen, you're stuck designing schemas by trial and error.</p>
+      </div>
+      <div class="why-card">
+        <h4>Lakshana starts at discovery.</h4>
+        <p>You give it the folder. It tells you what's in there, then hands you back a clean schema per type. <em>Then</em> your extraction step can be simple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="container">
+    <h2>Install</h2>
+    <p class="section-lede">CPU-only, runs on a laptop. Pick whichever LLM provider you have a key for.</p>
+    <div class="quickstart-card" style="margin-top: 1rem;">
+<pre>
+<span class="c-comment"># minimum install</span>
+<span class="c-prompt">$</span> pip install lakshana
+
+<span class="c-comment"># with whichever LLM provider you use</span>
+<span class="c-prompt">$</span> pip install lakshana[openai]      <span class="c-comment"># covers Groq, Cerebras, OpenRouter, Ollama</span>
+<span class="c-prompt">$</span> pip install lakshana[anthropic]   <span class="c-comment"># Claude</span>
+<span class="c-prompt">$</span> pip install lakshana[google]      <span class="c-comment"># Gemini</span>
+<span class="c-prompt">$</span> pip install lakshana[all]         <span class="c-comment"># everything</span>
+
+<span class="c-comment"># Python API</span>
+<span class="c-prompt">$</span> python
+&gt;&gt;&gt; <span style="color:#7adfff">import</span> lakshana
+&gt;&gt;&gt; result = lakshana.discover(files=[...], model=<span style="color:#cf9c5d">"groq/llama-3.3-70b-versatile"</span>)
+&gt;&gt;&gt; <span style="color:#7adfff">for</span> cluster <span style="color:#7adfff">in</span> result.clusters:
+...     print(cluster[<span style="color:#cf9c5d">"name"</span>], result.schemas[<span style="color:#cf9c5d">str</span>(cluster[<span style="color:#cf9c5d">"id"</span>])])</pre>
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="container">
+    <h2>Why I built it</h2>
+    <div class="founder">
+      <p>I've been building <a href="https://github.com/mickyaero/docstruct" target="_blank">docstruct</a> for a while — a full document extraction stack focused on Indian financial documents. The hardest part was never the extraction itself. It was figuring out, for any new client, <em>what their documents even were</em>.</p>
+      <p>So I built this. Lakshana is the "tell me what I have" piece, pulled out and standalone, so anyone building extraction can use it as a starting point.</p>
+      <p>If you're building anything in this space, I'd love to hear from you — <a href="https://github.com/mickyaero/lakshana/issues">open an issue</a> with what you're trying to do.</p>
+      <p class="signature">— Micky (<a href="https://github.com/mickyaero">@mickyaero</a>)</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Lakshana · MIT licensed · Made by <a href="https://github.com/mickyaero">Micky Droch</a> · <a href="https://github.com/mickyaero/lakshana">github.com/mickyaero/lakshana</a>
+  </div>
+</footer>
+
+<script>
+function copyQuickstart(btn) {
+  const text = document.getElementById('quickstart-text').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = orig; }, 1500);
+  });
+}
+document.querySelectorAll('.demo-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.demo-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+    document.querySelectorAll('.demo-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tab));
+  });
+});
+</script>
+
+</body>
+</html>

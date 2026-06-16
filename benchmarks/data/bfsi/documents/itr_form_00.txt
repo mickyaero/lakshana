@@ -1,0 +1,192 @@
+FORM ITR-2
+INCOME TAX RETURN
+(For individuals and HUFs)
+Financial Year 2023-24
+
+================================================================
+
+PAN OF TAXPAYER : BJPPM3847K
+AADHAAR NUMBER : 234567891234
+ACKNOWLEDGEMENT NUMBER : 1234567890123
+DATE OF FILING : 15/07/2024
+
+STATUS OF TAXPAYER : Individual
+ASSESSMENT YEAR : 2024-25
+FINANCIAL YEAR : 2023-24
+
+================================================================
+
+PART A : PERSONAL INFORMATION
+
+NAME OF TAXPAYER : RAJESH KUMAR SHARMA
+DATE OF BIRTH : 23/06/1978
+AGE : 45
+
+RESIDENTIAL ADDRESS :
+C-47, Ashoka Enclave
+Sector 12, Plot No. 456
+NEW DELHI - 110089
+DELHI
+PIN CODE : 110089
+
+MOBILE NUMBER : 9876543210
+EMAIL : rajesh.sharma@email.com
+
+================================================================
+
+PART B : INCOME DETAILS
+
+INCOME FROM SALARY :
+Basic Salary : Rs. 6,50,000
+Dearness Allowance : Rs. 1,85,000
+House Rent Allowance : Rs. 1,30,000
+Conveyance Allowance : Rs. 25,000
+Total Salary Income : Rs. 8,90,000
+
+INCOME FROM HOUSE PROPERTY :
+Gross Annual Value of Property : Rs. 24,00,000
+Municipal Taxes Paid : Rs. 2,40,000
+Annual Repair and Maintenance : Rs. 1,80,000
+Interest on Housing Loan : Rs. 6,84,000
+Net Income from Property : Rs. 12,96,000
+
+INCOME FROM BUSINESS/PROFESSION :
+Gross Receipts : Rs. 45,00,000
+Cost of Raw Materials : Rs. 18,00,000
+Employee Cost and Wages : Rs. 8,50,000
+Rent and Office Maintenance : Rs. 2,40,000
+Depreciation : Rs. 1,20,000
+Other Operating Expenses : Rs. 3,90,000
+Total Business Income : Rs. 11,00,000
+
+CAPITAL GAINS :
+Long Term Capital Gains : Rs. 2,50,000
+Short Term Capital Gains : Rs. 85,000
+Total Capital Gains : Rs. 3,35,000
+
+OTHER SOURCES OF INCOME :
+Interest on Fixed Deposits : Rs. 1,15,000
+Dividend Income : Rs. 65,000
+Total Other Income : Rs. 1,80,000
+
+================================================================
+
+PART C : DEDUCTIONS
+
+SECTION 80C - LIFE INSURANCE, PPF, SUKANYA SAMRIDDHI :
+Life Insurance Premium : Rs. 2,00,000
+Public Provident Fund : Rs. 1,50,000
+Total Section 80C : Rs. 3,50,000
+
+SECTION 80D - MEDICLAIM INSURANCE PREMIUM :
+Self and Family : Rs. 45,000
+
+SECTION 80E - INTEREST ON EDUCATIONAL LOAN :
+Amount : Rs. 65,000
+
+SECTION 80CCD - CONTRIBUTIONS TO PENSION SCHEME :
+Employee Contribution to NPS : Rs. 2,50,000
+
+SECTION 80TTA - INTEREST ON SAVINGS ACCOUNT :
+Bank Savings Interest : Rs. 15,000
+
+TOTAL DEDUCTIONS UNDER CHAPTER VIA : Rs. 7,25,000
+
+================================================================
+
+PART D : INCOME CALCULATION
+
+TOTAL INCOME FROM ALL SOURCES :
+Salary + House Property + Business +
+Capital Gains + Other Income
+= Rs. 8,90,000 + Rs. 12,96,000 + Rs. 11,00,000 +
+  Rs. 3,35,000 + Rs. 1,80,000
+= Rs. 38,01,000
+
+LESS : DEDUCTIONS UNDER CHAPTER VIA :
+Rs. 7,25,000
+
+TOTAL TAXABLE INCOME : Rs. 30,76,000
+
+================================================================
+
+PART E : TAX COMPUTATION
+
+INCOME TAX CALCULATION :
+
+Income Upto Rs. 2,50,000 : Nil
+
+Income from Rs. 2,50,001 to Rs. 5,00,000
+= Rs. 2,50,000 @ 5% = Rs. 12,500
+
+Income from Rs. 5,00,001 to Rs. 10,00,000
+= Rs. 5,00,000 @ 20% = Rs. 1,00,000
+
+Income from Rs. 10,00,001 and above
+= Rs. 20,76,000 @ 30% = Rs. 6,22,800
+
+TOTAL TAX BEFORE SURCHARGE AND CESS : Rs. 7,35,300
+
+SURCHARGE (10% on Tax as applicable) : Rs. 73,530
+
+EDUCATION CESS (4% on Tax and Surcharge) : Rs. 32,343
+
+TOTAL TAX LIABILITY : Rs. 8,41,173
+
+================================================================
+
+PART F : TAX PAID/CREDITS
+
+ADVANCE TAX PAID :
+Q1 (30/06/2023) : Rs. 1,50,000
+Q2 (30/09/2023) : Rs. 1,50,000
+Q3 (31/12/2023) : Rs. 2,00,000
+Q4 (31/03/2024) : Rs. 2,00,000
+
+TOTAL ADVANCE TAX PAID : Rs. 7,00,000
+
+SELF ASSESSMENT TAX PAID (31/03/2024) : Rs. 1,41,173
+
+TOTAL TAX PAID : Rs. 8,41,173
+
+TDS DEDUCTED BY EMPLOYERS/BANK/CONTRACTORS : Rs. 0
+
+TOTAL TAX PAID AND CREDITS : Rs. 8,41,173
+
+================================================================
+
+REFUND/BALANCE COMPUTATION
+
+Total Tax Liability : Rs. 8,41,173
+Less : Total Tax Paid : Rs. 8,41,173
+REFUND/(BALANCE PAYABLE) : Rs. 0
+
+================================================================
+
+DECLARATION
+
+I declare that the return has been prepared and submitted by me
+in accordance with the provisions of the Income Tax Act, 1961.
+
+I solemnly declare that the return contains true particulars of my
+income derived from all sources and that I have made full
+disclosure of such income as required.
+
+================================================================
+
+SIGNATURE OF TAXPAYER : _____________________
+
+NAME : RAJESH KUMAR SHARMA
+DATE : 15/07/2024
+PLACE : NEW DELHI
+
+================================================================
+
+VERIFIER DETAILS
+
+NAME OF CA/CPA : PRIYA VENKATESH
+Registration Number : 234567
+Date of Verification : 15/07/2024
+Signature : _____________________
+
+================================================================

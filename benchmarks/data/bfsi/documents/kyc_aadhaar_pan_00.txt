@@ -1,0 +1,76 @@
+AADHAAR AND PAN VERIFICATION DOCUMENT
+
+============================================================
+
+AADHAAR ENROLLMENT DETAILS
+
+Enrollment Number: 3847569201023415/01-04-2022
+
+Name: RAJESH KUMAR SHARMA
+
+Gender: MALE
+
+Date of Birth: 15/03/1987
+
+Address: 47, Ram Nagar Society, Sector 5, Mahape, Navi Mumbai,
+Maharashtra 400710
+
+Mobile: 9876543210
+
+Email: rajesh.sharma87@email.com
+
+============================================================
+
+PAN CARD DETAILS
+
+PAN Number: ARAPS4521K
+
+Full Name: RAJESH KUMAR SHARMA
+
+Father's Name: SH. ASHOK KUMAR SHARMA
+
+Date of Birth: 15/03/1987
+
+Address for Communication: 47 Ram Nagar Society
+Sector 5 Mahape
+Navi Mumbai Maharashtra 400710
+
+PAN Status: Active
+
+Date of Issue: 22/07/2005
+
+============================================================
+
+INCOME VERIFICATION
+
+Financial Year: 2023-2024
+
+Gross Income: Rs. 25,50,000 (25 lakh 50 thousand)
+
+Income Tax Paid: Rs. 3,18,750
+
+Assessment Status: Compliant
+
+============================================================
+
+GST REGISTRATION (if applicable)
+
+GSTIN: 27ARAPS4521K1Z5
+
+State: Maharashtra
+
+Registration Date: 10/12/2019
+
+Status: Active
+
+============================================================
+
+DOCUMENT VERIFICATION DETAILS
+
+Aadhaar Verified: YES
+PAN Verified: YES
+Tax Status: REGULAR FILER
+Address Confirmed: 15/03/2024
+Last Updated: 02/04/2026
+
+============================================================

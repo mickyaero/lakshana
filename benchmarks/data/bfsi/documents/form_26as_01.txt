@@ -1,0 +1,106 @@
+FORM 26AS
+TAX CREDIT STATEMENT
+
+Ministry of Finance
+Department of Revenue
+Income Tax Department
+
+Assessment Year: 2024-25
+Financial Year: 2023-24
+
+---
+
+ASSESSEE DETAILS
+
+Name: RAJESH KUMAR SHARMA
+Date of Birth: 15/07/1968
+PAN: AABPS5847K
+Address: 145, Ashoka Enclave
+        Sector 12, Faridabad
+        Haryana - 121007
+
+Mobile: 9876543210
+Email: rajesh.sharma1968@email.com
+
+---
+
+SUMMARY OF TAX CREDITS
+
+Total TDS Deposited: Rs. 2,45,820
+Total TCS Amount: Rs. 8,500
+Advance Tax Paid: Rs. 1,50,000
+Self Assessment Tax Paid: Rs. 0
+Total Tax Credits: Rs. 4,04,320
+
+---
+
+TDS DEPOSITED DETAILS
+
+Deductor Name: INFOSYS LIMITED
+Deductor TAN: AAACT0055K
+Section Code: 192
+Amount of TDS Deposited: Rs. 1,68,750
+Number of Payments: 4
+Period: 01/04/2023 to 31/03/2024
+
+Deductor Name: HDFC BANK LIMITED
+Deductor TAN: AAACR5055H
+Section Code: 194A
+Amount of TDS Deposited: Rs. 45,320
+Number of Payments: 2
+Period: 01/04/2023 to 31/03/2024
+
+Deductor Name: RELIANCE INDUSTRIES LTD
+Deductor TAN: AABCR1234A
+Section Code: 194H
+Amount of TDS Deposited: Rs. 31,750
+Number of Payments: 1
+Period: 15/12/2023
+
+---
+
+TCS (TAX COLLECTED AT SOURCE) DETAILS
+
+Deductor Name: MARUTI SUZUKI INDIA LIMITED
+Section Code: 206C
+Amount of TCS Collected: Rs. 8,500
+Invoice Date: 22/11/2023
+
+---
+
+ADVANCE TAX DETAILS
+
+Amount Paid: Rs. 1,50,000
+Payment Date: 30/12/2023
+Challan Number: 109730001001
+Bank Name: STATE BANK OF INDIA
+
+---
+
+FINANCIAL YEAR SUMMARY
+
+Period: 01/04/2023 to 31/03/2024
+Gross Total Income: Rs. 28,50,000
+Total Deductions: Rs. 1,50,000
+Taxable Income: Rs. 27,00,000
+
+---
+
+VERIFICATION DETAILS
+
+Certificate Generated On: 02/04/2024
+Document Reference: 26AS-2024-2314567890
+Status: VERIFIED AND FINALIZED
+
+Last Updated: 02/04/2024 at 14:32 Hours
+Digital Signature: Valid
+Authenticated By: Income Tax Department Server
+
+---
+
+IMPORTANT NOTE:
+This document is generated from records maintained in the Income Tax Department
+database. For any discrepancy or clarification, assessee may login to e-filing
+portal or contact nearest Income Tax Office.
+
+Page 1 of 1

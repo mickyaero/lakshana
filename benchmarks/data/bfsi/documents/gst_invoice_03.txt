@@ -1,0 +1,63 @@
+TAX INVOICE
+
+SELLER INFORMATION
+Seller Name: SHARMA MANUFACTURING SOLUTIONS PVT LTD
+GSTIN: 27AABCS5678K1Z5
+PAN: AABCS5678K
+Address: Plot No. 45-B, HITEC City, Hyderabad - 500081
+State: Telangana
+Contact: +91-40-4400XXXX
+Email: accounts@sharmamanuf.co.in
+
+BUYER INFORMATION
+Buyer Name: RAJESH KUMAR SHARMA
+GSTIN: 06AAPCT1234H1Z9
+Address: 3rd Floor, Tech Park, Survey No. 123, Pune - 411001
+State: Maharashtra
+Contact: +91-20-6600XXXX
+
+INVOICE DETAILS
+Invoice Number: INV-2025-08743
+Invoice Date: 15/03/2025
+Due Date: 30/04/2025
+Place of Supply: Maharashtra
+
+ITEM DETAILS
+Description: Industrial Control Panels & Switchgear Components
+HSN/SAC Code: 8537
+Quantity: 50 Units
+Unit Price: Rs. 8,500.00
+Item Total: Rs. 4,25,000.00
+
+FINANCIAL SUMMARY
+Taxable Amount: Rs. 4,25,000.00
+CGST (9%): Rs. 38,250.00
+SGST (9%): Rs. 38,250.00
+Total Tax: Rs. 76,500.00
+Grand Total: Rs. 5,01,500.00
+
+Amount in Words: Rupees Five Lakh One Thousand Five Hundred Only
+
+PAYMENT TERMS
+Payment Mode: NEFT/Cheque
+Bank Details:
+Bank Name: ICICI Bank Limited
+Account Number: 1234567890XX
+IFSC Code: ICIC0000XXX
+
+TAX CALCULATION SUMMARY
+Sub Total: Rs. 4,25,000.00
+Central GST (CGST) @ 9%: Rs. 38,250.00
+State GST (SGST) @ 9%: Rs. 38,250.00
+Total Amount Due: Rs. 5,01,500.00
+
+Notes and Conditions:
+1. This is a tax invoice as per GST Act
+2. Payment should be made within 45 days from invoice date
+3. All goods are as per the specifications mentioned in PO
+4. Disputes if any, should be reported within 7 days of delivery
+
+Authorized By: _______________
+Company Stamp and Signature
+
+Date: 15/03/2025

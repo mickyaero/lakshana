@@ -1,0 +1,188 @@
+HEALTH INSURANCE CLAIM FORM - OCR EXTRACTED TEXT
+
+================================================================================
+
+CLAIM DETAILS
+
+Claim Number: 2024/MEDI/450287/KA
+Date of Claim Submission: 15/03/2024
+TPA Name: MEDI ASSIST INDIA PRIVATE LIMITED
+TPA Reference: MA-KA-8762-2024
+Policy Number: AHL-1847-25-00012475
+
+INSURED MEMBER DETAILS
+
+Member Name: RAJESH KUMAR SHARMA
+Date of Birth: 12/06/1968
+Gender: Male
+Member ID: AHL-1847-25-00012475
+Relationship: Self
+Contact Number: +91-9876543210
+Email: rajesh.sharma.1968@gmail.com
+
+PATIENT DETAILS (if different from insured)
+
+Patient Name: RAJESH KUMAR SHARMA
+Age: 55 Years
+Gender: Male
+
+REGISTERED MEDICAL PRACTITIONER DETAILS
+
+Doctor Name: DR. ARUN VENKATESH REDDY
+Qualification: MD, DM (Cardiology)
+Medical License: AP/2015/0045821
+Hospital Registration: REG/AP/2020/1847
+
+HOSPITAL/HEALTHCARE PROVIDER DETAILS
+
+Hospital Name: APOLLO HOSPITALS BANGALORE
+Hospital Type: Multi-Specialty Corporate Hospital
+Address: No. 154/11, Opposite Bangalore Club, Opp. St. Mark's Cathedral, 
+         Bangalore, Karnataka - 560001
+PIN Code: 560001
+GSTIN: 29AAFCA4921E2Z5
+Hospital Registration: RH/KA/2018/0028475
+Contact: 080-2850-9090
+
+ADMISSION AND DISCHARGE DETAILS
+
+Date of Admission: 28/02/2024
+Date of Discharge: 10/03/2024
+Number of Days Hospitalized: 11 Days
+Mode of Admission: Emergency
+Admission Through: Ambulance
+
+CLINICAL DETAILS
+
+Primary Diagnosis: ACUTE MYOCARDIAL INFARCTION (AMI) - ANTERIOR WALL
+ICD-10 Code: I21.02
+Secondary Diagnosis: HYPERTENSION, TYPE 2 DIABETES MELLITUS
+Treatment Type: Surgical Management
+Procedure Name: PERCUTANEOUS CORONARY INTERVENTION (PCI) WITH STENT PLACEMENT
+Procedure Code: 92204
+Number of Stents Used: 2 (Drug Eluting Stents)
+
+PRE-EXISTING DISEASES
+
+Pre-Existing Disease Declared: Yes
+Disease 1: Type 2 Diabetes Mellitus (Diagnosed: 2008)
+Disease 2: Essential Hypertension (Diagnosed: 2012)
+Disease 3: Dyslipidemia (Diagnosed: 2015)
+
+ITEMIZED HOSPITAL BILL
+
+Room Charges (11 days @ Rs. 8,500/day):                      Rs. 93,500
+ICU Charges (5 days @ Rs. 15,000/day):                       Rs. 75,000
+Doctor Fees (Cardiologist):                                   Rs. 1,50,000
+Doctor Fees (Anesthesiologist):                               Rs. 75,000
+Surgical Procedure Charges (PCI with 2 Stents):              Rs. 3,50,000
+Interventional Radiology Charges:                             Rs. 45,000
+Diagnostic Charges:
+  - ECG (Multiple): Rs. 3,500
+  - Troponin Test: Rs. 4,200
+  - Cardiac Imaging: Rs. 28,500
+  - Coronary Angiography: Rs. 75,000
+  - ECHO Cardiography: Rs. 12,000
+  Total Diagnostic Charges:                                   Rs. 1,23,200
+Medicine Charges:
+  - Cardiac Medications: Rs. 18,750
+  - Antibiotics: Rs. 8,240
+  - Anticoagulants: Rs. 22,480
+  - Other Medications: Rs. 12,530
+  Total Medicine Charges:                                     Rs. 62,000
+Laboratory Charges:
+  - Blood Tests: Rs. 8,500
+  - Biochemistry: Rs. 6,800
+  - Hematology: Rs. 4,200
+  Total Laboratory Charges:                                   Rs. 19,500
+Nursing Charges:                                              Rs. 28,000
+Operation Theatre (OT) Charges:                               Rs. 95,000
+Stent Cost (2 DES @ Rs. 1,25,000 each):                       Rs. 2,50,000
+Other Consumables:                                            Rs. 35,000
+Miscellaneous Charges:                                        Rs. 15,000
+
+TOTAL HOSPITAL BILL:                                          Rs. 10,66,200
+
+INSURANCE POLICY DETAILS
+
+Policy Type: Group Health Insurance
+Policy Holder Name: SHARMA INDUSTRIES PVT LTD
+Policy Holder GSTIN: 29AAFCA4921E1Z5
+Policy Holder PAN: AAFCA4921E
+Policy Premium: Rs. 5,00,000 (Annual)
+Sum Insured: Rs. 50,00,000
+Room Limit: Rs. 1,500/day
+Effective Date: 01/04/2023
+Policy Renewal Date: 31/03/2024
+Renewal Status: Active
+
+CLAIM DETAILS AND COVERAGE
+
+Amount Claimed: Rs. 10,66,200
+Copay Percentage: 10%
+Deductible Amount: Rs. 10,000
+Copay Amount (10%): Rs. 1,06,620
+Deductible to be Paid by Patient: Rs. 10,000
+Net Claim Amount to be Paid: Rs. 8,49,580
+
+EXCLUSIONS APPLIED
+
+1. Room charges exceeding Rs. 1,500/day: Rs. 7,000 (rejected)
+2. Pre-existing disease waiting period waived: Covered
+3. Medical management covered: Yes
+
+AUTHORIZATION DETAILS
+
+Authorization Number: TPA/2024/0450287/KA
+Authorization Approval Date: 28/02/2024
+Authorized Amount: Rs. 10,50,000
+Pre-authorization Status: Approved
+
+CLAIM RECOMMENDATION
+
+Claim Assessment Status: APPROVED - PARTIAL
+Recommended Payment: Rs. 8,49,580
+Outstanding/Rejected Amount: Rs. 2,16,620
+Rejection Reason for Outstanding: Room charges exceeding policy limit of Rs. 1,500/day
+
+SUPPORTING DOCUMENTS ATTACHED
+
+1. Original hospital bill and itemized charges
+2. Medical prescriptions and test reports
+3. Discharge summary
+4. Identity proof (Aadhar)
+5. Policy copy
+6. Authorization letter
+
+PROCESSED BY
+
+TPA Authorization Officer: PRIYA MENON
+Employee ID: MEDI/KA/2847
+Date of Processing: 20/03/2024
+Signature: [DIGITAL SIGNATURE - PRIYA MENON]
+
+BANK DETAILS FOR REIMBURSEMENT
+
+Account Holder: RAJESH KUMAR SHARMA
+Bank Name: STATE BANK OF INDIA
+Account Number: 32847156428475
+IFSC Code: SBIN0001847
+Account Type: Savings
+
+CHEQUE/DRAFT DETAILS
+
+Cheque Number: 1847562
+Issue Date: 22/03/2024
+Amount: Rs. 8,49,580
+Payable to: RAJESH KUMAR SHARMA
+
+REMARKS AND NOTES
+
+Patient had to bear Rs. 2,16,620 additional cost due to room charges exceeding
+the policy limit. Patient also bears the 10% copay of Rs. 1,06,620. Pre-existing
+diseases are covered under the policy as per the terms and conditions. Patient
+was admitted through emergency and required immediate intervention. All clinical
+parameters support the diagnosis and treatment provided.
+
+================================================================================
+END OF CLAIM DOCUMENT

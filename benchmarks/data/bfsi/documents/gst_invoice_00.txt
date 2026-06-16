@@ -1,0 +1,94 @@
+GST INVOICE
+
+INVOICE NO. INV-2024-045821
+INVOICE DATE: 15/03/2024
+
+===============================================================
+
+SOLD BY:
+RAJESH KUMAR SHARMA ENTERPRISES PVT. LTD.
+Registered Address: Plot No. 42, Industrial Area Phase-II,
+Pimpri, Pune - 411018, Maharashtra
+GSTIN: 27AABCT5055K1Z0
+PAN: AABCT5055K
+Contact: +91-9876543210
+
+BILLED TO:
+M/S TECHVISION SOLUTIONS INDIA
+Office Address: No. 456, Brigade Gateway,
+Whitefield, Bengaluru - 560066, Karnataka
+GSTIN: 33ABCDE1234F1Z5
+
+===============================================================
+
+INVOICE DETAILS:
+
+Invoice No.: INV-2024-045821
+Invoice Date: 15/03/2024
+Due Date: 30/04/2024
+Place of Supply: Karnataka
+Supply Type: Inter-State (IGST Applicable)
+Reverse Charge: No
+
+===============================================================
+
+ITEM DESCRIPTION & QUANTITY:
+
+SI. No. | Description | HSN Code | Qty | Unit | Rate | Amount (Rs.)
+--------|-------------|----------|-----|------|------|---------------
+1       | IT Support Services - Annual | 99- | 1   | LUM | 8,00,000 | 8,00,000
+        | Maintenance Contract        | 5109|     |     |          |
+--------|-------------|----------|-----|------|------|---------------
+2       | Software License (50 Users) | 49- | 1   | SET | 3,50,000 | 3,50,000
+        | Cloud Subscription (12 Months)| 0090|   |     |          |
+--------|-------------|----------|-----|------|------|---------------
+
+SUBTOTAL (TAXABLE AMOUNT): Rs. 11,50,000
+
+===============================================================
+
+TAX CALCULATION:
+
+IGST @ 18%: Rs. 2,07,000
+SGST @ 0%: Rs. 0
+CGST @ 0%: Rs. 0
+
+TOTAL GST: Rs. 2,07,000
+
+===============================================================
+
+GRAND TOTAL: Rs. 13,57,000
+
+(Rupees Thirteen Lakh Fifty-Seven Thousand Only)
+
+===============================================================
+
+PAYMENT TERMS:
+Due Date: 30/04/2024
+Payment Method: NEFT/RTGS to Bank Account
+Bank Name: ICICI Bank
+Account No.: 1234567890123
+IFSC Code: ICIC0000456
+
+Note: Payment should be made within 45 days from the invoice date.
+GST Registration Details: This is a registered GST business.
+Reverse Charge Applicable: No
+HSN-SAC Code Applicable as per GST Rule.
+
+===============================================================
+
+AUTHORIZED SIGNATORY:
+
+_____________________________
+(RAJESH KUMAR SHARMA)
+Director
+RAJESH KUMAR SHARMA ENTERPRISES PVT. LTD.
+
+Date: 15/03/2024
+Stamp / Seal: [COMPANY STAMP]
+
+===============================================================
+
+For any queries regarding this invoice, please contact:
+Email: invoicing@rajeshkumar-enterprises.com
+Mobile: +91-9876543210

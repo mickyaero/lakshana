@@ -1,0 +1,71 @@
+AADHAAR CARD - OCR EXTRACTED TEXT
+=================================
+
+Aadhaar Number: 8734 5621 9847
+Virtual ID (VID): 7482 1956 3409
+
+Name: RAJESH KUMAR SHARMA
+Father's Name: LATE SHRI VIJAY SHARMA
+Date of Birth: 23/06/1978
+Gender: Male
+Address: 342, Shastri Nagar, Sector-7, Pushpraj Apartments
+         Indore, Madhya Pradesh 452001
+
+State: Madhya Pradesh
+District: Indore
+PIN Code: 452001
+
+Issue Date: 15/08/2015
+Validity: Lifetime
+
+Mobile: XXXX XXXX 7834
+Email: XXXX XXXX XXXX XXXX 4521
+
+---
+
+PAN CARD - OCR EXTRACTED TEXT
+==============================
+
+PAN: BPRK8947SD
+
+Name: RAJESH KUMAR SHARMA
+Father's Name: VIJAY SHARMA
+Date of Birth: 23/06/1978
+Address: 342 Shastri Nagar Sector 7
+         Indore Madhya Pradesh 452001
+         India
+
+Status: Individual
+Category: Resident Individual
+Issue Date: 12/09/2016
+
+Mobile: 9876543210
+Email: rajesh.sharma.1978@email.com
+
+---
+
+SECONDARY DOCUMENT - AADHAR E-KYC
+==================================
+
+e-KYC Reference: EK-2024-847539-SKY
+Aadhaar Number: 8734 5621 9847
+Name: RAJESH KUMAR SHARMA
+Date of Birth: 23/06/1978
+Gender: Male
+Address: 342, Shastri Nagar, Sector-7, Indore, Madhya Pradesh 452001
+
+Marital Status: Married
+Spouse Name: NEHA RAJESH SHARMA
+Number of Children: 02
+
+Annual Income: Rs. 18,75,000 (Eighteen Lakh Seventy Five Thousand)
+Occupation: Service Provider
+Employer: BHARAT INFORMATION SYSTEMS PVT LTD
+
+Bank Account: XXXX XXXX XXXX 7629
+Bank Name: STATE BANK OF INDIA
+Account Type: Savings
+
+Verification Date: 05/03/2024
+Verified By: Dr. Anil Kumar Verma (NDHM ID: NDHM-MP-00847539)
+Verification Status: Verified and Authenticated

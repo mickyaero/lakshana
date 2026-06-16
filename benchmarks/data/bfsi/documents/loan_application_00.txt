@@ -1,0 +1,106 @@
+LOAN APPLICATION FORM
+
+UNIVERSAL BANK LIMITED
+Personal Loan Application
+
+Form No. UBL-2024-PL-089456
+Date of Application: 15/03/2024
+
+SECTION 1: APPLICANT DETAILS
+
+Applicant Full Name: RAJESH KUMAR SHARMA
+Date of Birth: 12/05/1978
+Gender: Male
+Marital Status: Married
+Father/Spouse Name: MEERA SHARMA
+
+SECTION 2: CONTACT DETAILS
+
+Current Address: Flat No. 302, Shiv Enclave, Plot No. 45,
+Sector 12, Faridabad, Haryana - 121001
+Phone: 9876543210
+Email: rajesh.sharma@email.com
+
+Permanent Address: House No. 234, Agra Cantonment,
+Agra, Uttar Pradesh - 282003
+PIN Code: 282003
+
+Years at Current Address: 4 Years
+
+SECTION 3: IDENTIFICATION & TAX DETAILS
+
+PAN Number: AHPRS5432K
+Aadhaar Number: 3547 8926 1234 5678
+Voter ID: QZ1234567
+Driving License: HR9820121234567
+
+SECTION 4: EMPLOYMENT & INCOME DETAILS
+
+Occupation: Salaried Employee
+Employer Name: ACME Engineering Solutions Pvt. Ltd.
+Employer Address: No. 156, Industrial Area Phase II,
+Gurgaon, Haryana - 122001
+Designation: Senior Project Manager
+Years with Current Employer: 8 Years 3 Months
+
+Gross Monthly Income: Rs. 1,15,000
+Annual Income: Rs. 13,80,000
+
+SECTION 5: FINANCIAL DETAILS
+
+Existing Loan EMI: Rs. 22,500
+Existing Loans Details:
+- Home Loan: Rs. 15,000 EMI (Repayment Period: 180 months)
+- Car Loan: Rs. 7,500 EMI (Repayment Period: 48 months)
+
+Credit Score (CIBIL): 745
+Bank Account Number: 9876543210234567
+Bank Name: Universal Bank Limited
+Account Type: Savings
+
+SECTION 6: LOAN DETAILS REQUESTED
+
+Loan Amount Required: Rs. 5,50,000
+Loan Purpose: Higher Education - MBA
+Preferred Loan Tenure: 60 months
+Proposed Monthly EMI: Rs. 11,500
+
+SECTION 7: REFERENCE DETAILS
+
+Primary Reference Name: DR. AMIT VERMA
+Relationship: Professional Colleague
+Contact Number: 9988776655
+
+Secondary Reference Name: SHARMILA DESAI
+Relationship: Friend
+Contact Number: 9977664433
+
+SECTION 8: ADDITIONAL INFORMATION
+
+GST Registration (if applicable): 06AHPRS5432K1Z5
+Professional Qualifications: B.Tech (Mechanical), MBA (Finance)
+Own/Rent Current Property: Rented
+Annual Property Tax Paid: Rs. 8,000
+
+Total Monthly Obligations: Rs. 22,500
+Monthly Income after Obligations: Rs. 92,500
+Debt to Income Ratio: 19.6%
+
+SECTION 9: DECLARATION
+
+I/We hereby declare that the information provided above is true
+and correct to the best of my/our knowledge. I/We authorize the
+bank to verify the documents and conduct background checks.
+
+Applicant Signature: R.K. SHARMA
+Date: 15/03/2024
+
+FOR BANK USE ONLY
+
+Loan ID: LN-2024-089456-SK
+Processed By: PRIYA NAIR
+Verification Date: 18/03/2024
+Status: APPROVED
+Approval Amount: Rs. 5,50,000
+Approval Rate: 10.5% p.a.
+Sanction Letter No.: SL/2024/089456

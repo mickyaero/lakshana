@@ -1,0 +1,189 @@
+CLAIM FORM - CASHLESS / REIMBURSEMENT
+===============================================
+
+STAR HEALTH AND ALLIED INSURANCE COMPANY LIMITED
+Reg. No.: 129 | IRDA Registration
+Address: Star Health House, No.1, New Tank Road, Opp. Plaza Theatre,
+Nungambakkam, Chennai - 600034
+
+===============================================
+PATIENT INFORMATION SECTION
+===============================================
+
+Patient Name: RAJESH KUMAR SHARMA
+Date of Birth: 15/06/1968
+Age: 57 Years
+Gender: Male
+Patient ID: SH-2024-001156
+Address: Flat No. 12-A, Shivalik Apartment, Sector 15,
+         Faridabad - 121007, Haryana
+
+Policy Number: SH/2023/7854692/001
+Policy Holder Name: RAJESH KUMAR SHARMA
+Relationship with Patient: Self
+Date of Policy Commencement: 12/04/2023
+Date of Policy Expiry: 11/04/2024
+Sum Insured: Rs. 15,00,000 (Rupees Fifteen Lakh)
+
+===============================================
+HOSPITALIZATION DETAILS
+===============================================
+
+Hospital Name: FORTIS ESCORTS HEART INSTITUTE
+Hospital Registration (ROHINI ID): DL/GNR/0008457/2024
+Hospital Address: Okhla Road, New Delhi - 110025
+Contact: 011-4141-5000
+Hospital GSTIN: 07AABCR5055K1Z5
+
+Date of Admission: 24/02/2024
+Date of Discharge: 02/03/2024
+Duration of Stay: 7 Days (Inpatient)
+
+Treatment Type: Surgical
+Procedure Name: Coronary Artery Bypass Grafting (CABG) - Double Vessel
+ICD-10 Code: I25.10 (Atherosclerotic heart disease with angina pectoris)
+
+===============================================
+MEDICAL PROVIDER INFORMATION
+===============================================
+
+Consultant Doctor Name: Dr. VIKRAM ANAND MISHRA
+Doctor Registration Number: MCI/2008/34567
+Doctor Fees: Rs. 1,25,000
+
+Anesthetist Name: Dr. PRIYA VENKATESH
+Anesthetist Registration: MCI/2011/45892
+Anesthetist Fees: Rs. 65,000
+
+Cardiologist Name: Dr. AMIT PATEL
+Surgical Assistance: Yes
+
+===============================================
+HOSPITALIZATION BILL BREAKDOWN
+===============================================
+
+A. PROFESSIONAL CHARGES
+   Consultant Fees:                Rs. 1,25,000
+   Anesthetist Fees:               Rs.    65,000
+   Surgical Assistance:            Rs.    35,000
+   Nursing Charges (7 days @ Rs. 2500): Rs. 17,500
+   Subtotal A:                     Rs. 2,42,500
+
+B. ROOM & BOARDING
+   Room Rent (7 days @ Rs. 8,500): Rs. 59,500
+   Subtotal B:                     Rs. 59,500
+
+C. DIAGNOSTIC & INVESTIGATIONS
+   2D Echo:                        Rs. 8,500
+   ECG (Multiple):                 Rs. 2,200
+   Angiography (Catheterization):  Rs. 45,000
+   Blood Work (SGOT, SGPT, Lipid Profile): Rs. 4,800
+   Chest X-Ray:                    Rs. 1,800
+   Subtotal C:                     Rs. 62,300
+
+D. IMPLANTS & SURGICAL MATERIALS
+   Saphenous Vein Graft Material:  Rs. 18,000
+   Sutures & Surgical Implants:    Rs. 22,500
+   Subtotal D:                     Rs. 40,500
+
+E. MEDICATIONS & SUPPLIES
+   Antibiotics:                    Rs. 8,600
+   Anticoagulants:                 Rs. 12,400
+   Cardiac Medications:            Rs. 15,800
+   IV Fluids & Consumables:        Rs. 18,500
+   Subtotal E:                     Rs. 55,300
+
+F. OPERATION THEATRE CHARGES
+   OT Charges (2 hours @ Rs. 15,000): Rs. 30,000
+   Subtotal F:                     Rs. 30,000
+
+G. MISCELLANEOUS
+   Intensive Care Charges (CCU):   Rs. 45,000
+   Post-operative Monitoring:      Rs. 22,000
+   Discharge Processing:           Rs. 2,500
+   Subtotal G:                     Rs. 69,500
+
+================================================
+TOTAL GROSS BILL AMOUNT:            Rs. 5,60,100
+Less: Pre-authorization Approval Limit: Rs. 50,000
+TOTAL HOSPITAL BILL (NET):          Rs. 5,10,100
+================================================
+
+GST @ 5% (on applicable charges):    Rs. 18,500
+
+TOTAL BILL INCLUDING GST:            Rs. 5,28,600
+
+Insurance Approved Amount:           Rs. 5,28,600
+Patient Co-pay / Deductible:         Rs. 0
+NET AMOUNT PAYABLE:                  Rs. 5,28,600
+
+===============================================
+CLAIM INFORMATION
+===============================================
+
+Amount Claimed: Rs. 5,28,600 (Rupees Five Lakh Twenty-Eight Thousand Six Hundred)
+Claim Type: Cashless Hospitalization
+Claim Number: SH-CLM-2024-0078456
+TPA Name: MEDI ASSIST INDIA PRIVATE LIMITED
+TPA Registration: IRDA/TPA/0084/2022
+TPA Contact: 1860-102-6969
+Date of Claim Submission: 03/03/2024
+Claim Status: APPROVED FOR PAYMENT
+Approval Amount: Rs. 5,28,600
+Date of Approval: 07/03/2024
+Payment Reference: PAY/SH/2024/0078456
+
+================================================
+SUPPORTING DOCUMENTS ATTACHED
+================================================
+
+[ ] Original Hospital Bill & Itemized Statement
+[ ] Original Hospital Discharge Summary
+[ ] Investigation Reports (Echo, ECG, Angiography)
+[X] Prescription with Doctor's Signature
+[X] Doctor's Fitness Certificate
+[X] Hospital Cashless Guarantee Letter
+[ ] Policy Document (Copy)
+[X] Patient Identification Proof (Aadhar/PAN)
+[X] Authorized User Declaration Form
+[ ] Pre-authorization Request Form (if applicable)
+
+================================================
+DECLARATIONS & AUTHORIZATION
+================================================
+
+I hereby declare that the above information is true and correct to the best of my
+knowledge and belief. I authorize the insurance company to verify the details
+from the hospital and other sources.
+
+Patient/Authorized Representative Name: RAJESH KUMAR SHARMA
+Signature: ________________________     Date: 07/03/2024
+
+Hospital Authorized Person Name: ASHOK KUMAR VERMA
+Designation: Billing Manager
+Hospital Stamp & Signature: [HOSPITAL SEAL]
+
+Insurance Company Authorized Officer: NEHA SHARMA
+Officer ID: IRDA/2020/45632
+Signature: ________________________     Date: 07/03/2024
+
+================================================
+SETTLEMENT DETAILS
+================================================
+
+Claim Reference: SH-CLM-2024-0078456
+Approved Amount: Rs. 5,28,600
+Payment Mode: Direct Hospital Settlement
+Payment Date: 08/03/2024
+Bank Details for Hospital: HDFC Bank Account No. 0123456789012 (if reimbursement)
+
+Insurance Company Remarks:
+Claim approved as per policy terms. All documents found in order. Payment
+authorized to Fortis Escorts Heart Institute on 08/03/2024 by NEFT transfer.
+Patient has no outstanding balance with hospital.
+
+================================================
+
+Document Generated on: 09/03/2024
+Next Review Date (if required): As per policy terms
+Policy Status: ACTIVE

@@ -1,0 +1,81 @@
+TAX INVOICE
+
+SELLER INFORMATION
+Name: RAJESH KUMAR SHARMA ENTERPRISES PVT. LTD.
+Address: Plot No. 234, Industrial Area Phase III, MANESAR
+HARYANA 121051
+GSTIN: 06AACPR5055K1Z0
+PAN: AACPR5055K
+Phone: 0124-4567890
+Email: accounts@rajeshenterprises.com
+
+INVOICE DETAILS
+Invoice Number: RKS/2024-25/00847
+Invoice Date: 15/03/2025
+Place of Supply: HARYANA
+Reverse Charge: No
+
+BUYER INFORMATION
+Name: PRIYA VENKATESH MANUFACTURING SOLUTIONS
+Address: Survey No. 567, Electronic City Phase 2
+BANGALORE, KARNATAKA 560100
+GSTIN: 29AAFPV7821B1Z5
+PAN: AAFPV7821B
+
+BILL TO SAME AS ABOVE
+
+SHIP TO
+M/s. Priya Venkatesh Mfg. Solutions
+Electronic City, Bangalore - 560100
+
+Order Reference: PO/2025/3456
+Order Date: 12/03/2025
+Delivery Date: 18/03/2025
+
+ITEM DETAILS
+
+Sl. Item Description HSN/SAC Qty Unit Rate Amount
+No. Code Per Unit (Rs.)
+
+1. Precision Engineering Components 84121900 250 NOS 580.00 1,45,000.00
+   (Stainless Steel 316L)
+   
+2. Material Testing & Calibration Service 99821000 1 JOB 32,500.00 32,500.00
+
+SUBTOTAL (Before Tax): Rs. 1,77,500.00
+
+TAX CALCULATION
+CGST @ 9%: Rs. 15,975.00
+SGST @ 9%: Rs. 15,975.00
+IGST @ 18%: Rs. 0.00
+Total Tax: Rs. 31,950.00
+
+GRAND TOTAL: Rs. 2,09,450.00
+
+AMOUNT IN WORDS
+Rupees Two Lakh Nine Thousand Four Hundred Fifty Only
+
+PAYMENT TERMS
+Due Date: 30/04/2025
+Payment Method: NEFT/RTGS to Bank Account
+Bank Name: ICICI BANK LTD
+Account No: 1234567890123456
+IFSC Code: ICIC0000456
+Swift Code: ICICININX
+
+Notes:
+1. This is a tax invoice as per GST Rules
+2. GST registration certificate available on request
+3. All disputes subject to Bangalore Jurisdiction
+4. This document is valid only if signed digitally by authorized signatory
+
+Authorized Signature
+
+Date: 15/03/2025
+Place: Manesar
+
+For RAJESH KUMAR SHARMA ENTERPRISES PVT. LTD.
+
+(Authorized Signatory)
+Name: ANAND KRISHNAMURTHY
+Designation: Financial Controller

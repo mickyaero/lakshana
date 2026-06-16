@@ -1,0 +1,123 @@
+TAX INVOICE
+
+========================================================================
+
+SELLER / SUPPLIER DETAILS:
+
+Seller Name: RAJESH KUMAR SHARMA ENTERPRISES PVT LTD
+Seller GSTIN: 27AABCU1234F1Z5
+PAN: AABCU1234F
+Address: Plot No. 45, Cyber Towers, Hitech City
+        Hyderabad, Telangana 500081
+        Phone: 040-4567-8901
+        Email: info@rksenterprises.com
+
+========================================================================
+
+BUYER / CUSTOMER DETAILS:
+
+Buyer Name: PRIYA VENKATESH IMPORT EXPORT COMPANY
+Buyer GSTIN: 18AABCT5678G1Z2
+Address: 302, Bandra Business Plaza, Plot 233
+        Bandra East, Mumbai, Maharashtra 400051
+        Phone: 022-2890-6700
+
+========================================================================
+
+Invoice Details:
+
+Invoice Number: GST-2024-00015847
+Invoice Date: 25/03/2024
+Due Date: 08/04/2024
+Place of Supply: Maharashtra
+
+PO Number: PVIEC/2024/03/4521
+Delivery Date: 28/03/2024
+
+========================================================================
+
+ITEM DETAILS:
+
+Item    Description              Qty    Unit   Rate    Per   Amount
+No.                                          (Rs)    Unit  (Rs)
+------- ----------------------- ------ ------ ------- ---- -----------
+
+1       Polyester Fabric Roll    50     Meter  485.50  Mtr  24,275.00
+2       Cotton Blend Yarn        120    Kg     1,650   Kg   1,98,000.00
+3       Dye Chemicals (Reactive) 25     Ltr    2,200   Ltr  55,000.00
+4       Printing Ink (Premium)   10     Can    3,500   Can  35,000.00
+
+========================================================================
+
+SUMMARY:
+
+Subtotal / Taxable Amount:              Rs. 3,12,275.00
+
+SGST @ 9%:                              Rs. 28,104.75
+CGST @ 9%:                              Rs. 28,104.75
+
+Total Tax (SGST + CGST):                Rs. 56,209.50
+
+Round Off (if any):                     Rs. 0.00
+
+GRAND TOTAL / Invoice Amount:           Rs. 3,68,484.50
+
+========================================================================
+
+TAX BREAKUP:
+
+SGST (State Goods and Services Tax) 9%: Rs. 28,104.75
+CGST (Central Goods and Services Tax) 9%: Rs. 28,104.75
+IGST (Integrated GST) 0%:               Rs. 0.00
+
+Total Tax Amount:                       Rs. 56,209.50
+
+========================================================================
+
+PAYMENT DETAILS:
+
+Mode of Payment: Bank Transfer / Cheque
+Payment Terms: Net 15 days from invoice date
+Due Date: 08/04/2024
+
+Bank Details:
+Bank Name: AXIS BANK LIMITED
+Account Holder: RAJESH KUMAR SHARMA ENTERPRISES PVT LTD
+Account Number: 9876543210123456789
+IFSC Code: UTIB0001200
+Cheque in favor of: RAJESH KUMAR SHARMA ENTERPRISES PVT LTD
+
+========================================================================
+
+REVERSE CHARGE:
+
+Reverse Charge Applicable: NO
+
+========================================================================
+
+TERMS AND CONDITIONS:
+
+1. The supply is subject to the jurisdiction of Hyderabad courts.
+2. Payment to be made within 15 days of invoice date.
+3. Interest @ 18% per annum will be charged on overdue payments.
+4. Goods once sold cannot be taken back unless defective.
+5. Please quote this invoice number with your payment.
+
+========================================================================
+
+AUTHORIZED SIGNATORY:
+
+Name: Rajesh Kumar Sharma
+Designation: Director
+Date: 25/03/2024
+Digital Signature / Seal
+
+========================================================================
+
+Notes:
+- This is a tax invoice issued under GST Act
+- HSN Code for items provided above
+- E-way Bill Number (if applicable): EWB1234567890123
+- Supply value exceeds Rs. 2,50,000 - E-way bill is mandatory
+
+========================================================================

@@ -1,0 +1,129 @@
+AXIS BANK LIMITED
+PERSONAL LOAN APPLICATION FORM
+
+===========================================================================
+
+APPLICATION DETAILS
+
+Application Number: AXB/2024/PLN/0847392
+Date of Application: 15/03/2024
+Branch: Bangalore Main Branch
+Loan Officer: Mr. Sharma
+
+===========================================================================
+
+APPLICANT INFORMATION
+
+Full Name: RAJESH KUMAR SHARMA
+Date of Birth: 22/05/1978
+Age: 45 years
+Gender: Male
+Mobile Number: 98765 43210
+Email ID: rajesh.k.sharma@email.com
+Marital Status: Married
+
+===========================================================================
+
+IDENTIFICATION DETAILS
+
+PAN Number: AHQPS1247K
+Aadhar Number: 2847 XXXX XXXX 3562
+Voter ID: TN01-2978-4521-001
+
+===========================================================================
+
+EMPLOYMENT DETAILS
+
+Designation: Senior Software Architect
+Employment Type: Salaried
+Employer Name: Infosys Technologies Limited
+Industry: Information Technology
+Current Address: Flat 302, Prestige Towers, Koramangala,
+                 Bangalore, Karnataka - 560034
+Residence Type: Rented
+Years at Current Company: 8 years 6 months
+Years in Current Designation: 3 years
+
+Permanent Address: House No. 156, Sector 8, Chandigarh - 160009
+                   Chandigarh (UT)
+
+===========================================================================
+
+FINANCIAL DETAILS
+
+Gross Monthly Income: Rs. 1,75,820
+Annual Gross Income: Rs. 24,80,000
+Average Monthly Income (Last 12 months): Rs. 1,72,540
+Income Proof Submitted: Salary Slip & Bank Statement
+
+Additional Monthly Income: Rs. Nil
+
+Number of Existing Loans: 1
+Existing Loan Details:
+   - Home Loan: EMI Rs. 42,000/month (HDFC Bank)
+   - Outstanding Balance: Rs. 28,50,000
+
+Number of Dependents: 2 (Wife and One Child)
+
+===========================================================================
+
+LOAN REQUEST DETAILS
+
+Loan Amount Required: Rs. 12,00,000
+Purpose of Loan: Home Interior Renovation & Electronics Purchase
+Preferred Tenure: 36 months
+Rate of Interest: As per Bank's Policy
+Processing Fee: 0.75%
+
+===========================================================================
+
+RESIDENCE & ASSET DETAILS
+
+Type of Residence: Rented
+Monthly Rent: Rs. 25,000
+Years at Current Residence: 4 years
+
+Vehicle Ownership: Maruti Swift (2020 Model)
+Registration Number: KA-05-AB-2874
+
+===========================================================================
+
+DECLARATION & SIGNATURE
+
+I hereby declare that the information provided in this application is true,
+correct and complete to the best of my knowledge and belief. I authorize
+Axis Bank to verify any information provided herein.
+
+Applicant Signature: _________________
+
+Date: 15/03/2024
+
+===========================================================================
+
+BANK DETAILS FOR SALARY CREDIT & EMI DEDUCTION
+
+Bank Name: ICICI Bank
+Account Type: Savings
+Account Number: 1234XXXXXXX567
+IFSC Code: ICIC0001234
+Monthly Salary Credit: Yes (Average Rs. 1,75,820)
+
+===========================================================================
+
+VERIFICATION STATUS
+
+Documents Submitted:
+[X] PAN Card
+[X] Aadhar Card
+[X] Last 3 Months Salary Slips
+[X] Last 6 Months Bank Statements
+[X] Address Proof (Utility Bill)
+[X] Employment Letter
+[X] Form 16 (FY 2023-24)
+
+Bank Officer Name: Priya Venkatesh
+Bank Officer ID: BM/BAR/2024/0342
+Verification Date: 18/03/2024
+Remarks: Documents verified. Credit Score: 745. Loan approved for processing.
+
+===========================================================================

@@ -1,0 +1,139 @@
+INCOME TAX RETURN - ITR-1 (SAHAJ)
+FORM ASSESSMENT YEAR 2024-25
+========================================
+
+NAME OF ASSESSEE: RAJESH KUMAR SHARMA
+ADDRESS: 45-B, SECTOR 12, VASANT KUNJ
+NEW DELHI - 110070
+INDIA
+
+PERMANENT ACCOUNT NUMBER (PAN): BGKPS5847K
+AADHAAR NUMBER: 438756291485
+MOBILE NO.: +91-9876543210
+EMAIL: rajesh.sharma1985@gmail.com
+
+STATUS OF TAXPAYER: Individual
+FINANCIAL YEAR: 2023-24
+ASSESSMENT YEAR: 2024-25
+
+ACKNOWLEDGEMENT NUMBER: 1234567890ABC
+FILING DATE: 15/07/2024
+VERIFICATION PLACE: NEW DELHI
+
+========================================
+INCOME DETAILS
+========================================
+
+SALARIES, WAGES, ALLOWANCES:
+Basic Salary: Rs. 20,00,000
+Dearness Allowance: Rs. 3,50,000
+House Rent Allowance: Rs. 4,80,000
+Other Allowances: Rs. 1,20,000
+TOTAL SALARY INCOME: Rs. 29,50,000
+
+INCOME FROM HOUSE PROPERTY:
+Gross Annual Value: Rs. 8,00,000
+Annual Rent Received: Rs. 8,00,000
+Less: Municipal Taxes: Rs. 0
+Net Annual Value: Rs. 8,00,000
+Less: 30% Deduction: Rs. 2,40,000
+INCOME FROM HOUSE PROPERTY: Rs. 5,60,000
+
+INCOME FROM OTHER SOURCES:
+Interest on Fixed Deposits: Rs. 45,890
+Interest on Savings: Rs. 8,750
+Dividend Income: Rs. 12,500
+TOTAL OTHER INCOME: Rs. 67,140
+
+========================================
+TOTAL INCOME BEFORE DEDUCTIONS: Rs. 35,77,140
+========================================
+
+DEDUCTIONS UNDER CHAPTER VI-A
+Life Insurance Premium (Sec 80C): Rs. 1,50,000
+Public Provident Fund (Sec 80C): Rs. 1,25,000
+Contribution to NPS (Sec 80CCD): Rs. 50,000
+Health Insurance Premium (Sec 80D): Rs. 25,000
+Interest on Education Loan (Sec 80E): Rs. 0
+Amount for Handicapped (Sec 80U): Rs. 0
+Donations to Charity (Sec 80G): Rs. 10,000
+TOTAL DEDUCTIONS: Rs. 3,60,000
+
+========================================
+TAXABLE INCOME CALCULATION
+========================================
+
+TOTAL INCOME: Rs. 35,77,140
+Less: Total Deductions (Chapter VI-A): Rs. 3,60,000
+TOTAL TAXABLE INCOME: Rs. 32,17,140
+
+========================================
+TAX COMPUTATION
+========================================
+
+Income upto Rs. 2,50,000: Rs. 0
+Income from Rs. 2,50,001 to Rs. 5,00,000: Rs. 37,500
+Income from Rs. 5,00,001 to Rs. 10,00,000: Rs. 2,50,000
+Income above Rs. 10,00,000: Rs. 4,43,071
+INCOME TAX: Rs. 7,30,571
+
+SURCHARGE (10% of Income Tax): Rs. 73,057
+HEALTH AND EDUCATION CESS (4%): Rs. 32,288
+
+TOTAL TAX LIABILITY: Rs. 8,35,916
+
+========================================
+TDS CREDIT AND CALCULATIONS
+========================================
+
+TDS CLAIMED ON SALARY: Rs. 6,85,000
+From Employer (Quarterly): Rs. 6,85,000
+
+TDS ON OTHER INCOME: Rs. 4,500
+On Interest (Sec 194A): Rs. 4,500
+
+TOTAL TDS CLAIMED: Rs. 6,89,500
+
+TAX LIABILITY: Rs. 8,35,916
+Less: TDS Claimed: Rs. 6,89,500
+========================================
+BALANCE TAX PAYABLE: Rs. 1,46,416
+========================================
+
+REFUND/DEMAND:
+If Total TDS > Tax Liability: REFUND DUE
+If Tax Liability > Total TDS: PAYMENT DUE Rs. 1,46,416
+
+PAYMENT DETAILS:
+Deposit of Income Tax (if any): Rs. 0
+Self-Assessment Tax (if any): Rs. 1,46,416
+
+========================================
+VERIFICATION & DECLARATION
+========================================
+
+I hereby declare that I am the assessee named above and the
+information provided in this return is true, complete and correct to
+the best of my knowledge and belief.
+
+SIGNATURE: ___________________
+
+DATE OF VERIFICATION: 15/07/2024
+
+PLACE OF VERIFICATION: NEW DELHI
+
+INCOME TAX OFFICER DETAILS:
+Circle: New Delhi I-B
+Range: 2-2(1), New Delhi
+Ward/Division: 1(1)
+
+========================================
+DOCUMENT REFERENCE
+========================================
+
+FINANCIAL YEAR COVERED: 01/04/2023 to 31/03/2024
+RETURN TYPE: ORIGINAL RETURN
+MODE OF FILING: ONLINE
+ITR FORM: ITR-1
+PROCESSED ON: 16/07/2024
+ACKNOWLEDGEMENT DATE: 16/07/2024

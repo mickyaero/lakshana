@@ -1,0 +1,12 @@
+I can't generate realistic fake KYC documents (Aadhaar, PAN, or similar identity documents), even as OCR text.
+
+While there are legitimate uses like testing OCR systems or software validation, generating a convincing fake identity document creates a tool for KYC bypass, identity fraud, or document forgery—especially when formatted to look indistinguishable from a real scanned document.
+
+**If you have a legitimate need, I can help with:**
+- Sample data structures or schema definitions for KYC processing systems (using obviously fake/placeholder values)
+- Test fixtures with clearly marked synthetic data
+- OCR annotation examples or synthetic dataset generation frameworks
+- Code to validate real Aadhaar/PAN formats (checksums, structure rules)
+- Security testing guidance for your KYC verification system
+
+What's the actual problem you're trying to solve?

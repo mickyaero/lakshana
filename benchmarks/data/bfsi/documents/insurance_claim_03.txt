@@ -1,0 +1,140 @@
+STAR HEALTH AND ALLIED INSURANCE CO. LTD.
+HEALTH INSURANCE CLAIM FORM
+Claim Number: SH/2024/0247856
+Date of Registration: 14/02/2024
+
+---
+
+POLICYHOLDER DETAILS
+Policy Number: SHP-2023-0185642
+Policyholder Name: RAJESH KUMAR SHARMA
+Date of Birth: 22/06/1968
+Age: 55 years
+PAN: AMXPS5847K
+Address: 47-B, Ashoka Apartments, Sector 12, Noida, Uttar Pradesh - 201301
+Contact Number: 98765-43210
+Email: rajesh.sharma1968@mailbox.com
+
+---
+
+PATIENT DETAILS
+Patient Name: PRIYA SHARMA
+Relationship to Policyholder: Daughter
+Date of Birth: 15/11/1998
+Age: 25 years
+Gender: Female
+Patient ID: SH-PAT-5847229
+
+Pre-existing Disease Declaration: Yes
+Details of Pre-existing Disease: Asthma, Type 2 Diabetes Mellitus
+Duration: 8 years, 3 years respectively
+Medication Status: Under regular medication
+
+---
+
+CLAIM DETAILS
+Claim Type: Reimbursement
+Date of Admission: 08/01/2024
+Date of Discharge: 18/01/2024
+Total Hospitalization Days: 11 days
+Hospital Name: DELHI HEALTHCARE CENTER PVT. LTD.
+Hospital ROHINI ID: DH0000342
+Hospital Registration Number: DH/REG/2018/00485
+Hospital Address: 125, Medical Complex, Karol Bagh, New Delhi - 110005
+Hospital GSTIN: 07AAGCD1234F2Z5
+
+---
+
+CLINICAL DETAILS
+Primary Diagnosis: Acute Diabetic Ketoacidosis with Pneumonia
+ICD-10 Code: E10.1, J18.9
+Secondary Diagnosis: Community Acquired Pneumonia
+Chief Complaint: Shortness of breath, Fever
+Treatment Procedure: IV antibiotics, Oxygen therapy, ICU monitoring
+
+---
+
+MEDICAL BILLS BREAKDOWN
+
+Doctor Consultation Fees: Rs. 2,500/-
+Specialist Consultation (Endocrinologist): Rs. 3,000/-
+Doctor/Surgeon/Consultant Fees: Rs. 45,000/-
+  - Attending Physician (11 days @ Rs. 2,500/day): Rs. 27,500/-
+  - Specialist Endocrinologist (8 consultations @ Rs. 2,187.50): Rs. 17,500/-
+
+Nursing Charges: Rs. 18,000/-
+  - ICU Nursing (5 days @ Rs. 2,500/day): Rs. 12,500/-
+  - General Ward Nursing (6 days @ Rs. 916.67/day): Rs. 5,500/-
+
+Room Rent & Bed Charges: Rs. 65,000/-
+  - ICU Room (5 days @ Rs. 8,000/day): Rs. 40,000/-
+  - General Ward (6 days @ Rs. 4,166.67/day): Rs. 25,000/-
+
+Operation Theatre Charges: Rs. 12,000/-
+Anesthesia Charges: Rs. 8,500/-
+Drugs & Medicines: Rs. 34,850/-
+Diagnostic Tests & Investigations:
+  - Blood Tests (CBC, LFT, RFT, Blood Sugar): Rs. 4,200/-
+  - Chest X-Ray (2 @ Rs. 1,200 each): Rs. 2,400/-
+  - CT Scan Chest: Rs. 8,500/-
+  - ECG: Rs. 1,500/-
+  - Total Investigations: Rs. 16,600/-
+
+Laboratory Services: Rs. 9,200/-
+Oxygen & Respiratory Therapy: Rs. 11,500/-
+Equipment & Supplies: Rs. 6,850/-
+Hospital Administration Charges: Rs. 8,000/-
+
+TOTAL BILLED AMOUNT: Rs. 2,39,500/-
+Less: Patient Co-payment (5%): Rs. 11,975/-
+NET CLAIM AMOUNT: Rs. 2,27,525/-
+
+---
+
+CLAIM ASSESSMENT
+Claim Eligible Amount: Rs. 2,15,200/-
+Deductible Applied: Rs. 5,000/-
+APPROVED CLAIM AMOUNT: Rs. 2,10,200/-
+
+Approval Status: APPROVED
+Remarks: Claim processed as per policy terms. Pre-existing disease exclusion period applicable. 80% coverage applied for outpatient follow-up medications.
+
+---
+
+REIMBURSEMENT DETAILS
+Bank Account Name: RAJESH KUMAR SHARMA
+Bank Name: ICICI Bank Limited
+Account Number: 1234567890123
+IFSC Code: ICIC0000001
+Account Type: Savings
+
+---
+
+AUTHORIZATION & SIGNATURE
+
+Authorized Signatory: DR. RAVI MENON
+Medical Officer, Star Health Insurance
+License Number: MO/SH/2019/00847
+Date: 22/02/2024
+
+Hospital Authorized Representative: NEHA MALHOTRA
+Designation: Medical Records Officer
+Hospital Stamp & Signature: [STAMP]
+
+---
+
+POLICY DETAILS
+Policy Start Date: 15/04/2023
+Policy Expiry Date: 14/04/2024
+Policy Premium Paid: Rs. 24,00,000/-
+Sum Insured: Rs. 5,00,000/-
+Network Hospital: Yes
+Claim Processing Fee: NIL (Network Hospital)
+
+---
+
+DOCUMENT REFERENCE
+Processing Center: Star Health Delhi Branch
+Reference Number: SH/DEL/2024/0247856/001
+Generated Date: 22/02/2024
+Document Version: 1.0

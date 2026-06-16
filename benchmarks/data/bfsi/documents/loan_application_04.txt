@@ -1,0 +1,145 @@
+BANK OF INDIA - PERSONAL LOAN APPLICATION FORM
+===============================================
+
+Date of Application: 15/03/2024
+
+APPLICATION NUMBER: BOI/LN/2024/856234
+
+================== APPLICANT DETAILS ==================
+
+Name (as per ID proof): RAJESH KUMAR SHARMA
+
+Date of Birth: 12/06/1978
+
+Gender: Male
+
+Marital Status: Married
+
+Pan Number: BHAPS1847D
+
+Aadhaar Number: 7284 5619 2847 5623
+
+Email Address: rajesh.sharma2024@gmail.com
+
+Mobile Number: +91-9876543210
+
+Occupation: Senior Software Engineer
+
+Years of Experience: 18
+
+Current Employer: Tata Consultancy Services Limited
+
+Designation: Technical Lead
+
+Employment Type: Permanent
+
+================== ADDRESS DETAILS ==================
+
+Current Residential Address: 
+Flat 302, Palm Springs Apartments,
+Sector 62, Noida,
+Uttar Pradesh - 201309
+
+Years at Current Address: 7
+
+Permanent Address:
+House No. 245, Rajendra Nagar,
+Ghaziabad,
+Uttar Pradesh - 201001
+
+================== FINANCIAL DETAILS ==================
+
+Annual Income: Rs. 18,50,000
+
+Monthly Income: Rs. 1,54,167
+
+Income Source: Salary + Performance Bonus
+
+Last Salary (Monthly): Rs. 1,54,167
+
+Number of Existing Loans: 2
+
+Existing Loan Details:
+  Loan 1: Home Loan - ICICI Bank - Rs. 35,00,000 (Outstanding: Rs. 28,45,000)
+  Loan 2: Car Loan - HDFC Bank - Rs. 12,50,000 (Outstanding: Rs. 7,82,500)
+
+Credit Card Outstanding Balance: Rs. 3,15,450
+
+Total Monthly Liabilities: Rs. 52,000
+
+CIBIL Score: 742
+
+================== LOAN DETAILS ==================
+
+Loan Amount Requested: Rs. 15,00,000
+
+Loan Purpose: Home Renovation and Furniture
+
+Tenure Preferred: 60 months
+
+Processing Fee: 1% (Rs. 15,000)
+
+Insurance: Yes
+
+================== REFERENCE DETAILS ==================
+
+Reference 1 Name: AMIT PATEL
+
+Reference 1 Relationship: Colleague
+
+Reference 1 Contact: +91-9898765432
+
+Reference 1 Address: Flat 501, Oberoi Garden, Gurgaon - 122001
+
+Reference 2 Name: NEHA VERMA
+
+Reference 2 Relationship: Friend
+
+Reference 2 Contact: +91-8765432109
+
+Reference 2 Address: House 12, Priya Enclave, Delhi - 110019
+
+================== SUPPORTING DOCUMENTS CHECKLIST ==================
+
+[ X ] Pan Card Copy
+[ X ] Aadhaar Card Copy
+[ X ] Salary Slips (Last 3 months)
+[ X ] Form 16 / ITR (Last 2 years)
+[ X ] Bank Statements (Last 6 months)
+[ X ] Address Proof
+[ X ] Employment Letter
+[ X ] Identity Proof
+[ ] Property Documents (if applicable)
+
+================== DECLARATIONS AND CONSENT ==================
+
+I/We hereby declare that the information provided above is true and correct to
+the best of my/our knowledge and belief. I/We understand that any false or
+misleading information may lead to rejection of this application or legal action.
+
+I authorize Bank of India to verify the information provided and to conduct
+credit checks with Credit Information Bureau (India) Limited (CIBIL) and other
+agencies. I consent to the bank obtaining my credit reports and sharing
+information with credit bureaus as per RBI guidelines.
+
+I accept that the bank may contact me or my references for verification purposes.
+
+Signature of Applicant: ____________________
+
+Name (Print): RAJESH KUMAR SHARMA
+
+Date: 15/03/2024
+
+Place: Noida
+
+================== BANK USE ONLY ==================
+
+Processed By: [Officer Name]
+Employee ID: BOI12847
+Date of Processing: 15/03/2024
+Status: UNDER REVIEW
+Remarks: Documents submitted and verified. CIBIL check completed - Score 742 (Good).
+         Income stable. Existing liabilities manageable. Recommended for approval.
+
+Authorized By: [Senior Manager]
+Date: 16/03/2024

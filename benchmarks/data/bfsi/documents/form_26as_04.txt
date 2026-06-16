@@ -1,0 +1,111 @@
+FORM 26AS
+TAX CREDIT STATEMENT
+(For the Financial Year 2023-24 / Assessment Year 2024-25)
+
+Department of Income Tax
+Government of India
+
+===============================================================================
+
+PAN OF DEDUCTEE: ABCDE1234F
+NAME OF DEDUCTEE: RAJESH KUMAR SHARMA
+FATHER'S NAME: SHRI GOVIND SHARMA
+DATE OF BIRTH: 15/06/1978
+GENDER: MALE
+ADDRESS: 47-B, SECTOR 12, NOIDA
+         UTTAR PRADESH - 201301
+         INDIA
+
+===============================================================================
+
+SUMMARY OF TAX CREDIT
+
+Total Number of Entries: 04
+Total TDS Amount: Rs. 1,85,820
+Total TCS Amount: Rs. 0
+Grand Total Tax Credit: Rs. 1,85,820
+
+Assessment Year: 2024-25
+Financial Year: 2023-24
+
+===============================================================================
+
+DETAILS OF TDS ENTRIES
+
+ENTRY 1:
+--------
+Deductor Name: ABC PRIVATE LIMITED
+Deductor TAN: ABCD00123K
+Deductor GSTIN: 09AABCU1234F1Z5
+Section Code: 192 (Salary)
+Transaction Date: 30/06/2023
+Amount Paid/Credited: Rs. 25,00,000
+TDS Deducted: Rs. 50,000
+Challan Number: 105990002345
+Date of Deposit: 07/07/2023
+Status: DEPOSITED
+
+ENTRY 2:
+--------
+Deductor Name: XYZ CORPORATION LIMITED
+Deductor TAN: BCDE00456P
+Deductor GSTIN: 27AABCU9876F1Z5
+Section Code: 194A (Interest on Securities)
+Transaction Date: 15/08/2023
+Amount Paid/Credited: Rs. 8,50,000
+TDS Deducted: Rs. 68,000
+Challan Number: 105990023567
+Date of Deposit: 22/08/2023
+Status: DEPOSITED
+
+ENTRY 3:
+--------
+Deductor Name: HDFC BANK LIMITED
+Deductor TAN: CDEF00789H
+Deductor GSTIN: 27AABDB2010F1Z5
+Section Code: 194A (Interest on Deposits)
+Transaction Date: 31/03/2024
+Amount Paid/Credited: Rs. 6,20,000
+TDS Deducted: Rs. 46,500
+Challan Number: 105990034782
+Date of Deposit: 05/04/2024
+Status: DEPOSITED
+
+ENTRY 4:
+--------
+Deductor Name: MASTER FINANCIAL SERVICES
+Deductor TAN: DEFG00321T
+Section Code: 194H (Commission/Brokerage)
+Transaction Date: 20/12/2023
+Amount Paid/Credited: Rs. 12,15,000
+TDS Deducted: Rs. 21,320
+Challan Number: 105990045821
+Date of Deposit: 28/12/2023
+Status: DEPOSITED
+
+===============================================================================
+
+INCOME-TAX REFERENCE NUMBER (ITN): IT/2024-25/NOIDA/23450921
+
+ACKNOWLEDGEMENT NUMBER: 26AS/2024/04/001234
+
+This certificate has been generated on: 02/04/2024
+Valid as on: 31/12/2023
+
+Authorized by: CHIEF COMMISSIONER OF INCOME TAX
+Region: NOIDA
+
+For details and queries, visit: www.incometaxindiaefiling.gov.in
+
+===============================================================================
+
+NOTE: This Tax Credit Statement has been generated on the basis of TDS/TCS
+information received from the deductors/collectors and deposited with the
+Income Tax Department. If the amount shown in this statement does not match
+your records, you are advised to contact the deductor/collector concerned
+within 30 days of the generation of this statement.
+
+Any discrepancy may also be reported to the Income Tax Department through
+e-filing portal.
+
+===============================================================================

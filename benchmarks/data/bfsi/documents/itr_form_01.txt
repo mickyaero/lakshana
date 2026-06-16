@@ -1,0 +1,155 @@
+DEPARTMENT OF REVENUE
+MINISTRY OF FINANCE
+GOVERNMENT OF INDIA
+
+INCOME TAX RETURN - ITR-1 (SAHAJ)
+
+ASSESSMENT YEAR: 2024-25
+FINANCIAL YEAR: 2023-24
+
+PART A - VERIFICATION
+
+Name: RAJESH KUMAR SHARMA
+Date of Birth: 15/03/1978
+PAN: AQVPS5834K
+Aadhaar Number: 385462918756
+Gender: Male
+Residential Status: RES (Resident)
+
+Address:
+B-502, Akshay Heights
+Sector 12, Plot No. 45
+Noida, Uttar Pradesh - 201301
+India
+
+Contact: 09876543210
+Email: rajesh.sharma.tax@gmail.com
+
+PART B - INCOME DETAILS
+
+Gross Total Income Computation:
+
+1. Income from Salary: Rs. 18,50,000
+2. Income from House Property:
+   - Gross Annual Value: Rs. 3,60,000
+   - Less: Municipal Taxes: Rs. 18,000
+   - Less: Interest on Loan: Rs. 1,20,000
+   - Net Annual Value: Rs. 2,22,000
+3. Income from Capital Gains (Short-term): Rs. 85,420
+4. Income from Other Sources: Rs. 42,500
+
+Gross Total Income: Rs. 21,99,920
+
+PART C - DEDUCTIONS
+
+Section 80C - Life Insurance/PPF/ELSS/Tuition Fees:
+- Contribution to Public Provident Fund: Rs. 1,50,000
+- Life Insurance Premium (LIC): Rs. 75,000
+- ELSS Mutual Fund Investment: Rs. 75,000
+- Total Deduction u/s 80C: Rs. 3,00,000
+
+Section 80D - Health Insurance Premium:
+- Self + Family: Rs. 50,000
+- Parents (Senior Citizens): Rs. 50,000
+- Total Deduction u/s 80D: Rs. 1,00,000
+
+Section 80TTA - Interest on Savings Account: Rs. 6,500
+
+Total Deductions: Rs. 4,06,500
+
+TAXABLE INCOME
+
+Gross Total Income: Rs. 21,99,920
+Less: Deductions: Rs. 4,06,500
+Taxable Income: Rs. 17,93,420
+
+PART D - TAX COMPUTATION
+
+Tax on Taxable Income:
+- Upto Rs. 2,50,000: Nil
+- Rs. 2,50,001 to Rs. 5,00,000: Rs. 37,500
+- Rs. 5,00,001 to Rs. 10,00,000: Rs. 1,12,500
+- Rs. 10,00,001 to Rs. 17,93,420: Rs. 6,36,294
+- Total Income Tax: Rs. 8,86,294
+
+Health and Education Cess @ 4%: Rs. 35,452
+
+Total Tax Liability: Rs. 9,21,746
+
+PART E - TAX PAID/CREDITS
+
+TDS Claimed:
+- TDS on Salary (Form 16): Rs. 5,45,200
+- TDS on Interest (Form 26AS): Rs. 2,100
+- Total TDS Credit: Rs. 5,47,300
+
+Advance Tax Paid:
+- 1st Installment (15/06/2023): Rs. 1,50,000
+- 2nd Installment (15/09/2023): Rs. 1,50,000
+- 3rd Installment (15/12/2023): Rs. 1,00,000
+- 4th Installment (15/03/2024): Rs. 1,00,000
+- Total Advance Tax: Rs. 5,00,000
+
+Total Tax Paid/Credit: Rs. 10,47,300
+Less: Total Tax Liability: Rs. 9,21,746
+Refund Due: Rs. 1,25,554
+
+PART F - SCHEDULE DETAILS
+
+Schedule for Income from Capital Gains:
+- Sale of MF Units (Axis Fund):
+  Date of Purchase: 02/11/2022
+  Date of Sale: 15/08/2023
+  Cost of Acquisition: Rs. 1,20,000
+  Sale Consideration: Rs. 1,95,420
+  Short-term Capital Gain: Rs. 75,420
+
+- Bank Interest credited:
+  Interest earned on Fixed Deposit: Rs. 10,000
+
+SCHEDULE FOR DEDUCTIONS UNDER 80C:
+
+PPF Account (Opens January 2007):
+Annual Contribution: Rs. 1,50,000
+Account Number: 03121006800145
+
+LIC Policy:
+Policy Number: 587452136
+Premium Paid: Rs. 75,000
+Policy Type: Endowment Plan
+
+ELSS Mutual Fund:
+Fund Name: Motilal Oswal ELSS Tax Saver
+Units Purchased: 2850 units @ Rs. 26.32/unit
+Total Amount: Rs. 75,000
+
+PART G - VERIFICATION
+
+I certify that the particulars given herein are true and correct.
+The return has been prepared by me using the SAHAY (online) portal.
+Computation of Tax and Verification is as per the norms.
+
+Place of Verification: Noida
+Date of Verification: 28/07/2024
+
+Digital Signature/E-verification:
+Certificate - Digitally Signed
+
+Verification Code: ITR2024NOID87564AQVPS
+
+---
+Processing Details:
+Receipt Number: 201201234567
+Date of Receipt: 28/07/2024
+Status: PROCESSED
+Assessment Year: 2024-25
+Form Type: ITR-1
+
+---
+
+ACKNOWLEDGEMENT
+
+Your ITR has been successfully filed with the Income Tax Department.
+Refund shall be processed within 90 days of receipt.
+Refund Amount: Rs. 1,25,554
+Bank Account for Refund: ICIC Bank XXXX XXXX XXXX 9821

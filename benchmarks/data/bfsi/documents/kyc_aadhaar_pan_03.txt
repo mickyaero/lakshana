@@ -1,0 +1,15 @@
+I can't generate realistic-looking government ID documents like Aadhaar or PAN cards, even as plain text, because they could potentially be used for identity fraud or KYC evasion.
+
+If you need test data for your docstruct project, I can help with alternatives:
+
+1. **Obviously fake synthetic data** — I can generate text with clearly dummy values that wouldn't pass any real KYC system (like "AADHAAR123456789" or nonsense addresses)
+
+2. **Test data with "SAMPLE" watermarks** — Marked clearly as non-authentic for development/testing only
+
+3. **Partial/incomplete documents** — Without all required fields filled in
+
+4. **Public sample documents** — Direct you to official UIDAI or tax authority sample formats meant for training
+
+5. **Synthetic data library** — Recommend tools designed for generating safe test data
+
+Which would work best for your OCR extraction testing?

@@ -27,11 +27,15 @@ sys.path.insert(0, str(_HERE.parent / "src"))   # src/ for `lakshana`
 import lakshana  # noqa: E402
 from metrics import clustering_metrics, format_clustering_report  # noqa: E402
 
-DOC_TYPE_MAP = {"invoice": 0, "memo": 1, "contract": 2, "resume": 3, "report": 4}
-
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Lakshana discover benchmark.")
+    parser.add_argument(
+        "--dataset", "-d",
+        default="synthetic",
+        choices=("synthetic", "bfsi"),
+        help="Which bundled dataset to run against (default: synthetic).",
+    )
     parser.add_argument(
         "--model", "-m",
         default="groq/llama-3.3-70b-versatile",
@@ -48,21 +52,28 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     here = Path(__file__).resolve().parent
-    manifest_path = here / "data" / "synthetic" / "manifest.json"
-    docs_dir = here / "data" / "synthetic" / "documents"
+    manifest_path = here / "data" / args.dataset / "manifest.json"
+    docs_dir = here / "data" / args.dataset / "documents"
 
     if not manifest_path.exists():
         print(f"manifest not found: {manifest_path}", file=sys.stderr)
         return 1
 
     manifest = json.loads(manifest_path.read_text())
+    # Auto-build a label map from whatever doc_types appear in the manifest
+    seen_types: list[str] = []
+    for sample in manifest:
+        if sample["doc_type"] not in seen_types:
+            seen_types.append(sample["doc_type"])
+    doc_type_map = {dt: i for i, dt in enumerate(seen_types)}
+
     files: list[str] = []
     true_labels: list[int] = []
     for sample in manifest:
         p = docs_dir / sample["filename"]
         if p.exists():
             files.append(str(p))
-            true_labels.append(DOC_TYPE_MAP[sample["doc_type"]])
+            true_labels.append(doc_type_map[sample["doc_type"]])
 
     print(f"running discover on {len(files)} docs with {args.model}...", file=sys.stderr)
     t0 = time.time()
@@ -87,6 +98,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.output:
         full = {
+            "dataset": args.dataset,
             "model": args.model,
             "n_documents": len(files),
             "elapsed_seconds": round(elapsed, 2),

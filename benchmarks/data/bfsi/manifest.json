@@ -1,0 +1,142 @@
+[
+  {
+    "filename": "bank_statement_00.txt",
+    "doc_type": "bank_statement"
+  },
+  {
+    "filename": "bank_statement_01.txt",
+    "doc_type": "bank_statement"
+  },
+  {
+    "filename": "bank_statement_02.txt",
+    "doc_type": "bank_statement"
+  },
+  {
+    "filename": "bank_statement_03.txt",
+    "doc_type": "bank_statement"
+  },
+  {
+    "filename": "bank_statement_04.txt",
+    "doc_type": "bank_statement"
+  },
+  {
+    "filename": "form_26as_00.txt",
+    "doc_type": "form_26as"
+  },
+  {
+    "filename": "form_26as_01.txt",
+    "doc_type": "form_26as"
+  },
+  {
+    "filename": "form_26as_02.txt",
+    "doc_type": "form_26as"
+  },
+  {
+    "filename": "form_26as_03.txt",
+    "doc_type": "form_26as"
+  },
+  {
+    "filename": "form_26as_04.txt",
+    "doc_type": "form_26as"
+  },
+  {
+    "filename": "gst_invoice_00.txt",
+    "doc_type": "gst_invoice"
+  },
+  {
+    "filename": "gst_invoice_01.txt",
+    "doc_type": "gst_invoice"
+  },
+  {
+    "filename": "gst_invoice_02.txt",
+    "doc_type": "gst_invoice"
+  },
+  {
+    "filename": "gst_invoice_03.txt",
+    "doc_type": "gst_invoice"
+  },
+  {
+    "filename": "gst_invoice_04.txt",
+    "doc_type": "gst_invoice"
+  },
+  {
+    "filename": "insurance_claim_00.txt",
+    "doc_type": "insurance_claim"
+  },
+  {
+    "filename": "insurance_claim_01.txt",
+    "doc_type": "insurance_claim"
+  },
+  {
+    "filename": "insurance_claim_02.txt",
+    "doc_type": "insurance_claim"
+  },
+  {
+    "filename": "insurance_claim_03.txt",
+    "doc_type": "insurance_claim"
+  },
+  {
+    "filename": "insurance_claim_04.txt",
+    "doc_type": "insurance_claim"
+  },
+  {
+    "filename": "itr_form_00.txt",
+    "doc_type": "itr_form"
+  },
+  {
+    "filename": "itr_form_01.txt",
+    "doc_type": "itr_form"
+  },
+  {
+    "filename": "itr_form_02.txt",
+    "doc_type": "itr_form"
+  },
+  {
+    "filename": "itr_form_03.txt",
+    "doc_type": "itr_form"
+  },
+  {
+    "filename": "itr_form_04.txt",
+    "doc_type": "itr_form"
+  },
+  {
+    "filename": "kyc_aadhaar_pan_00.txt",
+    "doc_type": "kyc_aadhaar_pan"
+  },
+  {
+    "filename": "kyc_aadhaar_pan_01.txt",
+    "doc_type": "kyc_aadhaar_pan"
+  },
+  {
+    "filename": "kyc_aadhaar_pan_02.txt",
+    "doc_type": "kyc_aadhaar_pan"
+  },
+  {
+    "filename": "kyc_aadhaar_pan_03.txt",
+    "doc_type": "kyc_aadhaar_pan"
+  },
+  {
+    "filename": "kyc_aadhaar_pan_04.txt",
+    "doc_type": "kyc_aadhaar_pan"
+  },
+  {
+    "filename": "loan_application_00.txt",
+    "doc_type": "loan_application"
+  },
+  {
+    "filename": "loan_application_01.txt",
+    "doc_type": "loan_application"
+  },
+  {
+    "filename": "loan_application_02.txt",
+    "doc_type": "loan_application"
+  },
+  {
+    "filename": "loan_application_03.txt",
+    "doc_type": "loan_application"
+  },
+  {
+    "filename": "loan_application_04.txt",
+    "doc_type": "loan_application"
+  }
+]

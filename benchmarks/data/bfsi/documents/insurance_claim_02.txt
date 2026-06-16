@@ -1,0 +1,98 @@
+CLAIM SETTLEMENT DOCUMENT
+
+TPA : MEDASSIST HEALTHCARE SERVICES PVT LTD
+ReferenceNo.:MAS/CLM/2024/287456
+ClaimNumber: STR/HLT/2024/089234
+
+INSURANCE COMPANY : STAR HEALTH AND ALLIED INSURANCE CO. LTD
+PolicyNumber: STR0042857649BM
+PolicyHolderName: RAJESH KUMAR SHARMA
+IdentificationNumber: AAHPS8234F
+DateofBirth: 15/03/1968
+
+HOSPITALIZATION DETAILS
+
+HospitalName: APOLLO HOSPITALS LTD
+HospitalCity: BANGALORE
+HospitalRegistration: REG/AP/2018/00456
+GSTINRegistration: 29AAACR5055K1Z0
+
+PatientName: RAJESH KUMAR SHARMA
+AdmissionDate: 22/11/2023
+DischargeDate: 08/12/2023
+LengthofStay: 17Days
+
+MEDICAL DETAILS
+
+Diagnosis: ACUTE MYOCARDIAL INFARCTION WITH ACUTE HEART FAILURE
+TreatmentType: Surgical
+PreExistingDisease: Yes
+PreExistingDiseaseDeclaration: Hypertension, Diabetes Mellitus Type 2
+
+PRIMARY PROCEDURE: PERCUTANEOUS CORONARY INTERVENTION (PCI) WITH STENT PLACEMENT
+
+CLAIM AMOUNT BREAKDOWN
+
+RoomCharges: Rs.2,45,000
+(ICUChargesfor17days@Rs.14,412perday)
+
+ConsultationFees: Rs.42,500
+(CardiacConsultant,Anesthesia,Intensivist)
+
+InvestigationCharges: Rs.78,400
+12LeadECG: Rs.800
+2DeckoDoppler: Rs.18,500
+CoronaryCTAngiography: Rs.22,300
+BloodInvestigations: Rs.12,800
+(CBC,RBS,Lipid,Liver,Kidney,Electrolytes,Coagulation)
+XRayChest: Rs.1,200
+BloodGrouping: Rs.500
+TroponinI(Serial): Rs.22,300
+
+MedicineCharges: Rs.1,18,750
+AntiplateletsandAnticoagulants: Rs.45,200
+BetaBlockersandACEInhibitors: Rs.28,900
+Statins: Rs.18,650
+DiureticsandOthers: Rs.26,000
+
+SurgeryCharges: Rs.3,75,000
+(PercutaneousCoronaryIntervention,Stentplacement,OperationTheatre,Anesthesia)
+
+NursingCharges: Rs.68,900
+
+LabourCharges: Rs.32,100
+
+OxygenandMiscellaneous: Rs.24,850
+
+TOTALCLAIMAMOUNT: Rs.10,85,500
+
+DEDUCTIONS
+
+PolicyDeductible: Rs.10,000
+Coinsuranceapplicable@10%: Rs.97,550
+
+NETCLAIMAMOUNT PAYABLE: Rs.9,77,950
+
+CLAIMSETTLEMENT STATUS: APPROVED
+SettlementDate: 18/12/2023
+PaymentMode: DirectCashtoBeneficiary
+
+AuthorizingOfficer: Dr. M. VENKATESH MURTHY
+MedicalReviewer: Dr. PRIYA KRISHNAN
+ProcessingDate: 15/12/2023
+
+ADDRESS OF INSURED:
+Apt.302, ShivaPlaza
+#45, JubileeHills
+HYDERABAD, TELANGANA - 500033
+
+TPAADD RESS:
+MedAssistHealthcarePvtLtd
+#456, WhitefieldsBusinessPark
+BANGALORE, KARNATAKA - 560066
+PhoneNo.: 080-41234567
+ClaimHelpline: 1800-124-2424
+
+TermsandConditions: ThisisanAuthenticTreatmentReportandclaimamounthasbeen
+settledsubjecttotheTermsandConditionsofthepolicydocument.Anyrelief,
+concessionorgratuityisprovidedatthesoleexeciseoftheInsuranceCompany.

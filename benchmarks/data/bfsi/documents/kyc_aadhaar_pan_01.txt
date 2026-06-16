@@ -1,0 +1,69 @@
+AADHAAR CARD / e-KYC DOCUMENT
+===============================
+
+Document Type: Aadhaar Card
+Issue Date: 15/03/2019
+Validity: Lifelong
+
+Aadhaar Number: 3847 2561 9284
+Virtual ID (VID): 4926178304729481
+
+Full Name: RAJESH KUMAR SHARMA
+Gender: Male
+Date of Birth: 23/07/1985
+Father's Name: SURESH KUMAR SHARMA
+
+Address: Flat No. 401, Greenfield Apartments, Plot No. 25, Sector 7, HINJEWADI, Pune, Maharashtra
+State: Maharashtra
+Pin Code: 411057
+
+Mobile Number: XXXXXXXXXX (as on file)
+Email: ****** (as on file)
+
+Enrollment Number: 23456789012345/2018/02/15
+UIDAI Reference: 2304156789
+
+---
+
+PAN CARD
+===============================
+
+Document Type: PAN Card
+Issue Date: 12/05/2008
+
+PAN Number: ARWPS7429R
+Full Name: RAJESH KUMAR SHARMA
+Father's Name: SURESH KUMAR SHARMA
+Date of Birth: 23/07/1985
+Gender: Male
+Address: Flat No. 401, Greenfield Apartments, Sector 7, Hinjewadi, Pune - 411057, Maharashtra
+
+Jurisdiction: Pune
+Registration Reference: 15/2008
+
+---
+
+COMBINED KYC SUBMISSION
+===============================
+
+Name: RAJESH KUMAR SHARMA
+Aadhaar: 3847 2561 9284
+PAN: ARWPS7429R
+DOB: 23/07/1985
+Gender: Male
+Father: SURESH KUMAR SHARMA
+
+Complete Address: 
+Flat No. 401, Greenfield Apartments
+Plot No. 25, Sector 7
+Hinjewadi Industrial Area
+Pune - 411057
+Maharashtra, India
+
+Annual Income: Rs. 28,50,000 (Twenty-eight lakh fifty thousand)
+GSTIN (if applicable): 27ARWPS7429R1Z5
+
+Aadhaar Enrollment Date: 15/02/2018
+PAN Registration Date: 12/05/2008
+Document Verification Status: Verified
+KYC Completion Date: 02/04/2026

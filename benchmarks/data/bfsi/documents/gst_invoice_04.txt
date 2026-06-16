@@ -1,0 +1,128 @@
+TAX INVOICE
+
+===============================================================
+
+SELLER DETAILS:
+
+TECHVISION SOLUTIONS PRIVATE LIMITED
+Plot No. 42, Innovative Park
+Whitefield, Bangalore - 560066
+Karnataka, India
+
+GSTIN: 27AABCT7205R1Z5
+PAN: AABCT7205R
+Telephone: 080-41234567
+Email: billing@techvision.co.in
+
+===============================================================
+
+BUYER DETAILS:
+
+BRIGHT ENTERPRISES LIMITED
+Survey No. 156/A, TCS Technology Park
+Siruseri, Kelambakkam
+Chennai - 603103
+Tamil Nadu, India
+
+GSTIN: 33AAFCE1234P1Z7
+PAN: AAFCE1234P
+
+===============================================================
+
+INVOICE DETAILS:
+
+Invoice Number: TV/2024-25/0004782
+Date of Invoice: 23/03/2024
+
+Reference Invoice (if any): N/A
+Reference Date: N/A
+
+Place of Supply: Tamil Nadu
+Supply Type: Inter-State Supply
+
+===============================================================
+
+ITEM DETAILS:
+
+Sl. Description of Goods/Services        HSN/SAC    Qty    Unit    Unit Price    Taxable Amount
+No.                                       Code                                    (Rs.)
+
+1.  Software Development Services         998399     100    Hours   1,500.00      1,50,000.00
+    - Custom Application Development
+    - Testing & QA Support
+    - 3-month warranty
+
+2.  Technical Consultation &              998399     40     Hours   2,500.00      1,00,000.00
+    Architecture Design
+    - Solution Design
+    - Implementation Support
+
+===============================================================
+
+TAXABLE AMOUNT (Base):                    Rs.     2,50,000.00
+
+CGST @ 9% (Central GST):                  Rs.        11,250.00
+
+SGST @ 9% (State GST):                    Rs.        11,250.00
+
+IGST @ 18% (Integrated GST):              Rs.               -
+
+TOTAL TAX:                                Rs.        22,500.00
+
+Round Off:                                Rs.              -
+
+TOTAL AMOUNT PAYABLE:                     Rs.     2,72,500.00
+
+Amount in Words: Rupees Two Lakh Seventy Two Thousand Five Hundred Only
+
+===============================================================
+
+PAYMENT TERMS & BANK DETAILS:
+
+Payment Due Date: 22/04/2024
+Payment Terms: Net 30 Days from Invoice Date
+
+Bank Name: HDFC Bank Limited
+Account Holder: TECHVISION SOLUTIONS PRIVATE LIMITED
+Account Number: 1234567890123456
+IFSC Code: HDFC0000123
+UPI ID: techvision-solutions@hdfcbank
+
+Reverse Charge Applicable: NO
+
+===============================================================
+
+TAX SUMMARY:
+
+Taxable Value                             Rs.     2,50,000.00
+CGST (9%)                                 Rs.        11,250.00
+SGST (9%)                                 Rs.        11,250.00
+IGST (18%)                                Rs.               -
+
+Total Taxable Amount: Rs. 2,50,000.00
+Total Tax Amount: Rs. 22,500.00
+Total Invoice Value: Rs. 2,72,500.00
+
+===============================================================
+
+NOTES:
+
+This is a Computer Generated Invoice. No Signature Required.
+
+Terms & Conditions:
+- Payment to be made within agreed terms.
+- Goods/Services once delivered/rendered cannot be returned/reversed.
+- Our company reserves the right to withdraw credit facility.
+- In case of non-payment, interest @ 1.5% per month will be charged.
+
+Subject to Bangalore Jurisdiction.
+
+===============================================================
+
+Authorized Signatory:
+
+Name: RAJESH KUMAR SHARMA
+Designation: Finance Manager
+Date: 23/03/2024
+
+===============================================================

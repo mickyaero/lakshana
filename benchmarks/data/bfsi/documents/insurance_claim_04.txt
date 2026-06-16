@@ -1,0 +1,149 @@
+CLAIM SETTLEMENT ADVICE
+
+STAR HEALTH AND ALLIED INSURANCE CO LTD
+Registered Office: 201-B, Skyrise II, Gaurs Elanza, Plot 10A, Sector 30, Vashi, Navi Mumbai 400705
+GSTIN: 27AAACS1234C1Z5 | PAN: AAACS1234C
+
+TPA: MEDI ASSIST INDIA LTD
+Office Address: 5th Floor, Kailash Building, 26 Kasturba Gandhi Marg, New Delhi 110001
+Reg No: TP/04/03-2008
+
+================================
+
+CLAIM REFERENCE NO: CSA/2026/0845721
+CLAIM DATE: 02/04/2026
+CLAIM STATUS: SETTLED
+
+INSURER: Star Health and Allied Insurance Company Ltd
+POLICY NO: SH/IND/2024/786543
+MEMBER ID: 12345678901
+
+INSURED DETAILS:
+Policy Holder Name: RAJESH KUMAR SHARMA
+Relationship to Patient: Father
+Date of Birth: 15/06/1965
+Age: 60 years
+Gender: Male
+Address: C-402, Maple Ridge Apartments, Plot 85, Sector 62, Noida, Uttar Pradesh 201301
+PIN Code: 201301
+Contact: +91-9876543210
+
+PATIENT DETAILS (Family Floater):
+Patient Name: ARJUN SHARMA
+Relationship to PH: Son
+Date of Birth: 22/03/1992
+Age: 34 years
+Gender: Male
+
+HOSPITALIZATION DETAILS:
+Hospital Name: APOLLO HOSPITALS DELHI
+Hospital Registration/ROHINI ID: AP/DL/2005/00456
+Hospital Address: Mathura Road, Sarita Vihar, New Delhi 110076
+PIN Code: 110076
+Hospital Contact: +91-11-71618181
+
+Date of Admission: 12/03/2026
+Date of Discharge: 21/03/2026
+Total Days of Hospitalization: 10 days
+
+MEDICAL DETAILS:
+Primary Diagnosis: Acute Coronary Syndrome
+ICD-10 Code: I24.9
+Secondary Diagnosis: Type 2 Diabetes Mellitus
+ICD-10 Code: E11.9
+Pre-existing Disease Declared: Yes
+Details: Hypertension (controlled), Diabetes since 5 years
+
+Procedure Performed: Coronary Artery Bypass Graft (CABG)
+Procedure Code: 36.10
+
+Treating Consultant: Dr. VIKRAM GOPAL MEHTA
+Consultant Registration: ERMED00012456
+Specialization: Cardiothoracic Surgeon
+Doctor Fees: Rs. 2,15,000
+
+Assisting Doctors:
+1. Dr. ARUN PRAKASH NAIR - Anesthesiologist - Rs. 85,000
+2. Dr. SNEHA SHARMA - ICU Specialist - Rs. 75,000
+
+MEDICINES AND CONSUMABLES:
+Medicine Charges: Rs. 1,84,920
+Consumables (stents, grafts, sutures): Rs. 4,52,350
+
+ITEMIZED BILLING:
+
+Hospital Room Charges:
+ICU Room (2 days @ Rs. 18,500/day): Rs. 37,000
+High Dependency Unit (5 days @ Rs. 12,500/day): Rs. 62,500
+General Ward (3 days @ Rs. 8,500/day): Rs. 25,500
+
+Operation Theater Charges: Rs. 2,50,000
+
+Medical/Surgical Consumables:
+Coronary Artery Bypass Graft: Rs. 2,85,000
+IV Lines, Catheters, Monitoring devices: Rs. 1,04,000
+Surgical instruments (reusable): Rs. 63,350
+
+Pathology & Investigations:
+ECG, Echo, Angiography, Blood tests: Rs. 95,670
+CT Scan: Rs. 32,000
+X-Ray: Rs. 8,500
+
+Pharmacy Charges: Rs. 1,84,920
+Medicines (Aspirin, Clopidogrel, Statin, ACE Inhibitors, Beta Blockers): Rs. 1,84,920
+
+Nursing & Allied Charges: Rs. 58,000
+Physiotherapy Sessions: Rs. 35,000
+
+TOTAL HOSPITAL BILL: Rs. 24,00,340
+
+INSURANCE PROCESSING:
+
+Waiting Period Applicable: No
+Sub-limit Exhausted: None
+Pre-Authorization Reference: PA/2026/0458932
+
+CLAIM ADJUDICATION:
+
+Amount Claimed: Rs. 24,00,340
+Pre-existing Disease Deduction (0%): Rs. 0
+Deductible Applied: Rs. 0
+Network Hospital Benefit: 100% Cashless
+Amount Approved: Rs. 24,00,340
+Amount Rejected/Reduced: Rs. 0
+Amount Payable: Rs. 24,00,340
+
+NET SETTLEMENT AMOUNT: Rs. 24,00,340 (Rupees Twenty-Four Lakh Only)
+
+SETTLEMENT DETAILS:
+
+Settlement Mode: Direct Hospital Settlement (Cashless)
+Settlement Date: 28/03/2026
+Payment Status: CLEARED
+Cheque/Transfer Reference: NEFT/20260328/456789123
+
+Patient Out-of-Pocket: Rs. 0
+Insurer Share: Rs. 24,00,340
+
+COMPLIANCE NOTES:
+
+This claim has been settled based on the policy terms and conditions, medical reports,
+hospital bills, and supporting documents submitted.
+
+GSTIN of Hospital: 27AAPAH0234K1Z8
+PAN of Hospital: AAPAH0234K
+
+Authorized Signatory: Mr. ADITYA DASGUPTA
+Title: Regional Claims Manager
+Employee ID: MEDI/2024/001245
+
+For Star Health and Allied Insurance Company Ltd
+
+Signature: _________________
+Date: 02/04/2026
+
+For any queries, contact:
+Star Health Customer Care: 1800-4201-800 (Toll-free)
+Medi Assist TPA: +91-11-41585858
+
+This is a computer-generated document and does not require a wet-ink signature.
