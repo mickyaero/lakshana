@@ -16,6 +16,7 @@
 <meta name="twitter:title" content="Lakshana — Zero-config schema discovery" />
 <meta name="twitter:description" content="Drop a folder of PDFs. Get a JSON Schema." />
 <meta name="twitter:image" content="https://mickyaero.github.io/lakshana/og-image.png" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
@@ -39,7 +40,7 @@
   --shadow-lg: 0 8px 24px rgba(30,26,21,0.08), 0 2px 8px rgba(30,26,21,0.04);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 body {
   font-family: 'Inter', -apple-system, system-ui, sans-serif;
   background: var(--bg);
@@ -210,6 +211,32 @@ section .section-lede { color: var(--text-2); margin-bottom: 2rem; font-size: 1.
 /* Footer */
 footer { padding: 2.5rem 0 3rem; color: var(--muted); font-size: 0.88rem; text-align: center; border-top: 1px solid rgba(221,210,196,0.5); }
 footer a { color: var(--text-2); }
+
+/* Code blocks must scroll horizontally on narrow viewports, never truncate */
+.quickstart-card pre {
+  overflow-x: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile (≤ 640px) — collapse nav-links text, leave brand + Star icon */
+@media (max-width: 640px) {
+  .container { padding: 0 1.1rem; }
+  .nav-links { gap: 0.75rem; }
+  .nav-links a:not(.gh-btn) { display: none; }
+  .hero { padding: 3rem 0 2.5rem; }
+  .hero h1 { font-size: 2rem; line-height: 1.15; }
+  section { padding: 2.75rem 0; }
+  section h2 { font-size: 1.55rem; }
+  .quickstart-card { font-size: 0.78rem; padding: 1rem 1.1rem; line-height: 1.65; }
+  .quickstart-card .copy-btn { font-size: 0.72rem; padding: 0.25rem 0.5rem; top: 0.55rem; right: 0.55rem; }
+  .demo-tabs { flex-wrap: nowrap; }
+  .demo-tab { font-size: 0.82rem; padding: 0.5rem 0.7rem; white-space: nowrap; }
+  .cluster-row { flex-direction: column; gap: 0.4rem; padding: 0.85rem 0; }
+  .cluster-name { min-width: 0; }
+  .field-chip { font-size: 0.76rem; }
+  .demo-meta { gap: 0.6rem 1rem; font-size: 0.8rem; }
+}
 </style>
 </head>
 <body>
@@ -370,6 +397,39 @@ footer a { color: var(--text-2); }
           <span class="field-chip">refund</span>
         </div>
       </div>
+      <div class="cluster-row">
+        <div class="cluster-name">KYC (Aadhaar+PAN) <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">aadhaar_number</span>
+          <span class="field-chip">pan_number</span>
+          <span class="field-chip">full_name</span>
+          <span class="field-chip">date_of_birth</span>
+          <span class="field-chip">gender</span>
+          <span class="field-chip">address</span>
+        </div>
+      </div>
+      <div class="cluster-row">
+        <div class="cluster-name">Loan Application <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">applicant_name</span>
+          <span class="field-chip">employer_name</span>
+          <span class="field-chip">designation</span>
+          <span class="field-chip">monthly_income</span>
+          <span class="field-chip">pan_number</span>
+          <span class="field-chip">aadhaar_number</span>
+        </div>
+      </div>
+      <div class="cluster-row">
+        <div class="cluster-name">Insurance Claim <span class="doc-count">5 docs</span></div>
+        <div class="cluster-fields">
+          <span class="field-chip">policy_number</span>
+          <span class="field-chip">claim_number</span>
+          <span class="field-chip">patient_name</span>
+          <span class="field-chip">hospital_name</span>
+          <span class="field-chip">admission_date</span>
+          <span class="field-chip">discharge_date</span>
+        </div>
+      </div>
       <div class="demo-meta">
         <span><strong>7</strong> Indian doc types</span>
         <span>GST · ITR · 26AS · KYC · Bank · Loan · Insurance</span>
@@ -425,7 +485,7 @@ footer a { color: var(--text-2); }
   <div class="container">
     <h2>Why I built it</h2>
     <div class="founder">
-      <p>I've been building <a href="https://github.com/mickyaero/docstruct" target="_blank">docstruct</a> for a while — a full document extraction stack focused on Indian financial documents. The hardest part was never the extraction itself. It was figuring out, for any new client, <em>what their documents even were</em>.</p>
+      <p>I've been building docstruct for a while — a full document extraction stack focused on Indian financial documents. The hardest part was never the extraction itself. It was figuring out, for any new client, <em>what their documents even were</em>.</p>
       <p>So I built this. Lakshana is the "tell me what I have" piece, pulled out and standalone, so anyone building extraction can use it as a starting point.</p>
       <p>If you're building anything in this space, I'd love to hear from you — <a href="https://github.com/mickyaero/lakshana/issues">open an issue</a> with what you're trying to do.</p>
       <p class="signature">— Micky (<a href="https://github.com/mickyaero">@mickyaero</a>)</p>

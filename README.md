@@ -138,7 +138,7 @@ Every step has a graceful fallback. Every output is from real text in your docum
 
 Most "AI document extraction" tools assume *you* already know what fields you want. Real-world data is messier than that — you get a hard drive of receipts and contracts and `???` and you have to figure out the shape before you can extract anything.
 
-Lakshana is the discovery step that lets the rest of your pipeline be simple. It started as a feature inside [docstruct](https://github.com/mickyaero/docstruct); it's now its own thing so anyone can use it.
+Lakshana is the discovery step that lets the rest of your pipeline be simple. It started as a feature inside docstruct (an internal document-extraction stack); it's now its own thing so anyone can use it.
 
 — [Micky Droch](https://github.com/mickyaero)
 
