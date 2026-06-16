@@ -1,0 +1,17 @@
+INVOICE
+
+Invoice Number: INV-7670
+Date: 2024-09-16
+Bill To: NextGen Solutions
+
+Description          Qty    Price    Amount
+Data analysis        7      $342.15   $2395.05
+Software license     4      $54.32    $217.28
+Cloud hosting        5      $496.11   $2480.55
+
+Subtotal: $5092.88
+Tax (8%): $407.43
+Total: $5500.31
+
+Payment Terms: Net 30
+Due Date: 2024-08-20

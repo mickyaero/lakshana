@@ -1,0 +1,23 @@
+Frank Wilson
+frank@email.com | (270) 632-4220 | Seattle, WA
+
+PROFESSIONAL SUMMARY
+Experienced professional with 11 years in technology.
+
+EXPERIENCE
+
+Product Manager at Acme Corp
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Engineer at Alpine Software
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+MBA - Georgia Tech (2015)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

@@ -1,0 +1,16 @@
+INVOICE
+
+Invoice Number: INV-9295
+Date: 2024-09-18
+Bill To: DataPrime LLC
+
+Description          Qty    Price    Amount
+Cloud hosting        6      $281.62   $1689.72
+Cloud hosting        8      $347.68   $2781.44
+
+Subtotal: $4471.16
+Tax (8%): $357.69
+Total: $4828.85
+
+Payment Terms: Net 30
+Due Date: 2024-02-16

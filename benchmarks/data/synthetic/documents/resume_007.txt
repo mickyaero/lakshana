@@ -1,0 +1,23 @@
+Alice Chen
+alice@email.com | (785) 293-1069 | New York, NY
+
+PROFESSIONAL SUMMARY
+Experienced professional with 6 years in technology.
+
+EXPERIENCE
+
+Product Manager at DataPrime LLC
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Developer at Alpine Software
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+B.S. Computer Science - MIT (2014)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

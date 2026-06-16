@@ -1,0 +1,21 @@
+SERVICE AGREEMENT
+
+This Agreement is entered into as of 2024-03-17 between Acme Corp ("Provider") and Alpine Software ("Client").
+
+1. SCOPE OF SERVICES
+Provider shall deliver software development and consulting services.
+
+2. COMPENSATION
+Client shall pay Provider $88,313.15 per month.
+
+3. TERM
+This agreement begins on 2024-10-01 and continues for 22 months.
+
+4. TERMINATION
+Either party may terminate with 30 days written notice.
+
+SIGNATURES:
+
+_________________          _________________
+Acme Corp                   Alpine Software
+Date: 2024-03-17               Date: 2024-03-17

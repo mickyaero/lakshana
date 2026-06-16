@@ -1,0 +1,19 @@
+INVOICE
+
+Invoice Number: INV-5104
+Date: 2024-09-23
+Bill To: Global Dynamics
+
+Description          Qty    Price    Amount
+Technical support    1      $166.51   $166.51
+Cloud hosting        8      $232.22   $1857.76
+Training session     8      $211.12   $1688.96
+Software license     9      $112.67   $1014.03
+Software license     2      $328.27   $656.54
+
+Subtotal: $5383.80
+Tax (8%): $430.70
+Total: $5814.50
+
+Payment Terms: Net 30
+Due Date: 2024-05-04

@@ -1,0 +1,21 @@
+SERVICE AGREEMENT
+
+This Agreement is entered into as of 2024-12-04 between Global Dynamics ("Provider") and DataPrime LLC ("Client").
+
+1. SCOPE OF SERVICES
+Provider shall deliver software development and consulting services.
+
+2. COMPENSATION
+Client shall pay Provider $74,638.88 per month.
+
+3. TERM
+This agreement begins on 2024-09-01 and continues for 20 months.
+
+4. TERMINATION
+Either party may terminate with 60 days written notice.
+
+SIGNATURES:
+
+_________________          _________________
+Global Dynamics                   DataPrime LLC
+Date: 2024-12-04               Date: 2024-12-04

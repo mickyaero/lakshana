@@ -1,0 +1,23 @@
+Eva Schmidt
+eva@email.com | (326) 338-2318 | San Francisco, CA
+
+PROFESSIONAL SUMMARY
+Experienced professional with 7 years in technology.
+
+EXPERIENCE
+
+Product Manager at Global Dynamics
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Analyst at Global Dynamics
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+MBA - MIT (2015)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

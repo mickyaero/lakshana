@@ -1,0 +1,23 @@
+David Kim
+david@email.com | (204) 279-9496 | Boston, MA
+
+PROFESSIONAL SUMMARY
+Experienced professional with 9 years in technology.
+
+EXPERIENCE
+
+Product Manager at DataPrime LLC
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Analyst at Quantum Analytics
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+MBA - UC Berkeley (2010)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

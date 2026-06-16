@@ -1,0 +1,16 @@
+INVOICE
+
+Invoice Number: INV-9458
+Date: 2024-07-06
+Bill To: Quantum Analytics
+
+Description          Qty    Price    Amount
+Software license     4      $91.35    $365.40
+Cloud hosting        10     $166.40   $1664.00
+
+Subtotal: $2029.40
+Tax (8%): $162.35
+Total: $2191.75
+
+Payment Terms: Net 30
+Due Date: 2024-08-26

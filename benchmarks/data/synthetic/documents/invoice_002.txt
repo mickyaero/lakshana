@@ -1,0 +1,19 @@
+INVOICE
+
+Invoice Number: INV-9568
+Date: 2024-04-28
+Bill To: Quantum Analytics
+
+Description          Qty    Price    Amount
+Data analysis        8      $234.25   $1874.00
+Software license     4      $354.52   $1418.08
+Consulting services  7      $249.20   $1744.40
+Technical support    1      $454.61   $454.61
+Training session     4      $156.85   $627.40
+
+Subtotal: $6118.49
+Tax (8%): $489.48
+Total: $6607.97
+
+Payment Terms: Net 30
+Due Date: 2024-06-16

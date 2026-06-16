@@ -1,0 +1,23 @@
+Frank Wilson
+frank@email.com | (581) 888-9323 | San Francisco, CA
+
+PROFESSIONAL SUMMARY
+Experienced professional with 9 years in technology.
+
+EXPERIENCE
+
+Product Manager at Acme Corp
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Analyst at TechFlow Inc
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+M.S. Data Science - MIT (2012)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

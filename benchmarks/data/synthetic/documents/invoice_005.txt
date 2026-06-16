@@ -1,0 +1,17 @@
+INVOICE
+
+Invoice Number: INV-7625
+Date: 2024-10-18
+Bill To: TechFlow Inc
+
+Description          Qty    Price    Amount
+Training session     5      $176.23   $881.15
+Data analysis        8      $182.25   $1458.00
+Cloud hosting        6      $77.22    $463.32
+
+Subtotal: $2802.47
+Tax (8%): $224.20
+Total: $3026.67
+
+Payment Terms: Net 30
+Due Date: 2024-12-27

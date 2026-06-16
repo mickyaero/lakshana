@@ -1,0 +1,18 @@
+INVOICE
+
+Invoice Number: INV-2119
+Date: 2024-12-25
+Bill To: CloudNine Systems
+
+Description          Qty    Price    Amount
+Technical support    5      $374.33   $1871.65
+Technical support    4      $445.13   $1780.52
+Technical support    8      $400.02   $3200.16
+Cloud hosting        3      $55.20    $165.60
+
+Subtotal: $7017.93
+Tax (8%): $561.43
+Total: $7579.36
+
+Payment Terms: Net 30
+Due Date: 2024-01-19

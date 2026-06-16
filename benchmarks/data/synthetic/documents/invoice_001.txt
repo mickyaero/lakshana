@@ -1,0 +1,17 @@
+INVOICE
+
+Invoice Number: INV-4479
+Date: 2024-06-15
+Bill To: TechFlow Inc
+
+Description          Qty    Price    Amount
+Cloud hosting        6      $260.21   $1561.26
+Data analysis        9      $146.54   $1318.86
+Software license     5      $268.46   $1342.30
+
+Subtotal: $4222.42
+Tax (8%): $337.79
+Total: $4560.21
+
+Payment Terms: Net 30
+Due Date: 2024-05-07

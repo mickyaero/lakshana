@@ -1,0 +1,452 @@
+[
+  {
+    "id": "synth_0000",
+    "filename": "invoice_000.txt",
+    "ground_truth": {
+      "invoice_number": "INV-2208",
+      "total": 5814.5,
+      "company": "CloudNine Systems",
+      "item_count": 5
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0001",
+    "filename": "invoice_001.txt",
+    "ground_truth": {
+      "invoice_number": "INV-3638",
+      "total": 4560.21,
+      "company": "TechFlow Inc",
+      "item_count": 3
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0002",
+    "filename": "invoice_002.txt",
+    "ground_truth": {
+      "invoice_number": "INV-3103",
+      "total": 6607.97,
+      "company": "Quantum Analytics",
+      "item_count": 5
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0003",
+    "filename": "invoice_003.txt",
+    "ground_truth": {
+      "invoice_number": "INV-2446",
+      "total": 2191.75,
+      "company": "DataPrime LLC",
+      "item_count": 2
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0004",
+    "filename": "invoice_004.txt",
+    "ground_truth": {
+      "invoice_number": "INV-8864",
+      "total": 1308.43,
+      "company": "TechFlow Inc",
+      "item_count": 2
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0005",
+    "filename": "invoice_005.txt",
+    "ground_truth": {
+      "invoice_number": "INV-6462",
+      "total": 3026.67,
+      "company": "Alpine Software",
+      "item_count": 3
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0006",
+    "filename": "invoice_006.txt",
+    "ground_truth": {
+      "invoice_number": "INV-6452",
+      "total": 4900.45,
+      "company": "Quantum Analytics",
+      "item_count": 2
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0007",
+    "filename": "invoice_007.txt",
+    "ground_truth": {
+      "invoice_number": "INV-8657",
+      "total": 4828.85,
+      "company": "Acme Corp",
+      "item_count": 2
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0008",
+    "filename": "invoice_008.txt",
+    "ground_truth": {
+      "invoice_number": "INV-2728",
+      "total": 7579.36,
+      "company": "NextGen Solutions",
+      "item_count": 4
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0009",
+    "filename": "invoice_009.txt",
+    "ground_truth": {
+      "invoice_number": "INV-7950",
+      "total": 5500.31,
+      "company": "TechFlow Inc",
+      "item_count": 3
+    },
+    "doc_type": "invoice"
+  },
+  {
+    "id": "synth_0010",
+    "filename": "memo_000.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0011",
+    "filename": "memo_001.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0012",
+    "filename": "memo_002.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0013",
+    "filename": "memo_003.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0014",
+    "filename": "memo_004.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0015",
+    "filename": "memo_005.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0016",
+    "filename": "memo_006.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0017",
+    "filename": "memo_007.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0018",
+    "filename": "memo_008.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0019",
+    "filename": "memo_009.txt",
+    "ground_truth": {
+      "type": "memo"
+    },
+    "doc_type": "memo"
+  },
+  {
+    "id": "synth_0020",
+    "filename": "contract_000.txt",
+    "ground_truth": {
+      "amount": 91035.77,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0021",
+    "filename": "contract_001.txt",
+    "ground_truth": {
+      "amount": 13293.64,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0022",
+    "filename": "contract_002.txt",
+    "ground_truth": {
+      "amount": 78987.56,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0023",
+    "filename": "contract_003.txt",
+    "ground_truth": {
+      "amount": 74638.88,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0024",
+    "filename": "contract_004.txt",
+    "ground_truth": {
+      "amount": 58350.51,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0025",
+    "filename": "contract_005.txt",
+    "ground_truth": {
+      "amount": 83539.07,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0026",
+    "filename": "contract_006.txt",
+    "ground_truth": {
+      "amount": 39719.83,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0027",
+    "filename": "contract_007.txt",
+    "ground_truth": {
+      "amount": 88313.15,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0028",
+    "filename": "contract_008.txt",
+    "ground_truth": {
+      "amount": 23888.71,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0029",
+    "filename": "contract_009.txt",
+    "ground_truth": {
+      "amount": 23366.49,
+      "parties": 2
+    },
+    "doc_type": "contract"
+  },
+  {
+    "id": "synth_0030",
+    "filename": "resume_000.txt",
+    "ground_truth": {
+      "name": "Iris Johnson",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0031",
+    "filename": "resume_001.txt",
+    "ground_truth": {
+      "name": "Frank Wilson",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0032",
+    "filename": "resume_002.txt",
+    "ground_truth": {
+      "name": "Eva Schmidt",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0033",
+    "filename": "resume_003.txt",
+    "ground_truth": {
+      "name": "Iris Johnson",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0034",
+    "filename": "resume_004.txt",
+    "ground_truth": {
+      "name": "Frank Wilson",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0035",
+    "filename": "resume_005.txt",
+    "ground_truth": {
+      "name": "Carol Davis",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0036",
+    "filename": "resume_006.txt",
+    "ground_truth": {
+      "name": "David Kim",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0037",
+    "filename": "resume_007.txt",
+    "ground_truth": {
+      "name": "Alice Chen",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0038",
+    "filename": "resume_008.txt",
+    "ground_truth": {
+      "name": "Iris Johnson",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0039",
+    "filename": "resume_009.txt",
+    "ground_truth": {
+      "name": "Bob Martinez",
+      "type": "resume"
+    },
+    "doc_type": "resume"
+  },
+  {
+    "id": "synth_0040",
+    "filename": "report_000.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0041",
+    "filename": "report_001.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0042",
+    "filename": "report_002.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0043",
+    "filename": "report_003.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0044",
+    "filename": "report_004.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0045",
+    "filename": "report_005.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0046",
+    "filename": "report_006.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0047",
+    "filename": "report_007.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0048",
+    "filename": "report_008.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  },
+  {
+    "id": "synth_0049",
+    "filename": "report_009.txt",
+    "ground_truth": {
+      "type": "report"
+    },
+    "doc_type": "report"
+  }
+]

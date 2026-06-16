@@ -1,0 +1,21 @@
+SERVICE AGREEMENT
+
+This Agreement is entered into as of 2024-02-28 between DataPrime LLC ("Provider") and TechFlow Inc ("Client").
+
+1. SCOPE OF SERVICES
+Provider shall deliver software development and consulting services.
+
+2. COMPENSATION
+Client shall pay Provider $23,366.49 per year.
+
+3. TERM
+This agreement begins on 2024-08-01 and continues for 24 months.
+
+4. TERMINATION
+Either party may terminate with 90 days written notice.
+
+SIGNATURES:
+
+_________________          _________________
+DataPrime LLC                   TechFlow Inc
+Date: 2024-02-28               Date: 2024-02-28

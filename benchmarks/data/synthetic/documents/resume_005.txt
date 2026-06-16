@@ -1,0 +1,23 @@
+Carol Davis
+carol@email.com | (628) 500-7625 | New York, NY
+
+PROFESSIONAL SUMMARY
+Experienced professional with 4 years in technology.
+
+EXPERIENCE
+
+Senior Engineer at TechFlow Inc
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Engineer at Alpine Software
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+MBA - Georgia Tech (2012)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

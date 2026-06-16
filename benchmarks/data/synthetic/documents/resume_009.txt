@@ -1,0 +1,23 @@
+Bob Martinez
+bob@email.com | (344) 324-4832 | Austin, TX
+
+PROFESSIONAL SUMMARY
+Experienced professional with 4 years in technology.
+
+EXPERIENCE
+
+Senior Engineer at CloudNine Systems
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Engineer at DataPrime LLC
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+MBA - UC Berkeley (2019)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

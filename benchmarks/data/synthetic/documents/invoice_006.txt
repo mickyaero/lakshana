@@ -1,0 +1,16 @@
+INVOICE
+
+Invoice Number: INV-3680
+Date: 2024-11-06
+Bill To: DataPrime LLC
+
+Description          Qty    Price    Amount
+Training session     7      $346.95   $2428.65
+Software license     8      $263.60   $2108.80
+
+Subtotal: $4537.45
+Tax (8%): $363.00
+Total: $4900.45
+
+Payment Terms: Net 30
+Due Date: 2024-01-28

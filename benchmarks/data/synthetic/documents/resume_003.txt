@@ -1,0 +1,23 @@
+Iris Johnson
+iris@email.com | (559) 461-4534 | Seattle, WA
+
+PROFESSIONAL SUMMARY
+Experienced professional with 4 years in technology.
+
+EXPERIENCE
+
+Product Manager at CloudNine Systems
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Analyst at DataPrime LLC
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+B.S. Computer Science - UC Berkeley (2018)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

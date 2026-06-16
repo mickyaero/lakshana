@@ -1,0 +1,23 @@
+Iris Johnson
+iris@email.com | (496) 725-1492 | Boston, MA
+
+PROFESSIONAL SUMMARY
+Experienced professional with 13 years in technology.
+
+EXPERIENCE
+
+Senior Engineer at DataPrime LLC
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Engineer at Quantum Analytics
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+M.S. Data Science - Stanford (2011)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture

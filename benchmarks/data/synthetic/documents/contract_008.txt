@@ -1,0 +1,21 @@
+SERVICE AGREEMENT
+
+This Agreement is entered into as of 2024-12-03 between NextGen Solutions ("Provider") and Global Dynamics ("Client").
+
+1. SCOPE OF SERVICES
+Provider shall deliver software development and consulting services.
+
+2. COMPENSATION
+Client shall pay Provider $23,888.71 per year.
+
+3. TERM
+This agreement begins on 2024-06-01 and continues for 22 months.
+
+4. TERMINATION
+Either party may terminate with 90 days written notice.
+
+SIGNATURES:
+
+_________________          _________________
+NextGen Solutions                   Global Dynamics
+Date: 2024-12-03               Date: 2024-12-03

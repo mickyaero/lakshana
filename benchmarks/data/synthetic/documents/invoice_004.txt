@@ -1,0 +1,16 @@
+INVOICE
+
+Invoice Number: INV-3194
+Date: 2024-07-04
+Bill To: Acme Corp
+
+Description          Qty    Price    Amount
+Technical support    1      $283.01   $283.01
+Data analysis        10     $92.85    $928.50
+
+Subtotal: $1211.51
+Tax (8%): $96.92
+Total: $1308.43
+
+Payment Terms: Net 30
+Due Date: 2024-11-22

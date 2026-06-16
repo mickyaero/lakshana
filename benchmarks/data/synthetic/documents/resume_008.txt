@@ -1,0 +1,23 @@
+Iris Johnson
+iris@email.com | (799) 430-5648 | San Francisco, CA
+
+PROFESSIONAL SUMMARY
+Experienced professional with 11 years in technology.
+
+EXPERIENCE
+
+Product Manager at Quantum Analytics
+2020-2024
+- Led team of engineers on critical projects
+- Improved system performance by 40%
+
+Developer at DataPrime LLC
+2017-2020
+- Developed core platform features
+- Mentored junior developers
+
+EDUCATION
+M.S. Data Science - Georgia Tech (2015)
+
+SKILLS
+Python, JavaScript, SQL, Machine Learning, Cloud Architecture
