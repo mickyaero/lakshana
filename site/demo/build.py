@@ -113,23 +113,31 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('demo-cluster-label').textContent = DEMO_DATA.stats?.clusters || (DEMO_DATA.clusters||[]).length || '—';
 });
 
-// Override fetch — return canned shapes so any leftover call resolves harmlessly.
+// Override fetch — catch ALL /api/* calls so the browser never logs a 404.
+// Returns a permissive shape that's enough to keep docstruct's code paths happy.
 const _origFetch = window.fetch;
-window.fetch = function(url, opts={}) {
-  if (typeof url !== 'string') return _origFetch.call(this, url, opts);
-  if (url.includes('/api/settings/llm-keys')) {
-    return Promise.resolve({ok:true, json:()=>Promise.resolve({models:[
-      {id:'openai/gpt-4o-mini', name:'GPT-4o mini', provider:'openai', provider_label:'OpenAI'}
-    ]})});
+window.fetch = function(url, opts) {
+  if (typeof url === 'string' && url.includes('/api/')) {
+    const u = url;
+    // Return the right canned shape per endpoint pattern
+    let body = {};
+    if (u.includes('/api/settings/llm-keys')) {
+      body = { models: [{ id: 'openai/gpt-4o-mini', name: 'GPT-4o mini', provider: 'openai', provider_label: 'OpenAI' }] };
+    } else if (u.includes('/api/projects')) {
+      body = { projects: [], project_id: 'demo' };
+    } else if (u.includes('/api/schema-templates')) {
+      body = { templates: [] };
+    } else if (u.includes('/discover/progress')) {
+      body = { pct: 100, status: 'complete', message: 'Complete', logs: [] };
+    }
+    return Promise.resolve({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve(body),
+      text: () => Promise.resolve(JSON.stringify(body)),
+    });
   }
-  if (url.includes('/api/projects') && !opts.method) {
-    return Promise.resolve({ok:true, json:()=>Promise.resolve({projects:[]})});
-  }
-  if (url.includes('/api/schema-templates') && (opts.method === undefined || opts.method === 'GET')) {
-    return Promise.resolve({ok:true, json:()=>Promise.resolve({templates:[]})});
-  }
-  // Block writes
-  return Promise.resolve({ok:false, status:403, json:()=>Promise.resolve({detail:'Disabled in demo'})});
+  return _origFetch.call(this, url, opts);
 };
 
 // Wait until D exists, then patch behaviour
@@ -176,9 +184,29 @@ function _wirePatch() {
     D.goToStep(3);
   };
 
-  // Disable mutation actions
-  const _disabledMsg = 'Demo only — action disabled. Clone the repo to run lakshana locally.';
-  ['saveSchema','exportFormat','exportToStructure','rediscoverSchema','launchPipeline','startPipeline','saveAsTemplate','deleteTemplate','loadTemplates','testLLMKey'].forEach(fn => {
+  // Quiet auto-firing toasts (e.g. "Discovery complete!" from _showResults).
+  // Action-triggered toasts still work — we only suppress noisy navigation
+  // events the page would otherwise broadcast on every step transition.
+  const _origToast = D.toast.bind(D);
+  const _suppress = new Set([
+    'Discovery complete!',
+    'Discovery complete',
+    'Saved',
+    'Loading projects...',
+  ]);
+  D.toast = function(msg, type) {
+    if (typeof msg === 'string' && _suppress.has(msg.trim())) return;
+    return _origToast(msg, type);
+  };
+
+  // Silent no-ops for auto-loaders that hit non-existent endpoints
+  ['loadProjects','loadModels','loadTemplates','loadProject','_loadProviders'].forEach(fn => {
+    if (typeof D[fn] === 'function') D[fn] = function(){ return Promise.resolve(); };
+  });
+
+  // Disable mutation actions with a clear toast (these only fire on click)
+  const _disabledMsg = 'Demo only — clone the repo to run lakshana locally.';
+  ['saveSchema','exportFormat','exportToStructure','rediscoverSchema','launchPipeline','startPipeline','saveAsTemplate','deleteTemplate','testLLMKey'].forEach(fn => {
     if (typeof D[fn] === 'function') {
       D[fn] = function(){ D.toast(_disabledMsg, 'info'); };
     }

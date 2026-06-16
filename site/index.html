@@ -458,31 +458,27 @@ footer a:hover { color: var(--accent); }
     </div>
 
     <div class="showpiece" aria-label="example output">
-      <span class="showpiece-title">example · CLI</span>
-<pre><span class="c-prompt">$</span> lakshana analyze ./mystery_folder/
+      <span class="showpiece-title">example · CLI &nbsp;·&nbsp; <a href="demo/" style="color:#e8a76b;text-decoration:underline">walk through it visually →</a></span>
+<pre><span class="c-prompt">$</span> lakshana analyze ./aircraft_reports/
 
-<span class="c-comment"># clustering 50 documents…
+<span class="c-comment"># parsing 30 documents
 # embedding with hybrid structural + semantic signature
 # UMAP → HDBSCAN → LLM schema inference → frequency verification</span>
 
-<span class="c-ok">✓</span> discovered <span class="c-key">5</span> document types in 2m 17s
+<span class="c-ok">✓</span> discovered <span class="c-key">3</span> document types in 2m 15s
 
-   <span class="c-key">Service Agreement</span>  <span class="c-muted">— 10 docs</span>
-     provider · client · agreement_date · scope_of_services
-     compensation · payment_terms · term_start_date · term_end_date
+   <span class="c-key">Maintenance Inspection Report</span>  <span class="c-muted">— 10 docs</span>
+     work_order_number · aircraft_type · registration · operator
+     total_flight_hours · ata_chapter · check_level · findings
+     inspector_name · dgca_licence_no
 
-   <span class="c-key">Invoice</span>           <span class="c-muted">— 10 docs</span>
-     invoice_number · date · bill_to · description
-     quantity · price · tax_amount · total_amount
+   <span class="c-key">Flight Test Report</span>             <span class="c-muted">— 10 docs</span>
+     test_report_number · test_pilot · flight_test_engineer
+     test_objective · cg_position · observations · conclusion
 
-   <span class="c-key">Form 26AS</span>         <span class="c-muted">— 10 docs</span>
-     pan · assessment_year · tds_deducted · section_code
-
-   <span class="c-key">Bank Statement</span>    <span class="c-muted">— 10 docs</span>
-     account_number · opening_balance · closing_balance · period
-
-   <span class="c-key">GST Invoice</span>       <span class="c-muted">— 10 docs</span>
-     gstin · hsn_code · cgst · sgst · igst · taxable_value
+   <span class="c-key">Service Bulletin</span>               <span class="c-muted">— 10 docs</span>
+     sb_number · ata_chapter · classification · serial_numbers
+     compliance_window · manhours · approved_by
 
 <span class="c-ok">✓</span> wrote schema.json</pre>
     </div>
@@ -492,7 +488,7 @@ footer a:hover { color: var(--accent); }
 <section id="modes" class="dense">
   <div class="wrap">
     <p class="section-label">Two ways to use it</p>
-    <h2>A library when you want it in a pipeline. A <em>graphical app</em> when you want to interact with the result.</h2>
+    <h2>A library for pipelines. A <em>graphical app</em> to interact with.</h2>
     <div class="modes-grid">
       <div class="mode-card">
         <div class="mode-tag">Library &nbsp;·&nbsp; available now</div>
@@ -560,32 +556,38 @@ footer a:hover { color: var(--accent); }
 <section id="output">
   <div class="wrap">
     <p class="section-label">The output</p>
-    <h2>What you actually get back — <em>verbatim</em> from a real Groq Llama 3.3 70B run.</h2>
-    <p class="lede">Bundled in the repo as JSON. Reproducible with one command. These are the schemas your downstream extraction can build on.</p>
+    <h2>What you actually get back — verbatim from a real run. <a href="demo/" style="color:var(--accent);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px">Walk through it visually →</a></h2>
+    <p class="lede">Bundled in the repo as JSON. Reproducible with one command. These are the schemas your downstream extraction can build on. Same data the live demo shows.</p>
 
     <div class="gallery-tabs">
-      <button class="gallery-tab active" data-tab="general">Mixed types <span style="opacity:0.55">· 10 docs</span></button>
+      <button class="gallery-tab active" data-tab="aircraft">Aircraft engineering <span style="opacity:0.55">· 30 docs · 3 types</span></button>
       <button class="gallery-tab" data-tab="bfsi">Indian financial <span style="opacity:0.55">· 35 docs · 7 types</span></button>
     </div>
 
-    <div class="gallery-panel active" data-panel="general">
+    <div class="gallery-panel active" data-panel="aircraft">
       <div class="cluster">
-        <div class="cluster-head">Service Agreement <span class="count">5 documents · grouped: Contract Terms, Service Parties</span></div>
+        <div class="cluster-head">Maintenance Inspection Report <span class="count">10 documents · grouped: Work Order Metadata, Aircraft Details, Inspection Scope, Findings, Certification</span></div>
         <div class="field-list">
-          <span class="chip">provider</span><span class="chip">client</span><span class="chip">agreement_date</span><span class="chip">scope_of_services</span><span class="chip">compensation</span><span class="chip">term_start_date</span><span class="chip">term_end_date</span><span class="chip">payment_terms</span>
+          <span class="chip">work_order_number</span><span class="chip">aircraft_type</span><span class="chip">registration</span><span class="chip">operator</span><span class="chip">total_flight_hours</span><span class="chip">ata_chapter</span><span class="chip">check_level</span><span class="chip">findings</span><span class="chip">inspector_name</span><span class="chip">dgca_licence_no</span>
         </div>
       </div>
       <div class="cluster">
-        <div class="cluster-head">Invoice <span class="count">5 documents · grouped: Line Items, Metadata, Tax & Totals</span></div>
+        <div class="cluster-head">Flight Test Report <span class="count">10 documents · grouped: Test Identification, Aircraft + Crew, Test Conditions, Results</span></div>
         <div class="field-list">
-          <span class="chip">invoice_number</span><span class="chip">date</span><span class="chip">bill_to</span><span class="chip">description</span><span class="chip">quantity</span><span class="chip">price</span><span class="chip">tax_amount</span><span class="chip">total_amount</span>
+          <span class="chip">test_report_number</span><span class="chip">test_pilot</span><span class="chip">flight_test_engineer</span><span class="chip">test_objective</span><span class="chip">weather_conditions</span><span class="chip">cg_position</span><span class="chip">aircraft_mass</span><span class="chip">observations</span><span class="chip">conclusion</span>
+        </div>
+      </div>
+      <div class="cluster">
+        <div class="cluster-head">Service Bulletin <span class="count">10 documents · grouped: Bulletin Identity, Subject + Reason, Applicability, Compliance + Cost, Approval</span></div>
+        <div class="field-list">
+          <span class="chip">sb_number</span><span class="chip">ata_chapter</span><span class="chip">classification</span><span class="chip">aircraft_type</span><span class="chip">serial_numbers</span><span class="chip">compliance_window</span><span class="chip">manhours</span><span class="chip">approved_by</span><span class="chip">type_certification</span>
         </div>
       </div>
       <div class="gallery-meta">
-        <span><strong>2 / 2</strong> clusters discovered correctly</span>
-        <span><strong>100%</strong> purity vs. ground truth</span>
-        <span><strong>107 seconds</strong></span>
-        <span><strong>$0</strong> · Groq free tier</span>
+        <span><strong>3 / 3</strong> clusters discovered correctly</span>
+        <span><strong>96 / 94 / 97%</strong> per-cluster coverage</span>
+        <span><strong>~2m 15s</strong> end-to-end</span>
+        <span>Walk through the same result in the <a href="demo/" style="color:var(--accent)">live demo →</a></span>
       </div>
     </div>
 
