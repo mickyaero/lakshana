@@ -1073,6 +1073,137 @@ def test_run_discovery_populates_stats_on_too_few_parsed(mock_extract):
 
 # --- Robustness: deduplicate_fields surfaces config errors ---
 
+def test_set_log_level_changes_lakshana_logger():
+    import logging
+    import lakshana
+    saved = logging.getLogger("lakshana").level
+    try:
+        lakshana.set_log_level("DEBUG")
+        assert logging.getLogger("lakshana").level == logging.DEBUG
+        lakshana.set_log_level(logging.WARNING)
+        assert logging.getLogger("lakshana").level == logging.WARNING
+    finally:
+        logging.getLogger("lakshana").setLevel(saved)
+
+
+# --- Robustness: ingest hardening ---
+
+def test_extract_text_from_file_rejects_missing():
+    from lakshana.ingest import extract_text_from_file
+    import pytest
+    with pytest.raises(FileNotFoundError):
+        extract_text_from_file("/this/does/not/exist.txt")
+
+
+def test_extract_text_from_file_rejects_directory():
+    from lakshana.ingest import extract_text_from_file
+    import pytest, tempfile
+    td = tempfile.mkdtemp()
+    with pytest.raises(IsADirectoryError):
+        extract_text_from_file(td)
+
+
+def test_extract_text_from_file_handles_utf8_bom():
+    from lakshana.ingest import extract_text_from_file
+    import tempfile, os
+    td = tempfile.mkdtemp()
+    fp = os.path.join(td, "bom.txt")
+    with open(fp, "wb") as fh:
+        fh.write(b"\xef\xbb\xbfhello")   # UTF-8 BOM + "hello"
+    text = extract_text_from_file(fp)
+    assert text == "hello", f"BOM not stripped: got {text!r}"
+
+
+def test_extract_text_from_file_rejects_oversized_by_default():
+    from lakshana.ingest import extract_text_from_file
+    import pytest, tempfile, os
+    td = tempfile.mkdtemp()
+    fp = os.path.join(td, "big.txt")
+    # Write a 200MB-sized stub via seek (creates a sparse file; stat reports the full size)
+    with open(fp, "wb") as fh:
+        fh.seek(200 * 1024 * 1024 - 1)
+        fh.write(b"\0")
+    with pytest.raises(ValueError, match="exceeds"):
+        extract_text_from_file(fp)
+
+
+def test_extract_text_from_file_accepts_oversized_when_opted_in():
+    from lakshana.ingest import extract_text_from_file
+    import tempfile, os
+    td = tempfile.mkdtemp()
+    fp = os.path.join(td, "moderate.txt")
+    with open(fp, "w") as fh:
+        fh.write("x" * (15 * 1024 * 1024))  # 15 MB — over the warn threshold
+    text = extract_text_from_file(fp, max_bytes=20 * 1024 * 1024)
+    assert len(text) == 15 * 1024 * 1024
+
+
+# --- Robustness: call_llm transient detection + retries ---
+
+def test_call_llm_treats_5xx_as_transient():
+    from lakshana.llm import _is_transient
+    class FakeServerErr(Exception):
+        status_code = 502
+    assert _is_transient(FakeServerErr("bad gateway")) is True
+
+
+def test_call_llm_treats_anthropic_overloaded_as_transient():
+    from lakshana.llm import _is_transient
+    class APIError(Exception):
+        pass
+    assert _is_transient(APIError("Error 529: overloaded")) is True
+
+
+def test_call_llm_treats_timeout_as_transient():
+    from lakshana.llm import _is_transient
+    class APITimeout(Exception): pass
+    assert _is_transient(APITimeout("request timed out after 30s")) is True
+
+
+def test_call_llm_treats_4xx_as_non_transient():
+    from lakshana.llm import _is_transient
+    class AuthErr(Exception):
+        status_code = 401
+    assert _is_transient(AuthErr("unauthorized")) is False
+
+
+def test_call_llm_retry_delay_honors_retry_after():
+    from lakshana.llm import _retry_delay
+    class E(Exception):
+        retry_after = 12
+    delay = _retry_delay(E("blah"), attempt=0)
+    assert delay >= 12  # honors the hint, not the small exponential floor
+
+
+# --- Robustness: LLM output shape validation ---
+
+def test_expect_shape_dict_with_required_keys():
+    from lakshana._utils import expect_shape
+    import pytest
+    # passes
+    expect_shape({"name": "x", "fields": []}, ("dict", "name", "fields"))
+    # fails on missing key
+    with pytest.raises(ValueError, match="missing required key 'fields'"):
+        expect_shape({"name": "x"}, ("dict", "name", "fields"))
+
+
+def test_expect_shape_list_of_dicts():
+    from lakshana._utils import expect_shape
+    import pytest
+    expect_shape([{"name": "a"}, {"name": "b"}], ("list", ("dict", "name")))
+    with pytest.raises(ValueError, match="array element 1"):
+        expect_shape([{"name": "a"}, "not-a-dict"], ("list", ("dict", "name")))
+
+
+def test_expect_shape_rejects_wrong_top_level():
+    from lakshana._utils import expect_shape
+    import pytest
+    with pytest.raises(ValueError, match="expected object"):
+        expect_shape(["a", "b"], dict)
+    with pytest.raises(ValueError, match="expected array"):
+        expect_shape({"a": 1}, list)
+
+
 def test_deduplicate_fields_surfaces_missing_api_key():
     """Missing API key is a configuration error, must NOT be silently swallowed."""
     import pytest

@@ -96,6 +96,58 @@ def _balance_json(candidate: str) -> str:
     return candidate
 
 
+def expect_shape(data, shape, *, source: str = "LLM"):
+    """Defensive shape check for LLM-derived JSON.
+
+    ``shape`` is a small DSL:
+      - ``dict``           → require an object
+      - ``list``           → require an array
+      - ``("dict", key)``  → require object with key
+      - ``("list", item)`` → require array, each element matches `item`
+      - ``str`` / ``int`` etc. → require that python type
+
+    Returns ``data`` on success, else raises ``ValueError`` with a clear
+    description of what was expected vs. what arrived. Used to turn
+    'LLM returned something weird' into actionable error messages.
+    """
+    if shape is dict:
+        if not isinstance(data, dict):
+            raise ValueError(f"{source} returned {type(data).__name__}, expected object")
+        return data
+    if shape is list:
+        if not isinstance(data, list):
+            raise ValueError(f"{source} returned {type(data).__name__}, expected array")
+        return data
+    if isinstance(shape, type):
+        if not isinstance(data, shape):
+            raise ValueError(
+                f"{source} returned {type(data).__name__}, expected {shape.__name__}"
+            )
+        return data
+    if isinstance(shape, tuple) and shape and shape[0] == "dict":
+        if not isinstance(data, dict):
+            raise ValueError(f"{source} returned {type(data).__name__}, expected object")
+        for key in shape[1:]:
+            if key not in data:
+                raise ValueError(
+                    f"{source} response is missing required key '{key}'. "
+                    f"Got keys: {sorted(data.keys())}"
+                )
+        return data
+    if isinstance(shape, tuple) and shape and shape[0] == "list":
+        if not isinstance(data, list):
+            raise ValueError(f"{source} returned {type(data).__name__}, expected array")
+        if len(shape) > 1:
+            item_shape = shape[1]
+            for i, item in enumerate(data):
+                try:
+                    expect_shape(item, item_shape, source=f"{source}[{i}]")
+                except ValueError as e:
+                    raise ValueError(f"{source} array element {i}: {e}") from e
+        return data
+    return data
+
+
 def parse_json_robust(raw: str) -> dict:
     """Parse JSON with recovery for truncated/malformed LLM output."""
     try:
