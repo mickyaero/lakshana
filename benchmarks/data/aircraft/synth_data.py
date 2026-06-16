@@ -170,8 +170,40 @@ def gen_umap_coords(n_per_cluster: int = 10) -> tuple[list[list[float]], list[li
     return coords_2d, coords_3d
 
 
+def _build_doc_field_matrix(field_defs: list[dict], n_docs: int, target_coverage: int) -> list[dict]:
+    """Build a doc×field presence matrix that yields ~target_coverage when averaged.
+
+    Fields marked required=True are always present. Optional fields are present
+    most of the time but absent in a small random sample of documents so the
+    coverage indicator computes a believable number.
+    """
+    total_cells = len(field_defs) * n_docs
+    target_filled = round(total_cells * target_coverage / 100)
+    # Always-filled count from required fields
+    required_names = [f["name"] for f in field_defs if f.get("required")]
+    optional_names = [f["name"] for f in field_defs if not f.get("required")]
+    required_filled = len(required_names) * n_docs
+
+    matrix = [{name: True for name in required_names} for _ in range(n_docs)]
+    if not optional_names:
+        return matrix
+
+    # Distribute the remaining "filled" count across optional cells
+    remaining = max(0, target_filled - required_filled)
+    optional_cells = [(d, fn) for d in range(n_docs) for fn in optional_names]
+    random.shuffle(optional_cells)
+    for i, (d, fn) in enumerate(optional_cells):
+        matrix[d][fn] = i < remaining
+    return matrix
+
+
 def main() -> int:
     umap_2d, umap_3d = gen_umap_coords(10)
+    # Build doc_field_matrix for each schema so coverage indicator computes correctly
+    for cid, target in (("0", 96), ("1", 94), ("2", 97)):
+        SCHEMAS[cid]["doc_field_matrix"] = _build_doc_field_matrix(
+            SCHEMAS[cid]["fields"], n_docs=10, target_coverage=target,
+        )
 
     # Build doc_names + doc_cluster_ids + doc_snippets in the same order as
     # the UMAP coordinates (10 of each cluster, in cluster order)
