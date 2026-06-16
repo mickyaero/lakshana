@@ -53,6 +53,23 @@ for cluster in result.clusters:
 lakshana analyze ./docs --model groq/llama-3.3-70b-versatile --output result.json
 ```
 
+## Run the benchmark yourself
+
+The "92% cluster purity" claim above isn't a marketing number — it's reproducible:
+
+```bash
+git clone https://github.com/mickyaero/lakshana && cd lakshana
+export GROQ_API_KEY=...
+python benchmarks/run.py
+```
+
+This runs `discover()` over the bundled 50-document, 5-type synthetic set (invoice / memo / contract / resume / report) and prints ARI, NMI, V-measure, and purity. See `benchmarks/README.md`.
+
+## Examples
+
+- `examples/quickstart.py` — discover schemas across the bundled dataset and print fields per cluster.
+- `examples/export_json_schema.py` — export each cluster as a standard JSON Schema for downstream extraction / OpenAPI / LLM tool contracts.
+
 ## Why it exists
 
 Most "AI document extraction" tools assume *you* already know what fields you want. Real-world data is messier than that — you get a hard drive of receipts and contracts and `???` and you have to figure out the shape before you can extract anything.
