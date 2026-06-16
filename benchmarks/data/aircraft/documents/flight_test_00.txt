@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-DA-2026-702
+Test Date:           19/05/2026
+Test Duration:       3h 42min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       Airbus A330-300
+Registration:        VT-JFK
+Engine Configuration: 2 × RR Trent 772B
+Test Configuration:  62% MTOW, fwd CG @ 21% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. R. Subramanian
+First Officer:       F/O R. Bhattacharya
+Flight Test Engineer: FTE V. Subramanian
+
+TEST OBJECTIVE
+
+Cruise Performance Validation — Verify TAS at FL370, SFC, range factor for the subject aircraft at the conditions defined in
+Test Plan FTR-DA-2026-702, in accordance with CAR-23 / CS-25 § 25.386.
+
+TEST CONDITIONS
+
+Weather:             CAVOK, wind 270/08, OAT 26°C
+Test Altitude(s):    FL328 — FL189
+Fuel On Board (Start): 18.8 tonnes
+Aircraft Mass:       78 tonnes
+CG Position:         36.9% MAC
+
+OBSERVATIONS
+
+  • Engine parameters remained within nominal envelope during entire test sequence.
+  • Pitch attitude steady within ±0.5° of target throughout maneuver.
+  • Roll control authority adequate at all tested conditions; no adverse handling noted.
+  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
+
+CONCLUSION
+
+PASS — all acceptance criteria met. Recommended for certification.
+
+Approved by:         Capt. R. Subramanian
+FTE Concurrence:     FTE V. Subramanian

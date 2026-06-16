@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-AIR-34-411
+Issue Date:          18/01/2026
+Revision Status:     Revision 01
+ATA Chapter:         34 — Navigation
+Classification:      Recommended
+
+SUBJECT
+
+Wing Leading Edge Slat Track Lubrication Procedure Update
+
+APPLICABILITY
+
+Aircraft Type:       Airbus A350-900
+Serial Numbers:      MSN 4219 through MSN 4862
+Engine(s):           RR Trent XWB
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-AIR-34-770 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address intermittent slat actuator stall reports traced to insufficient lubrication. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Apply MIL-PRF-81322 grease per revised procedure detailed in Appendix A every 1500 FH.
+
+COMPLIANCE
+
+Recommended compliance: Within 4,500 flight hours
+or 24 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            15 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 1,040
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 34
+— Illustrated Parts Catalog (IPC) Chapter 34
+— Component Maintenance Manual 34-66-66
+
+APPROVED BY
+
+T. Balakrishnan, Test Engineer
+Engineering Authority: EA-4501
+Type Certification:    TC-FAA-2021

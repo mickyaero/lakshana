@@ -1,13 +1,5 @@
-<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lakshana logo">
-  <!-- scattered points: the "unmarked" documents -->
-  <circle cx="11" cy="18" r="2.6" fill="#1a1611" opacity="0.42"/>
-  <circle cx="52" cy="12" r="2.2" fill="#1a1611" opacity="0.36"/>
-  <circle cx="10" cy="48" r="2.4" fill="#1a1611" opacity="0.42"/>
-  <circle cx="54" cy="48" r="2.7" fill="#1a1611" opacity="0.40"/>
-  <circle cx="22" cy="55" r="1.9" fill="#1a1611" opacity="0.32"/>
-  <circle cx="44" cy="9"  r="1.8" fill="#1a1611" opacity="0.30"/>
-  <!-- thin orbit: the discovery -->
-  <circle cx="32" cy="32" r="14" fill="none" stroke="#cf6d35" stroke-width="1" opacity="0.32"/>
-  <!-- the lakṣaṇa — the defining mark -->
-  <circle cx="32" cy="32" r="8.5" fill="#cf6d35"/>
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lakshana logo (Devanagari la)">
+  <g transform="translate(21.90,45.81) scale(0.01458,-0.01458)" fill="#cf6d35">
+    <path d="M1418 1246V1104H1115V-29H1073L960 99V762Q856 738 639 455L523 570Q551 612 615 686Q516 780 419 780Q354 780 297.5 727.0Q241 674 241 602Q241 524 292.5 444.5Q344 365 570 144L536 113L252 397Q163 485 131.0 548.0Q99 611 99 665Q99 762 162.5 826.0Q226 890 319 890Q468 890 646 720Q799 869 960 869V1104H-3V1246Z"/>
+  </g>
 </svg>

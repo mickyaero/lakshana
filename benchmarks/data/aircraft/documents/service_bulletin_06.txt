@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-AIR-75-560
+Issue Date:          28/04/2026
+Revision Status:     Revision 01
+ATA Chapter:         75 — Engine Air
+Classification:      Mandatory
+
+SUBJECT
+
+Cabin Pressure Outflow Valve Position Sensor Update
+
+APPLICABILITY
+
+Aircraft Type:       Airbus A321neo
+Serial Numbers:      MSN 4441 through MSN 5143
+Engine(s):           CFM LEAP-1A26
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-AIR-75-884 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address drift of position sensor output observed > 5,000 FH causing slow OFV response. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Replace position sensor P/N OFV-PS-2301 and reprogram CPC per task 21-31-12.
+
+COMPLIANCE
+
+Recommended compliance: Within 6,000 flight hours
+or 12 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            9 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 3,259
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 75
+— Illustrated Parts Catalog (IPC) Chapter 75
+— Component Maintenance Manual 75-45-66
+
+APPROVED BY
+
+A. Vasudevan, Senior Engineer
+Engineering Authority: EA-2269
+Type Certification:    TC-FAA-2018

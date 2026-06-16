@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-BL-2026-459
+Test Date:           28/01/2026
+Test Duration:       5h 16min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       Airbus A320-200
+Registration:        VT-IDA
+Engine Configuration: 2 × CFM56-5B4/P
+Test Configuration:  71% MTOW, fwd CG @ 27% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. S. Mukherjee
+First Officer:       F/O R. Bhattacharya
+Flight Test Engineer: FTE M. Rao
+
+TEST OBJECTIVE
+
+Cruise Performance Validation — Verify TAS at FL370, SFC, range factor for the subject aircraft at the conditions defined in
+Test Plan FTR-BL-2026-459, in accordance with CAR-23 / CS-25 § 25.545.
+
+TEST CONDITIONS
+
+Weather:             CAVOK, wind 360/06, OAT 31°C
+Test Altitude(s):    FL256 — FL240
+Fuel On Board (Start): 16.6 tonnes
+Aircraft Mass:       200 tonnes
+CG Position:         34.1% MAC
+
+OBSERVATIONS
+
+  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
+  • Pitch attitude steady within ±0.5° of target throughout maneuver.
+  • Engine parameters remained within nominal envelope during entire test sequence.
+  • Stick force gradient consistent with predicted simulator response.
+
+CONCLUSION
+
+PASS — all acceptance criteria met. Recommended for certification.
+
+Approved by:         Capt. S. Mukherjee
+FTE Concurrence:     FTE M. Rao

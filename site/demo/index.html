@@ -1,0 +1,3288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lakshana — Discover (live demo replay)</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="demo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@700&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/plotly.js-gl3d-dist-min@2.35.3/plotly-gl3d.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <style>
+    :root {
+      --bg:#f5f0ea;--surface:#fff;--surface-alt:#f6f1eb;--border:#ddd2c4;
+      --text:#1a1611;--text-2:#564c40;--muted:#8f8274;
+      --accent:#cf6d35;--accent-h:#b85c28;--accent-g:rgba(207,109,53,0.08);--accent-glow:rgba(207,109,53,0.15);
+      --success:#3d8b40;--success-light:rgba(61,139,64,0.1);
+      --error:#c23a2e;--error-light:rgba(194,58,46,0.08);
+      --warning:#b8892a;--warning-light:rgba(184,137,42,0.08);
+      --blue:#3868b8;--purple:#7652b5;
+      --shadow:0 1px 3px rgba(30,26,21,0.06),0 1px 2px rgba(30,26,21,0.04);
+      --shadow-lg:0 8px 24px rgba(30,26,21,0.08),0 2px 8px rgba(30,26,21,0.04);
+      --r:10px;--r-lg:14px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:#f5f0ea;color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.5}
+    body::before{content:'';position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse 80% 60% at 10% 20%,rgba(208,104,48,0.06),transparent 70%),radial-gradient(ellipse 60% 80% at 85% 70%,rgba(176,132,37,0.05),transparent 70%),radial-gradient(ellipse 70% 50% at 50% 90%,rgba(56,104,184,0.03),transparent 70%),radial-gradient(ellipse 50% 40% at 70% 10%,rgba(118,82,181,0.025),transparent 60%);pointer-events:none}
+    body::after{content:'';position:fixed;inset:0;z-index:-1;opacity:0.35;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px;mix-blend-mode:overlay}
+    .navbar{display:none}
+    #step-bar{position:fixed;top:52px;left:0;right:0;height:44px;background:rgba(255,255,255,0.62);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(200,185,168,0.25);box-shadow:0 1px 2px rgba(30,26,21,0.03);display:flex;align-items:center;padding:0 2rem;z-index:49}
+    .navbar-brand{font-size:1.15rem;font-weight:800;margin-right:2rem;white-space:nowrap;display:flex;align-items:center;text-decoration:none;color:var(--text)}
+    .navbar-brand .brand-doc{display:inline-flex;letter-spacing:-0.02em}
+    .navbar-brand .brand-doc span{display:inline-block;font-family:'Caveat',cursive;font-weight:700;font-size:1.5rem;color:var(--accent);line-height:1}
+    .navbar-brand .brand-doc .c-d{transform:rotate(-8deg) translateY(2px)}.navbar-brand .brand-doc .c-o{transform:rotate(5deg) translateY(-3px) translateX(-1px);font-size:1.6rem}.navbar-brand .brand-doc .c-c{transform:rotate(-3deg) translateY(1px) translateX(-2px)}
+    .navbar-brand .brand-arrow{display:inline-block;margin:0 0.1em;color:var(--accent);font-size:0.7rem;font-weight:400;position:relative;top:1px;opacity:0.55}
+    .navbar-brand .brand-struct{font-family:'Fira Code','SF Mono',monospace;font-weight:600;font-size:0.92rem;color:var(--text);letter-spacing:0.04em}
+    .step-nav{display:flex;align-items:center;gap:0;flex:1}
+    .step-item{display:flex;align-items:center;gap:0.5rem;padding:0.5rem 1rem;cursor:pointer;font-size:0.85rem;font-weight:500;color:var(--muted);transition:all 0.2s;white-space:nowrap;border-bottom:3px solid transparent;position:relative}
+    .step-item:hover{color:var(--text-2)}.step-item.active{color:var(--accent);border-bottom-color:var(--accent)}.step-item.completed{color:var(--success)}.step-item.disabled{opacity:0.4;cursor:not-allowed;pointer-events:none}
+    .step-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;background:var(--surface-alt);color:var(--muted);flex-shrink:0}
+    .step-item.active .step-num{background:var(--accent);color:white}.step-item.completed .step-num{background:var(--success);color:white}
+    .step-connector{width:20px;height:2px;background:var(--border);flex-shrink:0;border-radius:1px;transition:background 0.3s}.step-connector.completed{background:var(--success)}
+    .main{max-width:1200px;margin:0 auto;padding:2rem 1.5rem;min-height:calc(100vh - 100px);margin-top:96px}
+    .page{display:none;animation:fadeIn 0.25s ease}.page.active{display:block}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .page-title{font-size:1.5rem;font-weight:700;margin-bottom:0.35rem;letter-spacing:-0.02em}
+    .page-subtitle{color:var(--text-2);font-size:0.9rem;margin-bottom:1.75rem;line-height:1.5}
+    .card{background:rgba(255,255,255,0.55);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,0.65);border-radius:var(--r-lg);padding:1.5rem;box-shadow:0 4px 24px rgba(30,26,21,0.06),inset 0 1px 0 rgba(255,255,255,0.5);margin-bottom:1rem;transition:box-shadow 0.25s cubic-bezier(0.16,1,0.3,1),transform 0.25s cubic-bezier(0.16,1,0.3,1)}.card:hover{box-shadow:0 8px 32px rgba(30,26,21,0.10),inset 0 1px 0 rgba(255,255,255,0.5);transform:translateY(-1px)}
+    input[type="text"],input[type="number"],input[type="password"],textarea,select{background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:0.6rem 0.85rem;font-size:0.9rem;font-family:inherit;outline:none;transition:border-color 0.2s;width:100%}
+    input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-g)}
+    label{display:block;font-size:0.85rem;font-weight:600;color:var(--text-2);margin-bottom:0.35rem}
+    .btn{padding:0.55rem 1.25rem;border-radius:8px;border:none;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.2s cubic-bezier(0.16,1,0.3,1);display:inline-flex;align-items:center;gap:0.4rem}
+    .btn-primary{background:var(--accent);color:white;box-shadow:0 1px 2px rgba(208,104,48,0.3),inset 0 1px 0 rgba(255,255,255,0.15)}.btn-primary:hover{background:var(--accent-h);box-shadow:0 4px 16px rgba(208,104,48,0.3),inset 0 1px 0 rgba(255,255,255,0.2);transform:translateY(-1px)}.btn-primary:active{transform:translateY(0) scale(0.98)}.btn-primary:disabled{opacity:0.4;cursor:not-allowed;transform:none}
+    .btn-secondary{background:rgba(255,255,255,0.45);color:var(--text);border:1px solid rgba(200,185,168,0.45);-webkit-backdrop-filter:blur(8px) saturate(130%);backdrop-filter:blur(8px) saturate(130%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4)}.btn-secondary:hover{background:rgba(255,255,255,0.60);border-color:rgba(200,185,168,0.65);transform:translateY(-1px);box-shadow:0 2px 8px rgba(30,26,21,0.06),inset 0 1px 0 rgba(255,255,255,0.5)}
+    .btn-sm{padding:0.4rem 0.85rem;font-size:0.8rem}
+    .btn-next{padding:0.65rem 2rem;font-size:0.95rem}
+    .footer-bar{display:flex;justify-content:flex-end;align-items:center;padding-top:1.5rem;margin-top:1.5rem;border-top:1px solid var(--border);gap:0.75rem}
+    .dropzone{border:2px dashed rgba(200,185,168,0.5);border-radius:12px;padding:2.5rem 1rem;text-align:center;cursor:pointer;transition:all 0.25s cubic-bezier(0.16,1,0.3,1);background:rgba(255,255,255,0.25);-webkit-backdrop-filter:blur(8px) saturate(130%);backdrop-filter:blur(8px) saturate(130%)}
+    .dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:rgba(208,104,48,0.08);box-shadow:0 0 0 4px rgba(208,104,48,0.08),inset 0 0 20px rgba(208,104,48,0.04);transform:scale(1.005)}
+    .dropzone .dz-icon{font-size:2.5rem;margin-bottom:0.5rem}.dropzone .dz-text{font-weight:600;font-size:0.95rem}.dropzone .dz-hint{color:var(--muted);margin-top:0.35rem;font-size:0.85rem}
+    input[type="file"]{display:none}
+    .file-grid{display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem}
+    .file-row{display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.85rem;background:var(--surface-alt);border:1px solid var(--border);border-radius:8px;font-size:0.88rem}
+    .file-row .f-name{flex:1;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.file-row .f-size{color:var(--muted);font-size:0.8rem;flex-shrink:0}
+    .file-row .f-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.78rem;cursor:pointer;color:var(--text-2)}.file-row .f-btn:hover{background:var(--error-light);border-color:var(--error);color:var(--error)}
+    .source-tabs{display:flex;gap:0.5rem;margin-bottom:1.25rem}.source-tab{padding:0.65rem 1.25rem;border-radius:10px;border:2px solid var(--border);background:var(--surface);cursor:pointer;transition:all 0.2s;font-size:0.88rem;font-weight:600;text-align:center;flex:1}
+    .source-tab:hover{border-color:var(--accent);background:var(--accent-g)}.source-tab.active{border-color:var(--accent);background:var(--accent-g);color:var(--accent)}
+    .source-tab .st-icon{font-size:1.3rem;display:block;margin-bottom:0.2rem}
+    .source-panel{display:none}.source-panel.active{display:block}
+    .progress-bar{width:100%;height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin:0.75rem 0}
+    .progress-fill{height:100%;background:var(--accent);border-radius:4px;transition:width 0.3s ease;width:0%}
+    .log-box{background:var(--surface-alt);border:1px solid var(--border);border-radius:8px;padding:0.75rem;max-height:300px;overflow-y:auto;font-family:'SF Mono','Fira Code',monospace;font-size:0.78rem;line-height:1.7}
+    .stat-row{display:flex;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap}
+    .stat-card{background:rgba(255,255,255,0.55);-webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);border:1px solid rgba(255,255,255,0.65);border-radius:10px;padding:1rem 1.25rem;text-align:center;flex:1;min-width:100px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.5)}
+    .stat-card .sv{font-size:1.6rem;font-weight:700;color:var(--accent)}.stat-card .sl{font-size:0.75rem;color:var(--muted);margin-top:0.15rem}
+    .toast-container{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;display:flex;flex-direction:column-reverse;gap:0.5rem}
+    .toast{padding:0.75rem 1.25rem;border-radius:10px;font-size:0.88rem;font-weight:500;animation:toastIn 0.3s ease;max-width:400px;background:rgba(255,255,255,0.80);-webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);border:1px solid rgba(255,255,255,0.5);box-shadow:0 4px 16px rgba(30,26,21,0.10),inset 0 1px 0 rgba(255,255,255,0.4)}
+    .toast-success{background:rgba(45,122,48,0.88);color:white}.toast-error{background:rgba(184,52,42,0.88);color:white}.toast-info{background:rgba(207,109,53,0.88);color:white}
+    @keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .modal-overlay{position:fixed;inset:0;background:rgba(30,26,21,0.40);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);z-index:100;display:flex;align-items:center;justify-content:center}
+    .modal{background:rgba(255,255,255,0.72);border-radius:16px;-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%);border:1px solid rgba(255,255,255,0.65);box-shadow:0 16px 48px rgba(30,26,21,0.15),0 4px 12px rgba(30,26,21,0.06),inset 0 1px 0 rgba(255,255,255,0.6);padding:1.5rem;max-width:520px;width:90vw;max-height:80vh;overflow-y:auto}
+    .banner-warn{background:var(--warning-light);border:1px solid rgba(184,137,42,0.3);border-radius:var(--r);padding:0.75rem 1rem;margin-bottom:1rem;font-size:0.85rem;display:flex;align-items:center;gap:0.5rem}
+    .info-icon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--surface-alt);border:1px solid var(--border);color:var(--accent);font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.15s;line-height:1;flex-shrink:0}
+    .info-icon:hover{background:var(--accent);color:white;border-color:var(--accent)}
+    .info-tip{background:var(--surface-alt);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:0.85rem 1rem;font-size:0.82rem;color:var(--text-2);line-height:1.65}
+    .info-tip strong{color:var(--text)}.info-tip em{color:var(--accent);font-style:normal;font-weight:500}
+    /* Scatter plot */
+    #umap-canvas{width:100%;height:400px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:crosshair}
+    .cluster-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1rem}
+    .cluster-card{background:rgba(255,255,255,0.55);-webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);border:1px solid rgba(255,255,255,0.65);border-radius:var(--r-lg);padding:1.25rem;cursor:pointer;transition:all 0.25s cubic-bezier(0.16,1,0.3,1);box-shadow:0 2px 12px rgba(30,26,21,0.04),inset 0 1px 0 rgba(255,255,255,0.5)}
+    .cluster-card:hover{box-shadow:0 8px 32px rgba(30,26,21,0.08);border-color:rgba(207,109,53,0.4);transform:translateY(-2px);background:rgba(255,255,255,0.75)}
+    .cluster-card.selected{border-color:var(--accent);border-width:2px;background:var(--accent-g)}
+    .cluster-card .cc-name{font-weight:700;font-size:0.95rem;margin-bottom:0.25rem}
+    .cluster-card .cc-desc{font-size:0.82rem;color:var(--text-2);margin-bottom:0.5rem;line-height:1.5}
+    .cluster-card .cc-count{font-size:0.78rem;color:var(--muted)}
+    .cluster-card .cc-keywords{display:flex;flex-wrap:wrap;gap:0.25rem;margin-top:0.4rem}
+    .cluster-card .cc-kw{font-size:0.68rem;padding:0.1rem 0.4rem;background:var(--surface-alt);border:1px solid var(--border);border-radius:4px;color:var(--text-2)}
+    /* Schema editor */
+    .schema-table{width:100%;border-collapse:collapse;font-size:0.85rem}
+    .schema-table th{text-align:left;padding:0.5rem 0.75rem;font-size:0.78rem;font-weight:600;color:var(--text-2);border-bottom:2px solid var(--border);position:sticky;top:0;background:var(--surface);z-index:1}
+    .schema-table td{padding:0.5rem 0.75rem;border-bottom:1px solid var(--border)}
+    .schema-table tr:hover td{background:var(--accent-g)}
+    .schema-table input,.schema-table select{border:1px solid transparent;background:transparent;padding:0.3rem 0.4rem;border-radius:6px;width:100%;font-size:0.82rem}
+    .schema-table input:focus,.schema-table select:focus{border-color:var(--accent);background:var(--surface)}
+    .freq-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;width:60px;display:inline-block;vertical-align:middle;margin-right:0.3rem}
+    .freq-fill{height:100%;border-radius:3px}
+    @media(max-width:900px){.cluster-cards{grid-template-columns:1fr}[style*="grid-template-columns: 1fr 320px"]{grid-template-columns:1fr!important}}
+    .hidden{display:none !important}
+
+    /* ---- Pipeline section styles ---- */
+    .pipeline-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:1rem}
+    .pipeline-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;transition:background 0.15s}
+    .pipeline-header:hover{background:var(--accent-g)}
+    .pipeline-header-left{display:flex;align-items:center;gap:0.75rem}
+    .pipeline-header-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--accent);color:white;font-size:1.1rem;flex-shrink:0}
+    .pipeline-header-title{font-weight:700;font-size:1rem}
+    .pipeline-header-desc{font-size:0.82rem;color:var(--text-2)}
+    .pipeline-header .chevron{transition:transform 0.2s;font-size:0.8rem;color:var(--muted)}
+    .pipeline-header.expanded .chevron{transform:rotate(180deg)}
+    .pipeline-body{border-top:1px solid var(--border);display:none;padding:1.25rem}
+    .pipeline-body.open{display:block;animation:fadeIn 0.25s ease}
+    .pipeline-step{border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.25rem;margin-bottom:0.75rem;transition:all 0.2s}
+    .pipeline-step.step-active{border-color:var(--accent);background:var(--accent-g)}
+    .pipeline-step.step-done{border-color:var(--success);background:var(--success-light)}
+    .pipeline-step.step-error{border-color:var(--error);background:var(--error-light)}
+    .pipeline-step-header{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem}
+    .pipeline-step-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;background:var(--surface-alt);color:var(--muted);flex-shrink:0}
+    .pipeline-step.step-active .pipeline-step-num{background:var(--accent);color:white}
+    .pipeline-step.step-done .pipeline-step-num{background:var(--success);color:white}
+    .pipeline-step-title{font-weight:600;font-size:0.9rem}
+    .pipeline-step-content{margin-top:0.5rem;font-size:0.85rem;color:var(--text-2);line-height:1.55}
+    .pipeline-step-content .skeleton-wrap{padding:0.5rem 0}
+
+    /* Field quality cards */
+    .fq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.6rem;margin-top:0.75rem}
+    .fq-card{background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r);padding:0.75rem 1rem;transition:all 0.15s}
+    .fq-card:hover{box-shadow:var(--shadow)}
+    .fq-card-name{font-weight:600;font-size:0.85rem;margin-bottom:0.25rem;display:flex;align-items:center;gap:0.4rem}
+    .fq-card-type{font-size:0.68rem;padding:0.1rem 0.35rem;background:rgba(56,104,184,0.1);color:#3868b8;border-radius:4px;font-weight:600}
+    .fq-card-metrics{display:flex;align-items:center;gap:0.75rem;margin-top:0.35rem;font-size:0.78rem;color:var(--text-2)}
+    .fq-card-fill{display:flex;align-items:center;gap:0.3rem}
+    .fq-card-fill-bar{width:50px;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+    .fq-card-fill-inner{height:100%;border-radius:3px;transition:width 0.3s}
+
+    /* Preview extraction results table */
+    .preview-table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:0.5rem}
+    .preview-table th{text-align:left;padding:0.45rem 0.65rem;font-size:0.75rem;font-weight:600;color:var(--text-2);border-bottom:2px solid var(--border);background:var(--surface-alt);position:sticky;top:0}
+    .preview-table td{padding:0.45rem 0.65rem;border-bottom:1px solid var(--border);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .preview-table tr:hover td{background:var(--accent-g)}
+
+    /* Annotations review */
+    .anno-card{background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r);padding:0.75rem 1rem;margin-bottom:0.5rem}
+    .anno-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.35rem}
+    .anno-card-name{font-weight:600;font-size:0.88rem}
+    .anno-card-body{font-size:0.8rem;color:var(--text-2);line-height:1.55}
+    .anno-card-fields{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem}
+    .anno-field-tag{font-size:0.72rem;padding:0.15rem 0.45rem;background:var(--accent-g);border:1px solid rgba(207,109,53,0.2);border-radius:4px;color:var(--accent);font-weight:500}
+
+    /* Pipeline launch button */
+    .btn-pipeline{background:linear-gradient(135deg,var(--accent),#e07a3a);color:white;padding:0.7rem 2rem;font-size:1rem;font-weight:700;border-radius:10px;box-shadow:0 4px 12px rgba(207,109,53,0.25);transition:all 0.2s}
+    .btn-pipeline:hover{box-shadow:0 6px 18px rgba(207,109,53,0.35);transform:translateY(-1px)}
+    .btn-pipeline:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+
+    /* ---- RARE badge ---- */
+    .badge-rare{background:rgba(194,58,46,0.1);color:#c23a2e;font-size:0.7rem;padding:0.1rem 0.4rem;border-radius:4px;font-weight:600;margin-left:0.3rem}
+    .badge-shared{background:rgba(56,104,184,0.1);color:#3868b8;font-size:0.7rem;padding:0.1rem 0.4rem;border-radius:4px;font-weight:600;margin-left:0.3rem}
+
+    /* ---- Grouped accordion schema ---- */
+    .group-header{display:flex;align-items:center;gap:0.5rem;padding:0.6rem 0.75rem;background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r);cursor:pointer;transition:background 0.15s;margin-bottom:0.25rem;user-select:none}
+    .group-header:hover{background:rgba(207,109,53,0.06)}
+    .group-header .group-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+    .group-header .group-name{font-weight:700;font-size:0.88rem;flex:1}
+    .group-header .group-meta{font-size:0.75rem;color:var(--muted);display:flex;gap:0.75rem;align-items:center}
+    .group-header .group-chevron{transition:transform 0.2s;font-size:0.7rem;color:var(--muted)}
+    .group-header.collapsed .group-chevron{transform:rotate(-90deg)}
+    .group-body{overflow:hidden;transition:max-height 0.25s ease}
+    .group-body.collapsed{max-height:0 !important;overflow:hidden}
+    .group-select-all{width:14px;height:14px;accent-color:var(--accent)}
+
+    /* ---- Drag-and-drop ---- */
+    .drag-handle{cursor:grab;color:var(--muted);font-size:0.9rem;padding:0 0.25rem;user-select:none;flex-shrink:0}
+    .drag-handle:active{cursor:grabbing}
+    .schema-table tr.dragging{opacity:0.5;background:var(--accent-g)}
+    .schema-table tr.drop-target td{border-top:2px dashed var(--accent)}
+    .group-header.drag-over{border:2px dashed var(--accent);background:var(--accent-g)}
+    .move-group-dropdown{font-size:0.78rem;padding:0.2rem 0.4rem;border:1px solid var(--border);border-radius:4px;background:var(--surface)}
+
+    /* ---- Grounded vs ungrounded frequency bars ---- */
+    .freq-fill-grounded{height:100%;border-radius:3px}
+    .freq-fill-ungrounded{height:100%;border-radius:3px;background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,0.4) 2px,rgba(255,255,255,0.4) 4px)}
+
+    /* ---- Cross-cluster fields panel ---- */
+    .cross-cluster-panel{background:rgba(56,104,184,0.04);border:1px solid rgba(56,104,184,0.15);border-radius:var(--r-lg);padding:1rem 1.25rem;margin-top:1rem}
+    .cross-cluster-table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:0.5rem}
+    .cross-cluster-table th{text-align:left;padding:0.4rem 0.6rem;font-size:0.75rem;font-weight:600;color:var(--text-2);border-bottom:2px solid var(--border)}
+    .cross-cluster-table td{padding:0.4rem 0.6rem;border-bottom:1px solid var(--border)}
+
+    /* ---- Merge suggestions ---- */
+    .merge-suggestion{background:rgba(184,137,42,0.06);border:1px solid rgba(184,137,42,0.2);border-radius:var(--r);padding:0.6rem 0.85rem;margin-bottom:0.35rem;font-size:0.82rem;display:flex;align-items:center;gap:0.5rem}
+    .merge-suggestion .merge-fields{font-weight:600;color:var(--text)}
+    .merge-suggestion .merge-reason{color:var(--text-2);flex:1}
+    .merge-suggestion .merge-action{font-size:0.75rem}
+
+    /* ---- Template library ---- */
+    .template-card{background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--r);padding:0.75rem 1rem;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.75rem}
+    .template-card .tpl-name{font-weight:600;font-size:0.88rem;flex:1}
+    .template-card .tpl-meta{font-size:0.75rem;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+<!-- Global nav (injected by docstruct-nav.js) -->
+<div id="ds-nav-container"></div>
+
+<!-- Feature step nav -->
+<nav id="step-bar">
+  <div class="step-nav" id="step-nav">
+    <div class="step-item active" data-step="1" onclick="D.goToStep(1)"><span class="step-num">1</span> Sample</div>
+    <div class="step-connector"></div>
+    <div class="step-item disabled" data-step="2" onclick="D.goToStep(2)"><span class="step-num">2</span> Playback</div>
+    <div class="step-connector"></div>
+    <div class="step-item disabled" data-step="3" onclick="D.goToStep(3)"><span class="step-num">3</span> Clusters</div>
+    <div class="step-connector"></div>
+    <div class="step-item disabled" data-step="4" onclick="D.goToStep(4)"><span class="step-num">4</span> Schema</div>
+    <div class="step-connector"></div>
+    <div class="step-item disabled" data-step="5" onclick="D.goToStep(5)"><span class="step-num">5</span> Pipeline</div>
+    <div class="step-connector"></div>
+    <div class="step-item disabled" data-step="6" onclick="D.goToStep(6)"><span class="step-num">6</span> Export</div>
+  </div>
+</nav>
+
+<div class="main">
+
+  
+  <!-- Step 1 (Demo) — Sample run intro -->
+  <div class="page active" data-step="1">
+    <div class="page-title">Sample run · Aircraft engineering reports</div>
+    <div class="page-subtitle">A playback of what Lakshana discovered when run on 30 aerospace documents across 3 types. You're seeing the real output, just pre-computed.</div>
+
+    <div style="background:linear-gradient(135deg,rgba(207,109,53,0.06),rgba(207,109,53,0.02));border:1px solid rgba(207,109,53,0.20);border-radius:var(--r-lg);padding:1.1rem 1.3rem;margin-bottom:1.25rem">
+      <strong style="font-size:0.9rem;color:var(--text);display:block;margin-bottom:0.4rem">What's in this corpus</strong>
+      <div style="font-size:0.85rem;color:var(--text-2);line-height:1.6">
+        30 synthetic but realistic aerospace documents: Maintenance Inspection Reports (A/B/C/D-checks, ATA-chapter referenced), Flight Test Reports (CAR-23 / CS-25 acceptance tests), and Service Bulletins (manufacturer modification advisories). Fleet includes A320neo, A350-900, B787-8, ATR 72-600, and others.
+        <br><br>
+        Lakshana was given no labels. It clustered the documents into the 3 implicit types, named each one, inferred a schema per type, and verified field frequencies. The output you'll see across the next steps is what came out — UMAP coordinates, cluster cards, schemas, coverage, and the lot.
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:0.9rem 1.2rem">
+      <div>
+        <div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Model used</div>
+        <div style="font-weight:600;font-size:0.96rem;margin-top:0.1rem" id="demo-model-label">—</div>
+      </div>
+      <div>
+        <div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Wall time</div>
+        <div style="font-weight:600;font-size:0.96rem;margin-top:0.1rem" id="demo-time-label">—</div>
+      </div>
+      <div>
+        <div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Documents</div>
+        <div style="font-weight:600;font-size:0.96rem;margin-top:0.1rem" id="demo-doc-label">—</div>
+      </div>
+      <div>
+        <div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Clusters found</div>
+        <div style="font-weight:600;font-size:0.96rem;margin-top:0.1rem" id="demo-cluster-label">—</div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <button class="btn btn-primary btn-next" onclick="D.startAnalysis()">Play the analysis &#8594;</button>
+      <button class="btn btn-secondary" onclick="D._jumpToResults()">Skip to results &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Analyze -->
+  <div class="page" data-step="2">
+    <div class="page-title">Analyzing Documents</div>
+    <div class="page-subtitle">Extracting structure, embedding, clustering, and discovering schemas...</div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem">
+        <strong style="font-size:0.9rem" id="d-progress-status">Starting...</strong>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="d-progress-bar"></div></div>
+    </div>
+    <div class="card">
+      <strong style="font-size:0.85rem;display:block;margin-bottom:0.35rem">Live Log</strong>
+      <div class="log-box" id="d-live-log"></div>
+    </div>
+  </div>
+
+  <!-- Step 3: Clusters -->
+  <div class="page" data-step="3">
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.35rem">
+      <div class="page-title" style="margin-bottom:0">Document Clusters</div>
+      <span class="info-icon" onclick="document.getElementById('cluster-info').classList.toggle('hidden')">&#9432;</span>
+    </div>
+    <div class="page-subtitle">Each point is a document. Colors represent discovered document types. Click any point or cluster card.</div>
+    <div id="cluster-info" class="hidden info-tip" style="margin-bottom:1rem">
+      <strong>How clustering works:</strong><br>
+      1. Each document is converted into a numerical "fingerprint" combining <em>structural features</em> (dates, amounts, key-value pairs, headers, tables) with <em>semantic meaning</em> (sentence-transformer embeddings).<br>
+      2. <strong>UMAP</strong> (Uniform Manifold Approximation and Projection) reduces these high-dimensional fingerprints to 2D/3D coordinates while preserving the relative distances — similar documents stay close.<br>
+      3. <strong>HDBSCAN</strong> (Hierarchical Density-Based Spatial Clustering) automatically detects groups of documents that are close together, without needing to specify the number of clusters upfront. It handles outliers gracefully.<br>
+      4. For each cluster, an LLM analyzes sample documents to generate a human-readable name, description, and list of distinguishing keywords.<br>
+      <em>Structural weight: 60% | Semantic weight: 40% — template structure matters more than content for grouping.</em>
+    </div>
+
+    <div class="stat-row" id="d-stats"></div>
+
+    <!-- Visualization: UMAP + Doc Preview side by side -->
+    <div style="display:grid;grid-template-columns:1fr 320px;gap:1rem">
+      <div class="card" style="padding:1rem;margin-bottom:0">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+          <div style="display:flex;align-items:center;gap:0.5rem">
+            <strong style="font-size:0.9rem">Document Map</strong>
+            <span class="info-icon" onclick="document.getElementById('umap-info').classList.toggle('hidden')">&#9432;</span>
+          </div>
+          <div style="display:flex;gap:0.35rem">
+            <button class="btn btn-sm" id="btn-2d" onclick="D.setView('2d')" style="font-weight:700;background:var(--accent);color:white">2D</button>
+            <button class="btn btn-secondary btn-sm" id="btn-3d" onclick="D.setView('3d')">3D</button>
+          </div>
+        </div>
+        <div id="umap-info" class="hidden info-tip" style="margin-bottom:0.5rem">
+          <strong>UMAP projection:</strong> documents are positioned so that structurally similar documents appear near each other. The axes are abstract coordinates — only <em>relative distances</em> matter, not the absolute position. Hover to see document names. Click a point to preview the document.
+        </div>
+        <div id="umap-plot" style="width:100%;height:450px"></div>
+      </div>
+
+      <!-- Document preview panel -->
+      <div class="card" style="padding:0;margin-bottom:0;display:flex;flex-direction:column;max-height:520px">
+        <div style="padding:0.75rem 1rem;border-bottom:1px solid var(--border);font-weight:600;font-size:0.88rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0">
+          <span id="doc-preview-title">Click a document</span>
+          <span id="doc-preview-cluster" style="font-size:0.68rem;padding:0.1rem 0.4rem;border-radius:4px;font-weight:600"></span>
+        </div>
+        <div id="doc-preview-body" style="flex:1;overflow-y:auto;padding:0.75rem 1rem;font-size:0.8rem;line-height:1.6;color:var(--text-2)">
+          <div style="text-align:center;padding:2.5rem 1rem;color:var(--muted)">
+            <div style="font-size:2rem;margin-bottom:0.5rem">&#128196;</div>
+            Click any point on the map to preview the document here.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cluster cards -->
+    <div style="display:flex;align-items:center;gap:0.4rem;margin-top:0.5rem;margin-bottom:0.5rem">
+      <strong style="font-size:0.95rem">Discovered Document Types</strong>
+      <span class="info-icon" onclick="document.getElementById('types-info').classList.toggle('hidden')">&#9432;</span>
+    </div>
+    <div id="types-info" class="hidden info-tip" style="margin-bottom:0.75rem">
+      Each card represents a group of structurally similar documents. The <strong>name</strong> and <strong>description</strong> are generated by the LLM after analyzing representative samples from the cluster. <strong>Keywords</strong> are the most distinguishing terms. Click "View Schema" to see the discovered fields for that document type.
+    </div>
+    <div class="cluster-cards" id="d-cluster-cards"></div>
+
+    <!-- Cross-Cluster Fields Panel -->
+    <div id="d-cross-cluster-panel" class="cross-cluster-panel hidden" style="margin-top:1rem">
+      <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.5rem">
+        <strong style="font-size:0.9rem">Cross-Cluster Fields</strong>
+        <span class="info-icon" onclick="document.getElementById('cross-cluster-info').classList.toggle('hidden')">&#9432;</span>
+      </div>
+      <div id="cross-cluster-info" class="hidden info-tip" style="margin-bottom:0.5rem">
+        Fields that appear in multiple clusters are likely universal to your document collection. These are candidates for a shared base template.
+      </div>
+      <div id="d-cross-cluster-body"></div>
+    </div>
+
+    <div class="footer-bar">
+      <button class="btn btn-primary btn-next" onclick="D.goToStep(4)">View Schemas &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Step 4: Schema -->
+  <div class="page" data-step="4">
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.35rem">
+      <div class="page-title" style="margin-bottom:0">Discovered Schema</div>
+      <span class="info-icon" onclick="document.getElementById('schema-info').classList.toggle('hidden')">&#9432;</span>
+    </div>
+    <div class="page-subtitle">Review and edit the discovered fields. Toggle required, rename, or remove fields.</div>
+    <div id="schema-info" class="hidden info-tip" style="margin-bottom:1rem">
+      <strong>How schema discovery works:</strong><br>
+      The LLM analyzes 5-8 sample documents from each cluster using <em>iterative schema discovery</em> (ReDD pattern): it starts with an empty schema, processes documents one by one, and evolves the schema with each new document — adding new fields and refining descriptions.<br><br>
+      <strong>Frequency</strong> measures how many documents in the cluster contain each field. It's computed by checking whether the field's name keywords or description keywords appear in each document's text.<br>
+      &#8226; <span style="color:var(--success)">&#9679;</span> <strong>&#8805;80%</strong> = Required (appears in most documents)<br>
+      &#8226; <span style="color:var(--warning)">&#9679;</span> <strong>40-79%</strong> = Common (appears often but not always)<br>
+      &#8226; <span style="color:var(--error)">&#9679;</span> <strong>&lt;40%</strong> = Rare (appears occasionally — consider removing)<br><br>
+      <em>All fields are editable. Rename, change types, toggle required, or remove noise fields before exporting.</em>
+    </div>
+    <div class="card" style="margin-bottom:0.75rem">
+      <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
+        <label style="margin:0;white-space:nowrap">Cluster:</label>
+        <select id="d-schema-cluster" onchange="D.showSchema(this.value)" style="width:auto;flex:1"></select>
+        <label style="margin:0;white-space:nowrap">Min frequency:</label>
+        <input type="range" id="d-freq-slider" min="0" max="100" value="20" oninput="D.filterByFreq(this.value)" style="width:120px">
+        <span id="d-freq-val" style="font-size:0.78rem;color:var(--muted);min-width:2.5rem">20%</span>
+        <label style="margin:0;white-space:nowrap">View:</label>
+        <button class="btn btn-sm btn-secondary" id="d-view-grouped" onclick="D.setSchemaView('grouped')" style="font-size:0.75rem">Grouped</button>
+        <button class="btn btn-sm" id="d-view-flat" onclick="D.setSchemaView('flat')" style="font-size:0.75rem">Flat</button>
+        <span class="info-icon" onclick="document.getElementById('freq-info').classList.toggle('hidden')">&#9432;</span>
+      </div>
+      <div id="freq-info" class="hidden info-tip" style="margin-top:0.5rem">
+        <strong>Frequency filter:</strong> Slide to hide fields that appear in fewer than X% of the cluster's documents. This helps focus on the most consistent fields and filter out noise. Fields with &lt;20% frequency are often extraction artifacts.
+      </div>
+    </div>
+
+    <!-- Coverage indicator -->
+    <div class="card" style="margin-bottom:0.75rem;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:0.4rem">
+        <strong style="font-size:0.88rem">Schema Coverage</strong>
+        <span class="info-icon" onclick="document.getElementById('coverage-info').classList.toggle('hidden')">&#9432;</span>
+      </div>
+      <div style="flex:1;min-width:150px">
+        <div style="height:10px;background:var(--border);border-radius:5px;overflow:hidden">
+          <div id="d-coverage-bar" style="height:100%;border-radius:5px;transition:width 0.4s ease,background 0.4s ease;width:0%"></div>
+        </div>
+      </div>
+      <div id="d-coverage-pct" style="font-size:1.1rem;font-weight:700;min-width:3.5rem;text-align:right">0%</div>
+      <div id="d-coverage-detail" style="font-size:0.75rem;color:var(--muted)"></div>
+    </div>
+    <div id="coverage-info" class="hidden info-tip" style="margin-bottom:0.75rem">
+      <strong>Coverage</strong> = percentage of all field×document cells that are filled. If you have 6 fields and 10 verified documents, there are 60 possible cells. If 52 of those cells have a value, coverage is 87%. Higher coverage means the selected fields comprehensively capture the information in your documents. Remove low-frequency fields to see how coverage changes — sometimes dropping rare fields barely affects coverage while simplifying the template.
+    </div>
+
+    <div class="card" style="overflow-x:auto">
+      <table class="schema-table" id="d-schema-table">
+        <thead><tr><th>Field</th><th>Type</th><th>Frequency <span class="info-icon" style="width:16px;height:16px;font-size:0.6rem" onclick="event.stopPropagation();document.getElementById('freq-col-info').classList.toggle('hidden')">&#9432;</span></th><th>Required</th><th>Description</th><th>Example</th><th></th></tr></thead>
+        <tbody id="d-schema-body"></tbody>
+      </table>
+      <div id="freq-col-info" class="hidden info-tip" style="margin-top:0.5rem">
+        <strong>Frequency</strong> = percentage of documents in this cluster where the field was detected. Computed by keyword matching: if the field name or description words appear in the document text, the field is considered present. This is an approximation — actual extraction may differ.
+      </div>
+    </div>
+    <!-- D3 Visualizations -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.5rem">
+      <!-- Lollipop chart -->
+      <div class="card" style="margin-bottom:0">
+        <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.5rem">
+          <strong style="font-size:0.85rem">Field Frequency</strong>
+          <span class="info-icon" onclick="document.getElementById('lollipop-info').classList.toggle('hidden')">&#9432;</span>
+        </div>
+        <div id="lollipop-info" class="hidden info-tip" style="margin-bottom:0.5rem">
+          Fields sorted by how consistently they appear across documents in this cluster. <span style="color:var(--success)">Green</span> = required (&#8805;80%). <span style="color:var(--accent)">Orange</span> = optional. Longer bars = more reliable fields.
+        </div>
+        <div id="d-lollipop" style="overflow-x:auto"></div>
+      </div>
+      <!-- Treemap -->
+      <div class="card" style="margin-bottom:0">
+        <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.5rem">
+          <strong style="font-size:0.85rem">Schema Map</strong>
+          <span class="info-icon" onclick="document.getElementById('treemap-info').classList.toggle('hidden')">&#9432;</span>
+        </div>
+        <div id="treemap-info" class="hidden info-tip" style="margin-bottom:0.5rem">
+          Each rectangle represents a field. <strong>Size</strong> = frequency (bigger = appears more often). <strong>Color</strong> = data type: <span style="color:#3868b8">string</span>, <span style="color:#3d8b40">number</span>, <span style="color:#7652b5">date</span>, <span style="color:#b8892a">boolean</span>. Hover for details.
+        </div>
+        <div id="d-treemap"></div>
+      </div>
+    </div>
+
+    <!-- JSON Schema Tree -->
+    <div class="card" style="margin-top:0.5rem">
+      <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.5rem">
+        <strong style="font-size:0.85rem">Schema Tree</strong>
+        <span class="info-icon" onclick="document.getElementById('tree-info').classList.toggle('hidden')">&#9432;</span>
+      </div>
+      <div id="tree-info" class="hidden info-tip" style="margin-bottom:0.5rem">
+        Interactive tree visualization of the discovered schema. The root is the template name, branches are fields, and leaves show properties (type, frequency, example). Click any node to expand or collapse. Colors indicate data type.
+      </div>
+      <div id="d-schema-tree" style="overflow:auto;max-height:500px"></div>
+    </div>
+
+    <div class="footer-bar">
+      <button class="btn btn-secondary" onclick="D.goToStep(3)">&#8592; Clusters</button>
+      <button class="btn btn-secondary" onclick="D.saveSchema()">Save Changes</button>
+      <button class="btn btn-secondary" onclick="D.rediscoverSchema()">Re-analyze with my edits</button>
+      <button class="btn btn-primary btn-next" onclick="D.goToStep(5)">Create Extraction Project &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Step 5: Pipeline -->
+  <div class="page" data-step="5">
+    <div class="page-title">Create Extraction Project</div>
+    <div class="page-subtitle">Build a full Structure project from the discovered schema. Preview extraction, review annotations, and launch.</div>
+
+    <div class="card" style="margin-bottom:0.75rem">
+      <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
+        <label style="margin:0;white-space:nowrap">Cluster:</label>
+        <select id="d-pipeline-cluster" onchange="D._pipelineClusterId=this.value" style="width:auto;flex:1"></select>
+        <label style="margin:0;white-space:nowrap">Project name:</label>
+        <input type="text" id="d-pipeline-name" placeholder="Auto-generated from cluster name" style="flex:2">
+      </div>
+    </div>
+
+    <!-- Pipeline progress steps -->
+    <div id="d-pipeline-progress" style="margin-bottom:1rem"></div>
+
+    <!-- Pipeline step panels -->
+    <div class="pipeline-step" id="ps-enrich">
+      <div class="pipeline-step-header">
+        <div class="pipeline-step-num">1</div>
+        <div class="pipeline-step-title">Enrich Schema</div>
+      </div>
+      <div class="pipeline-step-content" id="ps-enrich-content">
+        <div style="color:var(--muted)">Adds descriptions, patterns, and enum values to each discovered field for better extraction accuracy.</div>
+      </div>
+    </div>
+
+    <div class="pipeline-step" id="ps-fewshot">
+      <div class="pipeline-step-header">
+        <div class="pipeline-step-num">2</div>
+        <div class="pipeline-step-title">Select Examples</div>
+      </div>
+      <div class="pipeline-step-content" id="ps-fewshot-content">
+        <div style="color:var(--muted)">Picks 3 diverse representative documents and auto-generates few-shot annotations for the extraction model.</div>
+      </div>
+    </div>
+
+    <div class="pipeline-step" id="ps-preview">
+      <div class="pipeline-step-header">
+        <div class="pipeline-step-num">3</div>
+        <div class="pipeline-step-title">Preview Extraction</div>
+      </div>
+      <div class="pipeline-step-content" id="ps-preview-content">
+        <div style="color:var(--muted)">Runs extraction on 2-3 sample documents so you can verify the results before committing.</div>
+      </div>
+    </div>
+
+    <div class="pipeline-step" id="ps-quality">
+      <div class="pipeline-step-header">
+        <div class="pipeline-step-num">4</div>
+        <div class="pipeline-step-title">Field Quality</div>
+      </div>
+      <div class="pipeline-step-content" id="ps-quality-content">
+        <div style="color:var(--muted)">Shows per-field quality metrics and confidence indicators based on the preview results.</div>
+      </div>
+    </div>
+
+    <div class="pipeline-step" id="ps-launch">
+      <div class="pipeline-step-header">
+        <div class="pipeline-step-num">5</div>
+        <div class="pipeline-step-title">Launch Extraction</div>
+      </div>
+      <div class="pipeline-step-content" id="ps-launch-content">
+        <div style="color:var(--muted)">Creates the Structure project with enriched schema, few-shot examples, and all cluster documents. Ready to run full extraction.</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem">
+      <button class="btn btn-pipeline" id="d-pipeline-start-btn" onclick="D.startPipeline()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Run Pipeline
+      </button>
+      <span style="font-size:0.78rem;color:var(--muted);align-self:center">or press <kbd style="font-size:0.7rem">&lceil;&#8984;&#x23CE;&rfloor;</kbd></span>
+    </div>
+
+    <div id="d-pipeline-result" class="hidden" style="margin-top:1rem"></div>
+
+    <div class="footer-bar">
+      <button class="btn btn-secondary" onclick="D.goToStep(4)">&#8592; Schema</button>
+      <button class="btn btn-primary btn-next" onclick="D.goToStep(6)">Export &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Step 6: Export -->
+  <div class="page" data-step="6">
+    <div class="page-title">Export</div>
+    <div class="page-subtitle">Export the discovered schema or create a Structure project from it.</div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
+        <label style="margin:0">Cluster:</label>
+        <select id="d-export-cluster" style="width:auto;flex:1"></select>
+      </div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="D.exportToStructure()">&#9889; Create Structure Project</button>
+        <button class="btn btn-secondary" onclick="D.exportFormat('json_schema')">&#128196; JSON Schema</button>
+        <button class="btn btn-secondary" onclick="D.exportFormat('csv')">&#128202; CSV Headers</button>
+        <button class="btn btn-secondary" onclick="D.exportFormat('markdown')">&#128221; Markdown</button>
+        <button class="btn btn-secondary" onclick="D.saveAsTemplate()">&#128190; Save as Template</button>
+      </div>
+      <div id="d-export-result" class="hidden" style="margin-top:1rem"></div>
+    </div>
+    <!-- Template Library -->
+    <div class="card" style="margin-top:0.5rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
+        <strong style="font-size:0.9rem">Schema Template Library</strong>
+        <button class="btn btn-sm btn-secondary" onclick="D.loadTemplates()">Refresh</button>
+      </div>
+      <div id="d-template-list" style="color:var(--muted);font-size:0.85rem">Loading templates...</div>
+    </div>
+    <div class="footer-bar">
+      <button class="btn btn-secondary" onclick="D.goToStep(5)">&#8592; Pipeline</button>
+      <button class="btn btn-secondary" onclick="D.goToStep(1)">&#8592; New Analysis</button>
+    </div>
+  </div>
+</div>
+
+<!-- Settings modal -->
+<div class="hidden" id="settings-modal">
+  <div class="modal-overlay" onclick="if(event.target===this)D.closeSettings()">
+    <div class="modal">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+        <h3 style="font-size:1rem;font-weight:700">Settings</h3>
+        <span onclick="D.closeSettings()" style="cursor:pointer;font-size:1.2rem;color:var(--muted)">&times;</span>
+      </div>
+      <div style="font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.35rem">LLM Providers</div>
+      <div style="font-size:0.8rem;color:var(--text-2);margin-bottom:0.75rem">Configure API keys. Keys are saved locally in <code>.env</code>.</div>
+      <div id="llm-providers"></div>
+      <div id="llm-test-result" style="font-size:0.8rem;margin-top:0.4rem"></div>
+      <div style="margin-top:0.75rem;padding-top:0.5rem;border-top:1px solid var(--border);font-size:0.72rem;color:var(--muted)">
+        <strong>Get API keys:</strong>
+        <a href="https://console.groq.com/keys" target="_blank" style="color:var(--accent)">Groq</a> &middot;
+        <a href="https://cloud.cerebras.ai/" target="_blank" style="color:var(--accent)">Cerebras</a> &middot;
+        <a href="https://console.anthropic.com/settings/keys" target="_blank" style="color:var(--accent)">Anthropic</a> &middot;
+        <a href="https://platform.openai.com/api-keys" target="_blank" style="color:var(--accent)">OpenAI</a> &middot;
+        <a href="https://aistudio.google.com/apikey" target="_blank" style="color:var(--accent)">Google</a> &middot;
+        <a href="https://openrouter.ai/keys" target="_blank" style="color:var(--accent)">OpenRouter</a>
+      </div>
+      <hr class="ds-settings-divider">
+      <div id="api-keys-manager"></div>
+    </div>
+  </div>
+</div>
+<div class="toast-container" id="toast-container"></div>
+
+<script>
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+const CLUSTER_COLORS = ['#4a90d9','#5cb85c','#e74c3c','#9b59b6','#f0ad4e','#1abc9c','#e67e22','#3498db','#95a5a6','#2ecc71','#c0392b','#8e44ad'];
+
+const D = {
+  currentStep:1, maxStep:1, source:'upload',
+  projectId:null, uploadedFiles:[], _createdProjectId:null,
+  results:null, selectedCluster:'0', _schemaView:'grouped',
+  _undoStack:[], _dragState:null,
+
+  toast(m,t='info'){const c=document.getElementById('toast-container');const e=document.createElement('div');e.className=`toast toast-${t}`;e.textContent=m;c.appendChild(e);setTimeout(()=>e.remove(),4000)},
+
+  goToStep(n){if(n>this.maxStep)return;this.currentStep=n;document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelector(`.page[data-step="${n}"]`).classList.add('active');this._updateNav()},
+  _updateNav(){document.querySelectorAll('.step-item').forEach(item=>{const s=parseInt(item.dataset.step);item.classList.remove('active','completed','disabled');if(s===this.currentStep)item.classList.add('active');else if(s<this.currentStep||s<=this.maxStep)item.classList.add('completed');else item.classList.add('disabled')});document.querySelectorAll('.step-connector').forEach((c,i)=>{c.classList.toggle('completed',i+1<this.currentStep)})},
+  _unlockStep(n){if(n>this.maxStep)this.maxStep=n;this._updateNav()},
+
+  setSource(t){this.source=t;document.querySelectorAll('.source-tab').forEach(x=>x.classList.remove('active'));document.querySelector(`.source-tab[data-src="${t}"]`).classList.add('active');document.querySelectorAll('.source-panel').forEach(x=>x.classList.remove('active'));document.getElementById(`src-${t}`).classList.add('active')},
+
+  handleDrop(e){this.handleFiles(e.dataTransfer.files)},
+  handleFiles(files){for(const f of files){if(!this.uploadedFiles.find(x=>x.name===f.name))this.uploadedFiles.push(f)}this._renderFiles()},
+  removeFile(name){this.uploadedFiles=this.uploadedFiles.filter(f=>f.name!==name);this._renderFiles()},
+  _renderFiles(){const list=document.getElementById('d-file-list');if(!this.uploadedFiles.length){list.innerHTML='';return}list.innerHTML=this.uploadedFiles.map(f=>{const sz=f.size<1024?f.size+' B':f.size<1048576?(f.size/1024).toFixed(1)+' KB':(f.size/1048576).toFixed(1)+' MB';return`<div class="file-row"><span class="f-name">${esc(f.name)}</span><span class="f-size">${sz}</span><button class="f-btn" onclick="D.removeFile('${f.name.replace(/'/g,"\\'")}')">&#10005;</button></div>`}).join('')},
+
+  async loadProjects(){try{const r=await fetch('/api/projects');const d=await r.json();document.getElementById('d-project').innerHTML='<option value="">Select a project...</option>'+(d.projects||[]).map(p=>`<option value="${p.id}">${esc(p.name)} (${p.total_files||0} files)</option>`).join('')}catch(e){}},
+  loadProject(id){this.projectId=id;document.getElementById('d-project-info').textContent=id?'Will analyze all project files.':''},
+
+  async loadModels(){try{const r=await fetch('/api/settings/llm-keys');const d=await r.json();const sel=document.getElementById('d-model');if(d.models?.length){const free=['groq','cerebras','openrouter'];const sorted=[...d.models].sort((a,b)=>(free.includes(a.provider)?0:1)-(free.includes(b.provider)?0:1));sel.innerHTML=sorted.map(m=>{const pName=m.provider_label?.split('(')[0]?.trim()||m.provider;return`<option value="${m.id}">${m.name} — ${pName}</option>`}).join('')}}catch(e){}},
+
+  // ---- Analysis ----
+  async startAnalysis(){
+    const btn=document.getElementById('d-analyze-btn');btn.disabled=true;
+    const model=document.getElementById('d-model').value;
+    if(!model){this.toast('Select a model','error');btn.disabled=false;return}
+
+    this._unlockStep(2);this.goToStep(2);
+    document.getElementById('d-progress-bar').style.width='0%';
+    document.getElementById('d-progress-status').textContent='Starting...';
+    document.getElementById('d-live-log').innerHTML='';
+
+    try{
+      if(this.source==='upload'){
+        if(!this.uploadedFiles.length){this.toast('Upload files first','error');this.goToStep(1);btn.disabled=false;return}
+        const name=document.getElementById('d-project-name').value.trim()||'Discover Analysis';
+        this._addLog(`Creating project "${name}"...`);
+        const cr=await fetch('/api/projects',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})});
+        if(!cr.ok)throw new Error('Failed to create project');
+        const cd=await cr.json();this.projectId=cd.project_id;this._createdProjectId=cd.project_id;
+        this._addLog(`Uploading ${this.uploadedFiles.length} file(s)...`);
+        const fd=new FormData();for(const f of this.uploadedFiles)fd.append('files',f);
+        const ur=await fetch(`/api/projects/${this.projectId}/files`,{method:'POST',body:fd});
+        if(!ur.ok)throw new Error('Upload failed');
+        const fr=await fetch(`/api/projects/${this.projectId}/finalize-upload`,{method:'POST'});
+        if(!fr.ok)throw new Error('Finalize failed');
+        this._addLog('Files ready.');
+      } else {
+        if(!this.projectId){this.toast('Select a project','error');this.goToStep(1);btn.disabled=false;return}
+      }
+
+      const res=await fetch(`/api/projects/${this.projectId}/discover/analyze`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model})});
+      if(!res.ok)throw new Error((await res.json()).detail||'Analysis failed');
+      await this._pollProgress();
+    }catch(e){
+      this.toast('Error: '+e.message,'error');
+      this._addLog('ERROR: '+e.message);
+      document.getElementById('d-progress-status').textContent='Failed';
+    }
+    btn.disabled=false;
+  },
+
+  _addLog(m){const l=document.getElementById('d-live-log');const div=document.createElement('div');div.textContent=`[${new Date().toTimeString().substring(0,8)}] ${m}`;l.appendChild(div);l.scrollTop=l.scrollHeight},
+
+  async _pollProgress(){
+    return new Promise(resolve=>{
+      const poll=async()=>{
+        try{
+          const r=await fetch(`/api/projects/${this.projectId}/discover/progress`);const p=await r.json();
+          document.getElementById('d-progress-bar').style.width=(p.pct||0)+'%';
+          document.getElementById('d-progress-status').textContent=p.message||p.status||'';
+          if(p.logs){document.getElementById('d-live-log').innerHTML=p.logs.map(l=>`<div>${esc(l)}</div>`).join('');document.getElementById('d-live-log').scrollTop=99999}
+          if(p.status==='complete'){this._showResults(p);resolve();return}
+          if(p.status==='error'){this.toast('Failed: '+(p.message||''),'error');resolve();return}
+          setTimeout(poll,1500);
+        }catch(e){setTimeout(poll,2000)}
+      };
+      poll();
+    });
+  },
+
+  _viewMode: '2d',
+
+  // ---- Results ----
+  _showResults(data){
+    this.results=data;
+    const s=data.stats||{};
+
+    document.getElementById('d-stats').innerHTML=`
+      <div class="stat-card"><div class="sv">${s.total_docs||0}</div><div class="sl">Documents</div></div>
+      <div class="stat-card"><div class="sv">${s.clusters||0}</div><div class="sl">Clusters</div></div>
+      <div class="stat-card"><div class="sv">${s.total_fields||0}</div><div class="sl">Fields Found</div></div>
+      <div class="stat-card"><div class="sv">${s.duration_s||0}s</div><div class="sl">Time</div></div>
+    `;
+
+    // Cluster cards with schema field count
+    const cards=document.getElementById('d-cluster-cards');
+    cards.innerHTML=(data.clusters||[]).map((c,i)=>{
+      const color=CLUSTER_COLORS[i%CLUSTER_COLORS.length];
+      const pct=Math.round((c.doc_count/(s.total_docs||1))*100);
+      const schema=data.schemas?.[String(c.id)];
+      const fieldCount=schema?.fields?.length||0;
+      const coverage=schema?.coverage||0;
+      const covColor=coverage>=80?'var(--success)':coverage>=50?'var(--warning)':'var(--error)';
+      return`<div class="cluster-card" onclick="D.selectCluster('${c.id}')" data-cluster="${c.id}">
+        <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem">
+          <span style="width:14px;height:14px;border-radius:50%;background:${color};flex-shrink:0;border:2px solid rgba(0,0,0,0.1)"></span>
+          <span class="cc-name">${esc(c.name)}</span>
+          <span style="margin-left:auto;font-size:0.72rem;padding:0.1rem 0.4rem;background:var(--accent-g);border-radius:4px;color:var(--accent);font-weight:600">${fieldCount} fields</span>
+          <span style="font-size:0.72rem;padding:0.1rem 0.4rem;background:${covColor}15;border-radius:4px;color:${covColor};font-weight:600">${coverage}% coverage</span>
+        </div>
+        <div class="cc-desc">${esc(c.description)}</div>
+        <div class="cc-count" style="margin-top:0.35rem">${c.doc_count} documents (${pct}%)</div>
+        <div class="cc-keywords">${(c.keywords||[]).map(k=>`<span class="cc-kw">${esc(k)}</span>`).join('')}</div>
+        <button class="btn btn-primary btn-sm" style="margin-top:0.5rem;width:100%" onclick="event.stopPropagation();D.selectCluster('${c.id}')">View Schema &#8594;</button>
+      </div>`
+    }).join('');
+
+    // Populate dropdowns
+    const opts=(data.clusters||[]).map(c=>`<option value="${c.id}">${esc(c.name)} (${c.doc_count} docs)</option>`).join('');
+    document.getElementById('d-schema-cluster').innerHTML=opts;
+    document.getElementById('d-export-cluster').innerHTML=opts;
+
+    // Draw visualization
+    this._drawPlotly(data);
+
+    this._unlockStep(6);
+    this.goToStep(3);
+
+    // Populate pipeline cluster dropdown
+    document.getElementById('d-pipeline-cluster').innerHTML=opts;
+
+    // Show cross-cluster fields if available
+    this._showCrossClusterFields(data);
+
+    // Load template library
+    this.loadTemplates();
+
+    this.toast('Discovery complete!','success');
+  },
+
+  _showCrossClusterFields(data){
+    const crossFields=data.stats?.cross_cluster_fields||[];
+    const panel=document.getElementById('d-cross-cluster-panel');
+    const body=document.getElementById('d-cross-cluster-body');
+    if(!crossFields.length){panel.classList.add('hidden');return}
+    panel.classList.remove('hidden');
+    const clusters=data.clusters||[];
+    let html='<table class="cross-cluster-table"><thead><tr><th>Field</th><th>Clusters</th><th>Avg Frequency</th></tr></thead><tbody>';
+    for(const cf of crossFields.slice(0,15)){
+      const clNames=cf.clusters.map(cid=>{
+        const cl=clusters.find(c=>String(c.id)===String(cid));
+        return cl?cl.name:`Cluster ${cid}`;
+      });
+      html+=`<tr>
+        <td style="font-weight:600">${esc(cf.name)}<span class="badge-shared">${cf.clusters.length} clusters</span></td>
+        <td style="font-size:0.78rem">${clNames.map(n=>esc(n)).join(', ')}</td>
+        <td>${cf.avg_frequency}%</td>
+      </tr>`;
+    }
+    html+='</tbody></table>';
+    body.innerHTML=html;
+  },
+
+  selectCluster(id){
+    this.selectedCluster=String(id);
+    document.querySelectorAll('.cluster-card').forEach(c=>{c.classList.toggle('selected',c.dataset.cluster===String(id))});
+    document.getElementById('d-schema-cluster').value=String(id);
+    const pipelineSelect=document.getElementById('d-pipeline-cluster');
+    if(pipelineSelect)pipelineSelect.value=String(id);
+    this._pipelineClusterId=String(id);
+    this.showSchema(String(id));
+    this.goToStep(4);
+  },
+
+  setView(mode){
+    this._viewMode=mode;
+    document.getElementById('btn-2d').className=mode==='2d'?'btn btn-sm':'btn btn-secondary btn-sm';
+    document.getElementById('btn-3d').className=mode==='3d'?'btn btn-sm':'btn btn-secondary btn-sm';
+    if(mode==='2d'){
+      document.getElementById('btn-2d').style.cssText='font-weight:700;background:var(--accent);color:white';
+      document.getElementById('btn-3d').style.cssText='';
+    }else{
+      document.getElementById('btn-3d').style.cssText='font-weight:700;background:var(--accent);color:white';
+      document.getElementById('btn-2d').style.cssText='';
+    }
+    if(this.results)this._drawPlotly(this.results);
+  },
+
+  // ---- Plotly Scatter Plot (2D + 3D) ----
+  _drawPlotly(data){
+    const coords2d=data.umap_coords||[];
+    const coords3d=data.umap_3d||[];
+    const labels=data.doc_cluster_ids||[];
+    const names=data.doc_names||[];
+    const clusters=data.clusters||[];
+    if(!coords2d.length)return;
+
+    // Build one trace per cluster
+    const traces=[];
+    const clusterIds=[...new Set(labels)].sort((a,b)=>a-b);
+
+    for(const cid of clusterIds){
+      const idx=[];
+      for(let i=0;i<labels.length;i++){if(labels[i]===cid)idx.push(i)}
+      const cl=clusters.find(c=>c.id===cid)||{name:`Cluster ${cid}`};
+      const color=CLUSTER_COLORS[clusterIds.indexOf(cid)%CLUSTER_COLORS.length];
+
+      // Parse color for glass variants
+      const cm=color.match(/\d+/g)||[100,100,100];
+      const glassColor=`rgba(${cm[0]},${cm[1]},${cm[2]},0.45)`;
+      const glowColor=`rgba(${cm[0]},${cm[1]},${cm[2]},0.25)`;
+      if(this._viewMode==='3d'&&coords3d.length){
+        traces.push({
+          x:idx.map(i=>coords3d[i][0]),
+          y:idx.map(i=>coords3d[i][1]),
+          z:idx.map(i=>coords3d[i][2]),
+          text:idx.map(i=>names[i]||`Doc ${i+1}`),
+          customdata:idx.map(i=>({idx:i,cluster:cid,docName:names[i]||''})),
+          name:`${cl.name} (${idx.length})`,
+          type:'scatter3d',
+          mode:'markers',
+          marker:{size:6,color:glassColor,opacity:0.9,line:{width:1.5,color:`rgba(255,255,255,0.6)`}},
+          hovertemplate:'<b>%{text}</b><br>Cluster: '+esc(cl.name)+'<extra></extra>',
+        });
+      }else{
+        // Glass-style 2D markers: translucent fill, white border, soft shadow via halo ring
+        traces.push({
+          x:idx.map(i=>coords2d[i][0]),
+          y:idx.map(i=>coords2d[i][1]),
+          text:idx.map(i=>names[i]||`Doc ${i+1}`),
+          customdata:idx.map(i=>({idx:i,cluster:cid,docName:names[i]||''})),
+          name:`${cl.name} (${idx.length})`,
+          type:'scatter',
+          mode:'markers',
+          marker:{size:11,color:glassColor,opacity:0.9,line:{width:1.5,color:'rgba(255,255,255,0.7)'}},
+          hovertemplate:'<b>%{text}</b><br>Cluster: '+esc(cl.name)+'<extra></extra>',
+        });
+        // Glow halo ring behind each point
+        traces.push({
+          x:idx.map(i=>coords2d[i][0]),
+          y:idx.map(i=>coords2d[i][1]),
+          name:`${cl.name} (${idx.length})`,
+          type:'scatter',
+          mode:'markers',
+          marker:{size:20,color:glowColor,opacity:0.3,line:{width:0}},
+          hoverinfo:'skip',showlegend:false,legendgroup:`cluster-${cid}`,
+        });
+      }
+    }
+
+    // Add convex hull meshes for 3D
+    const is3d=this._viewMode==='3d';
+    if(is3d&&coords3d.length){
+      for(const cid of clusterIds){
+        const idx=[];
+        for(let i=0;i<labels.length;i++){if(labels[i]===cid)idx.push(i)}
+        if(idx.length>=4){
+          const color=CLUSTER_COLORS[clusterIds.indexOf(cid)%CLUSTER_COLORS.length];
+          traces.push({
+            type:'mesh3d',
+            x:idx.map(i=>coords3d[i][0]),
+            y:idx.map(i=>coords3d[i][1]),
+            z:idx.map(i=>coords3d[i][2]),
+            alphahull:0,opacity:0.06,color:color,
+            legendgroup:`cluster-${cid}`,showlegend:false,hoverinfo:'skip',
+          });
+        }
+      }
+    }
+
+    const layout={
+      paper_bgcolor:'rgba(0,0,0,0)',
+      plot_bgcolor:is3d?'rgba(0,0,0,0)':'rgba(250,247,244,0.4)',
+      margin:{l:30,r:20,t:10,b:30},
+      showlegend:true,
+      legend:{orientation:'h',y:-0.12,x:0.5,xanchor:'center',font:{family:'Inter',size:11,color:'#5e5347'}},
+      hovermode:'closest',
+      dragmode:is3d?'orbit':'lasso',
+      font:{family:'Inter'},
+    };
+
+    if(is3d){
+      layout.scene={
+        xaxis:{visible:false},yaxis:{visible:false},zaxis:{visible:false},
+        bgcolor:'rgba(250,247,244,0.5)',
+        camera:{eye:{x:1.5,y:1.5,z:1.2}},
+      };
+    }else{
+      layout.xaxis={visible:false,zeroline:false};
+      layout.yaxis={visible:false,zeroline:false};
+      // Add cluster label annotations at centroids
+      layout.annotations=clusterIds.map(cid=>{
+        const idx=[];for(let i=0;i<labels.length;i++){if(labels[i]===cid)idx.push(i)}
+        const cx=idx.reduce((s,i)=>s+coords2d[i][0],0)/idx.length;
+        const cy=idx.reduce((s,i)=>s+coords2d[i][1],0)/idx.length;
+        const cl=clusters.find(c=>c.id===cid);
+        return{x:cx,y:cy,text:`<b>${cl?.name||'Cluster '+cid}</b>`,font:{size:12,family:'Inter',color:'#1e1a15'},bgcolor:'rgba(255,255,255,0.6)',bordercolor:'rgba(255,255,255,0.5)',borderwidth:1,borderpad:5,showarrow:false};
+      });
+    }
+
+    const config={responsive:true,displayModeBar:true,modeBarButtonsToRemove:['autoScale2d','toggleSpikelines'],displaylogo:false};
+
+    if(typeof Plotly==='undefined'){document.getElementById('umap-plot').innerHTML='<div style="padding:2rem;text-align:center;color:#8f8274">3D visualization unavailable (Plotly failed to load). Clusters are shown as cards below.</div>';return;}
+    Plotly.newPlot('umap-plot',traces,layout,config);
+
+    const plotEl=document.getElementById('umap-plot');
+
+    // Click handler — preview document
+    plotEl.on('plotly_click',ev=>{
+      if(ev.points?.length){
+        const cd=ev.points[0].customdata;
+        if(cd)this._previewDoc(cd.idx!==undefined?cd.idx:0, cd.cluster);
+      }
+    });
+
+    // Lasso selection (2D only) — show selected doc names
+    plotEl.on('plotly_selected',ev=>{
+      if(!ev||!ev.points?.length)return;
+      const selected=ev.points.map(p=>p.text||p.customdata?.docName||'');
+      this.toast(`${selected.length} documents selected`,'info');
+    });
+  },
+
+  // ---- Document Preview ----
+  _previewDoc(docIdx, clusterId){
+    if(!this.results)return;
+    const name=this.results.doc_names?.[docIdx]||`Document ${docIdx+1}`;
+    const snippet=this.results.doc_snippets?.[docIdx]||'No preview available.';
+    const cl=this.results.clusters?.find(c=>c.id===clusterId);
+    const color=CLUSTER_COLORS[(this.results.clusters||[]).findIndex(c=>c.id===clusterId)%CLUSTER_COLORS.length]||'var(--accent)';
+
+    document.getElementById('doc-preview-title').textContent=name;
+    const badge=document.getElementById('doc-preview-cluster');
+    badge.textContent=cl?.name||'Cluster '+clusterId;
+    badge.style.background=color+'22';
+    badge.style.color=color;
+
+    document.getElementById('doc-preview-body').innerHTML=`
+      <pre style="white-space:pre-wrap;word-break:break-word;font-family:'SF Mono','Fira Code',monospace;font-size:0.78rem;line-height:1.65;color:var(--text);margin:0">${esc(snippet)}</pre>
+      ${snippet.length>=500?'<div style="text-align:center;padding:0.5rem;color:var(--muted);font-size:0.75rem">— preview truncated —</div>':''}
+      <button class="btn btn-primary btn-sm" style="margin-top:0.75rem;width:100%" onclick="D.selectCluster(${clusterId})">View Cluster Schema &#8594;</button>
+    `;
+  },
+
+  // ---- Schema View Toggle ----
+  setSchemaView(mode){
+    this._schemaView=mode;
+    document.getElementById('d-view-grouped').className=mode==='grouped'?'btn btn-sm':'btn btn-sm btn-secondary';
+    document.getElementById('d-view-flat').className=mode==='flat'?'btn btn-sm':'btn btn-sm btn-secondary';
+    if(mode==='grouped'){
+      document.getElementById('d-view-grouped').style.cssText='font-size:0.75rem;font-weight:700;background:var(--accent);color:white';
+      document.getElementById('d-view-flat').style.cssText='font-size:0.75rem';
+    }else{
+      document.getElementById('d-view-flat').style.cssText='font-size:0.75rem;font-weight:700;background:var(--accent);color:white';
+      document.getElementById('d-view-grouped').style.cssText='font-size:0.75rem';
+    }
+    this.showSchema(this.selectedCluster);
+  },
+
+  // ---- Schema Editor ----
+  showSchema(clusterId){
+    this.selectedCluster=String(clusterId);
+    const schema=this.results?.schemas?.[String(clusterId)];
+    if(!schema)return;
+    const freq=parseInt(document.getElementById('d-freq-slider').value)||0;
+    const tbody=document.getElementById('d-schema-body');
+    const allFields=schema.fields||[];
+    const groups=schema.groups||[];
+    const crossFields=this.results?.stats?.cross_cluster_fields||[];
+
+    // Build filtered list with original indices
+    const fields=[];
+    for(let i=0;i<allFields.length;i++){if((allFields[i].frequency||0)>=freq)fields.push({field:allFields[i],origIdx:i})}
+
+    // Cross-cluster field names for badge display
+    const crossFieldNames=new Set(crossFields.map(cf=>cf.name));
+
+    const useGrouped=this._schemaView==='grouped'&&groups.length>0;
+
+    if(useGrouped){
+      // Grouped accordion view
+      const grouped={};
+      for(const g of groups)grouped[g.name]=[];
+      grouped['Ungrouped']=grouped['Ungrouped']||[];
+
+      for(const item of fields){
+        const gn=item.field.group||'Ungrouped';
+        if(!grouped[gn])grouped[gn]=[];
+        grouped[gn].push(item);
+      }
+
+      let html='';
+      for(const g of groups){
+        const gFields=grouped[g.name]||[];
+        if(!gFields.length)continue;
+        const avgFreq=gFields.length?Math.round(gFields.reduce((s,x)=>s+(x.field.frequency||0),0)/gFields.length):0;
+        html+=`<tr class="group-header-row" data-group="${esc(g.name)}">
+          <td colspan="7">
+            <div class="group-header" onclick="D._toggleGroup('${esc(g.name)}')" data-group-name="${esc(g.name)}">
+              <span class="group-dot" style="background:${g.color||'var(--muted)'}"></span>
+              <span class="group-name">${esc(g.name)}</span>
+              <span class="group-meta">
+                <span>${gFields.length} fields</span>
+                <span>avg freq: ${avgFreq}%</span>
+                <input type="checkbox" class="group-select-all" onclick="event.stopPropagation();D._toggleGroupRequired('${esc(g.name)}',this.checked)" title="Select/deselect all required" checked>
+              </span>
+              <span class="group-chevron">&#9660;</span>
+            </div>
+          </td>
+        </tr>`;
+        for(const{field:f,origIdx}of gFields){
+          html+=this._renderFieldRow(f,origIdx,crossFieldNames);
+        }
+      }
+      tbody.innerHTML=html;
+    }else{
+      // Flat view
+      tbody.innerHTML=fields.map(({field:f,origIdx})=>this._renderFieldRow(f,origIdx,crossFieldNames)).join('');
+    }
+
+    // Show merge suggestions
+    this._showMergeSuggestions(schema);
+
+    // Extract plain field objects for D3 and coverage
+    const visibleFields=fields.map(({field})=>field);
+
+    // Update coverage indicator with per-group breakdown
+    this._updateCoverage(visibleFields, clusterId);
+
+    // Draw D3 visualizations
+    const cl=this.results?.clusters?.find(c=>String(c.id)===String(clusterId));
+    this._drawLollipop(visibleFields);
+    this._drawTreemap(visibleFields);
+    this._drawSchemaTree(visibleFields, cl?.name||'Schema');
+
+    // Setup drag-and-drop
+    this._initDragDrop();
+  },
+
+  _renderFieldRow(f,origIdx,crossFieldNames){
+    const freqColor=f.frequency>=80?'var(--success)':f.frequency>=40?'var(--warning)':'var(--error)';
+    const rareBadge=(f.frequency||0)<30?'<span class="badge-rare">RARE</span>':'';
+    const sharedBadge=crossFieldNames&&crossFieldNames.has(f.name)?'<span class="badge-shared">shared</span>':'';
+    const aliasTip=f.aliases&&f.aliases.length?' title="Aliases: '+f.aliases.join(', ')+'"':'';
+    // Grounded bar: solid for grounded, striped for ungrounded
+    const grounded=f.grounded_count||0;
+    const total=f.doc_count||0;
+    const groundedPct=total>0?Math.round(grounded/total*100):0;
+    const ungroundedPct=total>0?Math.round((total-grounded)/total*100):0;
+    const freqBar=`<span class="freq-bar"><span class="freq-fill-grounded" style="width:${groundedPct*(f.frequency||0)/100}%;background:${freqColor}"></span><span class="freq-fill-ungrounded" style="width:${ungroundedPct*(f.frequency||0)/100}%;background:${freqColor}"></span></span>`;
+
+    return`<tr data-idx="${origIdx}" data-group="${esc(f.group||'')}" draggable="true" ondragstart="D._onDragStart(event,${origIdx})" ondragover="D._onDragOver(event)" ondrop="D._onDrop(event,${origIdx})" ondragend="D._onDragEnd(event)">
+      <td><span class="drag-handle" title="Drag to reorder">&#10303;</span> <input type="text" value="${esc(f.name)}" onchange="D._updateField(${origIdx},'name',this.value)"${aliasTip} style="width:calc(100% - 24px);display:inline-block">${rareBadge}${sharedBadge}</td>
+      <td><select onchange="D._updateField(${origIdx},'type',this.value)">
+        ${['string','number','date','boolean','enum','integer'].map(t=>`<option value="${t}" ${f.type===t?'selected':''}>${t}</option>`).join('')}
+      </select></td>
+      <td>${freqBar}${f.frequency||0}%</td>
+      <td><input type="checkbox" ${f.required?'checked':''} onchange="D._updateField(${origIdx},'required',this.checked)" style="width:16px;height:16px;accent-color:var(--accent)"></td>
+      <td><input type="text" value="${esc(f.description||'')}" onchange="D._updateField(${origIdx},'description',this.value)"></td>
+      <td style="font-size:0.78rem;color:var(--muted);max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(f.example||'')}</td>
+      <td><button class="btn btn-sm" style="color:var(--error);background:none;border:none;font-size:1rem;cursor:pointer" onclick="D._removeField(${origIdx})">&#10005;</button></td>
+    </tr>`;
+  },
+
+  _toggleGroup(name){
+    const rows=document.querySelectorAll(`tr[data-group="${name}"]`);
+    const header=document.querySelector(`.group-header[data-group-name="${name}"]`);
+    if(!header)return;
+    const isCollapsed=header.classList.contains('collapsed');
+    header.classList.toggle('collapsed');
+    rows.forEach(r=>{if(!r.classList.contains('group-header-row'))r.style.display=isCollapsed?'':'none'});
+  },
+
+  _toggleGroupRequired(groupName,checked){
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    if(!schema)return;
+    for(const f of schema.fields){
+      if((f.group||'Ungrouped')===groupName)f.required=checked;
+    }
+    this.showSchema(this.selectedCluster);
+  },
+
+  _showMergeSuggestions(schema){
+    const suggestions=schema.merge_suggestions||[];
+    const container=document.getElementById('d-schema-body');
+    if(!suggestions.length)return;
+    // Add merge suggestion panel after the table
+    const parent=container.closest('.card');
+    let panel=parent.querySelector('.merge-panel');
+    if(panel)panel.remove();
+    panel=document.createElement('div');
+    panel.className='merge-panel';
+    panel.style.marginTop='0.75rem';
+    panel.innerHTML='<div style="font-size:0.82rem;font-weight:600;color:var(--text-2);margin-bottom:0.35rem">Merge Suggestions</div>'+
+      suggestions.map((s,i)=>`<div class="merge-suggestion">
+        <span class="merge-fields">${s.fields.join(' + ')}</span>
+        <span class="merge-reason">${esc(s.reason)}</span>
+        <span style="font-size:0.75rem;color:var(--muted)">&rarr; ${esc(s.suggested_name)}</span>
+      </div>`).join('');
+    parent.appendChild(panel);
+  },
+
+  // ---- D3: Lollipop Chart ----
+  _drawLollipop(fields){
+    const el=document.getElementById('d-lollipop');
+    el.innerHTML='';
+    if(!fields.length)return;
+    const sorted=[...fields].sort((a,b)=>(b.frequency||0)-(a.frequency||0));
+    const margin={top:8,right:40,bottom:25,left:Math.min(140,Math.max(...sorted.map(f=>f.name.length))*7+20)};
+    const width=Math.max(300,el.clientWidth||400)-margin.left-margin.right;
+    const height=sorted.length*26;
+    const svg=d3.select(el).append('svg')
+      .attr('width',width+margin.left+margin.right)
+      .attr('height',height+margin.top+margin.bottom)
+      .append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+    const x=d3.scaleLinear().domain([0,100]).range([0,width]);
+    const y=d3.scaleBand().domain(sorted.map(f=>f.name)).range([0,height]).padding(0.35);
+
+    // Background bars (subtle)
+    svg.selectAll('.bg').data(sorted).join('rect')
+      .attr('x',0).attr('y',d=>y(d.name)).attr('width',width).attr('height',y.bandwidth())
+      .attr('fill','#f6f1eb').attr('rx',3);
+
+    // Lines
+    svg.selectAll('.line').data(sorted).join('line')
+      .attr('x1',0).attr('x2',d=>x(d.frequency||0))
+      .attr('y1',d=>y(d.name)+y.bandwidth()/2).attr('y2',d=>y(d.name)+y.bandwidth()/2)
+      .attr('stroke',d=>(d.frequency||0)>=80?'#3d8b40':(d.frequency||0)>=40?'#b8892a':'#c23a2e')
+      .attr('stroke-width',2.5).attr('stroke-linecap','round').attr('stroke-opacity',0.6);
+
+    // Glass glow halos
+    svg.selectAll('.glow').data(sorted).join('circle')
+      .attr('cx',d=>x(d.frequency||0)).attr('cy',d=>y(d.name)+y.bandwidth()/2)
+      .attr('r',9)
+      .attr('fill',d=>(d.frequency||0)>=80?'#3d8b40':(d.frequency||0)>=40?'#b8892a':'#c23a2e')
+      .attr('opacity',0.12);
+
+    // Glass circles
+    svg.selectAll('.dot').data(sorted).join('circle')
+      .attr('cx',d=>x(d.frequency||0)).attr('cy',d=>y(d.name)+y.bandwidth()/2)
+      .attr('r',5)
+      .attr('fill',d=>(d.frequency||0)>=80?'#3d8b40':(d.frequency||0)>=40?'#b8892a':'#c23a2e')
+      .attr('opacity',0.75)
+      .attr('stroke','rgba(255,255,255,0.7)').attr('stroke-width',1.5);
+
+    // Value labels
+    svg.selectAll('.val').data(sorted).join('text')
+      .attr('x',d=>x(d.frequency||0)+10).attr('y',d=>y(d.name)+y.bandwidth()/2)
+      .attr('dy','0.35em').text(d=>`${d.frequency||0}%`)
+      .style('font-size','10px').style('font-family','Inter').style('fill','#5e5347').style('font-weight','600');
+
+    // Y axis (field names)
+    svg.append('g').call(d3.axisLeft(y).tickSize(0)).select('.domain').remove();
+    svg.selectAll('.tick text').style('font-size','11px').style('font-family','Inter').style('fill','#1e1a15');
+
+    // Add group dividers if groups exist
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    const groups=schema?.groups||[];
+    if(groups.length>0){
+      let prevGroup=null;
+      for(const f of sorted){
+        const gn=f.group||'Ungrouped';
+        if(prevGroup!==null&&prevGroup!==gn){
+          const yPos=y(f.name);
+          svg.append('line').attr('x1',-margin.left+10).attr('x2',width+10)
+            .attr('y1',yPos-2).attr('y2',yPos-2)
+            .attr('stroke','#ddd2c4').attr('stroke-width',1).attr('stroke-dasharray','4,3');
+          const gInfo=groups.find(g=>g.name===gn);
+          if(gInfo){
+            svg.append('circle').attr('cx',-margin.left+16).attr('cy',yPos-8).attr('r',4)
+              .attr('fill',gInfo.color||'#9a8e80').attr('opacity',0.7);
+            svg.append('text').attr('x',-margin.left+24).attr('y',yPos-5)
+              .text(gn).style('font-size','8px').style('fill',gInfo.color||'#9a8e80').style('font-weight','600');
+          }
+        }
+        prevGroup=gn;
+      }
+    }
+  },
+
+  // ---- D3: Treemap ----
+  _drawTreemap(fields){
+    const el=document.getElementById('d-treemap');
+    el.innerHTML='';
+    if(!fields.length)return;
+    const typeColors={string:'#3868b8',number:'#3d8b40',date:'#7652b5',boolean:'#b8892a',enum:'#cf6d35',integer:'#3d8b40'};
+    const width=Math.max(300,el.clientWidth||400);
+    const height=Math.max(200,Math.min(350,fields.length*20));
+
+    // Build nested hierarchy: groups -> fields (if groups exist)
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    const groups=schema?.groups||[];
+    let hierData;
+    if(groups.length>0){
+      const grouped={};
+      for(const g of groups)grouped[g.name]={color:g.color,children:[]};
+      grouped['Ungrouped']=grouped['Ungrouped']||{color:'#9a8e80',children:[]};
+      for(const f of fields){
+        const gn=f.group||'Ungrouped';
+        if(!grouped[gn])grouped[gn]={color:'#9a8e80',children:[]};
+        grouped[gn].children.push({...f,value:Math.max(f.frequency||1,5)});
+      }
+      hierData={children:Object.entries(grouped).filter(([,v])=>v.children.length).map(([name,v])=>({name,_groupColor:v.color,children:v.children}))};
+    }else{
+      hierData={children:fields.map(f=>({...f,value:Math.max(f.frequency||1,5)}))};
+    }
+
+    const root=d3.hierarchy(hierData).sum(d=>d.value);
+    d3.treemap().size([width,height]).padding(groups.length?4:3).paddingTop(groups.length?16:3).round(true)(root);
+    const svg=d3.select(el).append('svg').attr('width',width).attr('height',height);
+
+    // Draw group background rectangles if groups exist
+    if(groups.length>0){
+      const groupNodes=root.children||[];
+      for(const gn of groupNodes){
+        svg.append('rect').attr('x',gn.x0).attr('y',gn.y0).attr('width',gn.x1-gn.x0).attr('height',gn.y1-gn.y0)
+          .attr('fill',gn.data._groupColor||'#9a8e80').attr('opacity',0.08).attr('rx',8);
+        svg.append('text').attr('x',gn.x0+4).attr('y',gn.y0+11)
+          .text(gn.data.name).style('font-size','9px').style('fill',gn.data._groupColor||'#9a8e80').style('font-weight','700').style('pointer-events','none');
+      }
+    }
+
+    const leaf=svg.selectAll('g.leaf').data(root.leaves()).join('g').attr('class','leaf')
+      .attr('transform',d=>`translate(${d.x0},${d.y0})`);
+
+    leaf.append('rect')
+      .attr('width',d=>d.x1-d.x0).attr('height',d=>d.y1-d.y0)
+      .attr('fill',d=>typeColors[d.data.type]||'#9a8e80')
+      .attr('opacity',0.22).attr('rx',6);
+    leaf.append('rect')
+      .attr('width',d=>d.x1-d.x0).attr('height',d=>d.y1-d.y0)
+      .attr('fill',d=>typeColors[d.data.type]||'#9a8e80')
+      .attr('opacity',0.65).attr('rx',6)
+      .attr('stroke','rgba(255,255,255,0.35)').attr('stroke-width',1)
+      .style('cursor','pointer')
+      .on('mouseover',function(){d3.select(this).attr('opacity',0.85).attr('stroke','rgba(255,255,255,0.6)').attr('stroke-width',2)})
+      .on('mouseout',function(){d3.select(this).attr('opacity',0.65).attr('stroke','rgba(255,255,255,0.35)').attr('stroke-width',1)});
+
+    leaf.append('text').attr('x',5).attr('y',15)
+      .text(d=>(d.x1-d.x0)>45&&(d.y1-d.y0)>22?d.data.name:'')
+      .style('font-size','11px').style('fill','white').style('font-weight','600')
+      .style('font-family','Inter').style('pointer-events','none');
+
+    leaf.append('text').attr('x',5).attr('y',28)
+      .text(d=>(d.x1-d.x0)>45&&(d.y1-d.y0)>35?`${d.data.frequency||0}%`:'')
+      .style('font-size','9px').style('fill','rgba(255,255,255,0.75)')
+      .style('font-family','Inter').style('pointer-events','none');
+
+    leaf.append('text').attr('x',5).attr('y',40)
+      .text(d=>(d.x1-d.x0)>55&&(d.y1-d.y0)>48?d.data.type:'')
+      .style('font-size','8px').style('fill','rgba(255,255,255,0.6)')
+      .style('font-family','Inter').style('pointer-events','none');
+
+    leaf.append('title').text(d=>`${d.data.name}\nType: ${d.data.type}\nFrequency: ${d.data.frequency||0}%\nGroup: ${d.data.group||'Ungrouped'}\n${d.data.description||''}`);
+  },
+
+  // ---- D3: Collapsible Schema Tree ----
+  _drawSchemaTree(fields, clusterName){
+    const el=document.getElementById('d-schema-tree');
+    el.innerHTML='';
+    if(!fields.length)return;
+    const TC={string:'#3868b8',number:'#3d8b40',date:'#7652b5',boolean:'#b8892a',enum:'#cf6d35',integer:'#3d8b40'};
+    const TL={string:'str',number:'num',date:'date',boolean:'bool',enum:'enum',integer:'int'};
+
+    // Build group-aware tree: Root -> Group nodes -> Field nodes
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    const groups=schema?.groups||[];
+    const fieldToNode=f=>({
+      name:f.name,_type:'field',_ft:f.type,_freq:f.frequency||0,_req:f.required||false,
+      children:[
+        ...(f.description?[{name:f.description,_type:'prop',_pk:'desc'}]:[]),
+        ...(f.example?[{name:`e.g. "${f.example}"`,_type:'prop',_pk:'ex'}]:[]),
+        ...((f.examples||[]).length>1?[{name:`+ ${f.examples.length-1} more examples`,_type:'prop',_pk:'more'}]:[]),
+      ]
+    });
+
+    let children;
+    if(groups.length>0){
+      // Group layer
+      const grouped={};
+      for(const g of groups)grouped[g.name]=[];
+      for(const f of fields){
+        const gn=f.group||'Ungrouped';
+        if(!grouped[gn])grouped[gn]=[];
+        grouped[gn].push(f);
+      }
+      children=groups.filter(g=>(grouped[g.name]||[]).length>0).map(g=>{
+        const gf=grouped[g.name]||[];
+        const avgFreq=gf.length?Math.round(gf.reduce((s,f)=>s+(f.frequency||0),0)/gf.length):0;
+        return{
+          name:g.name,_type:'group',_color:g.color||'#9a8e80',_count:gf.length,_freq:avgFreq,
+          children:gf.map(fieldToNode)
+        };
+      });
+    }else{
+      children=fields.map(fieldToNode);
+    }
+
+    const nGroups=groups.length;
+    const treeData={
+      name:clusterName||'Schema',
+      _type:'root',
+      _count:fields.length,
+      _groupCount:nGroups,
+      children
+    };
+
+    const margin={top:25,right:200,bottom:25,left:110};
+    const ns=30;  // vertical node spacing
+    // Calculate horizontal spacing based on longest field name
+    const maxNameLen=Math.max(...fields.map(f=>f.name.length),8);
+    const hSpacing=Math.max(280, maxNameLen*8+160);  // name + badge + freq bar + REQ + padding
+    const width=Math.max(800,el.clientWidth||900,hSpacing*3+margin.left+margin.right);
+
+    const root=d3.hierarchy(treeData);
+    root.x0=0;root.y0=0;
+
+    // Start with root expanded, fields collapsed
+    root.children?.forEach(c=>{c._children=c.children;c.children=null});
+
+    const svg=d3.select(el).append('svg')
+      .attr('width',width)
+      .style('font-family','Inter')
+      .style('user-select','none');
+
+    // Gradient defs
+    const defs=svg.append('defs');
+    const grad=defs.append('linearGradient').attr('id','link-grad').attr('x1','0%').attr('x2','100%');
+    grad.append('stop').attr('offset','0%').attr('stop-color','#cf6d35').attr('stop-opacity',0.4);
+    grad.append('stop').attr('offset','100%').attr('stop-color','#e5dbd0').attr('stop-opacity',0.2);
+
+    // Glass glow shadow
+    const filter=defs.append('filter').attr('id','node-shadow').attr('x','-40%').attr('y','-40%').attr('width','180%').attr('height','180%');
+    filter.append('feGaussianBlur').attr('in','SourceAlpha').attr('stdDeviation',3).attr('result','blur');
+    filter.append('feFlood').attr('flood-color','rgba(207,109,53,0.15)').attr('result','color');
+    filter.append('feComposite').attr('in','color').attr('in2','blur').attr('operator','in').attr('result','glow');
+    const merge=filter.append('feMerge');
+    merge.append('feMergeNode').attr('in','glow');
+    merge.append('feMergeNode').attr('in','SourceGraphic');
+
+    // Glass node background filter
+    const glassFilter=defs.append('filter').attr('id','glass-node').attr('x','-10%').attr('y','-10%').attr('width','120%').attr('height','120%');
+    glassFilter.append('feGaussianBlur').attr('in','SourceAlpha').attr('stdDeviation',4).attr('result','blur');
+    glassFilter.append('feFlood').attr('flood-color','rgba(255,255,255,0.3)').attr('result','white');
+    glassFilter.append('feComposite').attr('in','white').attr('in2','blur').attr('operator','in').attr('result','glow');
+    const gm=glassFilter.append('feMerge');
+    gm.append('feMergeNode').attr('in','glow');
+    gm.append('feMergeNode').attr('in','SourceGraphic');
+
+    const g=svg.append('g').attr('transform',`translate(${margin.left},${margin.top})`);
+    const treeLayout=d3.tree().nodeSize([ns,hSpacing]);
+
+    function update(source){
+      treeLayout(root);
+      const nodes=root.descendants();
+      const links=root.links();
+
+      let x0=Infinity,x1=-Infinity;
+      nodes.forEach(d=>{if(d.x<x0)x0=d.x;if(d.x>x1)x1=d.x});
+      const height=x1-x0+margin.top+margin.bottom+50;
+      svg.attr('height',Math.max(120,height));
+      g.attr('transform',`translate(${margin.left},${margin.top-x0+25})`);
+
+      // Links — curved with gradient
+      const link=g.selectAll('.tl').data(links,d=>(d.target.data.name||'')+d.target.depth);
+      const linkEnter=link.enter().append('path').attr('class','tl')
+        .attr('fill','none')
+        .attr('stroke',d=>d.target.data._type==='prop'?'#e5dbd0':'url(#link-grad)')
+        .attr('stroke-width',d=>d.target.data._type==='prop'?1:2)
+        .attr('stroke-dasharray',d=>d.target.data._type==='prop'?'3,3':'none')
+        .attr('opacity',0);
+      linkEnter.merge(link).transition().duration(400)
+        .attr('opacity',1)
+        .attr('d',d3.linkHorizontal().x(d=>d.y).y(d=>d.x));
+      link.exit().transition().duration(200).attr('opacity',0).remove();
+
+      // Nodes
+      const node=g.selectAll('.tn').data(nodes,d=>(d.data.name||'')+d.depth);
+      const ne=node.enter().append('g').attr('class','tn')
+        .attr('transform',`translate(${source.y0||0},${source.x0||0})`)
+        .style('cursor',d=>d.children||d._children?'pointer':'default')
+        .on('click',(ev,d)=>{
+          if(d.children){d._children=d.children;d.children=null}
+          else if(d._children){d.children=d._children;d._children=null}
+          update(d);
+        });
+
+      // Root node — large accent circle with icon
+      ne.filter(d=>d.data._type==='root').each(function(d){
+        const g=d3.select(this);
+        // Glass outer glow
+        g.append('circle').attr('r',18).attr('fill','rgba(207,109,53,0.12)').attr('stroke','none');
+        // Glass node
+        g.append('circle').attr('r',14).attr('fill','rgba(207,109,53,0.85)').attr('stroke','rgba(255,255,255,0.5)').attr('stroke-width',2).attr('filter','url(#node-shadow)');
+        g.append('text').attr('text-anchor','middle').attr('dy','0.4em').text('{}').style('font-size','11px').style('fill','white').style('font-weight','700');
+        g.append('text').attr('x',20).attr('dy','0.35em').text(d.data.name).style('font-size','14px').style('font-weight','700').style('fill','#1e1a15');
+        const subLabel=d.data._groupCount?`${d.data._count} fields, ${d.data._groupCount} groups`:`${d.data._count} fields`;
+        g.append('text').attr('x',20).attr('dy','1.5em').text(subLabel).style('font-size','10px').style('fill','#9a8e80');
+      });
+
+      // Group nodes — folder with group color
+      ne.filter(d=>d.data._type==='group').each(function(d){
+        const g=d3.select(this);
+        const color=d.data._color||'#9a8e80';
+        const hasChildren=d._children||d.children;
+        g.append('circle').attr('r',14).attr('fill',color).attr('opacity',0.12).attr('stroke','none');
+        g.append('circle').attr('r',10).attr('fill',hasChildren?color:'rgba(255,255,255,0.8)').attr('opacity',hasChildren?0.7:1).attr('stroke',color).attr('stroke-opacity',0.6).attr('stroke-width',2);
+        if(d._children)g.append('text').attr('text-anchor','middle').attr('dy','0.4em').text('+').style('font-size','11px').style('font-weight','700').style('fill','white');
+        if(d.children)g.append('text').attr('text-anchor','middle').attr('dy','0.4em').text('−').style('font-size','10px').style('font-weight','700').style('fill','white');
+        g.append('text').attr('x',16).attr('dy','0.35em').text(d.data.name).style('font-size','12px').style('font-weight','700').style('fill','#1e1a15');
+        const metaX=16+d.data.name.length*7.5;
+        g.append('text').attr('x',metaX+4).attr('dy','0.35em').text(`${d.data._count} fields | ${d.data._freq}%`).style('font-size','9px').style('fill','#9a8e80');
+      });
+
+      // Field nodes — pill shape with type badge + freq bar
+      ne.filter(d=>d.data._type==='field').each(function(d){
+        const g=d3.select(this);
+        const color=TC[d.data._ft]||'#9a8e80';
+        const hasChildren=d._children||d.children;
+
+        // Glass outer glow
+        g.append('circle').attr('r',11).attr('fill',color).attr('opacity',0.1).attr('stroke','none');
+        // Glass circle with translucent fill and border
+        g.append('circle').attr('r',7).attr('fill',hasChildren?color:'rgba(255,255,255,0.8)').attr('opacity',hasChildren?0.85:1).attr('stroke',color).attr('stroke-opacity',0.55).attr('stroke-width',2).attr('filter','url(#glass-node)');
+
+        // Expand indicator
+        if(d._children)g.append('text').attr('class','exp-ind').attr('text-anchor','middle').attr('dy','0.4em').text('+').style('font-size','11px').style('font-weight','700').style('fill',hasChildren?'white':color);
+        if(d.children)g.append('text').attr('class','exp-ind').attr('text-anchor','middle').attr('dy','0.4em').text('−').style('font-size','10px').style('font-weight','700').style('fill',hasChildren?'white':color);
+
+        // Field name
+        g.append('text').attr('x',14).attr('dy','0.35em').text(d.data.name)
+          .style('font-size','12px').style('font-weight','600').style('fill','#1e1a15')
+          .style('font-family',"'Fira Code',monospace").style('letter-spacing','0.02em');
+
+        // Type badge
+        const nameWidth=d.data.name.length*7.5+14;
+        g.append('rect').attr('x',nameWidth+4).attr('y',-8).attr('width',30).attr('height',16).attr('rx',4).attr('fill',color+'20');
+        g.append('text').attr('x',nameWidth+19).attr('dy','0.35em').attr('text-anchor','middle')
+          .text(TL[d.data._ft]||d.data._ft).style('font-size','9px').style('font-weight','600').style('fill',color);
+
+        // Frequency mini-bar
+        const barX=nameWidth+40;
+        g.append('rect').attr('x',barX).attr('y',-3).attr('width',40).attr('height',6).attr('rx',3).attr('fill','#e5dbd0');
+        g.append('rect').attr('x',barX).attr('y',-3).attr('width',Math.max(2,(d.data._freq/100)*40)).attr('height',6).attr('rx',3)
+          .attr('fill',d.data._freq>=80?'#3d8b40':d.data._freq>=40?'#b8892a':'#c23a2e');
+        g.append('text').attr('x',barX+44).attr('dy','0.35em').text(`${d.data._freq}%`)
+          .style('font-size','9px').style('fill','#9a8e80').style('font-weight','500');
+
+        // Required badge
+        if(d.data._req){
+          g.append('text').attr('x',barX+72).attr('dy','0.35em').text('REQ')
+            .style('font-size','8px').style('fill','#3d8b40').style('font-weight','700').style('letter-spacing','0.05em');
+        }
+      });
+
+      // Property nodes — subtle leaf nodes with truncation
+      ne.filter(d=>d.data._type==='prop').each(function(d){
+        const g=d3.select(this);
+        const icons={desc:'💬',ex:'📋',more:'➕',req:'✓'};
+        g.append('circle').attr('r',3).attr('fill','#e5dbd0').attr('stroke','none');
+        // Truncate long descriptions to prevent overflow
+        let label=d.data.name||'';
+        const maxChars=Math.max(40,Math.floor((width-margin.left-margin.right-hSpacing*2)/7));
+        if(label.length>maxChars)label=label.substring(0,maxChars)+'…';
+        g.append('text').attr('x',8).attr('dy','0.35em')
+          .text((icons[d.data._pk]||'·')+' '+label)
+          .style('font-size','10px').style('fill',d.data._pk==='req'?'#3d8b40':'#5e5347')
+          .style('font-style',d.data._pk==='desc'?'italic':'normal');
+        // Full text tooltip on hover
+        if(d.data.name.length>maxChars){
+          g.append('title').text(d.data.name);
+        }
+      });
+
+      // Update positions
+      const nu=ne.merge(node);
+      nu.transition().duration(400).attr('transform',d=>`translate(${d.y},${d.x})`);
+      nu.select('circle').transition().duration(300)
+        .attr('fill',d=>{
+          if(d.data._type==='root')return '#cf6d35';
+          if(d.data._type==='field'){const c=TC[d.data._ft]||'#9a8e80';return(d._children)?c:'white'}
+          return '#e5dbd0';
+        });
+
+      node.exit().transition().duration(200).attr('opacity',0).remove();
+    }
+
+    update(root);
+  },
+
+  _updateCoverage(visibleFields, clusterId){
+    const schema=this.results?.schemas?.[String(clusterId)];
+    if(!schema)return;
+    const matrix=schema.doc_field_matrix||[];
+    const verifiedDocs=schema.verified_docs||matrix.length||1;
+    const visibleNames=new Set(visibleFields.map(f=>f.name));
+    const groups=schema.groups||[];
+
+    // Count filled cells only for visible fields
+    let filled=0;
+    let total=visibleNames.size*verifiedDocs;
+    for(const docPresence of matrix){
+      for(const fname of visibleNames){
+        if(docPresence[fname]||docPresence[fname]?.present)filled++;
+      }
+    }
+    const coverage=total>0?Math.round(filled/total*100):0;
+    const covColor=coverage>=80?'var(--success)':coverage>=50?'var(--warning)':'var(--error)';
+
+    document.getElementById('d-coverage-bar').style.width=coverage+'%';
+    document.getElementById('d-coverage-bar').style.background=covColor;
+    document.getElementById('d-coverage-pct').textContent=coverage+'%';
+    document.getElementById('d-coverage-pct').style.color=covColor;
+
+    // Per-group coverage breakdown
+    let detailText=`${visibleNames.size} fields x ${verifiedDocs} docs = ${total} cells, ${filled} filled`;
+    if(groups.length>0){
+      const groupCov=[];
+      for(const g of groups){
+        const gFields=visibleFields.filter(f=>(f.group||'Ungrouped')===g.name);
+        if(!gFields.length)continue;
+        const gNames=new Set(gFields.map(f=>f.name));
+        let gFilled=0;
+        for(const dp of matrix){for(const fn of gNames){if(dp[fn]||dp[fn]?.present)gFilled++}}
+        const gTotal=gNames.size*verifiedDocs;
+        const gPct=gTotal>0?Math.round(gFilled/gTotal*100):0;
+        groupCov.push(`${g.name}: ${gPct}%`);
+      }
+      if(groupCov.length)detailText+=` | ${groupCov.join(', ')}`;
+    }
+    document.getElementById('d-coverage-detail').textContent=detailText;
+  },
+
+  _updateField(idx,key,val){
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    if(!schema)return;
+    schema.fields[idx][key]=val;
+  },
+
+  _removeField(idx){
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    if(!schema)return;
+    this._undoStack.push(JSON.parse(JSON.stringify(schema.fields)));
+    schema.fields.splice(idx,1);
+    this.showSchema(this.selectedCluster);
+  },
+
+  // ---- Drag-and-Drop ----
+  _initDragDrop(){
+    // Keyboard undo: Cmd+Z / Ctrl+Z
+    if(!this._undoListenerAdded){
+      document.addEventListener('keydown',e=>{
+        if((e.metaKey||e.ctrlKey)&&e.key==='z'&&this._undoStack.length){
+          e.preventDefault();
+          const schema=this.results?.schemas?.[this.selectedCluster];
+          if(schema){
+            schema.fields=this._undoStack.pop();
+            this.showSchema(this.selectedCluster);
+            this.toast('Undo applied','info');
+          }
+        }
+      });
+      this._undoListenerAdded=true;
+    }
+  },
+  _onDragStart(e,idx){
+    this._dragState={fromIdx:idx};
+    e.dataTransfer.effectAllowed='move';
+    e.dataTransfer.setData('text/plain',idx);
+    requestAnimationFrame(()=>e.target.closest('tr')?.classList.add('dragging'));
+  },
+  _onDragOver(e){
+    e.preventDefault();
+    e.dataTransfer.dropEffect='move';
+    const tr=e.target.closest('tr');
+    document.querySelectorAll('.drop-target').forEach(r=>r.classList.remove('drop-target'));
+    if(tr)tr.classList.add('drop-target');
+  },
+  _onDrop(e,toIdx){
+    e.preventDefault();
+    document.querySelectorAll('.drop-target,.dragging').forEach(r=>r.classList.remove('drop-target','dragging'));
+    if(!this._dragState)return;
+    const fromIdx=this._dragState.fromIdx;
+    if(fromIdx===toIdx)return;
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    if(!schema)return;
+    this._undoStack.push(JSON.parse(JSON.stringify(schema.fields)));
+    // If dropping on a field in a different group, update the group
+    const targetGroup=schema.fields[toIdx]?.group;
+    if(targetGroup&&schema.fields[fromIdx]){
+      schema.fields[fromIdx].group=targetGroup;
+    }
+    // Reorder
+    const [moved]=schema.fields.splice(fromIdx,1);
+    schema.fields.splice(toIdx>fromIdx?toIdx-1:toIdx,0,moved);
+    this._dragState=null;
+    this.showSchema(this.selectedCluster);
+  },
+  _onDragEnd(e){
+    document.querySelectorAll('.drop-target,.dragging').forEach(r=>r.classList.remove('drop-target','dragging'));
+    this._dragState=null;
+  },
+
+  // ---- Rediscover with edits ----
+  async rediscoverSchema(){
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    if(!schema||!this.projectId){this.toast('No schema to re-analyze','error');return}
+    this.toast('Re-analyzing with your edits...','info');
+    try{
+      const model=document.getElementById('d-model').value||'claude-sonnet-4-6';
+      const r=await fetch(`/api/projects/${this.projectId}/discover/rediscover`,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({cluster_id:this.selectedCluster,model,seed_schema:schema})
+      });
+      if(!r.ok)throw new Error((await r.json()).detail||'Rediscovery failed');
+      const d=await r.json();
+      // Update results with new schema
+      this.results.schemas[this.selectedCluster]=d.schema;
+      this.showSchema(this.selectedCluster);
+      const diff=d.diff||{};
+      this.toast(`Rediscovered: +${(diff.added||[]).length} added, -${(diff.removed||[]).length} removed`,'success');
+    }catch(e){this.toast(e.message,'error')}
+  },
+
+  // ---- Template Library ----
+  async saveAsTemplate(){
+    const clusterId=document.getElementById('d-export-cluster').value;
+    const schema=this.results?.schemas?.[String(clusterId)];
+    if(!schema){this.toast('Select a cluster first','error');return}
+    const cl=this.results?.clusters?.find(c=>String(c.id)===String(clusterId));
+    const name=prompt('Template name:',cl?.name||'My Template');
+    if(!name)return;
+    try{
+      const r=await fetch('/api/schema-templates',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({name,description:`From cluster: ${cl?.name||clusterId}`,schema_json:schema})
+      });
+      if(!r.ok)throw new Error('Save failed');
+      this.toast('Template saved!','success');
+      this.loadTemplates();
+    }catch(e){this.toast(e.message,'error')}
+  },
+  async loadTemplates(){
+    try{
+      const r=await fetch('/api/schema-templates');
+      const d=await r.json();
+      const list=document.getElementById('d-template-list');
+      if(!d.templates?.length){list.innerHTML='<div style="color:var(--muted);font-size:0.82rem">No templates saved yet.</div>';return}
+      list.innerHTML=d.templates.map(t=>`<div class="template-card">
+        <span class="tpl-name">${esc(t.name)}</span>
+        <span class="tpl-meta">${t.field_count} fields</span>
+        <span class="tpl-meta">${t.created_at?.substring(0,10)||''}</span>
+        <button class="btn btn-sm btn-secondary" onclick="D.deleteTemplate('${t.id}')">Delete</button>
+      </div>`).join('');
+    }catch(e){document.getElementById('d-template-list').innerHTML='<div style="color:var(--error)">Failed to load templates</div>'}
+  },
+  async deleteTemplate(id){
+    if(!confirm('Delete this template?'))return;
+    try{
+      await fetch(`/api/schema-templates/${id}`,{method:'DELETE'});
+      this.toast('Template deleted','success');
+      this.loadTemplates();
+    }catch(e){this.toast(e.message,'error')}
+  },
+
+  filterByFreq(val){
+    document.getElementById('d-freq-val').textContent=val+'%';
+    this.showSchema(this.selectedCluster);  // showSchema already calls _updateCoverage
+  },
+
+  async saveSchema(){
+    const schema=this.results?.schemas?.[this.selectedCluster];
+    if(!schema||!this.projectId)return;
+    try{
+      const r=await fetch(`/api/projects/${this.projectId}/discover/schema/${this.selectedCluster}`,{
+        method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(schema)
+      });
+      if(!r.ok)throw new Error('Save failed');
+      this.toast('Schema saved','success');
+    }catch(e){this.toast(e.message,'error')}
+  },
+
+  // ---- Export ----
+  async exportFormat(fmt){
+    const clusterId=document.getElementById('d-export-cluster').value;
+    if(!clusterId||!this.projectId)return;
+    try{
+      const r=await fetch(`/api/projects/${this.projectId}/discover/export`,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({cluster_id:clusterId,format:fmt})
+      });
+      if(!r.ok)throw new Error((await r.json()).detail||'Export failed');
+      const d=await r.json();
+      const content=typeof d.data==='object'?JSON.stringify(d.data,null,2):d.data;
+      const el=document.getElementById('d-export-result');el.classList.remove('hidden');
+      el.innerHTML=`<pre style="background:var(--surface-alt);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:0.78rem;max-height:300px;overflow:auto;white-space:pre-wrap">${esc(content)}</pre>
+        <button class="btn btn-secondary btn-sm" style="margin-top:0.5rem" onclick="D._downloadExport('${fmt}')">Download</button>`;
+      this._lastExport={content,fmt};
+    }catch(e){this.toast(e.message,'error')}
+  },
+
+  _downloadExport(fmt){
+    if(!this._lastExport)return;
+    const ext={json_schema:'json',csv:'csv',markdown:'md'}[fmt]||'txt';
+    const type={json_schema:'application/json',csv:'text/csv',markdown:'text/markdown'}[fmt]||'text/plain';
+    const b=new Blob([this._lastExport.content],{type});
+    const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`discovered_schema.${ext}`;a.click();
+  },
+
+  async exportToStructure(){
+    const clusterId=document.getElementById('d-export-cluster').value;
+    if(!clusterId||!this.projectId)return;
+    try{
+      const r=await fetch(`/api/projects/${this.projectId}/discover/to-structure`,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({cluster_id:clusterId,format:'structure'})
+      });
+      if(!r.ok)throw new Error((await r.json()).detail||'Failed');
+      const d=await r.json();
+      this.toast(`Structure project created with ${d.entity_count} entities!`,'success');
+      const el=document.getElementById('d-export-result');el.classList.remove('hidden');
+      el.innerHTML=`<div class="card" style="border-left:3px solid var(--success)">
+        <strong>Project created:</strong> ${esc(d.project_name)}<br>
+        <span style="color:var(--muted);font-size:0.82rem">${d.entity_count} entities pre-loaded</span><br>
+        <a href="/" class="btn btn-primary btn-sm" style="margin-top:0.5rem">Open in Structure &#8594;</a>
+      </div>`;
+    }catch(e){this.toast(e.message,'error')}
+  },
+
+  // ---- Pipeline: Discover -> Structure ----
+  _pipelineClusterId: null,
+  _pipelineRunning: false,
+  _pipelineStepNames: ['Enriching schema', 'Selecting examples', 'Preview extraction', 'Field quality', 'Ready to launch'],
+
+  async startPipeline(){
+    if(this._pipelineRunning)return;
+    const clusterId=document.getElementById('d-pipeline-cluster').value||this.selectedCluster;
+    if(!clusterId||!this.projectId){this.toast('Select a cluster first','error');return}
+    this._pipelineClusterId=clusterId;
+    this._pipelineRunning=true;
+
+    const btn=document.getElementById('d-pipeline-start-btn');
+    btn.disabled=true;
+    btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:ds-spin 0.8s linear infinite"><circle cx="12" cy="12" r="10"/></svg> Running...';
+
+    const model=document.getElementById('d-model').value||'claude-sonnet-4-6';
+    const projectName=document.getElementById('d-pipeline-name').value.trim()||null;
+
+    // Reset all steps
+    ['ps-enrich','ps-fewshot','ps-preview','ps-quality','ps-launch'].forEach(id=>{
+      const el=document.getElementById(id);
+      el.classList.remove('step-active','step-done','step-error');
+    });
+
+    try{
+      // Step 1: Enrich schema (via create-pipeline which does enrichment)
+      await this._pipelineStep(0,'ps-enrich',async()=>{
+        DocstructShortcuts.showSkeleton('ps-enrich-content',{rows:3,cols:2});
+        // Auto-fewshot first to get annotations
+        const fewshotRes=await fetch(`/api/projects/${this.projectId}/discover/auto-fewshot`,{
+          method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({cluster_id:clusterId,n:3,model})
+        });
+        if(!fewshotRes.ok){const err=await fewshotRes.json();throw new Error(err.detail||'Auto-fewshot failed')}
+        this._pipelineFewshot=await fewshotRes.json();
+
+        // Show enriched schema info
+        const schema=this.results?.schemas?.[String(clusterId)];
+        const fields=schema?.fields||[];
+        let html='<div style="font-size:0.85rem;margin-bottom:0.5rem"><strong style="color:var(--success)">Schema enriched</strong> &mdash; '+fields.length+' fields ready for extraction</div>';
+        html+='<div style="display:flex;flex-wrap:wrap;gap:0.35rem">';
+        for(const f of fields.slice(0,12)){
+          html+=`<span style="font-size:0.72rem;padding:0.15rem 0.5rem;background:var(--surface-alt);border:1px solid var(--border);border-radius:4px;display:inline-flex;align-items:center;gap:0.25rem">
+            <strong>${esc(f.name)}</strong>
+            <span style="color:var(--muted)">${f.type||'string'}</span>
+            ${f.description?'<span title="'+esc(f.description)+'" style="color:var(--accent);cursor:help">i</span>':''}
+          </span>`;
+        }
+        if(fields.length>12)html+=`<span style="font-size:0.72rem;padding:0.15rem 0.5rem;color:var(--muted)">+${fields.length-12} more</span>`;
+        html+='</div>';
+        document.getElementById('ps-enrich-content').innerHTML=html;
+      });
+
+      // Step 2: Show selected examples
+      await this._pipelineStep(1,'ps-fewshot',async()=>{
+        DocstructShortcuts.showSkeleton('ps-fewshot-content',{rows:3,cols:1});
+        // We already have fewshot data from step 1
+        const annotations=this._pipelineFewshot?.annotations||[];
+        let html=`<div style="font-size:0.85rem;margin-bottom:0.5rem"><strong style="color:var(--success)">${annotations.length} representative documents selected</strong></div>`;
+        for(const anno of annotations){
+          const output=anno.output||{};
+          const fieldKeys=Object.keys(output).slice(0,6);
+          html+=`<div class="anno-card">
+            <div class="anno-card-header">
+              <span class="anno-card-name">${esc(anno.file||'Document')}</span>
+              <span style="font-size:0.72rem;color:var(--muted)">${Object.keys(output).length} fields annotated</span>
+            </div>
+            <div class="anno-card-fields">
+              ${fieldKeys.map(k=>`<span class="anno-field-tag">${esc(k)}: ${esc(String(output[k]||'').substring(0,40))}</span>`).join('')}
+              ${Object.keys(output).length>6?`<span class="anno-field-tag" style="color:var(--muted);border-color:var(--border)">+${Object.keys(output).length-6} more</span>`:''}
+            </div>
+          </div>`;
+        }
+        document.getElementById('ps-fewshot-content').innerHTML=html;
+      });
+
+      // Step 3: Preview extraction
+      await this._pipelineStep(2,'ps-preview',async()=>{
+        DocstructShortcuts.showSkeleton('ps-preview-content',{rows:4,cols:4});
+        const previewRes=await fetch(`/api/projects/${this.projectId}/discover/preview-extract`,{
+          method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({cluster_id:clusterId,model,max_docs:3})
+        });
+        if(!previewRes.ok){const err=await previewRes.json();throw new Error(err.detail||'Preview extraction failed')}
+        this._pipelinePreview=await previewRes.json();
+
+        const results=this._pipelinePreview?.results||[];
+        if(!results.length){
+          document.getElementById('ps-preview-content').innerHTML='<div style="color:var(--warning)">No preview results available. The extraction will still work on full run.</div>';
+          return;
+        }
+
+        // Build results table
+        const allFields=new Set();
+        for(const r of results){for(const k of Object.keys(r.fields||{}))allFields.add(k)}
+        const fieldList=[...allFields].slice(0,8);
+
+        let html=`<div style="font-size:0.85rem;margin-bottom:0.5rem"><strong style="color:var(--success)">${results.length} documents extracted</strong></div>`;
+        html+='<div style="overflow-x:auto"><table class="preview-table"><thead><tr><th>Document</th>';
+        for(const f of fieldList)html+=`<th>${esc(f)}</th>`;
+        if(allFields.size>8)html+=`<th style="color:var(--muted)">+${allFields.size-8}</th>`;
+        html+='</tr></thead><tbody>';
+        for(const r of results){
+          html+=`<tr><td style="font-weight:600">${esc(r.file||'')}</td>`;
+          for(const f of fieldList){
+            const val=r.fields?.[f];
+            const display=val!=null?String(val):'';
+            const conf=r.confidence?.[f];
+            html+=`<td title="${esc(display)}">${conf!=null?DocstructShortcuts.confidenceDot(conf)+' ':''}${esc(display.substring(0,50))}</td>`;
+          }
+          if(allFields.size>8)html+='<td style="color:var(--muted)">...</td>';
+          html+='</tr>';
+        }
+        html+='</tbody></table></div>';
+        document.getElementById('ps-preview-content').innerHTML=html;
+      });
+
+      // Step 4: Field quality
+      await this._pipelineStep(3,'ps-quality',async()=>{
+        DocstructShortcuts.showSkeleton('ps-quality-content',{rows:3,cols:3});
+        const qualRes=await fetch(`/api/projects/${this.projectId}/discover/field-quality?cluster_id=${encodeURIComponent(clusterId)}`);
+        if(!qualRes.ok){const err=await qualRes.json();throw new Error(err.detail||'Field quality failed')}
+        const qualData=await qualRes.json();
+        this._pipelineQuality=qualData;
+
+        const fields=qualData.fields||{};
+        const overall=qualData.overall_quality||0;
+        const typeColors={string:'#3868b8',number:'#3d8b40',date:'#7652b5',boolean:'#b8892a',enum:'#cf6d35',integer:'#3d8b40'};
+
+        let html=`<div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem">
+          <div style="font-size:0.85rem"><strong>Overall quality:</strong></div>
+          ${DocstructShortcuts.confidencePill(overall)}
+          <span style="font-size:0.78rem;color:var(--muted)">${qualData.total_fields||0} fields analyzed</span>
+        </div>`;
+        html+='<div class="fq-grid">';
+        for(const[name,m]of Object.entries(fields)){
+          const fillPct=Math.round((m.fill_rate||0)*100);
+          const fillColor=fillPct>=80?'var(--success)':fillPct>=50?'var(--warning)':'var(--error)';
+          const tc=typeColors[m.type]||'#9a8e80';
+          html+=`<div class="fq-card">
+            <div class="fq-card-name">
+              ${esc(name)}
+              <span class="fq-card-type" style="background:${tc}15;color:${tc}">${m.type||'string'}</span>
+              ${m.required?'<span style="font-size:0.62rem;font-weight:700;color:var(--success)">REQ</span>':''}
+            </div>
+            <div class="fq-card-metrics">
+              <div class="fq-card-fill">
+                <div class="fq-card-fill-bar"><div class="fq-card-fill-inner" style="width:${fillPct}%;background:${fillColor}"></div></div>
+                <span>${fillPct}%</span>
+              </div>
+              ${DocstructShortcuts.confidencePill(m.fill_rate||0)}
+            </div>
+          </div>`;
+        }
+        html+='</div>';
+        document.getElementById('ps-quality-content').innerHTML=html;
+      });
+
+      // Step 5: Ready to launch
+      this._pipelineSetStep(4,'ps-launch','active');
+      const clName=this.results?.clusters?.find(c=>String(c.id)===String(clusterId))?.name||'Cluster';
+      document.getElementById('ps-launch-content').innerHTML=`
+        <div style="text-align:center;padding:1rem 0">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem">&#9989;</div>
+          <div style="font-size:1rem;font-weight:700;margin-bottom:0.25rem">Pipeline complete &mdash; ready to create project</div>
+          <div style="font-size:0.85rem;color:var(--text-2);margin-bottom:1rem">A new Structure project will be created for "${esc(clName)}" with enriched schema, few-shot examples, and all cluster documents.</div>
+          <button class="btn btn-pipeline" id="d-pipeline-launch-btn" onclick="D.launchPipeline()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+            Launch Full Extraction
+          </button>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.5rem">Press <kbd style="font-size:0.68rem">&#8984;&#x23CE;</kbd> to launch</div>
+        </div>`;
+      this._pipelineSetStep(4,'ps-launch','done');
+
+    }catch(e){
+      this.toast('Pipeline error: '+e.message,'error');
+    }
+
+    this._pipelineRunning=false;
+    btn.disabled=false;
+    btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polygon points="5 3 19 12 5 21 5 3"/></svg> Run Pipeline';
+  },
+
+  async _pipelineStep(stepIdx,elId,fn){
+    this._pipelineSetStep(stepIdx,elId,'active');
+    DocstructShortcuts.showProgressiveStatus('d-pipeline-progress',this._pipelineStepNames,stepIdx);
+    try{
+      await fn();
+      this._pipelineSetStep(stepIdx,elId,'done');
+    }catch(e){
+      this._pipelineSetStep(stepIdx,elId,'error');
+      throw e;
+    }
+  },
+
+  _pipelineSetStep(idx,elId,state){
+    const el=document.getElementById(elId);
+    el.classList.remove('step-active','step-done','step-error');
+    if(state==='active')el.classList.add('step-active');
+    else if(state==='done')el.classList.add('step-done');
+    else if(state==='error')el.classList.add('step-error');
+  },
+
+  async launchPipeline(){
+    const clusterId=this._pipelineClusterId||document.getElementById('d-pipeline-cluster').value;
+    if(!clusterId||!this.projectId)return;
+
+    const btn=document.getElementById('d-pipeline-launch-btn');
+    if(btn){btn.disabled=true;btn.textContent='Creating project...';}
+
+    const model=document.getElementById('d-model').value||'claude-sonnet-4-6';
+    const projectName=document.getElementById('d-pipeline-name').value.trim()||null;
+
+    try{
+      const r=await fetch(`/api/projects/${this.projectId}/discover/create-pipeline`,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({cluster_id:clusterId,model,project_name:projectName})
+      });
+      if(!r.ok){const err=await r.json();throw new Error(err.detail||'Create pipeline failed')}
+      const d=await r.json();
+
+      this.toast(`Project created: ${d.project_name}`,'success');
+
+      // Update progress to all-complete
+      DocstructShortcuts.showProgressiveStatus('d-pipeline-progress',this._pipelineStepNames,-1);
+
+      const resultEl=document.getElementById('d-pipeline-result');
+      resultEl.classList.remove('hidden');
+      resultEl.innerHTML=`
+        <div class="card" style="border-left:3px solid var(--success);background:var(--success-light)">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem">
+            <span style="font-size:1.2rem">&#9989;</span>
+            <strong style="font-size:1rem">Project Created Successfully</strong>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+            <div class="stat-card" style="margin:0;padding:0.75rem"><div class="sv" style="font-size:1.2rem">${d.enriched_fields||0}</div><div class="sl">Enriched Fields</div></div>
+            <div class="stat-card" style="margin:0;padding:0.75rem"><div class="sv" style="font-size:1.2rem">${d.files_copied||0}</div><div class="sl">Files Copied</div></div>
+            <div class="stat-card" style="margin:0;padding:0.75rem"><div class="sv" style="font-size:1.2rem">${d.entity_count||0}</div><div class="sl">Entities</div></div>
+          </div>
+          <a href="/" class="btn btn-primary" style="width:100%;justify-content:center">Open in Structure &#8594;</a>
+        </div>`;
+
+      // Update launch button
+      document.getElementById('ps-launch-content').innerHTML=`
+        <div style="text-align:center;padding:1rem 0">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem">&#127881;</div>
+          <div style="font-size:1rem;font-weight:700;color:var(--success)">Project "${esc(d.project_name)}" created</div>
+          <div style="font-size:0.85rem;color:var(--text-2);margin-top:0.25rem">${d.entity_count} entities, ${d.files_copied} files, ${d.enriched_fields} enriched fields</div>
+          <a href="/" class="btn btn-primary" style="margin-top:0.75rem">Open in Structure &#8594;</a>
+        </div>`;
+    }catch(e){
+      this.toast('Launch failed: '+e.message,'error');
+      if(btn){btn.disabled=false;btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg> Retry Launch';}
+    }
+  },
+
+  // ---- Settings (reused from Connect) ----
+  async checkApiKey(){try{const r=await fetch('/api/settings/llm-keys');const d=await r.json();const i=document.getElementById('api-key-indicator');if(d.any_configured){const n=Object.entries(d.providers).filter(([,v])=>v.configured).map(([,v])=>v.label.split(' ')[0]).join(', ');i.innerHTML=`<span style="color:var(--success)">&#10003; ${n}</span>`;document.getElementById('api-key-banner').classList.add('hidden')}else{i.innerHTML=`<span style="color:var(--error)">&#9888; No key</span>`;document.getElementById('api-key-banner').classList.remove('hidden')}}catch(e){}},
+  openSettings(){document.getElementById('settings-modal').classList.remove('hidden');this._loadProviders();if(typeof DocstructApiKeys!=='undefined')DocstructApiKeys.render('api-keys-manager')},
+  closeSettings(){document.getElementById('settings-modal').classList.add('hidden')},
+  async _loadProviders(){try{const r=await fetch('/api/settings/llm-keys');const d=await r.json();const c=document.getElementById('llm-providers');const ph={anthropic:'sk-ant-...',openai:'sk-...',google:'AI...',groq:'gsk_...',cerebras:'csk-...',openrouter:'sk-or-...'};const order=['groq','cerebras','openrouter','google','openai','anthropic'];const sorted=order.filter(k=>d.providers[k]).map(k=>[k,d.providers[k]]);let html='';const ol=d.providers.ollama;if(ol){html+='<div style="font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem">Local (No API Key)</div><div style="margin-bottom:0.5rem;padding:0.55rem;background:var(--surface-alt);border:1px solid var(--border);border-radius:8px"><div style="display:flex;justify-content:space-between;align-items:center"><strong style="font-size:0.8rem">Ollama</strong>'+(ol.configured?'<span style="font-size:0.62rem;font-weight:600;padding:0.1rem 0.3rem;border-radius:4px;background:rgba(61,139,64,0.1);color:var(--success)">&#10003; running</span>':'<span style="font-size:0.62rem;color:var(--muted)">not running</span>')+'</div><div style="font-size:0.7rem;color:var(--muted);margin-top:0.2rem">'+(ol.configured?(ol.models_available||[]).length?'Models: '+(ol.models_available||[]).join(', '):'Running':'<a href=&quot;https://ollama.com&quot; target=&quot;_blank&quot; style=&quot;color:var(--accent)&quot;>Install Ollama</a> for local extraction')+'</div></div>';}html+='<div style="font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem">Free / Freemium</div>';const free=['groq','cerebras','openrouter'];const paid=['google','openai','anthropic'];for(const[k,p]of sorted.filter(([k])=>free.includes(k)))html+=this._pc(k,p,ph[k]||'');html+='<div style="font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin:0.6rem 0 0.3rem">Paid</div>';for(const[k,p]of sorted.filter(([k])=>paid.includes(k)))html+=this._pc(k,p,ph[k]||'');c.innerHTML=html}catch(e){}},
+  _pc(k,p,ph){return`<div style="margin-bottom:0.5rem;padding:0.55rem;background:var(--surface-alt);border:1px solid var(--border);border-radius:8px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.2rem"><strong style="font-size:0.8rem">${p.label}</strong>${p.configured?'<span style="font-size:0.62rem;font-weight:600;padding:0.1rem 0.3rem;border-radius:4px;background:rgba(61,139,64,0.1);color:var(--success)">&#10003; set</span>':''}</div><div style="display:flex;gap:0.25rem"><input type="password" id="key-${k}" placeholder="${ph}" style="flex:1;font-size:0.75rem;padding:0.25rem 0.4rem"><button class="btn btn-primary btn-sm" onclick="D.saveLLMKey('${k}')" style="font-size:0.72rem;padding:0.25rem 0.5rem">Save</button>${p.configured?`<button class="btn btn-secondary btn-sm" onclick="D.testLLMKey('${k}')" style="font-size:0.72rem;padding:0.25rem 0.5rem">Test</button>`:''}</div></div>`},
+  async saveLLMKey(p){const i=document.getElementById(`key-${p}`);const k=i.value.trim();if(!k){this.toast('Enter a key','error');return}try{const r=await fetch('/api/settings/llm-keys',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({provider:p,api_key:k})});if(!r.ok)throw new Error((await r.json()).detail||'Failed');i.value='';this.toast(`${p} key saved`,'success');this._loadProviders();this.checkApiKey();this.loadModels()}catch(e){this.toast(e.message,'error')}},
+  async testLLMKey(p){const r=document.getElementById('llm-test-result');r.innerHTML='<span style="color:var(--muted)">Testing...</span>';try{const res=await fetch('/api/settings/test-llm-key',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({provider:p})});if(!res.ok)throw new Error((await res.json()).detail||'Failed');const d=await res.json();r.innerHTML=`<span style="color:var(--success)">&#10003; "${d.response}"</span>`}catch(e){r.innerHTML=`<span style="color:var(--error)">&#10007; ${e.message}</span>`}},
+};
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')D.closeSettings()});
+D.checkApiKey();D.loadProjects();D.loadModels();
+</script>
+
+<!-- Unified nav + shortcuts + API key manager -->
+
+<script src="/static/docstruct-shortcuts.js"></script>
+<script src="/static/docstruct-apikeys.js"></script>
+<script>
+DocstructNav.init({
+  active: 'discover',
+  containerId: 'ds-nav-container',
+  onSettings: function() { D.openSettings(); }
+});
+
+// Render API key manager in settings modal
+DocstructApiKeys.render('api-keys-manager');
+
+DocstructShortcuts.init({
+  page: 'discover',
+  handlers: {
+    submit: function() {
+      // Cmd+Enter: context-dependent action
+      if (D.currentStep === 5) {
+        // On pipeline step — launch or start pipeline
+        var launchBtn = document.getElementById('d-pipeline-launch-btn');
+        if (launchBtn && !launchBtn.disabled) { launchBtn.click(); return; }
+        var startBtn = document.getElementById('d-pipeline-start-btn');
+        if (startBtn && !startBtn.disabled) { startBtn.click(); return; }
+      }
+      // Fallback to analyze button
+      var btn = document.getElementById('d-analyze-btn');
+      if (btn && !btn.disabled) btn.click();
+    },
+    nextDoc: function() { D.goToStep(Math.min(D.currentStep + 1, D.maxStep)); },
+    prevDoc: function() { D.goToStep(Math.max(D.currentStep - 1, 1)); },
+    escape: function() { D.closeSettings(); }
+  },
+  commands: [
+    {
+      id: 'pipeline-run',
+      title: 'Run Pipeline (Discover to Structure)',
+      icon: 'doc',
+      group: 'Discover',
+      action: function() { if (D.currentStep >= 4) { D.goToStep(5); D.startPipeline(); } }
+    },
+    {
+      id: 'pipeline-launch',
+      title: 'Launch Full Extraction',
+      icon: 'doc',
+      group: 'Discover',
+      action: function() { D.launchPipeline(); }
+    }
+  ]
+});
+</script>
+
+<script>
+// === LAKSHANA DEMO MODE OVERRIDES ============================================
+const DEMO_DATA = {
+  "model": "openai/gpt-4o-mini",
+  "elapsed_seconds": 134.7,
+  "stats": {
+    "total_docs": 30,
+    "clusters": 3,
+    "total_fields": 48,
+    "duration_s": 134.7,
+    "parsed_errors": 0
+  },
+  "clusters": [
+    {
+      "id": 0,
+      "name": "Maintenance Inspection Report",
+      "description": "Periodic A/B/C/D-check inspection findings with ATA-chapter references, corrective actions, and DGCA-licensed sign-off.",
+      "keywords": [
+        "inspection",
+        "ATA chapter",
+        "airworthy",
+        "AMM",
+        "AME",
+        "work order"
+      ],
+      "doc_count": 10,
+      "doc_type": "maintenance_inspection",
+      "doc_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Flight Test Report",
+      "description": "Certification and acceptance flight test runs per CAR-23 / CS-25, with test conditions, parameters measured, and crew sign-off.",
+      "keywords": [
+        "test pilot",
+        "FTE",
+        "envelope",
+        "CAR-23",
+        "MTOW",
+        "MAC"
+      ],
+      "doc_count": 10,
+      "doc_type": "flight_test",
+      "doc_indices": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Service Bulletin",
+      "description": "Manufacturer-issued modification advisories with ATA chapter, effectivity range, compliance window, and approved engineering authority.",
+      "keywords": [
+        "service bulletin",
+        "SB",
+        "compliance",
+        "ATA",
+        "MSN",
+        "effectivity"
+      ],
+      "doc_count": 10,
+      "doc_type": "service_bulletin",
+      "doc_indices": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    }
+  ],
+  "schemas": {
+    "0": {
+      "fields": [
+        {
+          "name": "work_order_number",
+          "type": "string",
+          "description": "Unique work order reference (e.g. MIR/2026/12345)",
+          "example": "MIR/2026/23434",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Work Order Metadata"
+        },
+        {
+          "name": "inspection_date",
+          "type": "date",
+          "description": "Calendar date the inspection was performed",
+          "example": "08/02/2026",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Work Order Metadata"
+        },
+        {
+          "name": "station",
+          "type": "string",
+          "description": "Maintenance station / hangar location",
+          "example": "Delhi (DEL) \u2014 Hangar Bay 3",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Work Order Metadata"
+        },
+        {
+          "name": "aircraft_type",
+          "type": "string",
+          "description": "Aircraft type and series",
+          "example": "Airbus A320neo",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft Details"
+        },
+        {
+          "name": "registration",
+          "type": "string",
+          "description": "Aircraft tail / registration mark",
+          "example": "VT-EXP",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft Details"
+        },
+        {
+          "name": "operator",
+          "type": "string",
+          "description": "Operator / airline",
+          "example": "Indigo",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft Details"
+        },
+        {
+          "name": "total_flight_hours",
+          "type": "number",
+          "description": "Total airframe flight hours at inspection",
+          "example": "17144",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft Details"
+        },
+        {
+          "name": "total_flight_cycles",
+          "type": "number",
+          "description": "Total airframe flight cycles at inspection",
+          "example": "15066",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft Details"
+        },
+        {
+          "name": "engine_type",
+          "type": "string",
+          "description": "Installed engine type",
+          "example": "CFM LEAP-1A26",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft Details"
+        },
+        {
+          "name": "check_level",
+          "type": "enum",
+          "description": "Inspection level (A/B/C-Check, Phase, Daily)",
+          "example": "A-Check",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Inspection Scope"
+        },
+        {
+          "name": "ata_chapter",
+          "type": "string",
+          "description": "ATA chapter the inspection covers",
+          "example": "27 \u2014 Flight Controls",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Inspection Scope"
+        },
+        {
+          "name": "reference_manual",
+          "type": "string",
+          "description": "AMM revision + task reference",
+          "example": "AMM Rev. 42, Task 27-11-04",
+          "frequency": 100,
+          "required": false,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Inspection Scope"
+        },
+        {
+          "name": "findings",
+          "type": "array",
+          "description": "List of findings with corrective actions",
+          "example": "[{finding, action}]",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Findings and Actions",
+          "is_repeating": true
+        },
+        {
+          "name": "inspector_name",
+          "type": "string",
+          "description": "Inspecting engineer's name",
+          "example": "Anjali Mehta, AME L2",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Certification"
+        },
+        {
+          "name": "dgca_licence_no",
+          "type": "string",
+          "description": "DGCA-issued AME licence number",
+          "example": "AME-34521",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Certification"
+        },
+        {
+          "name": "next_inspection_due",
+          "type": "date",
+          "description": "Date the next inspection is due",
+          "example": "07/05/2026",
+          "frequency": 100,
+          "required": false,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Certification"
+        }
+      ],
+      "groups": [
+        {
+          "name": "Work Order Metadata",
+          "description": "Work order number, date, station",
+          "color": "#3868b8"
+        },
+        {
+          "name": "Aircraft Details",
+          "description": "Type, registration, operator, hours, engine",
+          "color": "#5cb85c"
+        },
+        {
+          "name": "Inspection Scope",
+          "description": "Check level, ATA chapter, AMM reference",
+          "color": "#e67e22"
+        },
+        {
+          "name": "Findings and Actions",
+          "description": "Findings with corrective actions",
+          "color": "#9b59b6",
+          "is_repeating": true
+        },
+        {
+          "name": "Certification",
+          "description": "Inspector sign-off and next due date",
+          "color": "#1abc9c"
+        }
+      ],
+      "coverage": 96,
+      "verified_docs": 10
+    },
+    "1": {
+      "fields": [
+        {
+          "name": "test_report_number",
+          "type": "string",
+          "description": "Unique test report identifier",
+          "example": "FTR-BL-2026-247",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Identification"
+        },
+        {
+          "name": "test_date",
+          "type": "date",
+          "description": "Date of the test flight",
+          "example": "15/03/2026",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Identification"
+        },
+        {
+          "name": "test_duration",
+          "type": "string",
+          "description": "Total flight test duration",
+          "example": "3h 22min",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Identification"
+        },
+        {
+          "name": "test_location",
+          "type": "string",
+          "description": "Flight test range / airfield",
+          "example": "Bengaluru (BLR) \u2014 FTR B",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Identification"
+        },
+        {
+          "name": "aircraft_type",
+          "type": "string",
+          "description": "Test aircraft type",
+          "example": "Boeing 787-8",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft + Crew"
+        },
+        {
+          "name": "registration",
+          "type": "string",
+          "description": "Test aircraft registration",
+          "example": "VT-ANI",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft + Crew"
+        },
+        {
+          "name": "engine_configuration",
+          "type": "string",
+          "description": "Number and type of engines",
+          "example": "2 \u00d7 GEnx-1B70",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft + Crew"
+        },
+        {
+          "name": "test_pilot",
+          "type": "string",
+          "description": "Test pilot in command",
+          "example": "Capt. P. Bhattacharya",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft + Crew"
+        },
+        {
+          "name": "flight_test_engineer",
+          "type": "string",
+          "description": "FTE on board",
+          "example": "FTE V. Subramanian",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Aircraft + Crew"
+        },
+        {
+          "name": "test_objective",
+          "type": "string",
+          "description": "Stated objective per the test plan",
+          "example": "Stall Speed Verification",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Conditions"
+        },
+        {
+          "name": "weather_conditions",
+          "type": "string",
+          "description": "Weather at test time",
+          "example": "CAVOK, wind 270/08, OAT 26\u00b0C",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Conditions"
+        },
+        {
+          "name": "test_altitudes",
+          "type": "string",
+          "description": "Altitude band(s) used",
+          "example": "FL280 \u2014 FL370",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Conditions"
+        },
+        {
+          "name": "fuel_on_board",
+          "type": "string",
+          "description": "Starting fuel quantity (tonnes)",
+          "example": "18.4 tonnes",
+          "frequency": 100,
+          "required": false,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Conditions"
+        },
+        {
+          "name": "aircraft_mass",
+          "type": "string",
+          "description": "Test mass",
+          "example": "210 tonnes",
+          "frequency": 100,
+          "required": false,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Conditions"
+        },
+        {
+          "name": "cg_position",
+          "type": "string",
+          "description": "CG position as % MAC",
+          "example": "27.4% MAC",
+          "frequency": 100,
+          "required": false,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Test Conditions"
+        },
+        {
+          "name": "observations",
+          "type": "array",
+          "description": "Test observations bulleted by the FTE",
+          "example": "[\"\u2026\"]",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Results",
+          "is_repeating": true
+        },
+        {
+          "name": "conclusion",
+          "type": "string",
+          "description": "Pass / pass with observations / partial pass",
+          "example": "PASS \u2014 all acceptance criteria met.",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Results"
+        }
+      ],
+      "groups": [
+        {
+          "name": "Test Identification",
+          "description": "Report number, date, location",
+          "color": "#3868b8"
+        },
+        {
+          "name": "Aircraft + Crew",
+          "description": "Aircraft and test crew",
+          "color": "#5cb85c"
+        },
+        {
+          "name": "Test Conditions",
+          "description": "Objective, weather, mass, CG, altitudes",
+          "color": "#e67e22"
+        },
+        {
+          "name": "Results",
+          "description": "Observations and conclusion",
+          "color": "#9b59b6",
+          "is_repeating": true
+        }
+      ],
+      "coverage": 94,
+      "verified_docs": 10
+    },
+    "2": {
+      "fields": [
+        {
+          "name": "sb_number",
+          "type": "string",
+          "description": "Service Bulletin reference",
+          "example": "SB-A32-27-451",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Bulletin Identity"
+        },
+        {
+          "name": "issue_date",
+          "type": "date",
+          "description": "Date the SB was issued",
+          "example": "08/04/2026",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Bulletin Identity"
+        },
+        {
+          "name": "revision_status",
+          "type": "enum",
+          "description": "Original / Revision N",
+          "example": "Revision 01",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Bulletin Identity"
+        },
+        {
+          "name": "ata_chapter",
+          "type": "string",
+          "description": "ATA chapter the SB modifies",
+          "example": "29 \u2014 Hydraulic Power",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Bulletin Identity"
+        },
+        {
+          "name": "classification",
+          "type": "enum",
+          "description": "Mandatory or Recommended",
+          "example": "Mandatory",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Bulletin Identity"
+        },
+        {
+          "name": "subject",
+          "type": "string",
+          "description": "Short title of the change",
+          "example": "Hydraulic Reservoir Fill Valve Replacement",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Subject + Reason"
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "description": "Why the SB is being issued",
+          "example": "corrosion of fill valve seat",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Subject + Reason"
+        },
+        {
+          "name": "aircraft_type",
+          "type": "string",
+          "description": "Affected aircraft type",
+          "example": "Airbus A330-300",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Applicability"
+        },
+        {
+          "name": "serial_numbers",
+          "type": "string",
+          "description": "Affected MSN range",
+          "example": "MSN 1247 through MSN 1623",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Applicability"
+        },
+        {
+          "name": "engine",
+          "type": "string",
+          "description": "Affected engine model",
+          "example": "RR Trent 772B",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Applicability"
+        },
+        {
+          "name": "compliance_window",
+          "type": "string",
+          "description": "Time/cycles allowed for compliance",
+          "example": "Within 3,000 FH or 12 months",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Compliance + Cost"
+        },
+        {
+          "name": "manhours",
+          "type": "number",
+          "description": "Estimated labor hours per aircraft",
+          "example": "8",
+          "frequency": 100,
+          "required": false,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Compliance + Cost"
+        },
+        {
+          "name": "material_cost_usd",
+          "type": "number",
+          "description": "Estimated material cost (USD)",
+          "example": "2400",
+          "frequency": 100,
+          "required": false,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Compliance + Cost"
+        },
+        {
+          "name": "approved_by",
+          "type": "string",
+          "description": "Engineer who approved the SB",
+          "example": "Dr. K. Raghavan, Lead Engineer",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Approval"
+        },
+        {
+          "name": "type_certification",
+          "type": "string",
+          "description": "Governing TC (DGCA / EASA / FAA)",
+          "example": "TC-EASA-2018",
+          "frequency": 100,
+          "required": true,
+          "doc_count": 10,
+          "verified_against": 10,
+          "group": "Approval"
+        }
+      ],
+      "groups": [
+        {
+          "name": "Bulletin Identity",
+          "description": "Number, date, revision, ATA, classification",
+          "color": "#3868b8"
+        },
+        {
+          "name": "Subject + Reason",
+          "description": "What it changes and why",
+          "color": "#5cb85c"
+        },
+        {
+          "name": "Applicability",
+          "description": "Aircraft type, MSN range, engine",
+          "color": "#e67e22"
+        },
+        {
+          "name": "Compliance + Cost",
+          "description": "Window, labor hours, material cost",
+          "color": "#9b59b6"
+        },
+        {
+          "name": "Approval",
+          "description": "Engineering authority and TC",
+          "color": "#1abc9c"
+        }
+      ],
+      "coverage": 97,
+      "verified_docs": 10
+    }
+  },
+  "umap_coords": [
+    [
+      -3.6407,
+      2.4813
+    ],
+    [
+      -3.6733,
+      1.6885
+    ],
+    [
+      -2.8884,
+      2.4333
+    ],
+    [
+      -3.3631,
+      2.4171
+    ],
+    [
+      -4.4163,
+      2.6704
+    ],
+    [
+      -3.2257,
+      1.2697
+    ],
+    [
+      -3.9893,
+      1.9425
+    ],
+    [
+      -3.5253,
+      2.4865
+    ],
+    [
+      -3.3302,
+      2.4168
+    ],
+    [
+      -2.5554,
+      2.5061
+    ],
+    [
+      3.4588,
+      -2.0067
+    ],
+    [
+      3.7415,
+      -1.2524
+    ],
+    [
+      3.554,
+      -2.1263
+    ],
+    [
+      4.4715,
+      -2.0444
+    ],
+    [
+      4.0346,
+      -2.4194
+    ],
+    [
+      4.5184,
+      -2.7079
+    ],
+    [
+      3.7416,
+      -2.0495
+    ],
+    [
+      3.7657,
+      -2.4056
+    ],
+    [
+      4.1681,
+      -1.0798
+    ],
+    [
+      3.9992,
+      -1.5344
+    ],
+    [
+      0.7385,
+      -4.5365
+    ],
+    [
+      -0.2956,
+      -4.7322
+    ],
+    [
+      1.1089,
+      -5.3175
+    ],
+    [
+      0.5316,
+      -3.4062
+    ],
+    [
+      -0.645,
+      -5.585
+    ],
+    [
+      -0.0049,
+      -4.8159
+    ],
+    [
+      1.006,
+      -4.1135
+    ],
+    [
+      0.6389,
+      -3.3233
+    ],
+    [
+      0.6853,
+      -3.8987
+    ],
+    [
+      1.105,
+      -3.6747
+    ]
+  ],
+  "umap_3d": [
+    [
+      -3.6407,
+      2.4813,
+      1.0209
+    ],
+    [
+      -3.6733,
+      1.6885,
+      1.0253
+    ],
+    [
+      -2.8884,
+      2.4333,
+      1.4629
+    ],
+    [
+      -3.3631,
+      2.4171,
+      1.1649
+    ],
+    [
+      -4.4163,
+      2.6704,
+      1.2772
+    ],
+    [
+      -3.2257,
+      1.2697,
+      0.4896
+    ],
+    [
+      -3.9893,
+      1.9425,
+      1.2069
+    ],
+    [
+      -3.5253,
+      2.4865,
+      0.8752
+    ],
+    [
+      -3.3302,
+      2.4168,
+      0.8686
+    ],
+    [
+      -2.5554,
+      2.5061,
+      1.519
+    ],
+    [
+      3.4588,
+      -2.0067,
+      -0.7204
+    ],
+    [
+      3.7415,
+      -1.2524,
+      -0.5131
+    ],
+    [
+      3.554,
+      -2.1263,
+      -0.7822
+    ],
+    [
+      4.4715,
+      -2.0444,
+      -0.5143
+    ],
+    [
+      4.0346,
+      -2.4194,
+      -0.583
+    ],
+    [
+      4.5184,
+      -2.7079,
+      -0.7126
+    ],
+    [
+      3.7416,
+      -2.0495,
+      -0.4259
+    ],
+    [
+      3.7657,
+      -2.4056,
+      -0.3103
+    ],
+    [
+      4.1681,
+      -1.0798,
+      -0.0958
+    ],
+    [
+      3.9992,
+      -1.5344,
+      -1.0547
+    ],
+    [
+      0.7385,
+      -4.5365,
+      1.6416
+    ],
+    [
+      -0.2956,
+      -4.7322,
+      1.6141
+    ],
+    [
+      1.1089,
+      -5.3175,
+      1.2898
+    ],
+    [
+      0.5316,
+      -3.4062,
+      2.0025
+    ],
+    [
+      -0.645,
+      -5.585,
+      1.9251
+    ],
+    [
+      -0.0049,
+      -4.8159,
+      2.1421
+    ],
+    [
+      1.006,
+      -4.1135,
+      1.886
+    ],
+    [
+      0.6389,
+      -3.3233,
+      2.0167
+    ],
+    [
+      0.6853,
+      -3.8987,
+      1.2511
+    ],
+    [
+      1.105,
+      -3.6747,
+      1.9854
+    ]
+  ],
+  "doc_names": [
+    "maintenance_inspection_00.txt",
+    "maintenance_inspection_01.txt",
+    "maintenance_inspection_02.txt",
+    "maintenance_inspection_03.txt",
+    "maintenance_inspection_04.txt",
+    "maintenance_inspection_05.txt",
+    "maintenance_inspection_06.txt",
+    "maintenance_inspection_07.txt",
+    "maintenance_inspection_08.txt",
+    "maintenance_inspection_09.txt",
+    "flight_test_00.txt",
+    "flight_test_01.txt",
+    "flight_test_02.txt",
+    "flight_test_03.txt",
+    "flight_test_04.txt",
+    "flight_test_05.txt",
+    "flight_test_06.txt",
+    "flight_test_07.txt",
+    "flight_test_08.txt",
+    "flight_test_09.txt",
+    "service_bulletin_00.txt",
+    "service_bulletin_01.txt",
+    "service_bulletin_02.txt",
+    "service_bulletin_03.txt",
+    "service_bulletin_04.txt",
+    "service_bulletin_05.txt",
+    "service_bulletin_06.txt",
+    "service_bulletin_07.txt",
+    "service_bulletin_08.txt",
+    "service_bulletin_09.txt"
+  ],
+  "doc_snippets": [
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/23434\nDate of Inspection:  08/02/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Embraer E190\nRegistration:        VT-JCD\nOperator:            Star Air\nTotal Flight Hours:  17,144\nTotal Flight Cycles: 15,066\nEngine Type:         CF34-10E\n\nINSPECTION\n\nCheck Level:         A-Check\nATA Chapter:         21 \u2014 Air Conditioning\nReference Manual:    AMM Rev. 46, Task 21-88-13\n\nFINDINGS AND CORRECTIV",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/10851\nDate of Inspection:  08/04/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Embraer E190\nRegistration:        VT-JCD\nOperator:            Star Air\nTotal Flight Hours:  26,231\nTotal Flight Cycles: 16,261\nEngine Type:         CF34-10E\n\nINSPECTION\n\nCheck Level:         Daily Pre-flight\nATA Chapter:         49 \u2014 Airborne Auxiliary Power\nReference Manual:    AMM Rev. 41, Task 49-54-23\n\nFINDI",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/26361\nDate of Inspection:  26/01/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Boeing 737-800\nRegistration:        VT-SGE\nOperator:            SpiceJet\nTotal Flight Hours:  38,108\nTotal Flight Cycles: 11,785\nEngine Type:         CFM56-7B26\n\nINSPECTION\n\nCheck Level:         C-Check\nATA Chapter:         71 \u2014 Power Plant\nReference Manual:    AMM Rev. 47, Task 71-35-18\n\nFINDINGS AND CORRECTIVE",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/57819\nDate of Inspection:  13/03/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Airbus A350-900\nRegistration:        VT-JRC\nOperator:            Air India\nTotal Flight Hours:  37,714\nTotal Flight Cycles: 13,415\nEngine Type:         RR Trent XWB\n\nINSPECTION\n\nCheck Level:         A-Check\nATA Chapter:         28 \u2014 Fuel System\nReference Manual:    AMM Rev. 39, Task 28-88-91\n\nFINDINGS AND CORREC",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/52504\nDate of Inspection:  09/06/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Airbus A330-300\nRegistration:        VT-JFK\nOperator:            Air India\nTotal Flight Hours:  22,392\nTotal Flight Cycles: 14,216\nEngine Type:         RR Trent 772B\n\nINSPECTION\n\nCheck Level:         B-Check\nATA Chapter:         36 \u2014 Pneumatic\nReference Manual:    AMM Rev. 42, Task 36-19-37\n\nFINDINGS AND CORRECT",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/44718\nDate of Inspection:  13/06/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Boeing 737-800\nRegistration:        VT-SGE\nOperator:            SpiceJet\nTotal Flight Hours:  38,071\nTotal Flight Cycles: 5,340\nEngine Type:         CFM56-7B26\n\nINSPECTION\n\nCheck Level:         B-Check\nATA Chapter:         72 \u2014 Engine\nReference Manual:    AMM Rev. 47, Task 72-65-84\n\nFINDINGS AND CORRECTIVE ACTIO",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/92240\nDate of Inspection:  25/01/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Airbus A321neo\nRegistration:        VT-IUR\nOperator:            Vistara\nTotal Flight Hours:  15,185\nTotal Flight Cycles: 5,504\nEngine Type:         CFM LEAP-1A26\n\nINSPECTION\n\nCheck Level:         Phase-2\nATA Chapter:         36 \u2014 Pneumatic\nReference Manual:    AMM Rev. 47, Task 36-70-77\n\nFINDINGS AND CORRECTIVE ",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/48469\nDate of Inspection:  25/06/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Embraer E190\nRegistration:        VT-JCD\nOperator:            Star Air\nTotal Flight Hours:  30,293\nTotal Flight Cycles: 4,827\nEngine Type:         CF34-10E\n\nINSPECTION\n\nCheck Level:         Daily Pre-flight\nATA Chapter:         24 \u2014 Electrical Power\nReference Manual:    AMM Rev. 46, Task 24-24-90\n\nFINDINGS AND C",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/52487\nDate of Inspection:  12/02/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Boeing 787-8\nRegistration:        VT-ANI\nOperator:            Air India\nTotal Flight Hours:  8,037\nTotal Flight Cycles: 12,813\nEngine Type:         GEnx-1B70\n\nINSPECTION\n\nCheck Level:         Phase-2\nATA Chapter:         28 \u2014 Fuel System\nReference Manual:    AMM Rev. 41, Task 28-83-20\n\nFINDINGS AND CORRECTIVE AC",
+    "MAINTENANCE INSPECTION REPORT\n\nWork Order Number:   MIR/2026/31643\nDate of Inspection:  05/06/2026\nStation:             Delhi (DEL) \u2014 Hangar Bay 3\n\nAIRCRAFT DETAILS\n\nAircraft Type:       Airbus A320neo\nRegistration:        VT-EXP\nOperator:            Indigo\nTotal Flight Hours:  39,148\nTotal Flight Cycles: 12,007\nEngine Type:         PW1127G-JM\n\nINSPECTION\n\nCheck Level:         Phase-2\nATA Chapter:         78 \u2014 Engine Exhaust\nReference Manual:    AMM Rev. 44, Task 78-58-66\n\nFINDINGS AND CORRECTIV",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-DA-2026-702\nTest Date:           19/05/2026\nTest Duration:       3h 42min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       Airbus A330-300\nRegistration:        VT-JFK\nEngine Configuration: 2 \u00d7 RR Trent 772B\nTest Configuration:  62% MTOW, fwd CG @ 21% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. R. Subramanian\nFirst Officer:       F/O R. Bhattacharya\nFlight Test Engineer: FTE V. Subramanian\n\nTEST OBJECTIVE\n\n",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-HY-2026-541\nTest Date:           04/01/2026\nTest Duration:       4h 31min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       Boeing 777-300ER\nRegistration:        VT-ALR\nEngine Configuration: 2 \u00d7 GE90-115BL\nTest Configuration:  66% MTOW, fwd CG @ 19% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. S. Mukherjee\nFirst Officer:       F/O R. Bhattacharya\nFlight Test Engineer: FTE V. Subramanian\n\nTEST OBJECTIVE\n\nCrui",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-DA-2026-151\nTest Date:           15/05/2026\nTest Duration:       2h 13min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       Airbus A321neo\nRegistration:        VT-IUR\nEngine Configuration: 2 \u00d7 CFM LEAP-1A26\nTest Configuration:  90% MTOW, fwd CG @ 20% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. S. Mukherjee\nFirst Officer:       F/O P. Iyengar\nFlight Test Engineer: FTE V. Subramanian\n\nTEST OBJECTIVE\n\nAutopilo",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-BL-2026-322\nTest Date:           05/02/2026\nTest Duration:       2h 13min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       Boeing 737 MAX 8\nRegistration:        VT-AKO\nEngine Configuration: 2 \u00d7 CFM LEAP-1B27\nTest Configuration:  63% MTOW, fwd CG @ 26% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. M. Choudhary\nFirst Officer:       F/O A. Krishnan\nFlight Test Engineer: FTE M. Rao\n\nTEST OBJECTIVE\n\nVMU Verificat",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-DA-2026-529\nTest Date:           02/05/2026\nTest Duration:       4h 39min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       Airbus A320neo\nRegistration:        VT-EXP\nEngine Configuration: 2 \u00d7 PW1127G-JM\nTest Configuration:  85% MTOW, fwd CG @ 23% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. P. Bhattacharya\nFirst Officer:       F/O A. Krishnan\nFlight Test Engineer: FTE K. Banerjee\n\nTEST OBJECTIVE\n\nWet Runway",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-DA-2026-350\nTest Date:           05/03/2026\nTest Duration:       4h 52min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       Airbus A320neo\nRegistration:        VT-EXP\nEngine Configuration: 2 \u00d7 PW1127G-JM\nTest Configuration:  93% MTOW, fwd CG @ 19% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. P. Bhattacharya\nFirst Officer:       F/O A. Krishnan\nFlight Test Engineer: FTE M. Rao\n\nTEST OBJECTIVE\n\nVMU Verificatio",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-HY-2026-749\nTest Date:           11/02/2026\nTest Duration:       4h 10min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       Airbus A350-900\nRegistration:        VT-JRC\nEngine Configuration: 2 \u00d7 RR Trent XWB\nTest Configuration:  87% MTOW, fwd CG @ 23% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. V. Ramachandran\nFirst Officer:       F/O P. Iyengar\nFlight Test Engineer: FTE K. Banerjee\n\nTEST OBJECTIVE\n\nAutopilo",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-DA-2026-658\nTest Date:           03/06/2026\nTest Duration:       2h 33min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       De Havilland DHC-6\nRegistration:        VT-RDA\nEngine Configuration: 2 \u00d7 PT6A-34\nTest Configuration:  68% MTOW, fwd CG @ 18% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. V. Ramachandran\nFirst Officer:       F/O P. Iyengar\nFlight Test Engineer: FTE V. Subramanian\n\nTEST OBJECTIVE\n\nBrake E",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-DA-2026-854\nTest Date:           14/01/2026\nTest Duration:       4h 40min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       ATR 72-600\nRegistration:        VT-IRR\nEngine Configuration: 2 \u00d7 PW127M\nTest Configuration:  66% MTOW, fwd CG @ 21% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. P. Bhattacharya\nFirst Officer:       F/O P. Iyengar\nFlight Test Engineer: FTE V. Subramanian\n\nTEST OBJECTIVE\n\nSingle-Engine Ou",
+    "FLIGHT TEST REPORT\n\nTest Report Number:  FTR-BL-2026-459\nTest Date:           28/01/2026\nTest Duration:       5h 16min\nTest Location:       Bengaluru (BLR) \u2014 Flight Test Range B\n\nTEST AIRCRAFT\n\nAircraft Type:       Airbus A320-200\nRegistration:        VT-IDA\nEngine Configuration: 2 \u00d7 CFM56-5B4/P\nTest Configuration:  71% MTOW, fwd CG @ 27% MAC\n\nTEST CREW\n\nTest Pilot:          Capt. S. Mukherjee\nFirst Officer:       F/O R. Bhattacharya\nFlight Test Engineer: FTE M. Rao\n\nTEST OBJECTIVE\n\nCruise Perfo",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-BOE-71-145\nIssue Date:          07/03/2026\nRevision Status:     Revision 02\nATA Chapter:         71 \u2014 Power Plant\nClassification:      Recommended\n\nSUBJECT\n\nEngine Fuel Pump Inspection\n\nAPPLICABILITY\n\nAircraft Type:       Boeing 737 MAX 8\nSerial Numbers:      MSN 3130 through MSN 3731\nEngine(s):           CFM LEAP-1B27\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modified per SB-BOE-71-472 ",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-DE-29-782\nIssue Date:          17/03/2026\nRevision Status:     Revision 01\nATA Chapter:         29 \u2014 Hydraulic Power\nClassification:      Mandatory\n\nSUBJECT\n\nHydraulic Reservoir Fill Valve Replacement\n\nAPPLICABILITY\n\nAircraft Type:       De Havilland DHC-6\nSerial Numbers:      MSN 3856 through MSN 4208\nEngine(s):           PT6A-34\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modified per SB",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-AIR-34-411\nIssue Date:          18/01/2026\nRevision Status:     Revision 01\nATA Chapter:         34 \u2014 Navigation\nClassification:      Recommended\n\nSUBJECT\n\nWing Leading Edge Slat Track Lubrication Procedure Update\n\nAPPLICABILITY\n\nAircraft Type:       Airbus A350-900\nSerial Numbers:      MSN 4219 through MSN 4862\nEngine(s):           RR Trent XWB\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     ",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-DE-27-390\nIssue Date:          22/01/2026\nRevision Status:     Revision 02\nATA Chapter:         27 \u2014 Flight Controls\nClassification:      Recommended\n\nSUBJECT\n\nCargo Door Latch Actuator Software Update\n\nAPPLICABILITY\n\nAircraft Type:       De Havilland DHC-6\nSerial Numbers:      MSN 1383 through MSN 1673\nEngine(s):           PT6A-34\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modified per S",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-AIR-36-689\nIssue Date:          14/06/2026\nRevision Status:     Original Issue\nATA Chapter:         36 \u2014 Pneumatic\nClassification:      Mandatory\n\nSUBJECT\n\nMain Landing Gear Pintle Pin Inspection\n\nAPPLICABILITY\n\nAircraft Type:       Airbus A320neo\nSerial Numbers:      MSN 3025 through MSN 3484\nEngine(s):           PW1127G-JM\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modified per SB-AIR-3",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-BOE-21-968\nIssue Date:          18/02/2026\nRevision Status:     Original Issue\nATA Chapter:         21 \u2014 Air Conditioning\nClassification:      Recommended\n\nSUBJECT\n\nAPU Air Inlet Door Hinge Replacement\n\nAPPLICABILITY\n\nAircraft Type:       Boeing 777-300ER\nSerial Numbers:      MSN 4283 through MSN 4808\nEngine(s):           GE90-115BL\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modified per ",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-AIR-75-560\nIssue Date:          28/04/2026\nRevision Status:     Revision 01\nATA Chapter:         75 \u2014 Engine Air\nClassification:      Mandatory\n\nSUBJECT\n\nCabin Pressure Outflow Valve Position Sensor Update\n\nAPPLICABILITY\n\nAircraft Type:       Airbus A321neo\nSerial Numbers:      MSN 4441 through MSN 5143\nEngine(s):           CFM LEAP-1A26\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modified",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-AIR-29-653\nIssue Date:          11/03/2026\nRevision Status:     Original Issue\nATA Chapter:         29 \u2014 Hydraulic Power\nClassification:      Mandatory\n\nSUBJECT\n\nEngine Nacelle Anti-Ice Duct Inspection\n\nAPPLICABILITY\n\nAircraft Type:       Airbus A330-300\nSerial Numbers:      MSN 1948 through MSN 2390\nEngine(s):           RR Trent 772B\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modified pe",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-BOE-21-498\nIssue Date:          07/04/2026\nRevision Status:     Revision 02\nATA Chapter:         21 \u2014 Air Conditioning\nClassification:      Recommended\n\nSUBJECT\n\nFuel Quantity Indicating System Recalibration\n\nAPPLICABILITY\n\nAircraft Type:       Boeing 737 MAX 8\nSerial Numbers:      MSN 4510 through MSN 5149\nEngine(s):           CFM LEAP-1B27\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modi",
+    "SERVICE BULLETIN\n\nService Bulletin No: SB-DE-49-325\nIssue Date:          26/05/2026\nRevision Status:     Revision 01\nATA Chapter:         49 \u2014 Airborne Auxiliary Power\nClassification:      Mandatory\n\nSUBJECT\n\nBrake Control Unit Software Update\n\nAPPLICABILITY\n\nAircraft Type:       De Havilland DHC-6\nSerial Numbers:      MSN 2786 through MSN 3333\nEngine(s):           PT6A-34\nEffectivity:         All aircraft within the serial range listed above unless previously\n                     modified per S"
+  ],
+  "doc_cluster_ids": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ]
+};
+const DEMO_LOG_LINES = [
+  "Parsing 30 documents (PDFs / text / OCR fallback)…",
+  "Building hybrid embeddings — structural fingerprint + semantic vector…",
+  "UMAP projecting 384-dim embeddings → 2D + 3D…",
+  "HDBSCAN clustering (min_cluster_size = 3)…",
+  "Discovered 3 clusters. Sizes: 10 / 10 / 10",
+  "Labelling clusters via LLM…",
+  "  Cluster 0 — naming and keywords…",
+  "  Cluster 1 — naming and keywords…",
+  "  Cluster 2 — naming and keywords…",
+  "Inferring schema for each cluster (iterative field discovery)…",
+  "  cluster 0: 9 fields proposed",
+  "  cluster 1: 11 fields proposed",
+  "  cluster 2: 10 fields proposed",
+  "Verifying field frequency across documents (LLM grounded)…",
+  "Deduplicating semantically similar fields…",
+  "Grouping fields into semantic categories…",
+  "Done."
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Populate intro stats
+  const model = (DEMO_DATA.model || 'openai/gpt-4o-mini').replace('openai/', '').replace('groq/', '');
+  document.getElementById('demo-model-label').textContent = model;
+  document.getElementById('demo-time-label').textContent = (DEMO_DATA.elapsed_seconds || DEMO_DATA.stats?.duration_s || '—') + ' s';
+  document.getElementById('demo-doc-label').textContent = DEMO_DATA.stats?.total_docs || (DEMO_DATA.doc_names||[]).length || '—';
+  document.getElementById('demo-cluster-label').textContent = DEMO_DATA.stats?.clusters || (DEMO_DATA.clusters||[]).length || '—';
+});
+
+// Override fetch — return canned shapes so any leftover call resolves harmlessly.
+const _origFetch = window.fetch;
+window.fetch = function(url, opts={}) {
+  if (typeof url !== 'string') return _origFetch.call(this, url, opts);
+  if (url.includes('/api/settings/llm-keys')) {
+    return Promise.resolve({ok:true, json:()=>Promise.resolve({models:[
+      {id:'openai/gpt-4o-mini', name:'GPT-4o mini', provider:'openai', provider_label:'OpenAI'}
+    ]})});
+  }
+  if (url.includes('/api/projects') && !opts.method) {
+    return Promise.resolve({ok:true, json:()=>Promise.resolve({projects:[]})});
+  }
+  if (url.includes('/api/schema-templates') && (opts.method === undefined || opts.method === 'GET')) {
+    return Promise.resolve({ok:true, json:()=>Promise.resolve({templates:[]})});
+  }
+  // Block writes
+  return Promise.resolve({ok:false, status:403, json:()=>Promise.resolve({detail:'Disabled in demo'})});
+};
+
+// Wait until D exists, then patch behaviour
+function _wirePatch() {
+  if (typeof D === 'undefined') { setTimeout(_wirePatch, 30); return; }
+
+  D.projectId = 'demo';
+  D._createdProjectId = 'demo';
+
+  // Animated playback then jump to results
+  D.startAnalysis = function() {
+    this._unlockStep(2); this.goToStep(2);
+    const bar = document.getElementById('d-progress-bar');
+    const status = document.getElementById('d-progress-status');
+    const log = document.getElementById('d-live-log');
+    log.innerHTML = '';
+    let i = 0;
+    const total = DEMO_LOG_LINES.length;
+    const tick = () => {
+      if (i >= total) {
+        bar.style.width = '100%';
+        status.textContent = 'Complete';
+        setTimeout(() => {
+          D._showResults(DEMO_DATA);
+          D._unlockStep(3); D.goToStep(3);
+        }, 350);
+        return;
+      }
+      const line = DEMO_LOG_LINES[i];
+      D._addLog(line);
+      status.textContent = line;
+      bar.style.width = `${Math.round((i+1)/total*100)}%`;
+      i++;
+      setTimeout(tick, 260);
+    };
+    tick();
+  };
+
+  // Instant jump (no playback) for impatient viewers
+  D._jumpToResults = function() {
+    D._unlockStep(2);
+    D._unlockStep(3);
+    D._showResults(DEMO_DATA);
+    D.goToStep(3);
+  };
+
+  // Disable mutation actions
+  const _disabledMsg = 'Demo only — action disabled. Clone the repo to run lakshana locally.';
+  ['saveSchema','exportFormat','exportToStructure','rediscoverSchema','launchPipeline','startPipeline','saveAsTemplate','deleteTemplate','loadTemplates','testLLMKey'].forEach(fn => {
+    if (typeof D[fn] === 'function') {
+      D[fn] = function(){ D.toast(_disabledMsg, 'info'); };
+    }
+  });
+
+  // On load: auto-play after a beat
+  setTimeout(() => {
+    if (D.currentStep === 1) {
+      // Pre-fill the model label and let the user click play; do nothing automatic
+    }
+  }, 200);
+}
+_wirePatch();
+</script>
+
+</body>
+</html>

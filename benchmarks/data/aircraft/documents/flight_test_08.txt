@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-DA-2026-854
+Test Date:           14/01/2026
+Test Duration:       4h 40min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       ATR 72-600
+Registration:        VT-IRR
+Engine Configuration: 2 × PW127M
+Test Configuration:  66% MTOW, fwd CG @ 21% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. P. Bhattacharya
+First Officer:       F/O P. Iyengar
+Flight Test Engineer: FTE V. Subramanian
+
+TEST OBJECTIVE
+
+Single-Engine Out Handling — Verify Vmca, asymmetric thrust, rudder authority for the subject aircraft at the conditions defined in
+Test Plan FTR-DA-2026-854, in accordance with CAR-23 / CS-25 § 25.305.
+
+TEST CONDITIONS
+
+Weather:             SCT at 12000ft, wind 180/15, OAT 22°C
+Test Altitude(s):    FL315 — FL259
+Fuel On Board (Start): 20.4 tonnes
+Aircraft Mass:       255 tonnes
+CG Position:         25.3% MAC
+
+OBSERVATIONS
+
+  • Roll control authority adequate at all tested conditions; no adverse handling noted.
+  • EICAS/ECAM displays remained clean; no nuisance alerts during test.
+  • Stick force gradient consistent with predicted simulator response.
+  • Cabin pressure schedule tracked normally; max ΔP within limit.
+
+CONCLUSION
+
+PASS — all acceptance criteria met. Recommended for certification.
+
+Approved by:         Capt. P. Bhattacharya
+FTE Concurrence:     FTE V. Subramanian

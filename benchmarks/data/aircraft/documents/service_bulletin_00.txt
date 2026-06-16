@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-BOE-71-145
+Issue Date:          07/03/2026
+Revision Status:     Revision 02
+ATA Chapter:         71 — Power Plant
+Classification:      Recommended
+
+SUBJECT
+
+Engine Fuel Pump Inspection
+
+APPLICABILITY
+
+Aircraft Type:       Boeing 737 MAX 8
+Serial Numbers:      MSN 3130 through MSN 3731
+Engine(s):           CFM LEAP-1B27
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-BOE-71-472 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address potential premature wear of impeller bearing under specific operating conditions. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Inspect impeller bearing per Figure 2 using borescope. If wear exceeds 0.15 mm, replace per AMM 73-12-04.
+
+COMPLIANCE
+
+Recommended compliance: Within 6,000 flight hours
+or 6 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            2 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 1,966
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 71
+— Illustrated Parts Catalog (IPC) Chapter 71
+— Component Maintenance Manual 71-52-89
+
+APPROVED BY
+
+Prof. S. Iyer, Chief Engineer
+Engineering Authority: EA-6143
+Type Certification:    TC-FAA-2015

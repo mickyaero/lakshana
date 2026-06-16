@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-AIR-36-689
+Issue Date:          14/06/2026
+Revision Status:     Original Issue
+ATA Chapter:         36 — Pneumatic
+Classification:      Mandatory
+
+SUBJECT
+
+Main Landing Gear Pintle Pin Inspection
+
+APPLICABILITY
+
+Aircraft Type:       Airbus A320neo
+Serial Numbers:      MSN 3025 through MSN 3484
+Engine(s):           PW1127G-JM
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-AIR-36-251 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address small population of pintle pins found with surface micro-cracks during teardown. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Perform fluorescent dye penetrant inspection per NDT-32-08-PT-04 on next A-Check.
+
+COMPLIANCE
+
+Recommended compliance: Within 1,500 flight hours
+or 6 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            14 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 3,122
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 36
+— Illustrated Parts Catalog (IPC) Chapter 36
+— Component Maintenance Manual 36-64-38
+
+APPROVED BY
+
+Prof. S. Iyer, Chief Engineer
+Engineering Authority: EA-3881
+Type Certification:    TC-FAA-2022

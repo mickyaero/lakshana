@@ -1,0 +1,39 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/92240
+Date of Inspection:  25/01/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Airbus A321neo
+Registration:        VT-IUR
+Operator:            Vistara
+Total Flight Hours:  15,185
+Total Flight Cycles: 5,504
+Engine Type:         CFM LEAP-1A26
+
+INSPECTION
+
+Check Level:         Phase-2
+ATA Chapter:         36 — Pneumatic
+Reference Manual:    AMM Rev. 47, Task 36-70-77
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. FADEC software version mismatch found, software update SB-FADEC-22 applied.
+     ACTION: Cleared after re-inspection; no further action required.
+  2. Forward galley chiller coolant level below MIN mark, replenished.
+     ACTION: Borescope inspection scheduled for next A-Check.
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        Anjali Mehta, AME L2
+DGCA Licence No.:    AME-42953
+Signature:           _____________________   Date: 25/01/2026
+
+Next Inspection Due: 28/03/2026

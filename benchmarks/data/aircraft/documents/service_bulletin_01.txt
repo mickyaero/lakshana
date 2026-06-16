@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-DE-29-782
+Issue Date:          17/03/2026
+Revision Status:     Revision 01
+ATA Chapter:         29 — Hydraulic Power
+Classification:      Mandatory
+
+SUBJECT
+
+Hydraulic Reservoir Fill Valve Replacement
+
+APPLICABILITY
+
+Aircraft Type:       De Havilland DHC-6
+Serial Numbers:      MSN 3856 through MSN 4208
+Engine(s):           PT6A-34
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-DE-29-230 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address corrosion of fill valve seat observed in field operations exceeding 8,000 FH. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Replace fill valve assembly P/N HRV-2241-01 with improved variant P/N HRV-2241-02.
+
+COMPLIANCE
+
+Recommended compliance: Within 3,000 flight hours
+or 24 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            14 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 1,516
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 29
+— Illustrated Parts Catalog (IPC) Chapter 29
+— Component Maintenance Manual 29-58-96
+
+APPROVED BY
+
+T. Balakrishnan, Test Engineer
+Engineering Authority: EA-3851
+Type Certification:    TC-FAA-2023

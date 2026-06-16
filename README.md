@@ -9,8 +9,11 @@
 **Zero-config schema discovery for document collections.** Drop a folder of PDFs, get a JSON Schema. No training, no labels, no manual schema design.
 
 ```bash
-pip install lakshana
-export GROQ_API_KEY=...   # free tier works
+# Install from source (PyPI release coming)
+git clone https://github.com/mickyaero/lakshana && cd lakshana
+pip install -e ".[openai]"
+
+export OPENAI_API_KEY=...        # or GROQ / ANTHROPIC / CEREBRAS / GOOGLE
 lakshana analyze ./my_docs --output schema.json
 ```
 
@@ -28,7 +31,7 @@ It's the "tell me what I have" step that every document-extraction pipeline skip
 
 ## What you actually get
 
-Real Groq Llama 3.3 70B run on 10 mixed docs (5 contracts + 5 invoices), captured verbatim:
+Real LLM run on 10 mixed docs (5 contracts + 5 invoices) — captured verbatim (this one used Groq's Llama 3.3 70B; works the same with Claude, GPT-4o, Gemini, Cerebras, or local Ollama):
 
 ```
 cluster 0: 'Service Agreement'  (5 docs)
@@ -60,8 +63,8 @@ The pipeline is **degrading gracefully** there, not crashing — but if you're r
 
 - **Zero schema design.** Point it at a folder. Get back a typed schema with frequency and grounding for every field.
 - **No labels, no training.** Pure clustering + LLM inference. Works on a dataset of 10 docs or 10,000.
-- **CPU only.** No GPU required.
-- **Multi-LLM.** Anthropic, OpenAI, Groq, Cerebras, Google, OpenRouter, Ollama. Bring whatever key you have.
+- **Runs anywhere.** Works on a laptop CPU; scales on GPU. No GPU required.
+- **Bring your own LLM.** Anthropic, OpenAI, Groq, Cerebras, Google, OpenRouter, Ollama, or any OpenAI-compatible endpoint. Not tied to any one model.
 - **India-first by accident.** Born inside a stack focused on Indian financial documents — the bundled BFSI benchmark covers 7 doc types including GST invoices, Form 26AS, ITR, and KYC.
 - **77 unit tests, CI green** on Python 3.10 / 3.11 / 3.12.
 

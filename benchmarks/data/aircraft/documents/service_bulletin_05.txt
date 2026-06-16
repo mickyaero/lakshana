@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-BOE-21-968
+Issue Date:          18/02/2026
+Revision Status:     Original Issue
+ATA Chapter:         21 — Air Conditioning
+Classification:      Recommended
+
+SUBJECT
+
+APU Air Inlet Door Hinge Replacement
+
+APPLICABILITY
+
+Aircraft Type:       Boeing 777-300ER
+Serial Numbers:      MSN 4283 through MSN 4808
+Engine(s):           GE90-115BL
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-BOE-21-672 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address hinge bushing wear leading to door rattle on ground operations. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Replace bushing P/N APU-INLT-BSH-04 with improved CRES bushing P/N APU-INLT-BSH-05.
+
+COMPLIANCE
+
+Recommended compliance: Within 4,500 flight hours
+or 24 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            6 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 2,049
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 21
+— Illustrated Parts Catalog (IPC) Chapter 21
+— Component Maintenance Manual 21-88-74
+
+APPROVED BY
+
+T. Balakrishnan, Test Engineer
+Engineering Authority: EA-7991
+Type Certification:    TC-FAA-2021

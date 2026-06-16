@@ -1,0 +1,41 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/26361
+Date of Inspection:  26/01/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Boeing 737-800
+Registration:        VT-SGE
+Operator:            SpiceJet
+Total Flight Hours:  38,108
+Total Flight Cycles: 11,785
+Engine Type:         CFM56-7B26
+
+INSPECTION
+
+Check Level:         C-Check
+ATA Chapter:         71 — Power Plant
+Reference Manual:    AMM Rev. 47, Task 71-35-18
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. Forward galley chiller coolant level below MIN mark, replenished.
+     ACTION: Borescope inspection scheduled for next A-Check.
+  2. Cabin pressurization outflow valve actuator response time 1.2s, within limit.
+     ACTION: Lubrication performed per MM 12-21-04; signed off.
+  3. Lavatory waste tank flush motor intermittent; cleaned and tested OK.
+     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        Arjun Kapoor, B2
+DGCA Licence No.:    AME-16006
+Signature:           _____________________   Date: 26/01/2026
+
+Next Inspection Due: 28/03/2026

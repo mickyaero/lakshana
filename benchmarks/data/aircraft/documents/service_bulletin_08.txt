@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-BOE-21-498
+Issue Date:          07/04/2026
+Revision Status:     Revision 02
+ATA Chapter:         21 — Air Conditioning
+Classification:      Recommended
+
+SUBJECT
+
+Fuel Quantity Indicating System Recalibration
+
+APPLICABILITY
+
+Aircraft Type:       Boeing 737 MAX 8
+Serial Numbers:      MSN 4510 through MSN 5149
+Engine(s):           CFM LEAP-1B27
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-BOE-21-588 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address drift in fuel quantity reading observed across multiple operators. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Perform calibration per FCOM 28-41-00, comparing to drip-stick measurement at three fuel levels.
+
+COMPLIANCE
+
+Recommended compliance: Within 1,500 flight hours
+or 18 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            2 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 4,055
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 21
+— Illustrated Parts Catalog (IPC) Chapter 21
+— Component Maintenance Manual 21-48-59
+
+APPROVED BY
+
+P. Krishnan, Design Engineer
+Engineering Authority: EA-7865
+Type Certification:    TC-FAA-2025

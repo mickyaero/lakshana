@@ -1,0 +1,43 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/23434
+Date of Inspection:  08/02/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Embraer E190
+Registration:        VT-JCD
+Operator:            Star Air
+Total Flight Hours:  17,144
+Total Flight Cycles: 15,066
+Engine Type:         CF34-10E
+
+INSPECTION
+
+Check Level:         A-Check
+ATA Chapter:         21 — Air Conditioning
+Reference Manual:    AMM Rev. 46, Task 21-88-13
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. Cabin pressurization outflow valve actuator response time 1.2s, within limit.
+     ACTION: Component replaced per IPC reference; functional test PASSED.
+  2. Forward galley chiller coolant level below MIN mark, replenished.
+     ACTION: Borescope inspection scheduled for next A-Check.
+  3. FADEC software version mismatch found, software update SB-FADEC-22 applied.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  4. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
+     ACTION: Lubrication performed per MM 12-21-04; signed off.
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        Arjun Kapoor, B2
+DGCA Licence No.:    AME-83563
+Signature:           _____________________   Date: 08/02/2026
+
+Next Inspection Due: 28/06/2026

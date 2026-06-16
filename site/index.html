@@ -410,14 +410,17 @@ footer a:hover { color: var(--accent); }
   <div class="wrap">
     <div class="hero-eyebrow"><span class="deva">लक्षण</span> &nbsp;·&nbsp; <em>lakṣaṇa</em>, Sanskrit: a defining mark, a distinguishing feature.</div>
     <h1>Drop a folder of PDFs.<br />Get a <em>JSON Schema.</em></h1>
-    <p class="sub">An open-source Python library that discovers the document types in any folder, then hands you back a verified schema for each one. No training. No labels. CPU only.</p>
+    <p class="sub">An open-source Python library that discovers the document types in any folder, then hands you back a verified schema for each one. No training. No labels. Works on a laptop CPU; scales on GPU. Bring whichever LLM API you have.</p>
 
     <div class="hero-cta">
-      <a href="https://github.com/mickyaero/lakshana" class="btn btn-primary" target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-        Read the source
+      <a href="demo/" class="btn btn-primary">
+        See the live demo &nbsp;→
       </a>
-      <a href="#install" class="btn btn-ghost">Install &nbsp;→</a>
+      <a href="https://github.com/mickyaero/lakshana" class="btn btn-ghost" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        Source
+      </a>
+      <a href="#install" class="btn btn-ghost">Install</a>
     </div>
 
     <div class="showpiece" aria-label="example output">
@@ -614,25 +617,24 @@ footer a:hover { color: var(--accent); }
 <section id="install">
   <div class="wrap-tight">
     <p class="section-label">Install</p>
-    <h2>One command. <em>CPU only.</em> Bring whichever LLM key you have.</h2>
+    <h2>One command. <em>Bring whichever LLM</em> you have a key for.</h2>
     <div class="code-card" style="margin-top:2rem;">
-<pre><span class="c-comment"># core install</span>
-<span class="c-prompt">$</span> pip install lakshana
+<pre><span class="c-comment"># clone + install from source (PyPI release coming)</span>
+<span class="c-prompt">$</span> git clone https://github.com/mickyaero/lakshana &amp;&amp; cd lakshana
+<span class="c-prompt">$</span> pip install -e <span class="c-str">".[openai]"</span>     <span class="c-comment"># also serves Groq, Cerebras, OpenRouter, Ollama</span>
+<span class="c-prompt">$</span> pip install -e <span class="c-str">".[anthropic]"</span>  <span class="c-comment"># Claude</span>
+<span class="c-prompt">$</span> pip install -e <span class="c-str">".[google]"</span>     <span class="c-comment"># Gemini</span>
 
-<span class="c-comment"># with the provider you use (each is optional)</span>
-<span class="c-prompt">$</span> pip install <span class="c-str">"lakshana[openai]"</span>      <span class="c-comment"># covers Groq, Cerebras, OpenRouter, Ollama</span>
-<span class="c-prompt">$</span> pip install <span class="c-str">"lakshana[anthropic]"</span>   <span class="c-comment"># Claude</span>
-<span class="c-prompt">$</span> pip install <span class="c-str">"lakshana[google]"</span>      <span class="c-comment"># Gemini</span>
-<span class="c-prompt">$</span> pip install <span class="c-str">"lakshana[all]"</span>         <span class="c-comment"># everything</span>
-
-<span class="c-comment"># Python API</span>
+<span class="c-comment"># Python API — works with whichever LLM you have a key for</span>
 <span class="c-prompt">&gt;&gt;&gt;</span> <span class="c-kw">from</span> lakshana <span class="c-kw">import</span> discover
-<span class="c-prompt">&gt;&gt;&gt;</span> result = discover(files=[...], model=<span class="c-str">"groq/llama-3.3-70b-versatile"</span>)
+<span class="c-prompt">&gt;&gt;&gt;</span> result = discover(files=[...], model=<span class="c-str">"openai/gpt-4o-mini"</span>)
 <span class="c-prompt">&gt;&gt;&gt;</span> <span class="c-kw">for</span> c <span class="c-kw">in</span> result.clusters:
 ...     print(c[<span class="c-str">"name"</span>], result.schemas[<span class="c-kw">str</span>(c[<span class="c-str">"id"</span>])])
 
 <span class="c-comment"># CLI</span>
-<span class="c-prompt">$</span> lakshana analyze ./docs --model groq/llama-3.3-70b-versatile --output schema.json</pre>
+<span class="c-prompt">$</span> lakshana analyze ./docs --output schema.json
+<span class="c-prompt">$</span> lakshana analyze ./docs --model claude-sonnet-4-6 --output schema.json
+<span class="c-prompt">$</span> lakshana analyze ./docs --model openai/gpt-4o-mini --output schema.json</pre>
     </div>
   </div>
 </section>

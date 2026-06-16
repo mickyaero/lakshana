@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-DA-2026-350
+Test Date:           05/03/2026
+Test Duration:       4h 52min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       Airbus A320neo
+Registration:        VT-EXP
+Engine Configuration: 2 × PW1127G-JM
+Test Configuration:  93% MTOW, fwd CG @ 19% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. P. Bhattacharya
+First Officer:       F/O A. Krishnan
+Flight Test Engineer: FTE M. Rao
+
+TEST OBJECTIVE
+
+VMU Verification — Verify minimum unstick speed at aft CG, tail clearance for the subject aircraft at the conditions defined in
+Test Plan FTR-DA-2026-350, in accordance with CAR-23 / CS-25 § 25.238.
+
+TEST CONDITIONS
+
+Weather:             BKN at 8000ft, wind calm, OAT 14°C
+Test Altitude(s):    FL215 — FL139
+Fuel On Board (Start): 8.1 tonnes
+Aircraft Mass:       235 tonnes
+CG Position:         35.2% MAC
+
+OBSERVATIONS
+
+  • Stick force gradient consistent with predicted simulator response.
+  • Hydraulic systems Green and Yellow maintained nominal pressure (3000 psi ± 50).
+  • EICAS/ECAM displays remained clean; no nuisance alerts during test.
+  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
+
+CONCLUSION
+
+PARTIAL PASS — re-fly required for envelope point #3 due to weather.
+
+Approved by:         Capt. P. Bhattacharya
+FTE Concurrence:     FTE M. Rao

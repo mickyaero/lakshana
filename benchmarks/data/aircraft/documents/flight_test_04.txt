@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-DA-2026-529
+Test Date:           02/05/2026
+Test Duration:       4h 39min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       Airbus A320neo
+Registration:        VT-EXP
+Engine Configuration: 2 × PW1127G-JM
+Test Configuration:  85% MTOW, fwd CG @ 23% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. P. Bhattacharya
+First Officer:       F/O A. Krishnan
+Flight Test Engineer: FTE K. Banerjee
+
+TEST OBJECTIVE
+
+Wet Runway Stopping Distance — Verify anti-skid efficiency, stopping distance ratio for the subject aircraft at the conditions defined in
+Test Plan FTR-DA-2026-529, in accordance with CAR-23 / CS-25 § 25.870.
+
+TEST CONDITIONS
+
+Weather:             BKN at 8000ft, wind calm, OAT 14°C
+Test Altitude(s):    FL117 — FL084
+Fuel On Board (Start): 12.7 tonnes
+Aircraft Mass:       204 tonnes
+CG Position:         36.1% MAC
+
+OBSERVATIONS
+
+  • Roll control authority adequate at all tested conditions; no adverse handling noted.
+  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
+  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+  • Stick force gradient consistent with predicted simulator response.
+
+CONCLUSION
+
+PARTIAL PASS — re-fly required for envelope point #3 due to weather.
+
+Approved by:         Capt. P. Bhattacharya
+FTE Concurrence:     FTE K. Banerjee

@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-HY-2026-749
+Test Date:           11/02/2026
+Test Duration:       4h 10min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       Airbus A350-900
+Registration:        VT-JRC
+Engine Configuration: 2 × RR Trent XWB
+Test Configuration:  87% MTOW, fwd CG @ 23% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. V. Ramachandran
+First Officer:       F/O P. Iyengar
+Flight Test Engineer: FTE K. Banerjee
+
+TEST OBJECTIVE
+
+Autopilot Coupled Approach — Verify ILS CAT-IIIA capture, glideslope hold for the subject aircraft at the conditions defined in
+Test Plan FTR-HY-2026-749, in accordance with CAR-23 / CS-25 § 25.234.
+
+TEST CONDITIONS
+
+Weather:             CAVOK, wind 360/06, OAT 31°C
+Test Altitude(s):    FL406 — FL214
+Fuel On Board (Start): 16.2 tonnes
+Aircraft Mass:       234 tonnes
+CG Position:         32.8% MAC
+
+OBSERVATIONS
+
+  • Hydraulic systems Green and Yellow maintained nominal pressure (3000 psi ± 50).
+  • EICAS/ECAM displays remained clean; no nuisance alerts during test.
+  • Pitch attitude steady within ±0.5° of target throughout maneuver.
+  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+
+CONCLUSION
+
+PASS — all acceptance criteria met. Recommended for certification.
+
+Approved by:         Capt. V. Ramachandran
+FTE Concurrence:     FTE K. Banerjee

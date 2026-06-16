@@ -1,0 +1,39 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/52504
+Date of Inspection:  09/06/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Airbus A330-300
+Registration:        VT-JFK
+Operator:            Air India
+Total Flight Hours:  22,392
+Total Flight Cycles: 14,216
+Engine Type:         RR Trent 772B
+
+INSPECTION
+
+Check Level:         B-Check
+ATA Chapter:         36 — Pneumatic
+Reference Manual:    AMM Rev. 42, Task 36-19-37
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
+     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+  2. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
+     ACTION: Cleared after re-inspection; no further action required.
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        Vikram Nair, AME L1
+DGCA Licence No.:    AME-84341
+Signature:           _____________________   Date: 09/06/2026
+
+Next Inspection Due: 28/10/2026

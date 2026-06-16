@@ -1,0 +1,41 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/52487
+Date of Inspection:  12/02/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Boeing 787-8
+Registration:        VT-ANI
+Operator:            Air India
+Total Flight Hours:  8,037
+Total Flight Cycles: 12,813
+Engine Type:         GEnx-1B70
+
+INSPECTION
+
+Check Level:         Phase-2
+ATA Chapter:         28 — Fuel System
+Reference Manual:    AMM Rev. 41, Task 28-83-20
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
+     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+  2. Forward galley chiller coolant level below MIN mark, replenished.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  3. Right main landing gear oleo strut servicing low pressure, recharged to spec.
+     ACTION: Component replaced per IPC reference; functional test PASSED.
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        R. Venkatesan, AME L1
+DGCA Licence No.:    AME-21226
+Signature:           _____________________   Date: 12/02/2026
+
+Next Inspection Due: 28/05/2026

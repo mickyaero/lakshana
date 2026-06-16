@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-HY-2026-541
+Test Date:           04/01/2026
+Test Duration:       4h 31min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       Boeing 777-300ER
+Registration:        VT-ALR
+Engine Configuration: 2 × GE90-115BL
+Test Configuration:  66% MTOW, fwd CG @ 19% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. S. Mukherjee
+First Officer:       F/O R. Bhattacharya
+Flight Test Engineer: FTE V. Subramanian
+
+TEST OBJECTIVE
+
+Cruise Performance Validation — Verify TAS at FL370, SFC, range factor for the subject aircraft at the conditions defined in
+Test Plan FTR-HY-2026-541, in accordance with CAR-23 / CS-25 § 25.355.
+
+TEST CONDITIONS
+
+Weather:             SCT at 12000ft, wind 180/15, OAT 22°C
+Test Altitude(s):    FL178 — FL177
+Fuel On Board (Start): 9.8 tonnes
+Aircraft Mass:       159 tonnes
+CG Position:         22.6% MAC
+
+OBSERVATIONS
+
+  • Cabin pressure schedule tracked normally; max ΔP within limit.
+  • Hydraulic systems Green and Yellow maintained nominal pressure (3000 psi ± 50).
+  • Pitch attitude steady within ±0.5° of target throughout maneuver.
+  • Buffet onset noted at α = 9.4°, well clear of stall AoA (12.8°).
+
+CONCLUSION
+
+PASS — exceeds spec margin by 8%. No further action required.
+
+Approved by:         Capt. S. Mukherjee
+FTE Concurrence:     FTE V. Subramanian

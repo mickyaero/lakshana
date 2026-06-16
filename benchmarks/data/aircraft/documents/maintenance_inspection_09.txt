@@ -1,0 +1,41 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/31643
+Date of Inspection:  05/06/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Airbus A320neo
+Registration:        VT-EXP
+Operator:            Indigo
+Total Flight Hours:  39,148
+Total Flight Cycles: 12,007
+Engine Type:         PW1127G-JM
+
+INSPECTION
+
+Check Level:         Phase-2
+ATA Chapter:         78 — Engine Exhaust
+Reference Manual:    AMM Rev. 44, Task 78-58-66
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. Cabin pressurization outflow valve actuator response time 1.2s, within limit.
+     ACTION: Lubrication performed per MM 12-21-04; signed off.
+  2. FADEC software version mismatch found, software update SB-FADEC-22 applied.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  3. APU oil consumption rate elevated to 0.18 L/hr; trend monitoring continued.
+     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        R. Venkatesan, AME L1
+DGCA Licence No.:    AME-77839
+Signature:           _____________________   Date: 05/06/2026
+
+Next Inspection Due: 28/08/2026

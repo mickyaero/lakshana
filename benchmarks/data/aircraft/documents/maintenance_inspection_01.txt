@@ -1,0 +1,39 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/10851
+Date of Inspection:  08/04/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Embraer E190
+Registration:        VT-JCD
+Operator:            Star Air
+Total Flight Hours:  26,231
+Total Flight Cycles: 16,261
+Engine Type:         CF34-10E
+
+INSPECTION
+
+Check Level:         Daily Pre-flight
+ATA Chapter:         49 — Airborne Auxiliary Power
+Reference Manual:    AMM Rev. 41, Task 49-54-23
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. FADEC software version mismatch found, software update SB-FADEC-22 applied.
+     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+  2. Right main landing gear oleo strut servicing low pressure, recharged to spec.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        Vikram Nair, AME L1
+DGCA Licence No.:    AME-22156
+Signature:           _____________________   Date: 08/04/2026
+
+Next Inspection Due: 28/06/2026

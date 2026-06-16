@@ -1,0 +1,41 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/48469
+Date of Inspection:  25/06/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Embraer E190
+Registration:        VT-JCD
+Operator:            Star Air
+Total Flight Hours:  30,293
+Total Flight Cycles: 4,827
+Engine Type:         CF34-10E
+
+INSPECTION
+
+Check Level:         Daily Pre-flight
+ATA Chapter:         24 — Electrical Power
+Reference Manual:    AMM Rev. 46, Task 24-24-90
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. L1 wheel brake assembly worn to 28% remaining; replacement scheduled.
+     ACTION: Borescope inspection scheduled for next A-Check.
+  2. Engine #2 IDG oil filter delta-P approaching caution band, filter replaced.
+     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+  3. Leading edge slat actuator showing minor hydraulic seepage within AMM limits.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        Arjun Kapoor, B2
+DGCA Licence No.:    AME-49117
+Signature:           _____________________   Date: 25/06/2026
+
+Next Inspection Due: 28/10/2026

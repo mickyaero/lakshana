@@ -1,0 +1,39 @@
+MAINTENANCE INSPECTION REPORT
+
+Work Order Number:   MIR/2026/57819
+Date of Inspection:  13/03/2026
+Station:             Delhi (DEL) — Hangar Bay 3
+
+AIRCRAFT DETAILS
+
+Aircraft Type:       Airbus A350-900
+Registration:        VT-JRC
+Operator:            Air India
+Total Flight Hours:  37,714
+Total Flight Cycles: 13,415
+Engine Type:         RR Trent XWB
+
+INSPECTION
+
+Check Level:         A-Check
+ATA Chapter:         28 — Fuel System
+Reference Manual:    AMM Rev. 39, Task 28-88-91
+
+FINDINGS AND CORRECTIVE ACTIONS
+
+  1. Right main landing gear oleo strut servicing low pressure, recharged to spec.
+     ACTION: Adjusted to manufacturer specification; recorded in tech log.
+  2. Static port heater P/N 387-2241-04 failed BIT, replaced with new unit.
+     ACTION: Deferred to next scheduled inspection per MEL Cat-B (10 days).
+
+CERTIFICATION
+
+Aircraft is hereby certified airworthy for return to service in accordance with the
+approved maintenance program. All applicable Airworthiness Directives reviewed and
+found compliant.
+
+Inspected by:        Anjali Mehta, AME L2
+DGCA Licence No.:    AME-32431
+Signature:           _____________________   Date: 13/03/2026
+
+Next Inspection Due: 28/07/2026

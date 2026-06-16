@@ -1,10 +1,6 @@
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
   <rect width="64" height="64" rx="13" fill="#1a1611"/>
-  <!-- three small surrounding dots (cluster) -->
-  <circle cx="15" cy="15" r="3"  fill="#cf6d35" opacity="0.55"/>
-  <circle cx="49" cy="15" r="3"  fill="#cf6d35" opacity="0.40"/>
-  <circle cx="15" cy="49" r="3"  fill="#cf6d35" opacity="0.40"/>
-  <circle cx="49" cy="49" r="3"  fill="#cf6d35" opacity="0.55"/>
-  <!-- center: the mark -->
-  <circle cx="32" cy="32" r="11" fill="#cf6d35"/>
+  <g transform="translate(21.90,45.81) scale(0.01458,-0.01458)" fill="#cf6d35">
+    <path d="M1418 1246V1104H1115V-29H1073L960 99V762Q856 738 639 455L523 570Q551 612 615 686Q516 780 419 780Q354 780 297.5 727.0Q241 674 241 602Q241 524 292.5 444.5Q344 365 570 144L536 113L252 397Q163 485 131.0 548.0Q99 611 99 665Q99 762 162.5 826.0Q226 890 319 890Q468 890 646 720Q799 869 960 869V1104H-3V1246Z"/>
+  </g>
 </svg>

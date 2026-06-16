@@ -1,0 +1,122 @@
+[
+  {
+    "filename": "maintenance_inspection_00.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_01.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_02.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_03.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_04.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_05.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_06.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_07.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_08.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "maintenance_inspection_09.txt",
+    "doc_type": "maintenance_inspection"
+  },
+  {
+    "filename": "flight_test_00.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_01.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_02.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_03.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_04.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_05.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_06.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_07.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_08.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "flight_test_09.txt",
+    "doc_type": "flight_test"
+  },
+  {
+    "filename": "service_bulletin_00.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_01.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_02.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_03.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_04.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_05.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_06.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_07.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_08.txt",
+    "doc_type": "service_bulletin"
+  },
+  {
+    "filename": "service_bulletin_09.txt",
+    "doc_type": "service_bulletin"
+  }
+]

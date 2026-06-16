@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-DA-2026-151
+Test Date:           15/05/2026
+Test Duration:       2h 13min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       Airbus A321neo
+Registration:        VT-IUR
+Engine Configuration: 2 × CFM LEAP-1A26
+Test Configuration:  90% MTOW, fwd CG @ 20% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. S. Mukherjee
+First Officer:       F/O P. Iyengar
+Flight Test Engineer: FTE V. Subramanian
+
+TEST OBJECTIVE
+
+Autopilot Coupled Approach — Verify ILS CAT-IIIA capture, glideslope hold for the subject aircraft at the conditions defined in
+Test Plan FTR-DA-2026-151, in accordance with CAR-23 / CS-25 § 25.489.
+
+TEST CONDITIONS
+
+Weather:             CAVOK, wind 270/08, OAT 26°C
+Test Altitude(s):    FL081 — FL279
+Fuel On Board (Start): 14.4 tonnes
+Aircraft Mass:       245 tonnes
+CG Position:         32.4% MAC
+
+OBSERVATIONS
+
+  • Roll control authority adequate at all tested conditions; no adverse handling noted.
+  • Stick force gradient consistent with predicted simulator response.
+  • Cabin pressure schedule tracked normally; max ΔP within limit.
+  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+
+CONCLUSION
+
+PASS — exceeds spec margin by 8%. No further action required.
+
+Approved by:         Capt. S. Mukherjee
+FTE Concurrence:     FTE V. Subramanian

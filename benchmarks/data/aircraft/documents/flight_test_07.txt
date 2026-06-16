@@ -1,0 +1,46 @@
+FLIGHT TEST REPORT
+
+Test Report Number:  FTR-DA-2026-658
+Test Date:           03/06/2026
+Test Duration:       2h 33min
+Test Location:       Bengaluru (BLR) — Flight Test Range B
+
+TEST AIRCRAFT
+
+Aircraft Type:       De Havilland DHC-6
+Registration:        VT-RDA
+Engine Configuration: 2 × PT6A-34
+Test Configuration:  68% MTOW, fwd CG @ 18% MAC
+
+TEST CREW
+
+Test Pilot:          Capt. V. Ramachandran
+First Officer:       F/O P. Iyengar
+Flight Test Engineer: FTE V. Subramanian
+
+TEST OBJECTIVE
+
+Brake Energy Limit Test — Verify RTO at MTOW, brake temperatures, fuse plug release for the subject aircraft at the conditions defined in
+Test Plan FTR-DA-2026-658, in accordance with CAR-23 / CS-25 § 25.467.
+
+TEST CONDITIONS
+
+Weather:             BKN at 8000ft, wind calm, OAT 14°C
+Test Altitude(s):    FL187 — FL207
+Fuel On Board (Start): 9.1 tonnes
+Aircraft Mass:       135 tonnes
+CG Position:         35.6% MAC
+
+OBSERVATIONS
+
+  • Landing gear retraction time 9.8s (spec: ≤ 12.0s); extension 11.4s.
+  • FADEC reported no exceedances; engine vibration < 0.4 IPS throughout.
+  • Stick force gradient consistent with predicted simulator response.
+  • Roll control authority adequate at all tested conditions; no adverse handling noted.
+
+CONCLUSION
+
+PARTIAL PASS — re-fly required for envelope point #3 due to weather.
+
+Approved by:         Capt. V. Ramachandran
+FTE Concurrence:     FTE V. Subramanian

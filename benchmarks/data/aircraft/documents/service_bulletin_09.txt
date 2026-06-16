@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-DE-49-325
+Issue Date:          26/05/2026
+Revision Status:     Revision 01
+ATA Chapter:         49 — Airborne Auxiliary Power
+Classification:      Mandatory
+
+SUBJECT
+
+Brake Control Unit Software Update
+
+APPLICABILITY
+
+Aircraft Type:       De Havilland DHC-6
+Serial Numbers:      MSN 2786 through MSN 3333
+Engine(s):           PT6A-34
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-DE-49-498 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address FAA reported potential anti-skid logic discrepancy under wet runway conditions. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Update BCU software from v2.18 to v2.20 per maintenance procedure 32-44-10.
+
+COMPLIANCE
+
+Recommended compliance: Within 4,500 flight hours
+or 24 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            10 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 1,078
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 49
+— Illustrated Parts Catalog (IPC) Chapter 49
+— Component Maintenance Manual 49-31-69
+
+APPROVED BY
+
+Dr. K. Raghavan, Lead Engineer
+Engineering Authority: EA-3091
+Type Certification:    TC-FAA-2022

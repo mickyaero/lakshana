@@ -1,0 +1,53 @@
+SERVICE BULLETIN
+
+Service Bulletin No: SB-AIR-29-653
+Issue Date:          11/03/2026
+Revision Status:     Original Issue
+ATA Chapter:         29 — Hydraulic Power
+Classification:      Mandatory
+
+SUBJECT
+
+Engine Nacelle Anti-Ice Duct Inspection
+
+APPLICABILITY
+
+Aircraft Type:       Airbus A330-300
+Serial Numbers:      MSN 1948 through MSN 2390
+Engine(s):           RR Trent 772B
+Effectivity:         All aircraft within the serial range listed above unless previously
+                     modified per SB-AIR-29-823 Rev. 02.
+
+REASON FOR ISSUE
+
+This Service Bulletin is issued to address thermal cycling fatigue cracking observed on bleed air duct elbow. Operator reports and in-service
+investigations indicate that continued operation without the corrective action described
+herein may result in degraded system performance and increased maintenance burden.
+
+DESCRIPTION OF CHANGE
+
+Inspect duct elbow per Figure 3; replace if any crack length > 6 mm is detected.
+
+COMPLIANCE
+
+Recommended compliance: Within 3,000 flight hours
+or 6 months from the date of this Service Bulletin,
+whichever occurs first.
+
+ESTIMATED LABOR
+
+Manhours:            6 MH per aircraft (two technicians, station-level)
+Estimated Material Cost: USD 746
+Special Tooling:     None / Standard line tooling
+
+REFERENCES
+
+— Aircraft Maintenance Manual (AMM) Chapter 29
+— Illustrated Parts Catalog (IPC) Chapter 29
+— Component Maintenance Manual 29-63-62
+
+APPROVED BY
+
+Prof. S. Iyer, Chief Engineer
+Engineering Authority: EA-6421
+Type Certification:    TC-FAA-2021
